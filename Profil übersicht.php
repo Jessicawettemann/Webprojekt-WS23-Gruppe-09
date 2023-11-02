@@ -1,7 +1,7 @@
 <?php
 session_start();
 include"../Datenbank Verbindung.php";
-# hier muss der Header noch hin für die Sicherherit
+include "../Header Sicherheit.php";
 ?>
 
     <!DOCTYPE html>
