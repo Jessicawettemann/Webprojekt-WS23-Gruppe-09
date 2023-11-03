@@ -1,4 +1,4 @@
-<?<php
+<?php
 //Verbingsinformationen
 $hostname = "mars.iuk.hdm-stuttgart.de"; // Hostname Datenbank
 $username = "jw170"; // Datenbank-Benutzername
