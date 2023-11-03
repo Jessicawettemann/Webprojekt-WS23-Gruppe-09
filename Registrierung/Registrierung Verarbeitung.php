@@ -24,3 +24,4 @@ $stmt->execute();
 
 echo "Registrierung erfolgreich!"; //Überprüfung, ob erfolgreich   
 $db = null; // Datenbankverbindung schließen
+?>
