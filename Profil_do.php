@@ -1,4 +1,8 @@
-
+<?php //funktioniert erst wenn Login und Regsirtierung fertig ist
+include "Datenbank Verbindung.php";
+include "Header Sicherheit.php";
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="de">
 <head>
