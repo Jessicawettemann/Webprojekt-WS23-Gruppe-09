@@ -26,19 +26,21 @@ if ($_FILES["profilbild"]["name"] != null) {
     if ($fileType == "jpg" or $fileType == "png" or $fileType == "PNG" or $fileType == "pdf" or $fileType == "HEIC" or $fileType == "jpeg" or $fileType == "JPG") {
         echo "";
     } else {
-        die("<div class='fail'> Dieses Dateiformat wird nicht unterstützt. </div>");
-    }
-    if ($_FILES["profilbild"]["size"] > 80000000) {
-        die("<div class='fail'> Diese Datei ist leider zu groß </div>");
+        die("<div class='fail'> Dein aktuelles Dateiformat wird nicht unterstützt. </div>");
+
     }
     if (!move_uploaded_file($_FILES["profilbild"]["tmp_name"], "/home/jw170/public_html/Bilder/" .$_FILES["profilbild"]["name"])) {
         echo "<div class='fail'> Datenbankfehler </div>";
-    }
+    } //Wenn ein Profilbild hochgeladen wird, überprüft der Code das Dateiformat und verschiebt die Datei in das Verzeichnis
+    // "/home/jw170/public_html/Bilder/". Wenn das Profilbild zu groß ist, wird eine Fehlermeldung angezeigt.
+}
+    if ($_FILES["profilbild"]["size"] > 80000000) {
+    die("<div class='fail'> Deine aktuellle Datei ist leider zu groß </div>");
 }
 $statement = $pdo->prepare("INSERT INTO Nutzer (vorname, nachname, benutzername, email, profilbild, passwort) VALUES (?,?,?,?,?,?)");
 $p = "hjfew3545r8c0szhwgfsdafghjgfdhj";
 
-// Felder sollen nicht freigelassen werden:
+// Felder sollen nicht freigelassen werden wenn doch Fehlermeldung:
 if(($_POST["vorname"]) !=null and ($_POST["nachname"]) !=null and ($_POST["benutzername"]) !=null and ($_POST["email"]) !=null and ($_POST["passwort"]) !=null){
     if($statement->execute(array(htmlspecialchars($_POST["vorname"]), htmlspecialchars($_POST["nachname"]), htmlspecialchars($_POST["benutzername"]), htmlspecialchars($_POST["email"]), htmlspecialchars($_FILES["profilbild"]["name"]), password_hash($_POST["passwort"].$p, PASSWORD_BCRYPT), ))){
         echo"<div class='fine'> Du wurdest erfolgreich registriert "."<br><br>";
@@ -47,7 +49,8 @@ if(($_POST["vorname"]) !=null and ($_POST["nachname"]) !=null and ($_POST["benut
     }
 }else{
     echo"<div class='fail'> Alle Felder müssen ausgefüllt sein! "."<br><br>"."<a href='Registrierung%20Formular.php'>Erneut versuchen</a> </div>";
-}
+} //Der Code bereitet dann eine SQL-Abfrage vor, um die Benutzerdaten in die Datenbanktabelle "Nutzer" einzufügen. Es werden verschiedene Felder überprüft, um sicherzustellen, dass sie nicht leer sind. Wenn alle Felder ausgefüllt sind, wird die Abfrage ausgeführt und eine Erfolgsmeldung angezeigt.
+// Andernfalls wird eine Fehlermeldung angezeigt, die darauf hinweist, dass alle Felder ausgefüllt sein müssen.
 ?>
 
 </body>
