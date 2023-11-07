@@ -35,7 +35,7 @@ if ($_FILES["Profilbild"]["name"] != null) {
         echo "<div class='fail'> Datenbankfehler </div>";
     }
 }
-$statement = $pdo->prepare("INSERT INTO User (Vorname, Nachname, Benutzername, E-mail, Profilbild, Passwort) VALUES (?,?,?,?,?,?)");
+$statement = $pdo->prepare("INSERT INTO Nutzer (Vorname, Nachname, Benutzername, E-mail, Profilbild, Passwort) VALUES (?,?,?,?,?,?)");
 $p = "hjfew3545r8c0szhwgfsdafghjgfdhj";
 
 // Felder sollen nicht freigelassen werden:
