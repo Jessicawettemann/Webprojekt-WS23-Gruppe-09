@@ -16,13 +16,22 @@ session_start();
 <?php
 if(!isset($_POST["benutzername"]) or !isset($_POST["passwort"])){
     die("<div class='fail'> Formularfehler </div>");
-}
+} //Der Code überprüft, ob die POST-Variablen "benutzername" und "passwort" gesetzt sind.
+// Wenn nicht, wird eine Fehlermeldung angezeigt und der Code wird beendet.
 
 if ($_FILES["profilbild"]["name"] != null) {
     $fileName = $_FILES["profilbild"]["name"];
     $fileSplit = explode(".", $fileName);
     $fileType = $fileSplit[sizeof($fileSplit) - 1];
-
+//In diesem Codeabschnitt wird überprüft, ob ein Profilbild hochgeladen wurde.
+// Dazu wird überprüft, ob der Wert des "name" Feldes des "profilbild" Arrays in $_FILES nicht null ist.
+//Wenn ein Profilbild hochgeladen wurde, wird der Dateiname in der Variable $fileName gespeichert.
+// Dann wird der Dateiname mit dem Punkt als Trennzeichen in ein Array aufgeteilt, um das Dateiformat zu erhalten.
+    //In diesem Codeabschnitt wird überprüft, ob ein Profilbild hochgeladen wurde. Dazu wird überprüft, ob der Wert des "name" Feldes des "profilbild" Arrays in $_FILES nicht null ist.
+    //
+    //Wenn ein Profilbild hochgeladen wurde, wird der Dateiname in der Variable $fileName gespeichert. Dann wird der Dateiname mit dem Punkt als Trennzeichen in ein Array aufgeteilt, um das Dateiformat zu erhalten.
+    // Das Dateiformat wird in der Variable $fileType gespeichert, indem das letzte Element des Arrays verwendet wird.
+// Das Dateiformat wird in der Variable $fileType gespeichert, indem das letzte Element des Arrays verwendet wird.
     if ($fileType == "jpg" or $fileType == "png" or $fileType == "PNG" or $fileType == "pdf" or $fileType == "HEIC" or $fileType == "jpeg" or $fileType == "JPG") {
         echo "";
     } else {
