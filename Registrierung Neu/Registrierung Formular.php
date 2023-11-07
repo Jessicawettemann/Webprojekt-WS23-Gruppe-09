@@ -16,26 +16,23 @@ session_start();
 <div>
     <form action="Registrierung_do.php" method="post">
         <h2>Registrieren</h2>
+        <label class="label" for="profilbild"></label>
+        <input type="file" placeholder="Profilbild" name="profilbild">
 
+        <label class="label" for="vorname"></label>
+        <input type="text" placeholder="Vorname" name="vorname">
 
-        <label class="label" for="Benutzername"></label>
-        <input type="text"  placeholder="Benutzername" name="Benutzername">
+        <label class="label" for="nachname"></label>
+        <input type="text" placeholder="Nachname" name="nachname">
 
-        <label class="label" for="Vorname"></label>
-        <input type="text" placeholder="Vorname" name="Vorname">
+        <label class="label" for="benutzername"></label>
+        <input type="text"  placeholder="Benutzername" name="benutzername">
 
-        <label class="label" for="Nachname"></label>
-        <input type="text" placeholder="Nachname" name="Nachname">
+        <label class="label" for="email"></label>
+        <input type="text" placeholder="E-Mail Adresse" name="email">
 
-
-        <label class="label" for="E-Mail"></label>
-        <input type="text" placeholder="E-Mail Adresse" name="E-Mail">
-
-        <label class="label" for="Passwort"></label>
-        <input type="password" placeholder="Passwort" name="Passwort">
-
-        <label class="label" for="Profilbild"></label>
-        <input type="file" placeholder="Profilbild" name="Profilbild">
+        <label class="label" for="passwort"></label>
+        <input type="password" placeholder="Passwort" name="passwort">
 
         <button type="submit">Registrieren</button>
     </form>
