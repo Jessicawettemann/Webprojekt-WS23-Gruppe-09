@@ -35,7 +35,19 @@ if ($_FILES["Profilbild"]["name"] != null) {
         echo "<div class='fail'> Datenbankfehler </div>";
     }
 }
+$statement = $pdo->prepare("INSERT INTO Nutzer (Vorname, Nachname, Benutzername, E-Mail, Profilbild, Passwort) VALUES (?,?,?,?,?,?)");
+$p = "hjfew3545r8c0szhwgfsdafghjgfdhj";
 
+// Felder sollen nicht freigelassen werden:
+if(($_POST["Vorname"]) !=null and ($_POST["Nachname"]) !=null and ($_POST["Benutzername"]) !=null and ($_POST["E-Mail"]) !=null and ($_POST["Passwort"]) !=null){
+    if($statement->execute(array(htmlspecialchars($_POST["Vorname"]), htmlspecialchars($_POST["Nachname"]), htmlspecialchars($_POST["Benutzername"]), htmlspecialchars($_POST["E-Mail"]), htmlspecialchars($_FILES["Profilbild"]["name"]), password_hash($_POST["Passwort"].$p, PASSWORD_BCRYPT), ))){
+        echo"<div class='fine'> Du wurdest erfolgreich registriert "."<br>";
+    }else{
+        die("<div class='fail'> Diese Zugangsdaten sind bereits vergeben "."<br><br>". "<a href='Registrierung%20Formular.php'>Erneut versuchen</a> </div>");
+    }
+}else{
+    echo"<div class='fail'> Alle Felder müssen ausgefüllt sein! "."<br><br>"."<a href='Registrierung%20Formular.php'>Erneut versuchen</a> </div>";
+}
 ?>
 
 </body>
