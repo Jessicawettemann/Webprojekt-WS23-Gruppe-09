@@ -34,9 +34,6 @@ session_start();
         <label class="label" for="passwort"></label>
         <input type="password" placeholder="Passwort" name="passwort">
 
-        <label for="profilbild">Profilbild hochladen:</label>
-            <input type="file" id="profilbild" name="profilbild" required> <br><br>
-
         <button type="submit">Registrieren</button>
     </form>
 </div>

@@ -50,7 +50,7 @@ $statement = $pdo->prepare("INSERT INTO Nutzer (vorname, nachname, benutzername,
 $p = "hjfew3545r8c0szhwgfsdafghjgfdhj";
 
 // Felder sollen nicht freigelassen werden wenn doch Fehlermeldung:
-if(($_POST["vorname"]) !=null and ($_POST["nachname"]) !=null and ($_POST["benutzername"]) !=null and ($_POST["email"]) !=null and ($_POST["passwort"]) !=null){
+if(($_POST["vorname"]) !=null and ($_POST["nachname"]) !=null and ($_POST["benutzername"]) !=null and ($_POST["email"]) !=null and ($_POST["passwort"]) != null and ($_POST["profilbild"]) ){
     if($statement->execute(array(htmlspecialchars($_POST["vorname"]), htmlspecialchars($_POST["nachname"]), htmlspecialchars($_POST["benutzername"]), htmlspecialchars($_POST["email"]), htmlspecialchars($_FILES["profilbild"]["name"]), password_hash($_POST["passwort"].$p, PASSWORD_BCRYPT), ))){
         echo"<div class='fine'> Du wurdest erfolgreich registriert "."<br><br>";
     }else{

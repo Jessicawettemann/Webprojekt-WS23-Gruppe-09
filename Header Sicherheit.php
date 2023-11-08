@@ -2,41 +2,49 @@
 include "Datenbank Verbindung.php";
 session_start();
 ?>
-    <!DOCTYPE html>
-    <html lang="de">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width">
 
-    </head>
-    <body>
-    <header>
-        <div class="header">
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+
+</head>
+<body>
+<header>
 
 
+            <?php
+            #wenn Nutzer angemeldet ist wird zum Logout verlinkt, anderenfalls zum Login
+            if(isset($_SESSION["benutzername"])) {
+                echo "<li class='li'><a href='../Login/logout.php'>Logout</a></li";
+            }else{
+                echo "<li class='li'><a href='../Login/login.php'>Login</a></li";
+            }
+            ?>
 
-<?php
-#wenn Nutzer angemeldet ist wird zum Logout verlinkt, anderenfalls zum Login
-if(isset($_SESSION["Benutzername"])) {
-    echo "<li class='li'><a href='../Login/logout.php'>Logout</a></li"; # Login verlinken
-}else{
-    echo "<li class='li'><a href='../Login/login.php'>Login</a></li";
-}
-    $statement = $pdo -> prepare ("SELECT Profilbild FROM User WHERE ID= :USER _ID ");
-                        $statement -> bindParam(":User_ID", $_SESSION["User_ID"]);
-                        if($statement -> execute()) {
-                            if ($row = $statement->fetch()) {
-                                if (($row["Profilbild"]) == null or "") {
-                                    echo "<div>kein Profilbild</div>";
-                                } else {
-                                    echo "<div><img class='profilpicture' src='https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/" . $row['Profilbild'] ."'></div>";
-                                }
+            <div>
+                <?php
+                #ist Nutzer angemeldet wird das Profilbild angezeigt, wenn nicht dann der Platzhalter
+                if (!isset($_SESSION["Nutzer_ID"])) {
+                    echo "<div>nicht angemeldet</div>";
+                }else{
+
+                    $statement = $pdo -> prepare ("SELECT profilbild FROM Nutzer WHERE ID= :Nutzer_ID ");
+                    $statement -> bindParam(":Nutzer_ID", $_SESSION["Nutzer_ID"]);
+                    if($statement -> execute()) {
+                        if ($row = $statement->fetch()) {
+                            if (($row["profilbild"]) == null or "") {
+                                echo "<div>kein Profilbild</div>";
+                            } else {
+                                echo "<div><img class='profilpicture' src='https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/" . $row['profilbild'] ."'></div>";
                             }
-
+                        }
                     }
-                    ?>
-        </div>
-
-        </div>
-    </header>
-    </body>
+                }
+                ?>
+            </div>
+        </ul>
+    </div>
+</header>
+</body>
