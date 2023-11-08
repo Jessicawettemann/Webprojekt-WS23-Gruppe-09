@@ -35,7 +35,7 @@ $statement->execute([$hash, $Nutzer_Id]);
 if($statement->execute()){
     echo '<p>'. "<div class='fine''>Deine Änderung war erfolgreich!</div>";
 }else{
-    echo '<p>'. "<div class='fail'>Beim Bearbeiten ist etwas schiefgelaufen, bitte versuche es erneut.</div>". "</p> <a href= 'passwort.php'> Passwort bearbeiten</a>";
+    echo '<p>'. "<div class='fail'>Beim Bearbeiten ist etwas schiefgelaufen, bitte versuche es erneut.</div>". "</p> <a href= 'Passwort.php'> Passwort bearbeiten</a>";
 }
 ?>
 </body>
