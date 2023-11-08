@@ -38,7 +38,10 @@ if ($_FILES["profilbild"]["name"] != null) {
         die("<div class='fail'> Dein aktuelles Dateiformat wird nicht unterstützt. </div>");
 
     }
-
+    if (!move_uploaded_file($_FILES["profilbild"]["tmp_name"], "/home/jw170/public_html/Bilder" .$_FILES["profilbild"]["name"])) {
+        echo "<div class='fail'> Datenbankfehler </div>";
+    } //Wenn ein Profilbild hochgeladen wird, überprüft der Code das Dateiformat und verschiebt die Datei in das Verzeichnis
+    // "/home/jw170/public_html/Bilder/". Wenn das Profilbild zu groß ist, wird eine Fehlermeldung angezeigt.
 }
     if ($_FILES["profilbild"]["size"] > 80000000) {
     die("<div class='fail'> Deine aktuellle Datei ist leider zu groß </div>");
