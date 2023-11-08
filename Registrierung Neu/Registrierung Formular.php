@@ -29,7 +29,7 @@ session_start();
         <input type="text"  placeholder="Benutzername" name="benutzername">
 
         <label class="label" for="email"></label>
-        <input type="text" placeholder="E-Mail adresse" name="email">
+        <input type="text" placeholder="E-Mail Adresse" name="email">
 
         <label class="label" for="passwort"></label>
         <input type="password" placeholder="Passwort" name="passwort">
