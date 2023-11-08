@@ -28,7 +28,7 @@ $statement=$pdo->prepare("SELECT * FROM Nutzer WHERE email = ?");
 $statement->execute([$email]);
 $email2 = $statement-> fetch();
 if ($email2){
-    die ("<div class='fail'>Die Mailadresse existiert bereits, bitte wähle eine andere.</div>"."</p> <a href= 'email.php'> Zurück zur Bearbeitung</a>");
+    die ("<div class='fail'>Die Mailadresse existiert bereits, bitte wähle eine andere.</div>". "</p> <a href= 'email.php'> Zurück zur Bearbeitung</a>");
 }else{
     # Änderung der Nutzerdaten in der Datenbank
     $statement2=$pdo->prepare("UPDATE Nutzer SET email=? WHERE ID=?");
