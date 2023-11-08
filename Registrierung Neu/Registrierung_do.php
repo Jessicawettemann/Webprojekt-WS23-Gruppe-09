@@ -18,8 +18,9 @@ if(!isset($_POST["benutzername"]) or !isset($_POST["passwort"])){
     die("<div class='fail'> Formularfehler </div>");
 } //Der Code überprüft, ob die POST-Variablen "benutzername" und "passwort" gesetzt sind.
 // Wenn nicht, wird eine Fehlermeldung angezeigt und der Code wird beendet.
-
+echo "1";
 if ($_FILES["profilbild"]["name"] != null) {
+    echo "2";
     $fileName = $_FILES["profilbild"]["name"];
     $fileSplit = explode(".", $fileName);
     $fileType = $fileSplit[sizeof($fileSplit) - 1];
@@ -38,8 +39,10 @@ if ($_FILES["profilbild"]["name"] != null) {
         die("<div class='fail'> Dein aktuelles Dateiformat wird nicht unterstützt. </div>");
 
     }
-    if (!move_uploaded_file($_FILES["profilbild"]["tmp_name"], "/home/jw170/public_html/Bilder" .$_FILES["profilbild"]["name"])) {
+    if (!move_uploaded_file($_FILES["profilbild"]["tmp_name"], "/home/jw170/public_html/Bilder/" .$_FILES["profilbild"]["name"])) {
         echo "<div class='fail'> Datenbankfehler </div>";
+    }else{
+        echo "ok";
     } //Wenn ein Profilbild hochgeladen wird, überprüft der Code das Dateiformat und verschiebt die Datei in das Verzeichnis
     // "/home/jw170/public_html/Bilder/". Wenn das Profilbild zu groß ist, wird eine Fehlermeldung angezeigt.
 }
@@ -52,7 +55,7 @@ $p = "hjfew3545r8c0szhwgfsdafghjgfdhj";
 // Felder sollen nicht freigelassen werden wenn doch Fehlermeldung:
 if(($_POST["vorname"]) !=null and ($_POST["nachname"]) !=null and ($_POST["benutzername"]) !=null and ($_POST["email"]) !=null and ($_POST["passwort"]) != null and ($_POST["profilbild"]) ){
     if($statement->execute(array(htmlspecialchars($_POST["vorname"]), htmlspecialchars($_POST["nachname"]), htmlspecialchars($_POST["benutzername"]), htmlspecialchars($_POST["email"]), htmlspecialchars($_FILES["profilbild"]["name"]), password_hash($_POST["passwort"].$p, PASSWORD_BCRYPT), ))){
-        echo"<div class='fine'> Du wurdest erfolgreich registriert "."<br><br>";
+        echo"<div class='fine'> Du wurdest erfolgreich registriertmm "."<br><br>";
     }else{
         die("<div class='fail'> Diese Zugangsdaten sind bereits vergeben "."<br><br>". "<a href='Registrierung%20Formular.php'>Erneut versuchen</a> </div>");
     }
