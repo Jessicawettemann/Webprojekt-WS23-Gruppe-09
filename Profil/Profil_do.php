@@ -40,7 +40,7 @@ if(!isset($_SESSION["Nutzer_ID"])){
     echo "<br>";
     echo "E-Mail:"." ". $row ["email"]. "<a class='edit' href= 'email.php'>" . " bearbeiten". "</a>";
     echo "<br>";
-    echo "<a href= 'passwort%20bearbeiten.php'>". "Passwort ändern". "</a> <br>" ;
+    echo "<a href= 'Passwort.php'>". "Passwort ändern". "</a> <br>" ;
     echo "<br>";
     echo "<img src='https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/" . $row["profilbild"] . "'height='100px'> <br>".
         "<a href= 'profilbild%20bearbeiten.php'>" . "aktuelles Profilbild ändern";
