@@ -14,7 +14,7 @@ include"Datenbank Verbindung.php";
     <h1>Login</h1>
 
         <div class="input_container"
-        <form action=" /Login/Login%20Do.php" method="post">
+        <form action="Login%20Do.php" method="post">
 
             <label class="label" for="benutzername"></label>
             <input type="text" placeholder= "Benutzername" name="benutzername">
