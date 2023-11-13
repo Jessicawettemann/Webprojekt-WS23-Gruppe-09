@@ -14,7 +14,7 @@
     <div class="ich-suche"> <!-- Klasse ist ein gruppierendes Element ohne semantische Bedeutung 
 Durch die Klasse kann ein einziges Element innerhalb des div mit CSS angesprochen werden -->
         <h2>Ich suche</h2>
-        <a href="redirect.php?category=1">Weiterleitung ich-suche</a>
+        <a href="ich-suche">Weiterleitung ich-suche</a>
     </div>
 
     <div class="ich-biete">
