@@ -2,6 +2,8 @@
 
 
 include " Datenbank Verbindung.php";
+include "Header Sicherheit.php";
+
 session_start();
 if(!isset($_SESSION["Nutzer_ID"])){
     echo("<div class='fail'> Bitte melde dich zunächst an! "."<br><br>". "<a href='Login Formular'>Hier geht's zum Login</a> </div>");
