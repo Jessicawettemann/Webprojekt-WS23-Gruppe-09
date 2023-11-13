@@ -1,7 +1,7 @@
 <?php
-include"Datenbank Verbindung.php";
-
 session_start();
+include"Datenbank Verbindung.php";
+include "Header Sicherheit.php";
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +14,7 @@ session_start();
 <body>
 
 <div>
-    <form action="Registrierung_do.php" method="post">
+    <form action="Registrierung_do.php" method="post" enctype="multipart/form-data">
         <h2>Registrieren</h2>
         <label class="label" for="profilbild"></label>
         <input type="file" placeholder="Profilbild" name="profilbild">
@@ -29,7 +29,7 @@ session_start();
         <input type="text"  placeholder="Benutzername" name="benutzername">
 
         <label class="label" for="email"></label>
-        <input type="text" placeholder="E-Mail Adresse" name="email">
+        <input type="text" placeholder="E-Mail adresse" name="email">
 
         <label class="label" for="passwort"></label>
         <input type="password" placeholder="Passwort" name="passwort">
