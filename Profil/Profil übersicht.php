@@ -1,7 +1,7 @@
 <?php
 session_start();
 include "Datenbank Verbindung.php";
-include "Header Sicherheit.php";
+;
 ?>
 
     <!DOCTYPE html>
@@ -12,8 +12,17 @@ include "Header Sicherheit.php";
 
     </head>
 <?php
+if(!isset($_SESSION["Nutzer_ID"])){
+    echo("<div class='fail'> Bitte melde dich zunächst an! "."<br><br>". "<a href='Login Formular'>Hier geht's zum Login</a> </div>");
+}else{
+    ?>
+    <body>
+    <h5>Mein Profil</h5>
+    <ul>
+        <li> <a href="Profil_do.php"> Meine Daten </a></li><br>
 
-if (!isset($_SESSION["Nutzer_ID"])) {
-    echo("<div class='fail'> Bitte melde dich zunächst an! " . "<br><br>" .;
-} else{
+    </ul>
+    <br>
+    <?php
+}
 ?>
