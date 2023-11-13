@@ -19,17 +19,17 @@ Durch die Klasse kann ein einziges Element innerhalb des div mit CSS angesproche
 
     <div class="ich-biete">
         <h2>Ich biete</h2>
-        <a href="redirect.php?category=2">Weiterleitung ich-biete</a>
+        <a href="ich-biete.php">Weiterleitung ich-biete</a>
     </div>
 
     <div class="community">
         <h2>Community</h2>
-        <a href="redirect.php?category=3">Weiterleitung community</a>
+        <a href="community.php">Weiterleitung community</a>
     </div>
 
     <div class="aktivitaeten">
         <h2>Aktivitäten</h2>
-        <a href="redirect.php?category=4">Weiterleitung aktivitaeten</a>
+        <a href="aktivitaeten.php">Weiterleitung aktivitaeten</a>
     </div>
 
 </body>
