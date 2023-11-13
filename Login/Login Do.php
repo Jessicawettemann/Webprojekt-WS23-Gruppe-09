@@ -1,7 +1,8 @@
 <?php
+session_start();
 include"Datenbank Verbindung.php";
 
-session_start();
+
 ?>
 
 

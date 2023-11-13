@@ -1,7 +1,8 @@
 <?php
+session_start();
 include"Datenbank Verbindung.php";
 
-session_start();
+
 ?>
 
 
@@ -58,10 +59,10 @@ if(($_POST["vorname"]) !=null and ($_POST["nachname"]) !=null and ($_POST["benut
     if($statement->execute(array(htmlspecialchars($_POST["vorname"]), htmlspecialchars($_POST["nachname"]), htmlspecialchars($_POST["benutzername"]), htmlspecialchars($_POST["email"]), htmlspecialchars($_FILES["profilbild"]["name"]), password_hash($_POST["passwort"].$p, PASSWORD_BCRYPT), ))){
         echo"<div class='fine'> Du wurdest erfolgreich registriertmm "."<br><br>";
     }else{
-        die("<div class='fail'> Diese Zugangsdaten sind bereits vergeben "."<br><br>". "<a href='/Registrierung%20Neu/Registrierung_Formular.php'>Erneut versuchen</a> </div>");
+        die("<div class='fail'> Diese Zugangsdaten sind bereits vergeben "."<br><br>". "<a href='Registrierung_Formular.php'>Erneut versuchen</a> </div>");
     }
 }else{
-    echo"<div class='fail'> Alle Felder müssen ausgefüllt sein! "."<br><br>"."<a href='/Registrierung%20Neu/Registrierung_Formular.php'>Erneut versuchen</a> </div>";
+    echo"<div class='fail'> Alle Felder müssen ausgefüllt sein! "."<br><br>"."<a href='Registrierung_Formular.php'>Erneut versuchen</a> </div>";
 } //Der Code bereitet dann eine SQL-Abfrage vor, um die Benutzerdaten in die Datenbanktabelle "Nutzer" einzufügen. Es werden verschiedene Felder überprüft, um sicherzustellen, dass sie nicht leer sind. Wenn alle Felder ausgefüllt sind, wird die Abfrage ausgeführt und eine Erfolgsmeldung angezeigt.
 // Andernfalls wird eine Fehlermeldung angezeigt, die darauf hinweist, dass alle Felder ausgefüllt sein müssen.
 ?>
