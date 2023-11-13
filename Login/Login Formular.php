@@ -24,7 +24,7 @@ include"Datenbank Verbindung.php";
 
             <button type="submit">Einloggen</button>
             <br><br>
-            <p>Noch keinen Account? <br> <a href="../Registrierung%20Neu/Registrierung_Formular.php">Hier registrieren</a>
+            <p>Noch keinen Account? <br> <a href="Registrierung_Formular.php">Hier registrieren</a>
             </p>
         </form>
         </div>
