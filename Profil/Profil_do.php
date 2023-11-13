@@ -19,7 +19,7 @@ session_start();
 
 <?php
 if(!isset($_SESSION["Nutzer_ID"])){
-    echo("<div class='fail'> Bitte melde dich zunächst an! "."<br><br>". "<a href='../Login/login.php'>Hier geht's zum Login</a> </div>");
+    echo("<div class='fail'> Bitte melde dich zunächst an! "."<br><br>". "<a href='Login Formular'>Hier geht's zum Login</a> </div>");
 }else {
 
 #<!-- Datensatz aus der Datenbank holen von angemeldetem Nutzer-->
@@ -43,7 +43,7 @@ if(!isset($_SESSION["Nutzer_ID"])){
     echo "<a href= 'Passwort.php'>". "Passwort ändern". "</a> <br>" ;
     echo "<br>";
     echo "<img src='https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/" . $row["profilbild"] . "'height='100px'> <br>".
-        "<a href= 'profilbild%20bearbeiten.php'>" . "aktuelles Profilbild ändern";
+        "<a href= 'Profilbild.php'>" . "aktuelles Profilbild ändern";
     echo "<br>";
     echo "</div>";
 }
