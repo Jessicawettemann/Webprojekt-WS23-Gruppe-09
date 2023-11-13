@@ -11,13 +11,21 @@ session_start();
 </head>
 <body>
     <h1>Login</h1>
-    <form action="Login Do.php" method="post">
-        <label for="benutzername">Benutzername:</label>
-        <input type="text" id="benutzername" name="benutzername" required><br>
 
-        <label for="passwort">Passwort:</label>
-        <input type="passwort" id="passwort" name="passwort" required><br>
+        <div class="input_container"
+        <form action=" /Login/Login%20Do.php" method="post">
+            <h1> Login</h1>
+            <label class="label" for="benutzername"></label>
+            <input type="text" placeholder= "Benutzername" name="benutzername">
 
-        <button type="submit">Absenden</button>
+            <label class="label" for="passwort"></label>
+            <input type="password" placeholder="Passwort" name="passwort">
+
+            <button type="submit">Einloggen</button>
+            <br><br>
+            <p>Noch keinen Account? <br> <a href="../Registrierung%20Neu/Registrierung_Formular.php">Hier registrieren</a>
+            </p>
+        </form>
+        </div>
     </form>
 </body>
