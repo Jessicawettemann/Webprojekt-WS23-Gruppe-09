@@ -1,7 +1,7 @@
 <?php
 session_start();
 include"Datenbank Verbindung.php";
-
+include "Header Sicherheit.php";
 ?>
 
 <!DOCTYPE html>
