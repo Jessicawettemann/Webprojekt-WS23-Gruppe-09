@@ -19,7 +19,7 @@ $p="hjfew3545r8c0szhwgfsdafghjgfdhj";
 if($statement->execute(array(htmlspecialchars($_POST["benutzername"])))){
     if($row = $statement->fetch()){
       if(password_verify($_POST["passwort"].$p,$row["passwort"])){
-         echo "<div class='big'>Herzlich Willkommen, ".$row["benutzername"]."<br>"."</div>"
+         echo "<div class='big'>Herzlich Willkommen, ".$row["benutzername"]."<br>"."</div>";
         $_SESSION["benutzername"]=$row["benutzername"];
         $_SESSION["Nutzer_ID"]=$row["ID"];
         } else{
