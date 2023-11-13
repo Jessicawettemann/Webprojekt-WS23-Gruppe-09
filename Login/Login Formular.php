@@ -14,7 +14,7 @@ session_start();
 
         <div class="input_container"
         <form action=" /Login/Login%20Do.php" method="post">
-            <h1> Login</h1>
+
             <label class="label" for="benutzername"></label>
             <input type="text" placeholder= "Benutzername" name="benutzername">
 

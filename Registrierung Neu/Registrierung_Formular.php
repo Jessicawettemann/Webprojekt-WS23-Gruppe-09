@@ -14,7 +14,7 @@ session_start();
 <body>
 
 <div>
-    <form action="Registrierung_do.php" method="post" enctype="multipart/form-data">
+    <form action="/Registrierung%20Neu/Registrierung_do.php" method="post" enctype="multipart/form-data">
         <h2>Registrieren</h2>
         <label class="label" for="profilbild"></label>
         <input type="file" placeholder="Profilbild" name="profilbild">
