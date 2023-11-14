@@ -30,6 +30,9 @@ if($statement->execute(array(htmlspecialchars($_POST["benutzername"])))){
             $_SESSION["benutzername"]=$row["benutzername"];
             $_SESSION["Nutzer_ID"]=$row["ID"];
 
+            header("Location:Startseite.php");
+            exit();
+
 
 
         } else{
