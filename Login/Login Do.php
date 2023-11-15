@@ -36,16 +36,16 @@ if($statement->execute(array(htmlspecialchars($_POST["benutzername"])))){
 
         } else{
 
-            echo ("<div class='fail'>Passwort falsch</div>");
+            echo (<div class='fail'>Passwort falsch</div>);
             echo $statement->errorInfo()[2];
         }
     }else{
 
-        echo "<div class='fail'>Nutzer nicht vorhanden</div>";
-        echo "<a href='../Registrierung%20Neu/Registrierung_Formular.php'> hier registrieren </a>";
+        echo <div class='fail'>Nutzer nicht vorhanden</div>;
+        echo <a href='../Registrierung%20Neu/Registrierung_Formular.php'> hier registrieren </a>;
     }
 }else{
-    die("<div class='fail'>Datenbank-Fehler</div>");
+    die(<div class='fail'>Datenbank-Fehler</div>);
 
 }
 ?>
