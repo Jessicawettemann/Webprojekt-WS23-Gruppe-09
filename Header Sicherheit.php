@@ -16,6 +16,7 @@ session_start();
     <div class="header">
         <ul class="ul">
             <li class="li"><a href="Profil übersicht.php">Mein Profil</a></li>
+            <li class="li"><a href="Startseite.php">Startseite</a></li>
 
 
             <?php

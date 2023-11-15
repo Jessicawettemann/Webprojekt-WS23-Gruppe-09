@@ -30,7 +30,7 @@ if($statement->execute(array(htmlspecialchars($_POST["benutzername"])))){
             $_SESSION["benutzername"]=$row["benutzername"];
             $_SESSION["Nutzer_ID"]=$row["ID"];
 
-            echo "<a href='../Startseite/Startseite.php'> Herzliche Willkommen </a>";
+            echo "<a href='Startseite.php'> Herzliche Willkommen </a>";
 
 
 
