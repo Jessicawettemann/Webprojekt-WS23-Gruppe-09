@@ -1,0 +1,12 @@
+.settings/
+.vscode/sftp.json
+.vscode/*
+**/sftp.json
+**/.vscode     
+
+**/.DS_Store
+**/.bash_logout
+**/.bashrc
+*/.my.cnf
+**/.profile
+**/mysql-zugangsdaten.txt
