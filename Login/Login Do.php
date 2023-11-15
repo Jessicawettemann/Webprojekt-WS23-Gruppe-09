@@ -30,13 +30,13 @@ if($statement->execute(array(htmlspecialchars($_POST["benutzername"])))){
             $_SESSION["benutzername"]=$row["benutzername"];
             $_SESSION["Nutzer_ID"]=$row["ID"];
 
-            echo "<a href='Startseite.php'>;
+            echo "<a href='Startseite.php'>Herzlich Willkommen</a>;
 
 
 
         } else{
 
-            echo "<div class='fail'>Passwort falsch</div>";
+            echo ("<div class='fail'>Passwort falsch</div>");
             echo $statement->errorInfo()[2];
         }
     }else{
