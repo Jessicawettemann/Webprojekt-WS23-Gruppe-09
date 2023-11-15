@@ -8,7 +8,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <title>Zur Playlist hinzufügen</title>
+    <title>Navigation</title>
 
 </head>
 <body>
