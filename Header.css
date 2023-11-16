@@ -34,8 +34,7 @@
     display: block;
     color: white;
     text-transform: uppercase;
-    font-weight: lighter;
-    text-decoration: none;
+
     font-family: "Poppins", sans-serif;
 }
 .li a:hover{
