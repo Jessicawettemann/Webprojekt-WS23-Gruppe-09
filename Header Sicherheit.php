@@ -9,6 +9,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <title>Übersicht</title>
+    <link rel="stylesheet" type="text/css" href="Header.css">
 
 </head>
 <body>
