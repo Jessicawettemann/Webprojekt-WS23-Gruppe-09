@@ -7,6 +7,7 @@ include "Header Sicherheit.php";
 <head>
     <meta charset="UTF-8">
     <title>Startseite</title>
+    <link rel="stylesheet" type="text/css" href="Startseite.css">
 </head>
 <section class="Header">
     <br><br>
