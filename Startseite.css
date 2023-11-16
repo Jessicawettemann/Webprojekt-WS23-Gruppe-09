@@ -1,4 +1,4 @@
-.header{
+.Header{
     min-height: 100vh;
     width: 100%;
     background-image: url("https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/Teal Green Simple Illustrated Social Media Policy Presentation.png");
@@ -10,17 +10,17 @@
 .Header{
 
     margin: auto;
-    text-align: center;
+    text-align: left;
 
     font-family: "Poppins", sans-serif;
 }
 .Header h1 {
     color: white;
-    font-size: 24px;
+    font-size: 40px;
 
 }
 .Header p{
-    color: gold;
+    color: white;
     margin: auto;
-    font-size: 42px;
+    font-size: 50px;
 }
