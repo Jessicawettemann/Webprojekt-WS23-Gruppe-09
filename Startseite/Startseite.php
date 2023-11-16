@@ -8,7 +8,13 @@ include "Header Sicherheit.php";
     <meta charset="UTF-8">
     <title>Startseite</title>
 </head>
-
+<section class="Header">
+    <br><br>
+    <h1>Willkommen bei </h1>
+    <p> Pilo </p>
+    <h1> Deine Social Media Plattform</h1>
+    <br><br><br><br>
+</section>
 <body>
     <h1> Das ist unsere Startseite </h1>
 
