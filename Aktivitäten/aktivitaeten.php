@@ -7,36 +7,6 @@ include "Header Sicherheit.php";
 <head>
     <meta charset="UTF-8">
     <title>Startseite</title>
-    <style>
-        body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-}
-
-#calendar {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-gap: 10px;
-}
-
-.day {
-    border: 1px solid #ddd;
-    padding: 10px;
-}
-
-.day:hover {
-    background-color: #f5f5f5;
-}
-
-.events {
-    list-style: none;
-    padding: 0;
-}
-
-.events li {
-    margin-bottom: 5px;
-}
-</style> <!-- Einrückung nochmal schauen -->
 
 </head>
 
