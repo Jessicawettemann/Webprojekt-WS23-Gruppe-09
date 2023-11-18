@@ -8,15 +8,18 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <title>Zur Playlist hinzufügen</title>
+    <title>Übersicht</title>
+    <link rel="stylesheet" type="text/css" href="Header.css">
 
 </head>
 <body>
 <header>
     <div class="header">
         <ul class="ul">
-            <li class="li"><a href="Profil übersicht.php">Mein Profil</a></li>
 
+            <li class="li"><a href="Startseite.php">Startseite</a></li>
+            <li class="li"><a href="Profil übersicht.php">Mein Profil</a></li>
+            <li class="li"><a href="Logout.php">Logout</a></li>
 
             <?php
             #wenn Nutzer angemeldet ist wird zum Logout verlinkt, anderenfalls zum Login

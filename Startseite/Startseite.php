@@ -7,8 +7,15 @@ include "Header Sicherheit.php";
 <head>
     <meta charset="UTF-8">
     <title>Startseite</title>
+    <link rel="stylesheet" type="text/css" href="Startseite.css">
 </head>
-
+<section class="Header">
+    <br><br>
+    <h1>Willkommen bei </h1>
+    <p> Pilo </p>
+    <h2> Deine Social Media Plattform</h2>
+    <br><br><br><br>
+</section>
 <body>
     <h1> Das ist unsere Startseite </h1>
 

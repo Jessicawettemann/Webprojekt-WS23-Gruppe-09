@@ -1,7 +1,7 @@
 <?php
 
 include"Datenbank Verbindung.php";
-include "Header Sicherheit.php";
+
 session_start();
 ?>
 
@@ -30,13 +30,14 @@ if($statement->execute(array(htmlspecialchars($_POST["benutzername"])))){
             $_SESSION["benutzername"]=$row["benutzername"];
             $_SESSION["Nutzer_ID"]=$row["ID"];
 
-            echo "<a href='../Startseite.php'> Herzliche Willkommen </a>";
+            header("Location: Startseite.php");
+            exit();
 
 
 
         } else{
 
-            echo("<div class='fail'>Passwort falsch</div>");
+            echo ("<div class='fail'>Passwort falsch</div>");
             echo $statement->errorInfo()[2];
         }
     }else{
