@@ -16,13 +16,13 @@ session_start();
 <?php
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $name = $_POST['name'];
-    $beschreibung = $_POST['beschreibung'];
-    $datum = $_POST['datum'];
-    $ort = $_POST['ort'];
+    $eventName = $_POST['event_name'];
+    $eventBeschreibung = $_POST['event_beschreibung'];
+    $eventDatum = $_POST['datum'];
+    $eventOrt = $_POST['ort'];
 
     // SQL-Query zum Hinzufügen des Ereignisses
-    $sql = "INSERT INTO Aktivitäten (name, beschreibung, datum, ort) VALUES ('$name', '$beschreibung', '$datum', '$ort')";
+    $sql = "INSERT INTO events (name, beschreibung, date, location) VALUES ('$eventName', '$eventBeschreibung', '$eventDatum', '$eventOrt')";
 
     if ($conn->query($sql) === TRUE) {
         echo "Ereignis wurde erfolgreich hinzugefügt";
