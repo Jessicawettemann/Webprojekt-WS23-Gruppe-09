@@ -15,23 +15,35 @@ session_start();
 <body>
 <?php
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $eventName = $_POST['event_name'];
-    $eventBeschreibung = $_POST['event_beschreibung'];
-    $eventDatum = $_POST['datum'];
-    $eventOrt = $_POST['ort'];
-
-    // SQL-Query zum Hinzufügen des Ereignisses
-    $sql = "INSERT INTO events (name, beschreibung, date, location) VALUES ('$eventName', '$eventBeschreibung', '$eventDatum', '$eventOrt')";
-
-    if ($conn->query($sql) === TRUE) {
-        echo "Ereignis wurde erfolgreich hinzugefügt";
-    } else {
-        echo "Fehler beim Hinzufügen des Ereignisses: " . $conn->error;
+for ($i=0; $i < 10 $i++); 
+{
+	
+    // Daten vom Formular aufnehmen
+    $name=$_POST['event_name'][$i];
+    $beschreibung=$_POST['event_beschreibung'][$i];
+    $datum=$_POST['datum'][$i];
+    $ort=$_POST['ort'][$i];
+    
+    // Daten in MySQL eintragen
+    $sql="INSERT INTO $tbl_Aktivitäten(name, beschreibung, datum, ort) VALUES('$name', '$beschreibung', '$datum', '$ort')";
+    $result=mysql_query($sql);
+    
     }
-}
-
-// Datenbankverbindung schließen
-$conn->close();
-?>
+    
+    // Bei Erfolg "Erfolg!" ausgeben.
+    if($result){
+    echo "Erfolg!";
+    echo "<BR>";
+    echo "<a href='formular.html'>Zur&uuml;ck zum Formular.</a>";
+    }
+    
+    else {
+    echo "FEHLER!";
+    }
+    ?>
+    
+    <?php
+    // close connection
+    mysql_close();
+    ?>
 
