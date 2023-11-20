@@ -21,14 +21,17 @@ include "Header Sicherheit.php";
 
     <!-- Formular zum Hinzufügen von Ereignissen -->
     <form action="add_event.php" method="post">
-        <label for="event">Ereignis hinzufügen:</label>
-        <input type="text" id="event" name="event" required>
+        <label for="name">Ereignis hinzufügen:</label>
+        <input type="text" id="event_name" name="event_name" required>
 
-        <label for="event">Beschreibung hinzufügen:</label>
-        <input type="text" id="event" name="event" required>
+        <label for="beschreibung">Beschreibung hinzufügen:</label>
+        <input type="text" id="event_beschreibung" name="event_beschreibung" required>
 
-        <label for="date">Datum:</label>
-        <input type="date" id="date" name="date" required>
+        <label for="datum">Datum:</label>
+        <input type="date" id="datum" name="datum" required>
+
+        <label for="ort">Ort:</label>
+        <input type="text" id="ort" name="ort" required>
 
         <button type="submit">Ereignis hinzufügen</button>
         
