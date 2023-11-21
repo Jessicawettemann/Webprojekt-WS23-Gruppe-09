@@ -8,10 +8,8 @@ session_start();
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>Startseite</title>
     <title>Angebotsübersicht</title>
-    <a class="back" href="../Startseite.php" > Zurück zur Startseite </a>
-    <a class="back" href="../Suchen.php"> SUCHE </a> #//Kommentar: Suchen muss noch erstellt werden
+
 </head>
 
 <body>
@@ -27,7 +25,7 @@ if ($statement->execute()){
         } else {
             echo "<div class='no'>kein Foto des Angebots enthalten</div>";
         }
-        echo "<br><a class='edit' href=Angebote_Bearbeiten.php?ID=" . $row["ID"] . "'>Bearbeiten</a>  <a class='edit' href='Angebote_Löschen.php?ID=" . $row["ID"] . "'> Löschen </a>  " . "<br>";
+        echo "<br><a class='edit' href=ich-biete_Bearbeiten.php?ID=" . $row["ID"] . "'>Bearbeiten</a>  <a class='edit' href=ich-biete_Löschen.php?ID=" . $row["ID"] . "'> Löschen </a>  " . "<br>";
     }
 }else{
     echo "<div class='fail'>Fehlermeldung</div>";
