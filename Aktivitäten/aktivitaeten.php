@@ -20,7 +20,7 @@ include "Header Sicherheit.php";
     </div>
 
     <!-- Formular zum Hinzufügen von Ereignissen -->
-    <form action="aktivitaeten_do.php" method="post">
+    <form action="aktivitaeten_do.php" method="post" enctype="multipart/form-data">
         <label for="name">Ereignis hinzufügen:</label>
         <input type="text" id="name" name="name" required>
 
