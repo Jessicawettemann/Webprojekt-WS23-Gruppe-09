@@ -25,9 +25,9 @@ Durch die Klasse kann ein einziges Element innerhalb des div mit CSS angesproche
         <a href="ich-suche.php">Weiterleitung ich-suche</a>
     </div>
 
-    <div class="ich-biete">
+    <div class="ich-biete_Übersicht">
         <h2>Ich biete</h2>
-        <a href="ich-biete.php">Weiterleitung ich-biete</a>
+        <a href="ich-biete_Übersicht.php">Weiterleitung ich-biete</a>
     </div>
 
     <div class="community">
