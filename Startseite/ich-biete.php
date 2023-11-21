@@ -17,7 +17,7 @@ session_start();
 <body>
     <h1> Das ist unsere Ich biete-Seite </h1>
 <?php
-$statement=$pdo->prepare("SELECT * FROM ich_biete");
+$statement=$pdo->prepare("SELECT * FROM Ich_biete");
 if ($statement->execute()){
     while($row=$statement->fetch()) {
         echo "<h4>" . $row["name"]. "</h4>";
