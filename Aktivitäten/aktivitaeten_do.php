@@ -25,7 +25,7 @@ for ($i=0; $i < 10 $i++);
     $ort=$_POST['ort'][$i];
     
     // Daten in MySQL eintragen
-    $sql="INSERT INTO $tbl_Aktivitäten(name, beschreibung, datum, ort) VALUES('$name', '$beschreibung', '$datum', '$ort')";
+    $sql="INSERT INTO $tbl_Aktivitäten(event_name, event_beschreibung, datum, ort) VALUES('$name', '$beschreibung', '$datum', '$ort')";
     $result=mysql_query($sql);
     
     }
