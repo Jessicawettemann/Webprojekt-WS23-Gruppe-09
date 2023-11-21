@@ -16,7 +16,7 @@ session_start();
 <?php
 
 // Binde die Werte der Felder an Parametermarkierungen
-$stmt = $conn->prepare("INSERT INTO 'Aktivitäten' (beschreibung, datum, ort) VALUES (?, ?, ?)"); 
+$statement = $pdo->prepare("INSERT INTO Aktivitäten (beschreibung, datum, ort) VALUES (?, ?, ?)"); 
 // In der ersten Klammer fehlt noch name
 $stmt->bind_param("sss", $event_beschreibung, $datum, $ort);
 
