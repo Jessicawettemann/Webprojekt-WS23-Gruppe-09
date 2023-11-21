@@ -16,12 +16,11 @@ session_start();
 <?php
 
 // Binde die Werte der Felder an Parametermarkierungen
-$stmt = $conn->prepare("INSERT INTO Aktivitäten (beschreibung, datum, ort) VALUES (?, ?, ?, ?)"); 
+$stmt = $conn->prepare("INSERT INTO 'Aktivitäten' (beschreibung, datum, ort) VALUES (?, ?, ?)"); 
 // In der ersten Klammer fehlt noch name
-$stmt->bind_param("ssss", $event_name, $event_beschreibung, $datum, $ort);
+$stmt->bind_param("sss", $event_beschreibung, $datum, $ort);
 
 // Setze die Werte der Parameter und führe den Anweisungsvorgang aus
-$event_name = $_POST['event_name'];
 $beschreibung = $_POST['event_beschreibung'];
 $datum = $_POST['datum'];
 $ort = $_POST['ort'];
