@@ -20,8 +20,8 @@ session_start();
 <div>
     <form action="aktivitaten_do.php" method="post" enctype="multipart/form-data">
         <br><br>
-        <label for="name">Ereignis hinzufügen:</label>
-        <input type="text" placeholder="name" name="name">
+        <label for="thema">Ereignis hinzufügen:</label>
+        <input type="text" placeholder="thema" name="thema">
 
         <label for="beschreibung">Beschreibung hinzufügen:</label>
         <input type="text" placeholder="beschreibung" name="beschreibung">
