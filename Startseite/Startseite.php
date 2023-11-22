@@ -12,7 +12,7 @@ include "Header Sicherheit.php";
 <section class="Header">
     <br><br>
     <h1>Willkommen bei </h1>
-    <p> Pilo </p>
+    <p> Pilo </p><br><br><br>
     <h2> Deine Social Media Plattform</h2>
     <br><br><br><br>
 </section>
@@ -37,7 +37,7 @@ Durch die Klasse kann ein einziges Element innerhalb des div mit CSS angesproche
 
     <div class="aktivitaeten">
         <h2>Aktivitäten</h2>
-        <a href="aktivitaeten.php">Weiterleitung aktivitaeten</a>
+        <a href="aktivitaten.php">Weiterleitung aktivitaeten</a>
     </div>
 
 </body>
