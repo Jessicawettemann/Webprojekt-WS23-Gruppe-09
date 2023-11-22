@@ -21,8 +21,7 @@ session_start();
 
 
 
-
-$statement = $pdo->prepare("INSERT INTO Aktivitäten ( name, beschreibung, datum,ort) VALUES (?,?, ?)");
+$statement = $pdo->prepare("INSERT INTO Aktivitäten (name, beschreibung, datum,ort) VALUES (?,?,?,?)");
 // Feld sollen nicht freigelassen werden:
 if(($_POST["name"]) !=null) {
     if ($statement->execute(array(htmlspecialchars($_POST["name"]), htmlspecialchars($_POST["beschreibung"]), htmlspecialchars($_POST["datum"]), htmlspecialchars($_POST["ort"])))) {
