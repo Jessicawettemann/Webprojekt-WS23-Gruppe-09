@@ -17,11 +17,6 @@ session_start();
 <?php
 
 
-// Überprüfe, ob der Benutzer angemeldet ist
-if(!isset($_SESSION['username'])) {
-    echo "<script>alert('Bitte logge dich ein, um Ereignisse hinzuzufügen.'); window.location.href='login.php';</script>";
-    exit();
-}
 
 // Verarbeite die Ereignisinformationen
 if(isset($_POST['thema']) && isset($_POST['beschreibung']) && isset($_POST['datum']) && isset($_POST['ort'])) {
@@ -31,7 +26,7 @@ if(isset($_POST['thema']) && isset($_POST['beschreibung']) && isset($_POST['datu
     $ort = $_POST['ort'];
 
     // Erstelle den SQL-Befehl zum Hinzufügen des Ereignisses
-    $sql = "INSERT INTO aktivitaeten (thema, beschreibung, datum, ort) VALUES ('$thema', '$beschreibung', '$datum', '$ort')";
+    $sql = "INSERT INTO Aktivitäten (thema, beschreibung, datum, ort) VALUES ('$thema', '$beschreibung', '$datum', '$ort')";
 
     // Führe den SQL-Befehl aus
     if(mysqli_query($conn, $sql)) {
