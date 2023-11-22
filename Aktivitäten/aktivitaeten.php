@@ -25,9 +25,6 @@ include "Header Sicherheit.php";
         <label for="thema">Ereignis hinzufügen:</label>
         <input type="text" id="thema" name="thema" required>
 
-        <label for="thema">Ereignis hinzufügen:</label>
-        <input type="text" id="thema" name="thema" required>
-
         <label for="beschreibung">Beschreibung hinzufügen:</label>
         <input type="text" id="beschreibung" name="beschreibung" required>
 
