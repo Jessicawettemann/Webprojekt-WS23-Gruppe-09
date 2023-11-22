@@ -23,11 +23,7 @@ $einfuegen = $db->prepare(
 $einfuegen->bind_param('ssss', $thema, $beschreibung, $datum, $ort);
 
 // Setze die Werte der Parameter und führe den Anweisungsvorgang aus
-$beschreibung = $_POST['beschreibung'];
-$thema = $_POST['thema'];
-$datum = $_POST['datum'];
-$ort = $_POST['ort'];
-$stmt->execute();
+
 
 if ($einfuegen->execute()) {
     header('Location: index.php');
