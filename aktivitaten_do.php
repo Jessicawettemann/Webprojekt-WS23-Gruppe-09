@@ -23,8 +23,9 @@ session_start();
 
 $statement = $pdo->prepare("INSERT INTO Aktivitäten (name, beschreibung, datum,ort) VALUES (?,?,?,?)");
 // Feld sollen nicht freigelassen werden:
-if(($_POST["name"]) !=null) {
-    if ($statement->execute(array(htmlspecialchars($_POST["name"]), htmlspecialchars($_POST["beschreibung"]), htmlspecialchars($_POST["datum"]), htmlspecialchars($_POST["ort"])))) {
+
+if(($_POST["name"]) !=null and ($_POST["beschreibung"]) !=null and ($_POST["datum"]) !=null and ($_POST["ort"]) !=null){
+    if($statement->execute(array(htmlspecialchars($_POST["name"]), htmlspecialchars($_POST["beschreibung"]), htmlspecialchars($_POST["datum"]), htmlspecialchars($_POST["ort"]),))){
         echo "<div class='fine'> Playlist wurde erstellt! </div>";
     } else {
         die("<div class='fail'> Diese Playlist existiert bereits" . "<br><br>" . "<a href='aktivitaten.php'>Erneut versuchen</a> </div>");
