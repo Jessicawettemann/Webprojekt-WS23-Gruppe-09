@@ -16,17 +16,24 @@ session_start();
 <?php
 
 // Binde die Werte der Felder an Parametermarkierungen
-$statement = $pdo->prepare("INSERT INTO Aktivitäten (beschreibung, datum, ort) VALUES (?,?,?)"); 
-// In der ersten Klammer fehlt noch name
-$stmt->bind_param("sss", $beschreibung, $datum, $ort);
+$einfuegen = $db->prepare(
+        "INSERT INTO Aktivitäten (thema, beschreibung, datum, ort) 
+        VALUES (?, ?, ?, ?, NOW())");
+
+$einfuegen->bind_param('ssss', $thema, $beschreibung, $datum, $ort);
 
 // Setze die Werte der Parameter und führe den Anweisungsvorgang aus
 $beschreibung = $_POST['beschreibung'];
+$thema = $_POST['thema'];
 $datum = $_POST['datum'];
 $ort = $_POST['ort'];
 $stmt->execute();
 
-echo "Neuer Eintrag wurde erfolgreich erstellt!";
+if ($einfuegen->execute()) {
+    header('Location: index.php');
+    die("Neuer Eintrag wurde erfolgreich erstellt!");
+}
+
 
 $stmt->close();
 
