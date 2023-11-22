@@ -16,6 +16,7 @@ session_start();
 <body>
 <?php
 
+
 // Überprüfe, ob der Benutzer angemeldet ist
 if(!isset($_SESSION['username'])) {
     echo "<script>alert('Bitte logge dich ein, um Ereignisse hinzuzufügen.'); window.location.href='login.php';</script>";
