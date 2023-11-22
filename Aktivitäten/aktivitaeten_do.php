@@ -1,6 +1,5 @@
 <?php
 include 'Datenbank Verbindung.php';
-include "Header Sicherheit.php";
 session_start();
 
 ?>
