@@ -34,4 +34,4 @@ $statement->execute();
 echo "Neuer Eintrag wurde erfolgreich erstellt!";
 
 
-$stmt->close();
+$statement->close();
