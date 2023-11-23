@@ -34,5 +34,5 @@ $statement->execute();
 echo "Neuer Eintrag wurde erfolgreich erstellt!";
 
 
-$statement->close();
+$stmt = null;
 $result = $statement->fetch(PDO::FETCH_ASSOC);
