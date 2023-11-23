@@ -18,6 +18,11 @@ session_start();
 <body>
 <?php
 
+ // Überprüfe, ob die Verbindung erfolgreich hergestellt wurde, und behandle den Fehlerfall
+    if (!$conn) {
+           die("Verbindung zur Datenbank fehlgeschlagen: " . mysqli_connect_error());
+       }
+
 // SQL-Anweisung vorbereiten
 $statement = $pdo->prepare("INSERT INTO Aktivitäten (thema, beschreibung, datum, ort) VALUES (?, ?, ?, ?)");
 
