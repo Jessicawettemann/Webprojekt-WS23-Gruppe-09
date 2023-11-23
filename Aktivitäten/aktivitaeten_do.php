@@ -26,10 +26,17 @@ $statement = $pdo->prepare("INSERT INTO Aktivitäten (thema, beschreibung, datum
 // Feld sollen nicht freigelassen werden:
 
 if(($_POST["thema"]) !=null and ($_POST["beschreibung"]) !=null and ($_POST["datum"]) !=null and ($_POST["ort"]) !=null){
-    if($statement->execute(array(htmlspecialchars($_POST["thema"]), htmlspecialchars($_POST["beschreibung"]), htmlspecialchars($_POST["datum"]), htmlspecialchars($_POST["ort"]),))){
-        echo "<div class='fine'> Ereignis gespeichert </div>";
+    $currentDate = date('Y-m-d');
+    $inputDate = htmlspecialchars($_POST["datum"]);
+
+    if(strtotime($inputDate) >= strtotime($currentDate)){
+        if($statement->execute(array(htmlspecialchars($_POST["thema"]), htmlspecialchars($_POST["beschreibung"]), htmlspecialchars($_POST["datum"]), htmlspecialchars($_POST["ort"]),))){
+            echo "<div class='fine'> Ereignis gespeichert </div>";
+        } else {
+            die("<div class='fail'> Fehlgeschlagen." . "<br><br>" . "<a href='aktivitaeten.php'>Erneut versuchen</a> </div>");
+        }
     } else {
-        die("<div class='fail'> Fehlgeschlagen." . "<br><br>" . "<a href='aktivitaeten.php'>Erneut versuchen</a> </div>");
+        die("<div class='fail'> Fehlgeschlagen: Das eingegebene Datum darf nicht in der Vergangenheit liegen. <br><br>" . "<a href='aktivitaeten.php'>Erneut versuchen</a> </div>");
     }
 }
 ?>
