@@ -36,3 +36,7 @@ echo "Neuer Eintrag wurde erfolgreich erstellt!";
 
 
 $stmt->close();
+
+if (!$stmt) {
+        die("SQL-Fehler: " . htmlspecialchars($pdo->errorInfo()[2]));
+    }
