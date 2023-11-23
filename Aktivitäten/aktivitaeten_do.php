@@ -18,9 +18,6 @@ session_start();
 <?php
 
 
-
-
-
 $statement = $pdo->prepare("INSERT INTO Aktivitäten (thema, beschreibung, datum,ort) VALUES (?,?,?,?)");
 
 // Feld sollen nicht freigelassen werden:
@@ -32,7 +29,7 @@ if(($_POST["thema"]) !=null and ($_POST["beschreibung"]) !=null and ($_POST["dat
     $inputDate = htmlspecialchars($_POST["datum"]);
     if(strtotime($inputDate) >= strtotime($currentDate)){
 
-        
+
         if($statement->execute(array(htmlspecialchars($_POST["thema"]), htmlspecialchars($_POST["beschreibung"]), htmlspecialchars($_POST["datum"]), htmlspecialchars($_POST["ort"]),))){
             echo "<div class='fine'> Ereignis gespeichert </div>";
         } else {
@@ -42,7 +39,17 @@ if(($_POST["thema"]) !=null and ($_POST["beschreibung"]) !=null and ($_POST["dat
         die("<div class='fail'> Fehlgeschlagen: Das eingegebene Datum darf nicht in der Vergangenheit liegen. <br><br>" . "<a href='aktivitaeten.php'>Erneut versuchen</a> </div>");
     }
 }
+
+
+//DATEN AUSGEBEN
+
+
+
+
 ?>
+
+
+
 
 
 
