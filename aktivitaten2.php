@@ -18,7 +18,7 @@ session_start();
     <h2>Playlist erstellen</h2>
 </div>
 <div>
-    <form action="aktivitaten_do.php" method="post" enctype="multipart/form-data">
+    <form action="aktivitaten2_do.php" method="post" enctype="multipart/form-data">
         <br><br>
         <label for="thema">Ereignis hinzufügen:</label>
         <input type="text" placeholder="thema" name="thema">
