@@ -1,6 +1,6 @@
 <?php
 include 'Datenbank Verbindung.php'; 
-include "Header Sicherheit.php";
+
 session_start();
 
 ?>
@@ -26,7 +26,7 @@ if(isset($_POST['thema']) && isset($_POST['beschreibung']) && isset($_POST['datu
     $ort = $_POST['ort'];
 
     // Erstelle den SQL-Befehl zum Hinzufügen des Ereignisses
-    $sql = "INSERT INTO Aktivitäten (thema, beschreibung, datum, ort) VALUES ('$thema', '$beschreibung', '$datum', '$ort')";
+    $sql = "INSERT INTO aktivitaeten (thema, beschreibung, datum, ort) VALUES ('$thema', '$beschreibung', '$datum', '$ort')";
 
     // Führe den SQL-Befehl aus
     if(mysqli_query($conn, $sql)) {
