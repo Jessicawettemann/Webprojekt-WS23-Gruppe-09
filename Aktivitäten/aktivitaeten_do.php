@@ -18,24 +18,21 @@ session_start();
 <body>
 <?php
 
-// SQL-Anweisung vorbereiten
-$statement = $pdo->prepare("INSERT INTO Aktivitäten (thema, beschreibung, datum, ort) VALUES (?, ?, ?, ?)");
-
-// Werte an die Platzhalter binden
-$statement->bindValue(1, $thema, PDO::PARAM_STR);
-$statement->bindValue(2, $beschreibung, PDO::PARAM_STR);
-$statement->bindValue(3, $datum, PDO::PARAM_STR);
-$statement->bindValue(4, $ort, PDO::PARAM_STR);
-
-// SQL-Anweisung ausführen
-$statement->execute();
+// Binde die Werte der Felder an Parametermarkierungen
+$statement = $pdo->prepare("INSERT INTO Aktivitäten (thema, beschreibung, datum, ort) VALUES (?,?,?,?)");
+// In der ersten Klammer fehlt noch name
+$stmt->bind_param("ssss",$thema, $beschreibung, $datum, $ort);
 
 
+// Setze die Werte der Parameter und führe den Anweisungsvorgang aus
+$beschreibung = $_POST['beschreibung'];
+$thema = $_POST['thema'];
+$datum = $_POST['datum'];
+$ort = $_POST['ort'];
+$stmt->execute();
 
 
-$stmt = null;
-$result = $statement->fetch(PDO::FETCH_ASSOC);
+echo "Neuer Eintrag wurde erfolgreich erstellt!";
 
- catch (PDOException $e) {
-        var_dump($e->getMessage());
-    }
+
+$stmt->close();
