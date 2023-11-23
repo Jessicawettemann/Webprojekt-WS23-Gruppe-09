@@ -31,8 +31,11 @@ $statement->bindValue(4, $ort, PDO::PARAM_STR);
 $statement->execute();
 
 
-echo "Neuer Eintrag wurde erfolgreich erstellt!";
 
 
 $stmt = null;
 $result = $statement->fetch(PDO::FETCH_ASSOC);
+
+ catch (PDOException $e) {
+        var_dump($e->getMessage());
+    }
