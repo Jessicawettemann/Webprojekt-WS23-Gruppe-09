@@ -37,7 +37,7 @@ Durch die Klasse kann ein einziges Element innerhalb des div mit CSS angesproche
 
     <div class="aktivitaeten">
         <h2>Aktivitäten</h2>
-        <a href="aktivitaten.php">Weiterleitung aktivitaeten</a>
+        <a href="aktivitaeten.php">Weiterleitung aktivitaeten</a>
     </div>
 
 </body>
