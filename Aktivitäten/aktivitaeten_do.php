@@ -1,6 +1,6 @@
 <?php
 include 'Datenbank Verbindung.php'; 
-
+include "Header Sicherheit.php";
 session_start();
 
 ?>
@@ -19,25 +19,18 @@ session_start();
 
 
 // Verarbeite die Ereignisinformationen
-if(isset($_POST['thema']) && isset($_POST['beschreibung']) && isset($_POST['datum']) && isset($_POST['ort'])) {
-    $thema = $_POST['thema'];
-    $beschreibung = $_POST['beschreibung'];
-    $datum = $_POST['datum'];
-    $ort = $_POST['ort'];
+$einfuegen = $db->prepare(
+    "INSERT INTO Aktivitäten (thema, beschreibung, datum, ort) 
+    VALUES (?, ?, ?, ?, NOW())");
 
-    // Erstelle den SQL-Befehl zum Hinzufügen des Ereignisses
-    $sql = "INSERT INTO aktivitaeten (thema, beschreibung, datum, ort) VALUES ('$thema', '$beschreibung', '$datum', '$ort')";
+$einfuegen->bind_param('ssss', $thema, $beschreibung, $datum, $ort);
 
-    // Führe den SQL-Befehl aus
-    if(mysqli_query($conn, $sql)) {
-        echo "<script>alert('Ereignis wurde erfolgreich hinzugefügt.'); window.location.href='index.php';</script>";
-    } else {
-        echo "<script>alert('Ein Fehler ist aufgetreten. Bitte versuche es erneut.'); window.location.href='index.php';</script>";
+
+    if ($einfuegen->execute()) {
+        header('Location: index.php');
+        die('erfolgreich');
     }
 
-    // Schließe die Datenbankverbindung
-    mysqli_close($conn);
-}
 ?>
 
 
