@@ -28,6 +28,7 @@ session_start();
             <input type="password" placeholder="Passwort" name="passwort">
             <span> </span>
         </div>
+    </form>
     <button type="submit">Einloggen</button>
     <br><br>
     <p>Noch keinen Account? <br> <a href="Registrierung_Formular.php">Hier registrieren</a>
