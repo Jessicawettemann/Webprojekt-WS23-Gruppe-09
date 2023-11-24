@@ -21,7 +21,7 @@ session_start();
         <label class="label" for="benutzername"></label>
         <input type="text" placeholder= "Benutzername" name="benutzername">
         <span> </span>
-        <label>Login</label>
+
     </div>
         <div class="txt_field">
             <label class="label" for="passwort"></label>
