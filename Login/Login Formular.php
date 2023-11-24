@@ -9,27 +9,30 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-
+    <link rel="stylesheet" type="text/css" href="Formulare.css">
     <title>Login</title>
 </head>
 <body>
-<form
-<div class="input_container"
-<form action="Login%20Do.php" method="post">
-    <h1> Login</h1>
-    <label class="label" for="benutzername"></label>
-    <input type="text" placeholder= "Benutzername" name="benutzername">
-
-    <label class="label" for="passwort"></label>
-    <input type="password" placeholder="Passwort" name="passwort">
-
+<div class="center">
+    <h1>Login</h1>
+    <form action="Login%20Do.php" method="post">
+    <div class="txt_field">
+        <label class="label" for="benutzername"></label>
+        <input type="text" placeholder= "Benutzername" name="benutzername">
+        <span> </span>
+        <label>Login</label>
+    </div>
+        <div class="txt_field">
+            <label class="label" for="passwort"></label>
+            <input type="password" placeholder="Passwort" name="passwort">
+            <span> </span>
+        </div>
     <button type="submit">Einloggen</button>
     <br><br>
     <p>Noch keinen Account? <br> <a href="Registrierung_Formular.php">Hier registrieren</a>
     </p>
 </form>
 </div>
-</form>
 
 </body>
 
