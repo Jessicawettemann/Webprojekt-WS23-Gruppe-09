@@ -8,7 +8,7 @@
     border-radius: 10px;
 }
 .center h1{
-    color: #78d1ee;
+    color: #D3EBE8;
     text-align: center;
     padding: 0 0 20px 0;
     border-bottom: 1px solid silver;
@@ -50,13 +50,13 @@ form .txt_field{
     left: 0;
     width: 0%;
     height: 2px;
-    background:#FF7B47 ;
+    background:black ;
     transition: .6s;
 }
 .txt_field input:focus~label,
 .txt_field input:valid~label{
     top: -6px;
-    color: #78d1ee;
+    color: #D3EBE8;
 }
 .txt_field input:focus~span::before,
 .txt_field input:valid~span::before{
@@ -73,7 +73,7 @@ input[type="submit"]{
     cursor: pointer;
 }
 input [type="submit" ]:hover{
-    border-color:#FF7B47 ;
+    border-color:#D3EBE8;
     transition: .6s;
 }
 .signup_link{
@@ -83,5 +83,5 @@ input [type="submit" ]:hover{
     color: white ;
 }
 .signup_link a{
-    color: #FF7B47;
+    color: #D3EBE8;
 }
