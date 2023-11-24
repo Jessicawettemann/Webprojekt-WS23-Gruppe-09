@@ -13,7 +13,7 @@ session_start();
     <title>Login</title>
 </head>
 <img src="https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/Teal Green Simple Illustrated Social Media Policy Presentation.png">
-<body>
+<from>
 <div class="input_container"
 <form action="Login%20Do.php" method="post">
     <h1> Login</h1>
@@ -29,6 +29,7 @@ session_start();
     </p>
 </form>
 </div>
+</from>
 
 </body>
 
