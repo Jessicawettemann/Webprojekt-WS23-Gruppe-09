@@ -13,7 +13,7 @@ include "Header Sicherheit.php";
     </head>
 <?php
 if(!isset($_SESSION["Nutzer_ID"])){
-    echo("<div class='fail'> Bitte melde dich zunächst an! "."<br><br>". "<a href='Login_Formular.php'>Hier geht's zum Login</a> </div>");
+    echo("<div class='fail'> Bitte melde dich zunächst an! "."<br><br>". "<a href='Login Formular.php'>Hier geht's zum Login</a> </div>");
 }else{
     ?>
     <body>
