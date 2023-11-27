@@ -16,7 +16,7 @@ form{
 }
 
 h1{
-    color: white;
+    color: #D3EBE8;
     font-family: "HelveticaNeueLT Pro 35 Th", sans-serif;
     font-size: 38px;
     background-position: top left;
@@ -46,7 +46,7 @@ input{
 
 }
 input:hover{
-    background-color: cyan;
+    background-color: #D3EBE8;
 
 }
 input:focus{
@@ -54,7 +54,7 @@ input:focus{
     background-color: cyan;
 }
 input::placeholder{
-    color: gold;
+    color: #D3EBE8;
 }
 
 button{
@@ -65,7 +65,7 @@ button{
     color: white;
     font-family: sans-serif;
     font-size: 14px;
-    background: linear-gradient(to right, rgb(0, 255, 255), rgb(236, 173, 15));
+    background: linear-gradient(to right, rgb(211, 235, 232), rgb(10, 9, 9));
 }
 button:hover{
     width: 200px;
