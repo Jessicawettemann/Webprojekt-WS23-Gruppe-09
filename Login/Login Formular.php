@@ -13,7 +13,8 @@ session_start();
     <title>Login</title>
 </head>
 <img src="https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/Teal Green Simple Illustrated Social Media Policy Presentation.png">
-<from>
+<body>
+<form
 <div class="input_container"
 <form action="Login%20Do.php" method="post">
     <h1> Login</h1>
@@ -25,13 +26,15 @@ session_start();
 
     <button type="submit">Einloggen</button>
     <br><br>
-    <p>Noch keinen Account? <br> <a href="Registrierung_Formular.php">Hier registrieren</a>
+    <p>Noch keinen Account? <br> <a href="Registrierung_Formular">Hier registrieren</a>
     </p>
 </form>
 </div>
-</from>
+</form>
 
 </body>
+
+</html>
 
 </html>
 
