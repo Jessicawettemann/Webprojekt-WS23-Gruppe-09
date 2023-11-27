@@ -6,8 +6,8 @@ form{
     width: 220px;
     padding: 60px;
     border-radius: 8px;
-
-    opacity: initial;
+    background-color: white;
+    opacity: inherit;
     box-shadow: 3px 3px 1px rgb(199, 184, 184);
     position: absolute;
     top: 50%;
