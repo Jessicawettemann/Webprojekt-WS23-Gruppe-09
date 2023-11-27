@@ -6,7 +6,8 @@ form{
     width: 220px;
     padding: 60px;
     border-radius: 8px;
-    background-color: white;
+
+    opacity: initial;
     box-shadow: 3px 3px 1px rgb(199, 184, 184);
     position: absolute;
     top: 50%;
@@ -51,7 +52,7 @@ input:hover{
 }
 input:focus{
     outline: none;
-    background-color: cyan;
+    background-color: #D3EBE8;
 }
 input::placeholder{
     color: #D3EBE8;
@@ -65,7 +66,7 @@ button{
     color: white;
     font-family: sans-serif;
     font-size: 14px;
-    background: linear-gradient(to right, rgb(211, 235, 232), rgb(10, 9, 9));
+    background: linear-gradient(to right, rgb(211, 235, 232), rgb(32, 154, 154));
 }
 button:hover{
     width: 200px;
