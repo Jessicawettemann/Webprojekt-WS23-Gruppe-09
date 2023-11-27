@@ -1,5 +1,7 @@
 
-
+img{
+    size: auto;
+}
 form{
 
     height: 350px;
@@ -55,7 +57,7 @@ input:focus{
     background-color: #D3EBE8;
 }
 input::placeholder{
-    color: #92e7dd;
+    color: #96d5ce;
 }
 
 button{
@@ -66,7 +68,7 @@ button{
     color: white;
     font-family: sans-serif;
     font-size: 14px;
-    background: linear-gradient(to right, rgb(211, 235, 232), rgb(132, 227, 227));
+    background: linear-gradient(to right, rgb(211, 235, 232), rgb(153, 231, 231));
 }
 button:hover{
     width: 200px;
