@@ -25,7 +25,7 @@ if ($statement->execute()){
         } else {
             echo "<div class='no'>kein Foto des Angebots enthalten</div>";
         }
-        echo "<br><a class='edit' href=ich-biete_Bearbeiten.php?ID=" . $row["ID"] . "'>Bearbeiten</a>  <a class='edit' href=ich-biete_Löschen.php?ID=" . $row["ID"] . "'> Löschen </a>  " . "<br>";
+        echo "<br><a class='edit' href=ich-biete_Bearbeiten.php?ID=" . $row["ID"] . "'>Bearbeiten</a>  <a class='edit' href=ich-biete_Löschen_do.php?ID=" . $row["ID"] . "'> Löschen </a>  " . "<br>";
     }
 }else{
     echo "<div class='fail'>Fehlermeldung</div>";
