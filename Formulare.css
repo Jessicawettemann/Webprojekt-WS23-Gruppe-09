@@ -61,10 +61,14 @@ input:focus{
 input::placeholder{
     color: #96d5ce;
 }
-
-a{
+p{
     font-family: "Poppins", sans-serif;
     color: black;
+    font-size: 14px;
+}
+a{
+    font-family: "Poppins", sans-serif;
+    color: #a1d0cc;
     font-size: 14px;
     position: page;
 }
