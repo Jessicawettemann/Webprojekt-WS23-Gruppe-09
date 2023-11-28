@@ -35,8 +35,41 @@ include "Header Sicherheit.php";
         <input type="text" id="ort" name="ort" required>
 
         <button type="submit">Ereignis hinzufügen</button>
+
+    <br>
+
+
+<?php 
+// Daten aus der Datenbank abrufen
+$statement = $pdo->prepare("SELECT * FROM Aktivitäten ORDER BY datum ASC");
+$statement->execute();
+$result = $statement->fetchAll();
+
+// Überschrift für die Tabelle
+echo "<table border='1'>
+<tr>
+<th>ID</th>
+<th>Thema</th>
+<th>Beschreibung</th>
+<th>Datum</th>
+<th>Ort</th>
+</tr>";
+
+// Daten aus der Datenbank durchlaufen und in die Tabelle einfügen
+foreach ($result as $row) {
+    echo "<tr>";
+    echo "<td>" . $row['id'] . "</td>";
+    echo "<td>" . $row['thema'] . "</td>";
+    echo "<td>" . $row['beschreibung'] . "</td>";
+    echo "<td>" . $row['datum'] . "</td>";
+    echo "<td>" . $row['ort'] . "</td>";
+    echo "</tr>";
+}
+
+// Tabellenende
+echo "</table>";
         
-        
+ ?>       
     </form>
 </body>
 </html>
