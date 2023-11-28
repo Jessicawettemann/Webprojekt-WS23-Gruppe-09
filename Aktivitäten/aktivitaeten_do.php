@@ -34,7 +34,7 @@ if(($_POST["thema"]) !=null and ($_POST["beschreibung"]) !=null and ($_POST["dat
 
 
         if($statement->execute(array(htmlspecialchars($_POST["thema"]), htmlspecialchars($_POST["beschreibung"]), htmlspecialchars($_POST["datum"]), htmlspecialchars($_POST["ort"]),))){
-            echo "<div class='fine'> Ereignis gespeichert </div>". "<br><br>" . "<a href='aktivitaeten.php'>Zu den Aktivitäten</a> </div>");
+            echo "<div class='fine'> Ereignis gespeichert </div>". "<br><br>" . "<a href='aktivitaeten.php'>Zu den Aktivitäten</a> </div>";
         } else {
             die("<div class='fail'> Fehlgeschlagen." . "<br><br>" . "<a href='aktivitaeten.php'>Erneut versuchen</a> </div>");
         }
