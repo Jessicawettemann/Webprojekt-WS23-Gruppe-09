@@ -13,6 +13,19 @@ include "Header Sicherheit.php";
 
 <body>
 
+<h1>Forum</h1>
+
+<form id="post-form">
+    <textarea id="post-content" placeholder="Gib hier deine Nachricht ein..."></textarea>
+    <button type="submit">Senden</button>
+</form>
+
+<div id="forum-posts">
+    <!-- Nachrichten werden hier angezeigt. -->
+</div>
+
+<br><br>
+
  <h1>Feed</h1>
  <form id="post-form">
     <label for="post-input">Neuer Post:</label>
