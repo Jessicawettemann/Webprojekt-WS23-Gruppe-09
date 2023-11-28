@@ -11,7 +11,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
 
-    <title>Kalender</title>
+    <title>Forum</title>
 </head>
 <body>
 
@@ -38,6 +38,3 @@ header("Location: community.php");
 exit();
 
 ?>
-
-</body>
-</html>
