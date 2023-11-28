@@ -50,7 +50,7 @@ $result = $statement->fetchAll();
 // Überschrift für die Tabelle
 echo "<table border='1'>
 <tr>
-<th>ID</th>
+
 <th>Thema</th>
 <th>Beschreibung</th>
 <th>Datum</th>
