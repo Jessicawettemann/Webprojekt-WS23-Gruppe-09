@@ -28,7 +28,6 @@ $statement = $pdo->prepare("INSERT INTO Beitrag (beitrag) VALUES (?)");
 if(($_POST["beitrag"])){
     
 
-
         if($statement->execute(array(htmlspecialchars($_POST["beitrag"]),))){
             echo "<div class='fine'> Beitrag gespeichert </div>". "<br><br>" . "<a href='community.php'>Zur Community</a> </div>";
         } else {
