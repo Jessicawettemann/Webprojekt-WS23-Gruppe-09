@@ -14,19 +14,19 @@ session_start();
 <body>
     
 <?php
-if(!isset($_SESSION["User"])){
+if(!isset($_SESSION["Nutzer_ID"])){
     echo("<div class='fail'> Diese Funktion steht nur den Nutzern zu Verfügung! "."<br><br>". "<a href='../Login Formular.php'>Hier geht's zum Login</a> </div>");
 }else{
     ?>
 
     <form action="ich-biete_Hinzufügen_do.php" method="post" enctype="multipart/form-data">
-        <label for="thema">Beschreibung:</label>
-        <input type="text" id="thema" name="thema" required>
+        <label for="Beschreibung">Beschreibung:</label>
+        <input type="text" id="Beschreibung" name="Thema" required>
 
         <label for="foto">Foto hinzufügen:</label>
-        <input type="file" id="Foto" placeholder="Foto">
+        <input type="file" id="Foto" name="Foto" required>
 
-        <label for="beschreibung">Zustand::</label>
+        <label for="Zustand">Zustand::</label>
         <input type="text" id="Zustand" name="Zustand" required>
 
         <label for="datum">Datum:</label>

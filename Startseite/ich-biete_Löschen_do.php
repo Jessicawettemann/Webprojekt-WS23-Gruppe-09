@@ -12,10 +12,10 @@ session_start();
 </head>
 <body>
 <?php
-if(!isset($_SESSION["User"])) { #prüft, ob User eingeloggt ist
+if(!isset($_SESSION["Nutzer_ID"])) { #prüft, ob User eingeloggt ist
     die("<div class='fail'>Du musst eingeloggt sein, um deine Angebote löschen zu können!". "<br><br>" . "<a href='../Login Formular.php'>Hier geht's zum Login</a> </div>");
 }
-if(isset($_GET["ID"])){
+if(isset($_GET["Ich_biete_ID"])){
     $statement=$pdo->prepare("DELETE FROM Ich_biete WHERE ID=?");
     if($statement->execute(array($_GET["ID"]))){
         echo "<div class='fine'>Angebot wurde erfolgreich gelöscht</div>";
