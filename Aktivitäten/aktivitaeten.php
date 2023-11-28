@@ -50,7 +50,6 @@ $result = $statement->fetchAll();
 // Überschrift für die Tabelle
 echo "<table border='1'>
 <tr>
-
 <th>Thema</th>
 <th>Beschreibung</th>
 <th>Datum</th>
@@ -60,7 +59,6 @@ echo "<table border='1'>
 // Daten aus der Datenbank durchlaufen und in die Tabelle einfügen
 foreach ($result as $row) {
     echo "<tr>";
-    echo "<td>" . $row['id'] . "</td>";
     echo "<td>" . $row['thema'] . "</td>";
     echo "<td>" . $row['beschreibung'] . "</td>";
     echo "<td>" . $row['datum'] . "</td>";
