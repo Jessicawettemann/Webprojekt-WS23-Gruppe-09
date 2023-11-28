@@ -17,6 +17,28 @@ session_start();
 
 <?php
 
+//DATEN AUSGEBEN
+
+
+$statement = $pdo->prepare("SELECT * FROM Aktivitäten ORDER BY datum ASC");
+$statement->execute();
+
+$result = $statement->fetchAll();
+
+if ($result) {
+    echo "<table>";
+    echo "<tr><th>Thema</th><th>Beschreibung</th><th>Datum</th><th>Ort</th></tr>";
+    foreach ($result as $row) {
+        echo "<tr><td>" . htmlspecialchars($row['thema']) . "</td><td>" . htmlspecialchars($row['beschreibung']) . "</td><td>" . htmlspecialchars($row['datum']) . "</td><td>" . htmlspecialchars($row['ort']) . "</td></tr>";
+    }
+    echo "</table>";
+} else {
+    echo "<div class='fail'>Keine Aktivitäten gefunden.</div>";
+}
+
+
+//Aktivität eintragen
+
 
 $statement = $pdo->prepare("INSERT INTO Aktivitäten (thema, beschreibung, datum,ort) VALUES (?,?,?,?)");
 
@@ -41,30 +63,6 @@ if(($_POST["thema"]) !=null and ($_POST["beschreibung"]) !=null and ($_POST["dat
 }
 
 
-//Fehlermeldung
-
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-//DATEN AUSGEBEN
-
-
-$statement = $pdo->prepare("SELECT * FROM Aktivitäten ORDER BY datum ASC");
-$statement->execute();
-
-$result = $statement->fetchAll();
-
-if ($result) {
-    echo "<table>";
-    echo "<tr><th>Thema</th><th>Beschreibung</th><th>Datum</th><th>Ort</th></tr>";
-    foreach ($result as $row) {
-        echo "<tr><td>" . htmlspecialchars($row['thema']) . "</td><td>" . htmlspecialchars($row['beschreibung']) . "</td><td>" . htmlspecialchars($row['datum']) . "</td><td>" . htmlspecialchars($row['ort']) . "</td></tr>";
-    }
-    echo "</table>";
-} else {
-    echo "<div class='fail'>Keine Aktivitäten gefunden.</div>";
-}
 
 ?>
 </body>
