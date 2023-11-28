@@ -15,23 +15,13 @@ include "Header Sicherheit.php";
 
 <h1>Forum</h1>
 
-<form id="post-form" action="community_do.php">
-    <textarea id="beitrag" placeholder="Gib hier deine Nachricht ein..."></textarea>
-    <button type="submit">Senden</button>
-</form>
-
-
 <!-- Test -->
 <form action="community_do.php" method="post" enctype="multipart/form-data">
         <label for="beitrag">Beitrag hinzufügen:</label>
         <input type="text" id="beitrag" name="beitrag" required>
         
         <button type="submit">Beitrag hinzufügen</button>
-
-
-<div id="forum-posts">
-    <!-- Nachrichten werden hier angezeigt. -->
-</div>
+</form>
 
 
 </body>
