@@ -37,6 +37,8 @@ include "Header Sicherheit.php";
         <button type="submit">Ereignis hinzufügen</button>
 
     <br>
+    <br>
+    <br>
 
 
 <?php 
@@ -48,7 +50,6 @@ $result = $statement->fetchAll();
 // Überschrift für die Tabelle
 echo "<table border='1'>
 <tr>
-<th>ID</th>
 <th>Thema</th>
 <th>Beschreibung</th>
 <th>Datum</th>
