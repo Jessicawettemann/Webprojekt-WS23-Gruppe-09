@@ -20,6 +20,15 @@ include "Header Sicherheit.php";
     <button type="submit">Senden</button>
 </form>
 
+
+<!-- Test -->
+<form action="community_do.php" method="post" enctype="multipart/form-data">
+        <label for="beitrag">Beitrag hinzufügen:</label>
+        <input type="text" id="beitrag" name="beitrag" required>
+        
+        <button type="submit">Beitrag hinzufügen</button>
+
+
 <div id="forum-posts">
     <!-- Nachrichten werden hier angezeigt. -->
 </div>
