@@ -17,25 +17,27 @@ session_start();
 
 <?php
 
+// Formulardaten auslesen
+$beitrag = $_POST['beitrag'];
 
-//Beitrag eintragen
+// Formulardaten prüfen
+if (empty($beitrag)) {
+    // Wenn der Beitrag leer ist, Fehler auslösen
+    http_response_code(400);
+    echo "Der Beitrag darf nicht leer sein.";
+    exit();
+}
 
-$statement = $pdo->prepare("INSERT INTO Beitrag (beitrag) VALUES (?)");
+// Daten in die Datenbank einfügen
+$stmt = $conn->prepare("INSERT INTO Beitrag (beitrag) VALUES (?)");
+$stmt->bind_param("s", $beitrag);
+$stmt->execute();
 
-// Feld sollen nicht freigelassen werden:
-
-if(($_POST["thema"]) !=null){
-
-        if($statement->execute(array(htmlspecialchars($_POST["beitrag"]),))){
-            echo "<div class='fine'> Beitrag gespeichert </div>". "<br><br>" . "<a href='community.php'>Zu den Beiträgen</a> </div>";
-        } else {
-            die("<div class='fail'> Fehlgeschlagen." . "<br><br>" . "<a href='community.php'>Erneut versuchen</a> </div>");
-        }
-    } else {
-        die("<div class='fail'> Fehlgeschlagen: Das eingegebene Datum darf nicht in der Vergangenheit liegen. <br><br>" . "<a href='aktivitaeten.php'>Erneut versuchen</a> </div>");
-    }
-
+// Nach erfolgreicher Ausführung auf die Startseite weiterleiten
+header("Location: community.php");
+exit();
 
 ?>
+
 </body>
 </html>
