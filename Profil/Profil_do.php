@@ -16,7 +16,7 @@ session_start();
 <body>
 
 <h5> Profil bearbeiten </h5>
-
+<div class="profile-card"
 <?php
 if(!isset($_SESSION["Nutzer_ID"])){
     echo("<div class='fail'> Bitte melde dich zunächst an! "."<br><br>". "<a href='Login Formular'>Hier geht's zum Login</a> </div>");
@@ -48,6 +48,6 @@ if(!isset($_SESSION["Nutzer_ID"])){
     echo "</div>";
 }
 ?>
-
+</div>
 </body>
 </html>
