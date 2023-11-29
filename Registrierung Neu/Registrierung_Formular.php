@@ -1,7 +1,7 @@
 <?php
 session_start();
 include"Datenbank Verbindung.php";
-include "Header Sicherheit.php";
+
 ?>
 
 <!DOCTYPE html>
@@ -9,6 +9,7 @@ include "Header Sicherheit.php";
 <head>
     <meta charset="UTF-8">
     <title>Registrierung</title>
+    <link rel="stylesheet" type="text/css" href="Formulare.css">
 
 </head>
 <body>
