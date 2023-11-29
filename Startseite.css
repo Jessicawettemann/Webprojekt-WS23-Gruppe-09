@@ -34,17 +34,16 @@ body {
     font-size: 40px;
 }
 .picture{
-    flex-basis: 10%;
+    flex-basis: 32%;
     border-radius: 10px;
     margin-bottom: 30px;
     position: relative;
     overflow: hidden;
-    display: flex;
-    gap: 20px;
+
 }
 .picture img{
-    width: 570px;
-    height: 640px;
+    width: 370px;
+    height: 440px;
     border-radius: 10px;
     position: center;
     display: flex;
