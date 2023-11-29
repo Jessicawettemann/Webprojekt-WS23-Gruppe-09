@@ -29,7 +29,7 @@
 /*---Navigation---*/
 .ul{
     width: auto;
-    background-color: #ECFFFD;
+    background-color: #D3EBE8;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -41,13 +41,13 @@
     padding-top: 20px;
     padding-bottom: 20px;
     display: block;
-    color: black;
+    color: #ECFFFD;
     font-weight: lighter;
     text-decoration: none;
     font-family: "HelveticaNeueLT Pro 35 Th", sans-serif;
 }
 .li a:hover{
-    color:black;
+    color: #ECFFFD;
     font-weight: bolder;
 }
 
