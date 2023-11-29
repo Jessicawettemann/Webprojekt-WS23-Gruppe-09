@@ -38,6 +38,10 @@ $statement = $pdo->prepare("SELECT * FROM Beitrag");
 $statement->execute();
 $result = $statement->fetchAll();
 
+$statement = $pdo->prepare("SELECT * FROM Nutzer");
+$statement->execute();
+$result = $statement->fetchAll();
+
 // Überschrift für die Tabelle
 echo "<table border='1'>
 <tr>
@@ -52,6 +56,8 @@ foreach ($result as $row) {
     echo "<tr>";
     echo "<td>" . $row['beitrag'] . "</td>";
     echo "<td>" . $row['datum'] . "</td>";
+    echo "<td>" . $row['benutzername'] . "</td>";
+    echo "<td>" . $row['profilbild'] . "</td>";
     echo "</tr>";
 }
 
