@@ -41,13 +41,13 @@
     padding-top: 20px;
     padding-bottom: 20px;
     display: block;
-    color: #ECFFFD;
+    color: white;
     font-weight: lighter;
     text-decoration: none;
-    font-family: "HelveticaNeueLT Pro 35 Th", sans-serif;
+    font-family: "Avenir Next Medium";
 }
 .li a:hover{
-    color: #ECFFFD;
+    color: white;
     font-weight: bolder;
 }
 
