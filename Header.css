@@ -41,13 +41,13 @@
     padding-top: 20px;
     padding-bottom: 20px;
     display: block;
-    color: #D3EBE8;
+    color: #AE7EB8;
     font-weight: lighter;
     text-decoration: none;
     font-family: "HelveticaNeueLT Pro 35 Th", sans-serif;
 }
 .li a:hover{
-    color: #D3EBE8;
+    color: #AE7EB8;
     font-weight: bolder;
 }
 
