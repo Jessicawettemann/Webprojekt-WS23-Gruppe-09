@@ -42,12 +42,14 @@ $result = $statement->fetchAll();
 echo "<table border='1'>
 <tr>
 <th>Beitrag</th>
+<th>Datum</th>
 </tr>";
 
 // Daten aus der Datenbank durchlaufen und in die Tabelle einfügen
 foreach ($result as $row) {
     echo "<tr>";
     echo "<td>" . $row['beitrag'] . "</td>";
+    echo "<td>" . $row['datum'] . "</td>";
     echo "</tr>";
 }
 
