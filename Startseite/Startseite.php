@@ -13,7 +13,7 @@ include "Header Sicherheit.php";
     <br><br>
     <h1>Willkommen bei </h1>
     <p> Pilo </p><br><br><br>
-    <h2> Deine Social Media Plattform</h2>
+    <h2> Deine Plattform</h2>
     <br><br><br><br>
 </section>
 <body>
