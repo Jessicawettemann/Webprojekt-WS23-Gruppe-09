@@ -11,8 +11,8 @@ include "Header Sicherheit.php";
 </head>
 <section class="Header">
     <br><br><br><br><br><br><br>
-    <h1>Willkommen bei </h1>
-    <p> Pilo </p><br><br><br>
+    <h1>Willkommen  </h1>
+    <p> bei Pilo </p><br><br><br>
 
 </section>
 <body>
