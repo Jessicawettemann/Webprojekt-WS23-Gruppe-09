@@ -40,7 +40,7 @@ Durch die Klasse kann ein einziges Element innerhalb des div mit CSS angesproche
     </div>
     </div>
     <div class="pictrure">
-        <img src="https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/Aktvitäten.png" alt=" placeholder" >
+        <img src="https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/Aktivitäten.png" alt=" placeholder" >
        <div class="Layer">
         <a href="aktivitaeten.php"> <h3>aktivitaeten</h3> </a>
     </div>
