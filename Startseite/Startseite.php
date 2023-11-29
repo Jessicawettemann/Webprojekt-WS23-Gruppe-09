@@ -20,7 +20,7 @@ include "Header Sicherheit.php";
 
     <div class="picture"> <!-- Klasse ist ein gruppierendes Element ohne semantische Bedeutung
 Durch die Klasse kann ein einziges Element innerhalb des div mit CSS angesprochen werden -->
-        <img src="https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/Teal Green Simple Illustrated Social Media Policy Presentation.png
+        <img src="https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/Suche.png" alt=" placeholder" >
         <div class="Layer">
 
         <a href="ich-suche.php"> <h3>Ich suche</h3></a>
@@ -28,19 +28,19 @@ Durch die Klasse kann ein einziges Element innerhalb des div mit CSS angesproche
 </div>
 
     <div class="picture">
-        <img src="https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/Teal Green Simple Illustrated Social Media Policy Presentation.png
+        <img src="https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/Biete.png" alt=" placeholder" >
         <div class="Layer">
         <a href="ich-biete_Übersicht.php"> <h3>Ich biete</h3></a>
     </div>
 </div>
     <div class="picture">
-        <img src="https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/Teal Green Simple Illustrated Social Media Policy Presentation.png" alt=" placeholder" >
+        <img src="https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/Community.png" alt=" placeholder" >
         <div class="Layer">
         <a href="community.php"> <h3>Community</h3></a>
     </div>
     </div>
     <div class="pictrure">
-        <img src="https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/Teal Green Simple Illustrated Social Media Policy Presentation.png
+        <img src="https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/Aktvitäten.png" alt=" placeholder" >
        <div class="Layer">
         <a href="aktivitaeten.php"> <h3>aktivitaeten</h3> </a>
     </div>
