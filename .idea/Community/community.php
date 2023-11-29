@@ -38,11 +38,6 @@ $statement = $pdo->prepare("SELECT * FROM Beitrag");
 $statement->execute();
 $result = $statement->fetchAll();
 
-// Profilbild und Benutzername aus der Nutzer-Tabelle abrufen
-$statement = $pdo->prepare("SELECT profilbild, benutzername FROM Nutzer");
-$statement->execute();
-$user_data = $statement->fetch();
-
 // Überschrift für die Tabelle
 echo "<table border='1'>
 <tr>
@@ -59,12 +54,7 @@ foreach ($result as $row) {
     echo "<td>" . $row['datum'] . "</td>";
     echo "</tr>";
 }
-foreach ($result as $row) {
-    echo "<tr>";
-    echo "<td>" . $row['benutzername'] . "</td>";
-    echo "<td>" . $row['profilbild'] . "</td>";
-    echo "</tr>";
-}
+
 
 // Tabellenende
 echo "</table>";
