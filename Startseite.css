@@ -59,7 +59,7 @@ body {
     transition: 0.5s;
 }
 .Layer:hover{
-    background: rgba(255,210,0,0.8);
+    background: rgb(236, 255, 253);
 }
 .Layer h3{
     width: 100%;
@@ -73,6 +73,7 @@ body {
     opacity: 0;
     transition: 0.5s;
     text-underline: white;
+    font-family: "Avenir Next Medium";
 
 }
 .Layer:hover h3{
