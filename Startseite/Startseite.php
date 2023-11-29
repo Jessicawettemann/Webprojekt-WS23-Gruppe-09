@@ -9,13 +9,14 @@ include "Header Sicherheit.php";
     <title>Startseite</title>
     <link rel="stylesheet" type="text/css" href="Startseite.css">
 </head>
-<section class="Header">
+<body>
+<section class="campus">
     <br><br><br><br><br><br><br>
     <h1>Willkommen  </h1>
     <p> bei Pilo </p><br><br><br>
 
 </section>
-<body>
+
 <div class="row"> </div>
 
     <div class="picture"> <!-- Klasse ist ein gruppierendes Element ohne semantische Bedeutung
@@ -47,6 +48,6 @@ Durch die Klasse kann ein einziges Element innerhalb des div mit CSS angesproche
     </div>
 </div>
 
-
+</section>
 </body>
 </html>
