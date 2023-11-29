@@ -34,10 +34,10 @@ body {
     font-size: 40px;
 }
 .picture{
-    flex-basis: 32%;
-    border-radius: 10px;
-    margin-bottom: 30px;
-    position: relative;
+    flex-basis: 15%;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    position: center;
     overflow: hidden;
 
 }
