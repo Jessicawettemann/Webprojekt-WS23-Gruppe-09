@@ -37,7 +37,7 @@ body {
     flex-basis: 15%;
     border-radius: 5px;
     margin-bottom: 20px;
-    position: center;
+    position: relative;
     overflow: hidden;
 
 }
