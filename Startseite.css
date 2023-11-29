@@ -65,7 +65,7 @@ body {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    position: center;
+    position: relative;
     opacity: 0;
     transition: 0.5s;
     text-underline: white;
