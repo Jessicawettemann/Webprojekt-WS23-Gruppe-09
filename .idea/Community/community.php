@@ -34,8 +34,13 @@ include "Datenbank Verbindung.php";
 
 <?php 
 //DATEN ANZEIGEN
-// Daten aus der Datenbank abrufen
-$statement = $pdo->prepare("SELECT * FROM Beitrag WHERE nutzer_id IN (SELECT id FROM Nutzer)");
+// Daten aus der Datenbank abrufen: Beitrag
+$statement = $pdo->prepare("SELECT * FROM Beitrag");
+$statement->execute();
+$result = $statement->fetchAll();
+
+// Daten aus der Datenbank abrufen: Nutzer
+$statement = $pdo->prepare("SELECT * FROM Nutzer");
 $statement->execute();
 $result = $statement->fetchAll();
 
@@ -47,6 +52,7 @@ echo "<table border='1'>
 <th>Benutzername</th>  
 <th>Profilbild</th>  
 </tr>";
+
 
 // Daten aus der Datenbank durchlaufen und in die Tabelle einfügen
 foreach ($result as $row) {
