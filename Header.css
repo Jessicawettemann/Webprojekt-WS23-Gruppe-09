@@ -1,4 +1,8 @@
 /*---HEADER---*/
+.html{
+    padding: 0;
+    margin: 0;
+}
 .header{
     width: auto;
     min-height: auto;
