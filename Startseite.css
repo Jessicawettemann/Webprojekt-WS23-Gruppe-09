@@ -33,12 +33,12 @@
     flex-basis: 32%;
     border-radius: 10px;
     margin-bottom: 30px;
-    position: relative;
+    position: center;
     overflow: hidden;
 }
 .picture img{
-    width: 620px;
-    height: 340px;
+    width: 420px;
+    height: 240px;
     border-radius: 10px;
 }
 .Layer{
