@@ -1,7 +1,7 @@
 <?php
 session_start();
 include"Datenbank Verbindung.php";
-include "Header Sicherheit.php";
+
 ?>
 
 <!DOCTYPE html>
@@ -9,13 +9,15 @@ include "Header Sicherheit.php";
 <head>
     <meta charset="UTF-8">
     <title>Registrierung</title>
+    <link rel="stylesheet" type="text/css" href="Formulare.css">
 
 </head>
+<img src="https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/Teal Green Simple Illustrated Social Media Policy Presentation.png">
 <body>
 
 <div>
-    <form action="Registrierung_do.php" method="post" enctype="multipart/form-data">
-        <h2>Registrieren</h2>
+    <form1 action="Registrierung_do.php" method="post" enctype="multipart/form-data">
+        <h1>Registrieren</h1>
         <label class="label" for="profilbild"></label>
         <input type="file" placeholder="Profilbild" name="profilbild">
 
@@ -35,7 +37,7 @@ include "Header Sicherheit.php";
         <input type="password" placeholder="Passwort" name="passwort">
 
         <button type="submit">Registrieren</button>
-    </form>
+    </form1>
 </div>
 
 </body>

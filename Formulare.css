@@ -1,9 +1,13 @@
 
 img{
-
+    background-image: url("https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/Teal Green Simple Illustrated Social Media Policy Presentation.png");
+    background-position: center;
     background-size: cover;
-
+    position: relative;
 }
+
+
+
 form{
 
     height: 350px;
@@ -12,7 +16,22 @@ form{
     border-radius: 8px;
     background-color: white;
     opacity: inherit;
-    box-shadow: 3px 3px 1px rgb(199, 184, 184);
+    box-shadow: 2px 2px 1px rgb(199, 184, 184);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+form1{
+
+    height: 490px;
+    width: 240px;
+    padding: 60px;
+    border-radius: 8px;
+    background-color: white;
+    opacity: inherit;
+    box-shadow: 2px 2px 1px rgb(199, 184, 184);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -22,7 +41,7 @@ form{
 
 h1{
     color: #D3EBE8;
-    font-family: "Avenir Next Heavy";
+    font-family: "Avenir Next Medium";
     font-size: 38px;
     background-position: top left;
 
@@ -62,12 +81,12 @@ input::placeholder{
     color: #96d5ce;
 }
 p{
-    font-family: "Poppins", sans-serif;
+    font-family: "Avenir Next", sans-serif;
     color: black;
     font-size: 14px;
 }
 a{
-    font-family: "Poppins", sans-serif;
+    font-family: "Avenir Next", sans-serif;
     color: #a1d0cc;
     font-size: 14px;
     position: page;
@@ -81,7 +100,7 @@ button{
     border-radius: 1000px;
     border: none;
     color: white;
-    font-family: sans-serif;
+    font-family: "Avenir Next", sans-serif;
     font-size: 14px;
     background: linear-gradient(to right, rgb(211, 235, 232), rgb(153, 231, 231));
 }
