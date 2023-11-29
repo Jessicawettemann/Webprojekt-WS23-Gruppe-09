@@ -12,6 +12,7 @@ include"Datenbank Verbindung.php";
     <link rel="stylesheet" type="text/css" href="Formulare.css">
 
 </head>
+<img src="https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/Teal Green Simple Illustrated Social Media Policy Presentation.png">
 <body>
 
 <div>
