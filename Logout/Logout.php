@@ -15,7 +15,7 @@ session_start();
 </head>
 <body>
 <div>
-    <h1>Popsicle</h1>
+
     <h2>Logout</h2>
 </div>
 
