@@ -34,11 +34,7 @@ include "Header Sicherheit.php";
 <?php 
 //DATEN ANZEIGEN
 // Daten aus der Datenbank abrufen
-$statement = $pdo->prepare("SELECT * FROM Beitrag");
-$statement->execute();
-$result = $statement->fetchAll();
-
-$statement = $pdo->prepare("SELECT * FROM Nutzer");
+$statement = $pdo->prepare("SELECT * FROM Beitrag WHERE nutzer_id IN (SELECT id FROM Nutzer)");
 $statement->execute();
 $result = $statement->fetchAll();
 
