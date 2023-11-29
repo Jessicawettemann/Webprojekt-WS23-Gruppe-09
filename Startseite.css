@@ -37,9 +37,10 @@
     overflow: hidden;
 }
 .picture img{
-    width: 350px;
+    width: 550px;
     height: 640px;
     border-radius: 10px;
+    position: center;
 }
 .Layer{
     background: transparent;
