@@ -10,11 +10,10 @@ include "Header Sicherheit.php";
     <link rel="stylesheet" type="text/css" href="Startseite.css">
 </head>
 <section class="Header">
-    <br><br><br><br>
+    <br><br><br><br><br><br><br>
     <h1>Willkommen bei </h1>
     <p> Pilo </p><br><br><br>
-    <h2> Deine Plattform</h2>
-    <br><br><br><br>
+
 </section>
 <body>
     <h1> Das ist unsere Startseite </h1>
