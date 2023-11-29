@@ -26,4 +26,7 @@ if (!isset($_SESSION["Nutzer_ID"])) {
     die("<div class='fail'> Du bist nicht angemeldet! " . "<br><br>" . "<a href='Login Formular.php'>Hier geht's zum Login</a> </div>");
 }
 
+session_destroy();
+    echo "<div class='fine'> Logout war erfolgreich " . "<br><br>" . "<a href='Startseite.php'>zurück zur Startseite</a> </div>";
 ?>
+
