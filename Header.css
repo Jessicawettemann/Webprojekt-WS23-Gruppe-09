@@ -29,7 +29,7 @@
 /*---Navigation---*/
 .ul{
     width: auto;
-    background-color: #D3EBE8;
+    background-color: white;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -41,13 +41,13 @@
     padding-top: 20px;
     padding-bottom: 20px;
     display: block;
-    color: white;
+    color: #D3EBE8;
     font-weight: lighter;
     text-decoration: none;
     font-family: "Avenir Next Medium";
 }
 .li a:hover{
-    color: white;
+    color: #D3EBE8;
     font-weight: bolder;
 }
 
