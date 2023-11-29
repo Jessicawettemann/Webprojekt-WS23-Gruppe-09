@@ -28,5 +28,32 @@ include "Header Sicherheit.php";
         <button type="submit">Beitrag hinzufügen</button>
     
     </form>
+
+
+
+<?php 
+//DATEN ANZEIGEN
+// Daten aus der Datenbank abrufen
+$statement = $pdo->prepare("SELECT * FROM Beitrag");
+$statement->execute();
+$result = $statement->fetchAll();
+
+// Überschrift für die Tabelle
+echo "<table border='1'>
+<tr>
+<th>Beitrag</th>
+</tr>";
+
+// Daten aus der Datenbank durchlaufen und in die Tabelle einfügen
+foreach ($result as $row) {
+    echo "<tr>";
+    echo "<td>" . $row['beitrag'] . "</td>";
+    echo "</tr>";
+}
+
+// Tabellenende
+echo "</table>";
+
+?>
 </body>
 </html>
