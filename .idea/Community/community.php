@@ -33,16 +33,20 @@ include "Datenbank Verbindung.php";
 
 
 <?php 
-//DATEN ANZEIGEN
-// Daten aus der Datenbank abrufen: Beitrag
-$statement = $pdo->prepare("SELECT * FROM Beitrag");
+
+// Daten aus der Datenbank abrufen: Beitrag und Nutzer
+$statement = $pdo->prepare("SELECT Beitrag.id, Beitrag.beitrag, Beitrag.datum, Nutzer.benutzername, Nutzer.profilbild 
+                             FROM Beitrag 
+                             JOIN Nutzer ON Beitrag.nutzer_id = Nutzer.id");
 $statement->execute();
 $result = $statement->fetchAll();
 
-// Daten aus der Datenbank abrufen: Nutzer
-$statement = $pdo->prepare("SELECT * FROM Nutzer");
-$statement->execute();
-$result = $statement->fetchAll();
+
+
+
+//DATEN ANZEIGEN
+// Daten aus der Datenbank abrufen: Beitrag
+
 
 // Überschrift für die Tabelle
 echo "<table border='1'>
@@ -52,7 +56,6 @@ echo "<table border='1'>
 <th>Benutzername</th>  
 <th>Profilbild</th>  
 </tr>";
-
 
 // Daten aus der Datenbank durchlaufen und in die Tabelle einfügen
 foreach ($result as $row) {
@@ -64,10 +67,8 @@ foreach ($result as $row) {
     echo "</tr>";
 }
 
-
 // Tabellenende
 echo "</table>";
-
 
 
 ?>
