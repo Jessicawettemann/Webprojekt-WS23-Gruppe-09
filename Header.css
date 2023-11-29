@@ -29,7 +29,7 @@
 /*---Navigation---*/
 .ul{
     width: auto;
-    background-color: white;
+    background-color: black;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
