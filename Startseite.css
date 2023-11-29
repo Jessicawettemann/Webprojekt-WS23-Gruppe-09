@@ -29,3 +29,69 @@
     margin: auto;
     font-size: 40px;
 }
+.picture{
+    flex-basis: 32%;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+.picture img{
+    width: 620px;
+    height: 340px;
+    border-radius: 10px;
+}
+.Layer{
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top:0;
+    left: 0;
+    transition: 0.5s;
+}
+.Layer:hover{
+    background: rgba(255,210,0,0.8);
+}
+.Layer h3{
+    width: 100%;
+    font-weight: 500;
+    color: white;
+    font-size: 20px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    opacity: 0;
+    transition: 0.5s;
+    text-underline: white;
+
+}
+.Layer:hover h3{
+    bottom: 49%;
+    opacity: 1;
+}
+
+
+
+@media( max-width: 650px) {
+
+
+
+    .Layer h3 {
+        width: 100%;
+        font-weight: 500;
+        color: white;
+        font-size: 14px;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        position: absolute;
+        opacity: 0;
+        transition: 0.5s;
+        text-underline: white;
+
+    }
+}
+
+
