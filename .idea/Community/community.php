@@ -58,7 +58,7 @@ foreach ($result as $row) {
     echo "<td>" . $row['beitrag'] . "</td>";
     echo "<td>" . $row['datum'] . "</td>";
     echo "</tr>";
-
+}
 foreach ($result as $row) {
     echo "<tr>";
     echo "<td>" . $row['benutzername'] . "</td>";
