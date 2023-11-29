@@ -59,7 +59,7 @@ body {
     transition: 0.5s;
 }
 .Layer:hover{
-    background: rgb(236, 255, 253);
+    background: linear-gradient(to right, rgb(211, 235, 232), rgb(153, 231, 231));
 }
 .Layer h3{
     width: 100%;
