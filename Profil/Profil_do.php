@@ -11,7 +11,7 @@ session_start();
     <meta charset="UTF-8">
 
     <title>Profil bearbeiten</title>
-
+    <link rel="stylesheet" type="text/css" href="Profil.css">
 </head>
 <body>
 
