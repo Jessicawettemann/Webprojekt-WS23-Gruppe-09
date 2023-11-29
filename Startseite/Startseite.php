@@ -16,28 +16,37 @@ include "Header Sicherheit.php";
 
 </section>
 <body>
-    <h1> Das ist unsere Startseite </h1>
+<div class="row"> </div>
 
-    <div class="ich-suche"> <!-- Klasse ist ein gruppierendes Element ohne semantische Bedeutung 
+    <div class="picture"> <!-- Klasse ist ein gruppierendes Element ohne semantische Bedeutung
 Durch die Klasse kann ein einziges Element innerhalb des div mit CSS angesprochen werden -->
-        <h2>Ich suche</h2>
-        <a href="ich-suche.php">Weiterleitung ich-suche</a>
-    </div>
+        <img src="https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/Teal Green Simple Illustrated Social Media Policy Presentation.png
+        <div class="Layer">
 
-    <div class="ich-biete_Übersicht">
-        <h2>Ich biete</h2>
-        <a href="ich-biete_Übersicht.php">Weiterleitung ich-biete</a>
+        <a href="ich-suche.php"> <h3>Ich suche</h3></a>
     </div>
+</div>
 
-    <div class="community">
-        <h2>Community</h2>
-        <a href="community.php">Weiterleitung community</a>
+    <div class="picture">
+        <img src="https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/Teal Green Simple Illustrated Social Media Policy Presentation.png
+        <div class="Layer">
+        <a href="ich-biete_Übersicht.php"> <h3>Ich biete</h3></a>
     </div>
+</div>
+    <div class="picture">
+        <img src="https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/Teal Green Simple Illustrated Social Media Policy Presentation.png" alt=" placeholder" >
+        <div class="Layer">
+        <a href="community.php"> <h3>Community</h3></a>
+    </div>
+    </div>
+    <div class="pictrure">
+        <img src="https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/Teal Green Simple Illustrated Social Media Policy Presentation.png
+       <div class="Layer">
+        <a href="aktivitaeten.php"> <h3>aktivitaeten</h3> </a>
+    </div>
+    </div>
+</div>
 
-    <div class="aktivitaeten">
-        <h2>Aktivitäten</h2>
-        <a href="aktivitaeten.php">Weiterleitung aktivitaeten</a>
-    </div>
 
 </body>
 </html>
