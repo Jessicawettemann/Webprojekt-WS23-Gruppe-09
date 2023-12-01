@@ -17,6 +17,13 @@ body {
     margin-bottom: 10px;
 }
 
+.profile-picture {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
 .edit {
     color: #007BFF;
     text-decoration: none;
