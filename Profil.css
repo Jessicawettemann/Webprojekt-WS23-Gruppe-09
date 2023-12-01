@@ -22,8 +22,8 @@ body {
 /* Die Überschrift am Anfang der Card */
 h5 {
     color: white;
-    position: center;
-    font-family: "Avenir Next Heavy";
+    position: relative;
+    font-family: "Avenir Next Medium";
     font-size: 40px;
 }
 
