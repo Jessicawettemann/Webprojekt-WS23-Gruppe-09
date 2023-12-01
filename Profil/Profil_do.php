@@ -19,7 +19,7 @@ session_start();
 <div class="profile-card"
      <br><br><br>
 <h5> Profil bearbeiten </h5>
-<br><br>
+<br>
 <?php
 if(!isset($_SESSION["Nutzer_ID"])){
     echo("<div class='fail'> Bitte melde dich zunächst an! "."<br><br>". "<a href='Login Formular.php'>Hier geht's zum Login</a> </div>");
