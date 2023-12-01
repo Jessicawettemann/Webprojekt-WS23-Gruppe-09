@@ -22,9 +22,13 @@ body {
 /* Die Überschrift am Anfang der Card */
 h5 {
     color: white;
-    position: relative;
+
     font-family: "Avenir Next Medium";
     font-size: 40px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Die Datenzeilen in der Card */
