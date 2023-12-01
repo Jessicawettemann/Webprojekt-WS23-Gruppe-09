@@ -27,26 +27,27 @@ h5 {
 
 /* Die Datenzeilen in der Card */
 . .profile-card rows {
-    color: #666666;
-    font-size: 18px;
+    color: #D3EBE8;
+    font-size: 20px;
     margin-bottom: 10px;
+    font-family: "Avenir Next Medium";
 }
 
 /* Die Bearbeiten-Links */
 .profile-card edit {
-    color: #333333;
+    color: black;
     text-decoration: none;
     font-size: 14px;
 }
 
 /* Die Aktivität des Links, wenn er betätigt wird */
 .edit:hover {
-    color: #1a73e8;
+    color: #D3EBE8;
 }
 
 /* Die Card, die den Erfolg der Bearbeitung anzeigt */
 .success {
-    color: #1a73e8;
+    color:#D3EBE8;
     margin-bottom: 20px;
 }
 
