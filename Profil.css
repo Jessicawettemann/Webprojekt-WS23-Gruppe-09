@@ -9,15 +9,15 @@
     border-radius: 10px;
 }
 .profile-card img {
-    width: 30%;
-    height: 60px;
+    width: 30px;
+    height: 30px;
     object-fit: cover;
-    border-radius: 70%;
+    border-radius: 90%;
 }
 
 
 /* Die Überschrift am Anfang der Card */
-.profile-card h5 {
+h5 {
     color: #333333;
     margin-bottom: 20px;
 }
