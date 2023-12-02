@@ -43,9 +43,7 @@ if($statement->execute(array(htmlspecialchars($_POST["admin"])))) {
                 echo "<div class='fine'>Herzlich Willkommen, " . $row["admin"]."</div>";
                 $_SESSION["admin"] = $row["admin"];
                 $_SESSION["Admin_ID"] = $row["ID"];
-                echo "<a class='go' href= 'ich-biete_Hinzufügen.php'> ich biete </a> <br> ";
 
-                echo "<a class='go' href='ich-biete_Übersicht.php'> Übersicht </a> <br>";
             } else {
 
                 echo("<div class='fail'>Passwort falsch</div>");
