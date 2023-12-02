@@ -1,18 +1,18 @@
 <?php
-include"Datenbank Verbindung.php";
-include "Header Sicherheit.php";
-session_start();
+include "Datenbank Verbindung.php";
 
+session_start();
 ?>
 
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>Login Admin</title>
+    <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" type="text/css" href="Formulare.css">
-
+    <title>Login</title>
 </head>
+
 <body>
 <form
 <div class="input_container"
@@ -26,14 +26,17 @@ session_start();
 
     <button type="submit">Einloggen</button>
     <br><br>
-     <a href="Startseite.php">Zum Start</a>
+    <p>Noch keinen Account? <br><br> <a href="Registrierung_Formular.php">Hier registrieren</a>
     </p>
 </form>
 </div>
-
 </form>
 
-
 </body>
+
 </html>
+
+</html>
+
+
 
