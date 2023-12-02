@@ -45,7 +45,7 @@ if(!isset($_SESSION["Nutzer_ID"])){
     echo "<img src='https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/" . $row["profilbild"] . "'height='100px'> <br><br>".
         "<a href= 'Profilbild.php'>" . "Profilbild ändern". "</a>";
 
-    echo "<br><br>";
+    echo "<br><br>"." <p style= text-align:center </p>";
     echo "Benutzername:" ." " . $row ["benutzername"]."<a class='edit'  href= 'benutzername.php'>" . " bearbeiten ". "</a>" ." <p style= text-align:center </p>";
     echo "<br><br>";
     echo "E-Mail:"." ". $row ["email"]. "<a class='edit' href= 'email.php'>" . " bearbeiten". "</a>";
