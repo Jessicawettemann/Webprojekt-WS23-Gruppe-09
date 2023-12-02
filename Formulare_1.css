@@ -14,7 +14,7 @@ form{
     text-align: center;
 }
 
-.h1{
+h1{
     color: #D3EBE8;
     font-family: "Avenir Next Medium";
     font-size: 38px;
@@ -27,11 +27,11 @@ form{
     line-height: 60px;
 }
 
-.inputs_container {
+inputs_container {
 
     position: relative;
 }
-.input{
+input{
     height: 32px;
     width: 160px;
     margin: 15px;
@@ -44,23 +44,23 @@ form{
     font-size: 12px;
 
 }
-.input:hover{
+input:hover{
     background-color: #D3EBE8;
 
 }
-.input:focus{
+input:focus{
     outline: none;
     background-color: #D3EBE8;
 }
 input::placeholder{
     color: #96d5ce;
 }
-.p{
+p{
     font-family: "Avenir Next", sans-serif;
     color: black;
     font-size: 14px;
 }
-.a{
+a{
     font-family: "Avenir Next", sans-serif;
     color: #a1d0cc;
     font-size: 14px;
@@ -69,7 +69,7 @@ input::placeholder{
 a:hover{
     color: #d3ebe8;
 }
-.button{
+button{
     height: 40px;
     width: 110px;
     border-radius: 1000px;
@@ -79,11 +79,11 @@ a:hover{
     font-size: 14px;
     background: linear-gradient(to right, rgb(211, 235, 232), rgb(153, 231, 231));
 }
-.button:hover{
+button:hover{
     width: 200px;
 
 }
-.button:focus {
+button:focus {
     outline: none;
     width: 200px;
 }
