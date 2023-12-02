@@ -38,24 +38,15 @@ h5 {
     margin-bottom: 10px;
     font-family: "Avenir Next Medium";
 }
-.rows:hover {
-    color: #D3EBE8;
-   font-weight: bolder;
 
-}
 .rows h1{
     font-family: "Avenir Next Medium";
     color: #D3EBE8;
     text-align: center;
-    font-size: 30px;
+    font-size: 40px;
 }
-.rows href{
-    color: black;
-}
-.rows href:hover{
-  color: #D3EBE8;
-    font-weight: bolder;
-}
+
+
 
 /* Die Bearbeiten-Links */
  .edit {
