@@ -1,4 +1,6 @@
-
+body{
+    background-color: #D3EBE8;
+}
 form{
     height: 490px;
     width: 240px;
