@@ -10,8 +10,8 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <title>Login Admin</title>
+    <link rel="stylesheet" type="text/css" href="Formulare.css">
 
-    <link rel="stylesheet" href="Formulare.css">
 </head>
 <body>
 
@@ -29,7 +29,7 @@ session_start();
      <a href="Startseite.php">Zum Start</a>
     </p>
 </form>
-</div>
+
 
 
 
