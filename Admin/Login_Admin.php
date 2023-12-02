@@ -17,7 +17,7 @@ session_start();
 
 
 <form action="Login_Admin_do.php" method="post">
-    <h1> Login</h1>
+    <h1> Login Admin</h1>
     <label class="label" for="benutzername"></label>
     <input type="text" placeholder= "Benutzername" name="benutzername">
 
