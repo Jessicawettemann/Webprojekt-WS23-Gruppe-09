@@ -34,23 +34,18 @@ body {
     font-size: 40px;
 }
 .picture{
-    flex-basis: 15%;
-    border-radius: 5px;
-    margin-bottom: 20px;
+    flex-basis: 32%;
+    border-radius: 10px;
+    margin-bottom: 30px;
     position: relative;
     overflow: hidden;
 
 }
 .picture img{
-    width: 230px;
-    height: 240px;
-    border-radius: 10px;
-    position: center;
-    display: flex;
-    gap: 20px;
+    width: 100%;
 }
 .Layer{
-    background: transparent;
+    background: rgb(236, 255, 253);
     height: 100%;
     width: 100%;
     position: absolute;

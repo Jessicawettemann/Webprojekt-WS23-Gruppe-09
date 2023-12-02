@@ -21,7 +21,7 @@ include "Header Sicherheit.php";
 
     <div class="picture"> <!-- Klasse ist ein gruppierendes Element ohne semantische Bedeutung
 Durch die Klasse kann ein einziges Element innerhalb des div mit CSS angesprochen werden -->
-        <img src="https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/Suche.png" alt=" placeholder" >
+        <img src="https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/Suche.png"  >
         <div class="Layer">
 
         <a href="ich-suche.php"> <h3>Ich suche</h3></a>
