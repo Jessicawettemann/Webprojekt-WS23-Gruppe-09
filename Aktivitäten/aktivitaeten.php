@@ -50,7 +50,9 @@ $statement->execute();
 $result = $statement->fetchAll();
 
 // Überschrift für die Tabelle
+
 echo "<table border='1'>
+<br><br><br>
 <tr>
 <th>Thema</th>
 <th>Beschreibung</th>
