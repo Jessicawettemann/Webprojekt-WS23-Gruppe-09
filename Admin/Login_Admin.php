@@ -10,7 +10,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" type="text/css" href="Formulare.css">
-    <title>Login</title>
+    <title>Login Admin</title>
 </head>
 
 <body>
@@ -26,7 +26,7 @@ session_start();
 
     <button type="submit">Einloggen</button>
     <br><br>
-    <p>Noch keinen Account? <br><br> <a href="Registrierung_Formular.php">Hier registrieren</a>
+    <a href="Startseite.php">Zum Start</a>
     </p>
 </form>
 </div>
