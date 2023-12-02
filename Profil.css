@@ -34,7 +34,7 @@ h5 {
 /* Die Datenzeilen in der Card */
 .rows {
     color: black;
-    font-size: 20px;
+    font-size: 16px;
     margin-bottom: 10px;
     font-family: "Avenir Next Medium";
 }
@@ -42,7 +42,16 @@ h5 {
     font-family: "Avenir Next Medium";
     color: #D3EBE8;
     text-align: center;
+    font-size: 25px;
 }
+.rows href{
+    color: black;
+}
+.rows href:hover{
+  color: #D3EBE8;
+    font-weight: bolder;
+}
+
 /* Die Bearbeiten-Links */
  .edit {
     color: #D3EBE8;
@@ -53,7 +62,8 @@ h5 {
 /* Die Aktivität des Links, wenn er betätigt wird */
 .edit:hover {
     color: #D3EBE8;
-    font-weight: bolder
+    font-weight: bolder;
+
 }
 
 /* Die Card, die den Erfolg der Bearbeitung anzeigt */
