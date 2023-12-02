@@ -23,7 +23,7 @@ include "Header Sicherheit.php";
 Durch die Klasse kann ein einziges Element innerhalb des div mit CSS angesprochen werden -->
         <img src="https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/Suche.png"  >
         <div class="Layer">
-
+            <p style= text-align:center </p>
         <a href="ich-suche.php"> <h3>Ich suche</h3></a>
     </div>
 </div>
