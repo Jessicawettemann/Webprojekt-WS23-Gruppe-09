@@ -38,6 +38,11 @@ h5 {
     margin-bottom: 10px;
     font-family: "Avenir Next Medium";
 }
+.rows:hover {
+    color: #D3EBE8;
+   font-weight: bolder;
+
+}
 .rows h1{
     font-family: "Avenir Next Medium";
     color: #D3EBE8;
