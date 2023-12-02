@@ -9,7 +9,7 @@ include "Header Sicherheit.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terminkalender</title>
-    <link rel="stylesheet" type="text/css" href="Formulare.css">
+    <link rel="stylesheet" type="text/css" href="Formulare1.css">
 </head>
 <body>
 
