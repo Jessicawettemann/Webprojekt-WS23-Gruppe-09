@@ -35,9 +35,9 @@ $statement->bindParam(":admin", $_POST["admin"]);
 if($statement->execute(array(htmlspecialchars($_POST["admin"])))) {
 
     if ($row = $statement->fetch()) {
-        $st = $pdo->prepare("SELECT * FROM Admin WHERE password=?");
-        $st->bindParam(":password", $_POST["password"]);
-        if ($st->execute(array(htmlspecialchars($_POST["password"])))) {
+        $st = $pdo->prepare("SELECT * FROM Admin WHERE Passwort=?");
+        $st->bindParam(":Passwort", $_POST["Passwort"]);
+        if ($st->execute(array(htmlspecialchars($_POST["Passwort"])))) {
             if ($r = $st->fetch()) {
 
                 echo "<div class='fine'>Herzlich Willkommen, " . $row["admin"]."</div>";
@@ -45,7 +45,7 @@ if($statement->execute(array(htmlspecialchars($_POST["admin"])))) {
                 $_SESSION["Admin_ID"] = $row["ID"];
                 echo "<a class='go' href= 'ich-biete_Hinzufügen.php'> ich biete </a> <br> ";
 
-                echo "<a class='go' href='../Overviews/songs_alle.php'> alle Songs ansehen </a> <br>";
+                echo "<a class='go' href='ich-biete_Übersicht.php'> Übersicht </a> <br>";
             } else {
 
                 echo("<div class='fail'>Passwort falsch</div>");

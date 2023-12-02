@@ -19,10 +19,10 @@ session_start();
 <form action="Login_Admin_do.php" method="post">
     <h1> Login Admin</h1>
     <label class="label" for="benutzername"></label>
-    <input type="text" placeholder= "Benutzername" name="benutzername">
+    <input type="text" placeholder= "Benutzername" name="Benutzername">
 
     <label class="label" for="passwort"></label>
-    <input type="password" placeholder="Passwort" name="passwort">
+    <input type="password" placeholder="Passwort" name="Passwort">
 
     <button type="submit">Einloggen</button>
     <br><br>
