@@ -14,8 +14,8 @@ session_start();
 
 </head>
 <body>
-
-
+<form
+<div class="input_container"
 <form action="Login_Admin_do.php" method="post">
     <h1> Login Admin</h1>
     <label class="label" for="benutzername"></label>
@@ -29,9 +29,9 @@ session_start();
      <a href="Startseite.php">Zum Start</a>
     </p>
 </form>
+</div>
 
-
-
+</form>
 
 
 </body>
