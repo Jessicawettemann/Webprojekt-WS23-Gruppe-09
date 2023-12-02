@@ -41,7 +41,7 @@ if(!isset($_SESSION["Nutzer_ID"])){
 
     echo "<div class='rows'>";
     echo "<h1>Profil bearbeiten</h1>";
-    echo "<br><br><br>";
+    echo "<br><br><br>". " <p style= text-align:center </p>";
     echo "<img src='https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/" . $row["profilbild"] . "'height='100px'> <br><br>".
         "<a href= 'Profilbild.php'>" . "Profilbild ändern". "</a>";
 
