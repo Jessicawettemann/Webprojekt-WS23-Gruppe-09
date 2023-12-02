@@ -11,7 +11,7 @@ include "Header Sicherheit.php";
     <title>Terminkalender</title>
     <link rel="stylesheet" type="text/css" href="Formulare.css">
 </head>
-<body>
+<div>
 
     <h1>Kalender</h1>
     
@@ -21,7 +21,9 @@ include "Header Sicherheit.php";
     </div>
 
     <!-- Formular zum Hinzufügen von Ereignissen -->
-    <form action="aktivitaeten_do.php" method="post" enctype="multipart/form-data">
+    <div
+   <form
+    <form1 action="aktivitaeten_do.php" method="post" enctype="multipart/form-data">
         <label for="thema">Ereignis hinzufügen:</label>
         <input type="text" id="thema" name="thema" required>
 
@@ -40,6 +42,8 @@ include "Header Sicherheit.php";
     <br>
     <br>
 
+    </form1>
+</div>
 
 <?php 
 // Daten aus der Datenbank abrufen
