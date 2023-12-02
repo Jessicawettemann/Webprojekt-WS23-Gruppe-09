@@ -39,7 +39,8 @@ if(!isset($_SESSION["Nutzer_ID"])){
     $passwort = $row["passwort"];
     $profilbild = $row["profilbild"];
     echo "<div class='rows'>";
-
+    echo "<h1>Profil bearbeiten</h1>";
+    echo "<br><br><br>";
     echo "Benutzername:" ." " . $row ["benutzername"]."<a class='edit' href= 'benutzername.php'>" . " bearbeiten ". "</a>";
     echo "<br><br>";
     echo "E-Mail:"." ". $row ["email"]. "<a class='edit' href= 'email.php'>" . " bearbeiten". "</a>";
