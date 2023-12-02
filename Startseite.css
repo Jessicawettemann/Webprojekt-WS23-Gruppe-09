@@ -45,9 +45,9 @@ body {
     width: 20%;
 }
 .Layer{
-    background: white;
-    height: 100%;
-    width: 100%;
+
+    height: 20%;
+    width: 20%;
     position: absolute;
     top:0;
     left: 0;
