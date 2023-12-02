@@ -22,16 +22,16 @@ include "Header Sicherheit.php";
     </div>
     <!-- Formular zum Hinzufügen von Ereignissen -->
     <form action="aktivitaeten_do.php" method="post" enctype="multipart/form-data">
-        <label for="thema">Ereignis hinzufügen:</label>
+        <label for="thema"></label>
         <input type="text" placeholder="Thema" id="thema" name="thema" required>
 
-        <label for="beschreibung">Beschreibung hinzufügen:</label>
+        <label for="beschreibung"></label>
         <input type="text" placeholder="Beschreibung" id="beschreibung" name="beschreibung" required>
 
-        <label for="datum">Datum:</label>
+        <label for="datum"></label>
         <input type="date" placeholder="Datum" id="datum" name="datum" required>
 
-        <label for="ort">Ort:</label>
+        <label for="ort"></label>
         <input type="text"  placeholder="Ort" id="ort" name="ort" required>
 
         <button type="submit">Ereignis hinzufügen</button>
