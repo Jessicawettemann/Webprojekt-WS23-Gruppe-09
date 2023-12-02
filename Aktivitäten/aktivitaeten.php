@@ -37,7 +37,7 @@ include "Header Sicherheit.php";
         <input type="text" id="ort" name="ort" required>
 
         <button type="submit">Ereignis hinzufügen</button>
-
+    </form1>
     <br>
     <br>
     <br>
@@ -74,7 +74,7 @@ foreach ($result as $row) {
 echo "</table>";
         
  ?>       
-    </form1>
+
 </div>
 </body>
 </html>
