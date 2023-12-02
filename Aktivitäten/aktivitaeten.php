@@ -20,7 +20,6 @@ include "Header Sicherheit.php";
     <div id="calendar">
         <!-- Hier wird der Kalender angezeigt -->
     </div>
-
     <!-- Formular zum Hinzufügen von Ereignissen -->
     <form action="aktivitaeten_do.php" method="post" enctype="multipart/form-data">
         <label for="thema">Ereignis hinzufügen:</label>
