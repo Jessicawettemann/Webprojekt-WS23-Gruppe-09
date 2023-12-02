@@ -17,14 +17,17 @@ session_start();
 
 
 <form action="Login_Admin_do.php" method="post">
-    <h2>Admin-Login</h2>
-    <input type="text" placeholder="admin" name="admin">
+    <h1> Login</h1>
+    <label class="label" for="benutzername"></label>
+    <input type="text" placeholder= "Benutzername" name="benutzername">
 
-    <input type="password" placeholder="Passwort" name="password">
-    <br>
+    <label class="label" for="passwort"></label>
+    <input type="password" placeholder="Passwort" name="passwort">
+
     <button type="submit">Einloggen</button>
     <br><br>
-    <a href="Startseite.php"> zurück zum Start </a>
+     <a href="Startseite.php">Zum Start</a>
+    </p>
 </form>
 </div>
 
