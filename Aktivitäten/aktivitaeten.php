@@ -13,7 +13,7 @@ include "Header Sicherheit.php";
 </head>
 <body>
 
-    <h1>Kalender</h1>
+
 
     
     <!-- Kalenderbereich -->
@@ -22,6 +22,8 @@ include "Header Sicherheit.php";
     </div>
     <!-- Formular zum Hinzufügen von Ereignissen -->
     <form action="aktivitaeten_do.php" method="post" enctype="multipart/form-data">
+        <h1>Kalender</h1>
+        <br><br>
         <label for="thema"></label>
         <input type="text" placeholder="Thema" id="thema" name="thema" required>
 
