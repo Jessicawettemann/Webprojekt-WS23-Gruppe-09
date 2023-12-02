@@ -33,23 +33,25 @@ if(!isset($_SESSION["Nutzer_ID"])){
         die("<div class='fail'>Datensatz nicht verfügbar</div>");
     }
     $row = $statement->fetch();
+    $profilbild = $row["profilbild"];
     $Nutzer_Id = $row["ID"];
     $benutzername = $row["benutzername"];
     $email = $row["email"];
     $passwort = $row["passwort"];
-    $profilbild = $row["profilbild"];
+
     echo "<div class='rows'>";
     echo "<h1>Profil bearbeiten</h1>";
     echo "<br><br><br>";
+    echo "<img src='https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/" . $row["profilbild"] . "'height='100px'> <br>".
+        "<a href= 'Profilbild.php'>" . "aktuelles Profilbild ändern";
+    echo "<br><br>";
     echo "Benutzername:" ." " . $row ["benutzername"]."<a class='edit' href= 'benutzername.php'>" . " bearbeiten ". "</a>";
     echo "<br><br>";
     echo "E-Mail:"." ". $row ["email"]. "<a class='edit' href= 'email.php'>" . " bearbeiten". "</a>";
     echo "<br><br>";
     echo "<a href= 'Passwort.php'>". "Passwort ändern". "</a> <br>" ;
     echo "<br><br>";
-    echo "<img src='https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/" . $row["profilbild"] . "'height='100px'> <br>".
-        "<a href= 'Profilbild.php'>" . "aktuelles Profilbild ändern";
-    echo "<br><br>";
+
     echo "</div>";
 }
 ?>
