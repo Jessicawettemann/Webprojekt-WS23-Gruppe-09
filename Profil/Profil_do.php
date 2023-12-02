@@ -15,7 +15,7 @@ session_start();
 </head>
 <body>
 
-<h5> Profil bearbeiten </h5>
+
 <div class="profile-card"
      <br><br><br>
 <h5> Mein Profil </h5>
