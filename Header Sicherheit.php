@@ -20,6 +20,8 @@ session_start();
             <li class="li"><a href="Startseite.php">Startseite</a></li>
             <li class="li"><a href="Profil_do.php">Mein Profil</a></li>
             <li class="li"><a href="Logout.php">Logout</a></li>
+            <li class="li"><a href="Login_Admin.php">Login</a></li>
+
 
             <?php
             #wenn Nutzer angemeldet ist wird zum Logout verlinkt, anderenfalls zum Login
