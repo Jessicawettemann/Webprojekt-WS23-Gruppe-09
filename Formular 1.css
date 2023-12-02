@@ -1,0 +1,92 @@
+
+.form{
+
+    height: 490px;
+    width: 240px;
+    padding: 60px;
+    border-radius: 8px;
+    background-color: white;
+    opacity: inherit;
+    box-shadow: 2px 2px 1px rgb(199, 184, 184);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.h1{
+    color: #D3EBE8;
+    font-family: "Avenir Next Medium";
+    font-size: 38px;
+    background-position: top left;
+
+
+    background-size: 100% 4px;
+
+    background-repeat: no-repeat;
+    line-height: 60px;
+}
+
+.inputs_container {
+
+    position: relative;
+}
+.input {
+    height: 32px;
+    width: 160px;
+    margin: 15px;
+    padding: 0px 25px;
+    border-radius: 10px;
+    border: none;
+    background-color: white;
+    box-shadow: 3px 3px 6px rgba(0,0,0,0.212);
+    color: black;
+    font-size: 12px;
+
+}
+.input:hover{
+    background-color: #D3EBE8;
+
+}
+.input:focus{
+    outline: none;
+    background-color: #D3EBE8;
+}
+input::placeholder{
+    color: #96d5ce;
+}
+.p{
+    font-family: "Avenir Next", sans-serif;
+    color: black;
+    font-size: 14px;
+}
+.a{
+    font-family: "Avenir Next", sans-serif;
+    color: #a1d0cc;
+    font-size: 14px;
+    position: page;
+}
+a:hover{
+    color: #d3ebe8;
+}
+.button{
+    height: 40px;
+    width: 110px;
+    border-radius: 1000px;
+    border: none;
+    color: white;
+    font-family: "Avenir Next", sans-serif;
+    font-size: 14px;
+    background: linear-gradient(to right, rgb(211, 235, 232), rgb(153, 231, 231));
+}
+.button:hover{
+    width: 200px;
+
+}
+.button:focus {
+    outline: none;
+    width: 200px;
+}
+
+
