@@ -22,7 +22,7 @@ include "Header Sicherheit.php";
 
     <!-- Formular zum Hinzufügen von Ereignissen -->
     <div
-   <form
+
     <form1 action="aktivitaeten_do.php" method="post" enctype="multipart/form-data">
         <label for="thema">Ereignis hinzufügen:</label>
         <input type="text" id="thema" name="thema" required>
@@ -42,8 +42,8 @@ include "Header Sicherheit.php";
     <br>
     <br>
 
-    </form1>
-</div>
+
+
 
 <?php 
 // Daten aus der Datenbank abrufen
@@ -74,6 +74,7 @@ foreach ($result as $row) {
 echo "</table>";
         
  ?>       
-    </form>
+    </form1>
+</div>
 </body>
 </html>
