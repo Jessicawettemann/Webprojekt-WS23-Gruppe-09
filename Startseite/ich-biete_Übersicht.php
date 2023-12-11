@@ -23,7 +23,8 @@ if ($statement->execute()){
     while($row=$statement->fetch()) {
         $chosenSong = $row["ID"];
         echo "<div class='card'>";
-        echo "<h4>".$row["beschreibung"]."</h4>";
+        echo "<h1>Beschreibung</h>";
+       echo "<h2>".$row["beschreibung"]."</h2>";
 
         if (!empty($row["foto"])) {
             echo"<div class='image'>";
@@ -32,10 +33,12 @@ if ($statement->execute()){
         } else{
             echo "<div class='small'>keine Bilddatei vorhanden</div>";
         }
-
-        echo "<h4>".$row["zustand"]."</h4>";
-        echo "<h4>".$row["preis"]."</h4>";
-        echo "<h4>".$row["ort"]."</h4>";
+        echo "<h1>Zustand</h1><br>";
+        echo "<h2>".$row["zustand"]."</h2>";
+        echo "<h1>Preis</h1><br>";
+        echo "<h2>".$row["preis"]."</h2>";
+        echo "<h1>Ort</h1><br>";
+        echo "<h2>".$row["ort"]."</h2>";
         echo "</div>";
     }
 }else{
