@@ -45,9 +45,7 @@ if (!isset($_POST["ort"])) {
 }
 
 
-if (!isset($_POST["name"]) or !isset($_FILES["foto"])) {
-    die("<div class='fail'> Formularfehler </div>");
-}
+
 $statement = $pdo->prepare("INSERT INTO Upload (beschreibung, foto,zustand,preis,ort) VALUES (?, ?,?,?,?)");
 // Feld soll nicht freigelassen werden:
 if ($_POST["name"] !=null) {
