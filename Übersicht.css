@@ -7,10 +7,10 @@ button{
     width: 110px;
     border-radius: 1000px;
     border: none;
-    color: white;
+    color: #D3EBE8;
     font-family: "Avenir Next", sans-serif;
     font-size: 14px;
-    background: linear-gradient(to right, rgb(211, 235, 232), rgb(153, 231, 231));
+    background: white;
 }
 button:hover{
     width: 200px;
