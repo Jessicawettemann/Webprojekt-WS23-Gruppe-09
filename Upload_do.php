@@ -17,22 +17,28 @@ if (!isset($_POST["beschreibung"]) ) {
 if (!isset($_FILES["foto"]["tmp_name"]) || !isset($_FILES["foto"]["name"])) {
     die("<div class='fail'> Upload fehlgeschlagen </div>");
 }
-if (!empty($_FILES["foto"]["name"])){
-    $fileName = $_FILES["foto"]["name"];
-    $fileSplit = explode(".", $fileName);
-    $fileType = $fileSplit[sizeof($fileSplit) - 1];
 
-    if ($fileType == "jpg" or $fileType == "png" or $fileType == "PNG" or $fileType == "pdf" or $fileType == "HEIC" or $fileType == "jpeg" or $fileType == "JPG") {
-        echo "";
-    } else {
-        die("<div class='fail'> Dieses Dateiformat wird nicht unterstützt. </div>");
-    }
-    if ($_FILES["foto"]["size"] > 80000000) {
-        die("<div class='fail'> Diese Datei ist leider zu groß </div>");
-    }
-    if (!move_uploaded_file($_FILES["foto"]["tmp_name"], "/home/jw170/public_html/Bilder/" . $_FILES["foto"]["name"])) {
+// Überprüfen Sie den Dateityp und die Dateigröße
+$fileName = $_FILES["foto"]["name"];
+$fileInfo = pathinfo($fileName);
+$fileType = $fileInfo['extension'];
+$fileSize = $_FILES["foto"]["size"];
+
+if ($fileType == "jpg" or $fileType == "png" or $fileType == "PNG" or $fileType == "pdf" or $fileType == "HEIC" or $fileType == "jpeg" or $fileType == "JPG") {
+    echo "";
+} else {
+    die("<div class='fail'> Dieses Dateiformat wird nicht unterstützt. </div>");
+}
+
+if ($fileSize > 80000000) {
+    die("<div class='fail'> Diese Datei ist leider zu groß </div>");
+}
+
+
+
+     if (!move_uploaded_file($_FILES["foto"]["tmp_name"], "/home/jw170/public_html/Bilder/" . $_FILES["foto"]["name"])) {
         echo "<div class='fail'> Datenbankfehler 1 </div>";
-    }
+
 }
 if (!isset($_POST["zustand"])) {
     die("<div class='fail'> Zustand eintrag falsch </div>");
