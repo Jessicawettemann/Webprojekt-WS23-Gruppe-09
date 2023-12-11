@@ -10,7 +10,7 @@ session_start();
     <meta name="viewport" content="width=device-width">
 </head>
 <?php
-if (!isset($_POST["beschreibung"]) ) {
+if (!isset($_POST["beschreibung"])  or !isset($_POST["length"])) {
     die("<div class='fail'> Formularfehler 1 </div>");
 }
 
@@ -38,15 +38,15 @@ if (!move_uploaded_file($_FILES["foto"]["tmp_name"], "/home/jw170/public_html/Bi
     echo "<div class='fail'> Datenbankfehler 1 </div>";
 }
 
-if (!isset($_POST["zustand"])) {
+if (!isset($_POST["zustand"]) or !isset($_POST["length"])) {
     die("<div class='fail'> Zustand eintrag falsch </div>");
 }
 
-if (!isset($_POST["preis"]) ) {
+if (!isset($_POST["preis"])  or !isset($_POST["length"])) {
     die("<div class='fail'> Preis eintrag falsch </div>");
 }
 
-if (!isset($_POST["ort"])) {
+if (!isset($_POST["ort"])or !isset($_POST["length"])) {
     die("<div class='fail'> Ort eintrag falsch </div>");
 }
 
