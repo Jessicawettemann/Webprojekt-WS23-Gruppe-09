@@ -33,11 +33,11 @@ if ($statement->execute()){
         } else{
             echo "<div class='small'>keine Bilddatei vorhanden</div>";
         }
-        echo "<h1>Zustand</h1><br>";
+        echo "<h1>Zustand</h1>";
         echo "<h2>".$row["zustand"]."</h2>";
-        echo "<h1>Preis</h1><br>";
+        echo "<h1>Preis</h1>";
         echo "<h2>".$row["preis"]."</h2>";
-        echo "<h1>Ort</h1><br>";
+        echo "<h1>Ort</h1>";
         echo "<h2>".$row["ort"]."</h2>";
         echo "</div>";
     }
