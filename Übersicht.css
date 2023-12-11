@@ -8,11 +8,10 @@ body {
     display: inline-block;
     border: 1px solid #ddd;
     padding: 10px;
-    margin: 10px;
+
     width: 700px;
     height: auto;
-    position: center;
-
+    margin: 10px auto; /* Hier die Änderung */
 }
 
 .image {
