@@ -15,9 +15,8 @@ session_start();
 <body>
 <h1> Das ist unsere Ich biete-Seite </h1>
 
-<a href="Upload.php">
-    <button class="button">Hinzufügen</button>
-</a>
+
+
 
 <?php
 
