@@ -13,12 +13,12 @@ body {
     height: auto;
     margin: 10px auto; /* Hier die Änderung */
 }
-.h1{
+.card h1{
     font-family: "Avenir Next Medium";
     font-size: 16px;
     color: #D3EBE8;
 }
-.h2{
+.card h2{
     font-family: "Avenir Next";
     font-size: 14px;
 }
