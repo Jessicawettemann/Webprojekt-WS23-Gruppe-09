@@ -18,7 +18,7 @@ session_start();
 <br><br>
 
 <div class="profile-card"
-<h5> Mein Profil </h5>
+
      <br>
 
 <?php
@@ -41,6 +41,7 @@ if(!isset($_SESSION["Nutzer_ID"])){
     $passwort = $row["passwort"];
 
     echo "<div class='rows'>";
+    echo "<h5> Mein Profil </h5>";
     echo "<h1>Profil bearbeiten</h1>";
     echo "<br><br><br>". " <p style= text-align:center </p>";
     echo "<img src='https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/" . $row["profilbild"] . "'height='100px'> <br><br>".
