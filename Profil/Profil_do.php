@@ -14,10 +14,11 @@ session_start();
     <link rel="stylesheet" type="text/css" href="Profil.css">
 </head>
 <body>
-<h5> Mein Profil </h5>
+
 <br><br>
 
 <div class="profile-card"
+<h5> Mein Profil </h5>
      <br>
 
 <?php
