@@ -12,16 +12,7 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
 }
-.h5 {
-    color: #D3EBE8;
 
-    font-family: "Avenir Next Medium";
-    font-size: 50px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 .profile-card img {
     width: 190px;
     height: 190px;
@@ -38,7 +29,16 @@ body {
     margin-bottom: 10px;
     font-family: "Avenir Next Medium";
 }
+.rows h5 {
+    color: #D3EBE8;
 
+    font-family: "Avenir Next Medium";
+    font-size: 50px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .rows h1{
     font-family: "Avenir Next Medium";
     color: #D3EBE8;
