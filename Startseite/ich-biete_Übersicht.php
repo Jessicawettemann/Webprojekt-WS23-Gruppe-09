@@ -43,6 +43,8 @@ if ($statement->execute()){
         echo "<h1>Ort</h1>";
         echo "<h2>".$row["ort"]."</h2>";
         echo "</div>";
+        echo "<a href= Upload.php> <button class=button>Hinzufügen</button>
+</a>";
     }
 }else{
     echo "<div class='fail'>Fehlermeldung!</div>";
