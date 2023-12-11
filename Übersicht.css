@@ -13,7 +13,15 @@ body {
     height: auto;
     margin: 10px auto; /* Hier die Änderung */
 }
-
+.h1{
+    font-family: "Avenir Next Medium";
+    font-size: 16px;
+    color: #D3EBE8;
+}
+.h2{
+    font-family: "Avenir Next";
+    font-size: 14px;
+}
 .image {
     float: left;
     margin-right: 10px;
