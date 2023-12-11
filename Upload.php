@@ -26,14 +26,13 @@ session_start();
         <label class="label" for="zustand"></label><br>
         <input type="text" name="zustand" placeholder="Zustand">
         <br>
-
-        <br>
         <label class="label" for="preis"></label><br>
         <input type="text" name="preis" placeholder="Preis">
         <br>
         <label class="label" for="ort"></label><br>
         <input type="text" name="ort" placeholder="Preis">
         <br><br><br>
+
         <button class="button" type="submit">Hochladen</button>
     </form>
 
