@@ -50,10 +50,10 @@ if (!isset($_POST["ort"])) {
     die("<div class='fail'> Ort eintrag falsch </div>");
 }
 
-if ((!empty($_POST["beschreibung"])) and (!empty($_POST["foto"])) and (!empty($_FILES["zustand"])) and (!empty($_FILES["preis"])) and (!empty($_FILES["ort"]))) {
+if ((!empty($_POST["beschreibung"])) and (!empty($_POST["foto"])) and (!empty($_POST["zustand"])) and (!empty($_POST["preis"])) and (!empty($_POST["ort"]))) {
 
     $statement = $pdo->prepare("INSERT INTO Upload (beschreibung, foto, zustand, preis, ort) VALUES (?, ?, ?, ?, ?)");
-    if ($statement->execute(array(htmlspecialchars($_POST["beschreibung"]), htmlspecialchars($_FILES["foto"]["name"]), htmlspecialchars($_FILES["zustand"]), htmlspecialchars($_FILES["preis"]), htmlspecialchars($_FILES["ort"])))) {
+    if ($statement->execute(array(htmlspecialchars($_POST["beschreibung"]), htmlspecialchars($_FILES["foto"]["name"]), htmlspecialchars($_POST["zustand"]), htmlspecialchars($_POST["preis"]), htmlspecialchars($_POST["ort"])))) {
         echo "<div class='fine'> Eintrag wurde erstellt" . "<br><br>" . "<a href='Upload.php'>weiteren Song hochladen</a> </div>";
     } else {
         echo "</div class=fail>Datenbank-Fehler 3</div>";
