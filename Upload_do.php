@@ -34,13 +34,13 @@ if (!empty($_FILES["foto"]["name"])){
         echo "<div class='fail'> Datenbankfehler 1 </div>";
     }
 }
-if (!isset($_POST["zustand"]) or !isset($_POST["length"])) {
+if (!isset($_POST["zustand"])) {
     die("<div class='fail'> Zustand eintrag falsch </div>");
 }
-if (!isset($_POST["preis"]) or !isset($_POST["length"])) {
+if (!isset($_POST["preis"]) ) {
     die("<div class='fail'> Preis eintrag falsch </div>");
 }
-if (!isset($_POST["ort"]) or !isset($_POST["length"])) {
+if (!isset($_POST["ort"])) {
     die("<div class='fail'> Ort eintrag falsch </div>");
 }
 
