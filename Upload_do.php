@@ -14,7 +14,7 @@ if (!isset($_POST["beschreibung"]) ) {
     die("<div class='fail'> Formularfehler 1 </div>");
 }
 
-if (!isset($_FILES["foto"]["tmp_name"]) || !isset($_FILES["foto"]["beschreibung"])) {
+if (!isset($_FILES["foto"]["tmp_name"]) || !isset($_FILES["foto"]["name"])) {
     die("<div class='fail'> Upload fehlgeschlagen </div>");
 }
 if (!empty($_FILES["foto"]["name"])){
