@@ -13,7 +13,9 @@ session_start();
 </head>
 
 <body>
+<br><br>
 <h1> Ich biete</h1>
+<br><br>
 
 
 

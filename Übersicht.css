@@ -2,6 +2,11 @@ body {
     font-family: "Avenir Next Medium", sans-serif;
     background-color: #D3EBE8;
 }
+h1{
+    font-family: "Avenir Next Medium";
+font-size: 30px;
+color: white;
+position: center}
 button{
     height: 40px;
     width: 110px;
