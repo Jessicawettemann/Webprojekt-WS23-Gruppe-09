@@ -2,6 +2,26 @@ body {
     font-family: "Avenir Next Medium", sans-serif;
     background-color: #D3EBE8;
 }
+.button{
+    height: 40px;
+    width: 110px;
+    border-radius: 1000px;
+    border: none;
+    color: white;
+    font-family: "Avenir Next", sans-serif;
+    font-size: 14px;
+    background: linear-gradient(to right, rgb(211, 235, 232), rgb(153, 231, 231));
+}
+.button:hover{
+    width: 200px;
+
+}
+.button:focus {
+    outline: none;
+    width: 200px;
+}
+
+
 
 .card {
     background-color: white;
