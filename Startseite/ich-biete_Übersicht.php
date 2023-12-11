@@ -14,7 +14,8 @@ session_start();
 
 <body>
 <h1> Das ist unsere Ich biete-Seite </h1>
-<a href="Upload.php"> <h3>Hochladen</h3> </a>
+
+<a href="Upload.php">  <h3>Hinzufügen</h3> </a>
 
 <?php
 
