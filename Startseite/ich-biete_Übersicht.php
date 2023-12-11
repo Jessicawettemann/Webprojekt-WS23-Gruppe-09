@@ -13,7 +13,7 @@ session_start();
 </head>
 
 <body>
-<h1> Das ist unsere Ich biete-Seite </h1>
+<h1> Ich biete</h1>
 
 
 
