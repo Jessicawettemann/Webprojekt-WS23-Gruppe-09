@@ -1,0 +1,24 @@
+body {
+    font-family: "Avenir Next Medium", sans-serif;
+    background-color: #D3EBE8;
+}
+
+.card {
+    display: inline-block;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px;
+    width: 400px;
+    height: auto;
+    color: white;
+}
+
+.image {
+    float: left;
+    margin-right: 10px;
+}
+
+.image img {
+    width: 100px;
+    height: 100px;
+}
