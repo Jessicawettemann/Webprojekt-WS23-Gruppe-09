@@ -10,7 +10,7 @@ session_start();
     <meta name="viewport" content="width=device-width">
 </head>
 <?php
-if (!isset($_POST["beschreibung"]) or !isset($_POST["length"])) {
+if (!isset($_POST["beschreibung"]) ) {
     die("<div class='fail'> Formularfehler 1 </div>");
 }
 
