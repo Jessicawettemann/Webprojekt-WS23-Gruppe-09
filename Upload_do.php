@@ -48,7 +48,7 @@ if (!isset($_POST["ort"])) {
 
 $statement = $pdo->prepare("INSERT INTO Upload (beschreibung, foto,zustand,preis,ort) VALUES (?, ?,?,?,?)");
 // Feld soll nicht freigelassen werden:
-if ($_POST["name"] !=null) {
+if ($_POST["beschreibung"] !=null) {
     if ($statement->execute(array(htmlspecialchars($_POST["beschreibung"]), htmlspecialchars($_FILES["foto"]["name"]),htmlspecialchars($_POST["zustand"]),htmlspecialchars($_POST["preis"]),htmlspecialchars($_POST["ort"])))) {
         echo "<div class='fine'> Upload erfolgreich" . "<br><br>" . "<a href='Upload.php'>weitere Künstler hinzufügen</a> </div>";
     } else {
