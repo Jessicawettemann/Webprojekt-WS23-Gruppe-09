@@ -13,6 +13,8 @@ if (isset($_GET['id'])) {
 
     // Umleiten Sie den Benutzer zur Übersichtsseite
     header('Location: ich-biete_Übersicht.php');
+    exit();
+
 } else {
     // Wenn keine Beitrags-ID vorhanden ist, zeigen Sie eine Fehlermeldung an
     echo "Keine Beitrags-ID vorhanden!";

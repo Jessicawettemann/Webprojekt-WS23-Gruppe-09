@@ -54,9 +54,9 @@ if ((!empty($_POST["beschreibung"])) and (!empty($_FILES["foto"])) and (!empty($
 
     $statement = $pdo->prepare("INSERT INTO Upload (beschreibung, foto, zustand, preis, ort) VALUES (?, ?, ?, ?, ?)");
     if ($statement->execute(array(htmlspecialchars($_POST["beschreibung"]), htmlspecialchars($_FILES["foto"]["name"]), htmlspecialchars($_POST["zustand"]), htmlspecialchars($_POST["preis"]), htmlspecialchars($_POST["ort"])))) {
-        echo "<div class='fine'> Eintrag wurde erstellt" . "<br><br>" . "<a href='Upload.php'>weiteren Song hochladen</a> </div>";
+        echo "<div class='fine'> Eintrag wurde erstellt" . "<br><br>" . "<a href='Upload.php'>weiteres Angebot hochladen</a>" . "<br><br>" . "<a href='ich-biete_Übersicht.php'>Zurück zur Übersicht</a> </div>";
     } else {
-        echo "</div class=fail>Datenbank-Fehler 3</div>";
+        echo "<div class='fail'>Datenbank-Fehler 3</div>";
         echo $statement->errorInfo()[2];
     }
 
