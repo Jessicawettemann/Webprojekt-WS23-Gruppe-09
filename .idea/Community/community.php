@@ -1,59 +1,68 @@
 <?php
 include "Header Sicherheit.php";
-include "Datenbank Verbindung.php";
-
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="de">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Community</title>
-   <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminkalender</title>
+    <link rel="stylesheet" type="text/css" href="Formulare_1.css">
 </head>
 <body>
 
 
-   <h1>Forum</h1>
-  
-   <!-- Forumbereich -->
-   <div id="forum">
-       <!-- Hier wird das Forum angezeigt -->
-   </div>
+
+    
+    <!-- Forum -->
+    <div id="forum">
+        <!-- Hier wird der Kalender angezeigt -->
+    </div>
+    <!-- Formular zum Hinzufügen von Ereignissen -->
+    <form action="community_do.php" method="post" enctype="multipart/form-data">
+        <h1>Forum</h1>
+        <br><br>
+        <label for="beitrag"></label>
+        <input type="text" placeholder="Beitrag" id="beitrag" name="beitrag" required>
+
+        <button type="submit">Beitrag hinzufügen</button>
+
+    <br>
+    <br>
+    <br><br><br><br>
 
 
-   <!-- Formular zum Hinzufügen von Beiträgen -->
-   <form action="community_do.php" method="post" enctype="multipart/form-data">
-       <label for="beitrag">Beitrag hinzufügen:</label>
-       <input type="text" id="beitrag" name="beitrag" required>
+<?php 
+// Daten aus der Datenbank abrufen
+$statement = $pdo->prepare("SELECT * FROM Beitrag");
+$statement->execute();
+$result = $statement->fetchAll();
 
+// Überschrift für die Tabelle
 
-       <button type="submit">Beitrag hinzufügen</button>
-  
-   </form>
+echo "<table border='1'>
+<br><br><br>
+<tr>
+<th>Beitrag</th>
+<th>Datum</th>
+<th>Benutzername</th>
+<th>Profilbild</th>
+</tr>";
 
+// Daten aus der Datenbank durchlaufen und in die Tabelle einfügen
+foreach ($result as $row) {
+    echo "<tr>";
+    echo "<td>" . $row['beitrag'] . "</td>";
 
-
-
-
-
-<?php
-
-
-
-
+    echo "</tr>";
+}
 
 // Tabellenende
 echo "</table>";
-
-
-
-
-
-
-?>
+        
+ ?>       
+    </form>
 </body>
 </html>
