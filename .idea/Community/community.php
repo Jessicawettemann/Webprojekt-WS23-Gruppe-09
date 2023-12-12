@@ -43,55 +43,6 @@ include "Datenbank Verbindung.php";
 <?php
 
 
-// Daten aus der Datenbank abrufen: Beitrag und Nutzer
-$statement = $pdo->prepare("SELECT Beitrag.id, Beitrag.beitrag, Beitrag.datum, Nutzer.benutzername, Nutzer.profilbild
-                            FROM Beitrag
-                            JOIN Nutzer ON Beitrag.nutzer_id = Nutzer.id");
-$statement->execute();
-$result = $statement->fetchAll();
-
-
-
-
-
-
-
-
-//DATEN ANZEIGEN
-// Daten aus der Datenbank abrufen: Beitrag
-$statement = $pdo->prepare("SELECT * FROM Beitrag");
-$statement->execute();
-$result = $statement->fetchAll();
-
-
-// Daten aus der Datenbank abrufen: Nutzer
-$statement = $pdo->prepare("SELECT * FROM Nutzer");
-$statement->execute();
-$result = $statement->fetchAll();
-
-
-// Überschrift für die Tabelle
-echo "<table border='1'>
-<tr>
-<th>Beitrag</th>
-<th>Datum</th> 
-<th>Benutzername</th> 
-<th>Profilbild</th> 
-</tr>";
-
-
-
-
-// Daten aus der Datenbank durchlaufen und in die Tabelle einfügen
-foreach ($result as $row) {
-   echo "<tr>";
-   echo "<td>" . $row['beitrag'] . "</td>";
-   echo "<td>" . $row['datum'] . "</td>";
-   echo "<td>" . $row['benutzername'] . "</td>";
-   echo "<td>" . $row['profilbild'] . "</td>";
-   echo "</tr>";
-}
-
 
 
 
