@@ -65,7 +65,6 @@ if ((!empty($_POST["beschreibung"])) and (!empty($_FILES["foto"])) and (!empty($
     die("<div class='fail'> Alle Felder müssen ausgefüllt sein!" . "<br><br>" . "<a href='Upload.php'>zurück zum Formular</a> </div>");
 }
 ?>
-?>
 
 
 
