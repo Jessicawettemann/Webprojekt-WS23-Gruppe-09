@@ -13,7 +13,7 @@ include "Datenbank Verbindung.php";
 </head>
 <body>
 
-<h1>Forum</h1>
+<h1>Forum</h1>  
 
 <!-- Forumbereich -->
 <div id="forum">
