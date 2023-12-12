@@ -29,11 +29,11 @@ if($statement->execute(array(htmlspecialchars($_POST["beitrag"]),))){
     echo "<div class='fine'> Ereignis gespeichert </div>". "<br><br>" . "<a href='community.php'>Zu den Aktivitäten</a> </div>";
 } else {
     die("<div class='fail'> Fehlgeschlagen." . "<br><br>" . "<a href='community.php'>Erneut versuchen</a> </div>");
-}
-}
-    
 
+}
 
+$statement->execute();
+}
 
 ?>
 </body>
