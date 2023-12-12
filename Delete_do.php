@@ -12,7 +12,7 @@ if (isset($_GET['id'])) {
     $statement->execute(['chosenSong' => $chosenSong]);
 
     // Umleiten Sie den Benutzer zur Übersichtsseite
-    header('Location: Übersicht.php');
+    header('Location: ich-biete_Übersicht.php');
 } else {
     // Wenn keine Beitrags-ID vorhanden ist, zeigen Sie eine Fehlermeldung an
     echo "Keine Beitrags-ID vorhanden!";
