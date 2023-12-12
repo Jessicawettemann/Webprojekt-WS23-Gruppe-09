@@ -20,7 +20,6 @@ session_start();
 
 //Aktivität eintragen
 
-
 $statement = $pdo->prepare("INSERT INTO Beitrag (beitrag) VALUES (?)");
 
 if(($_POST["beitrag"]) !=null) {
