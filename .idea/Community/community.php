@@ -18,13 +18,13 @@ include "Header Sicherheit.php";
     
     <!-- Forum -->
     <div id="forum">
-        <!-- Hier wird der Kalender angezeigt -->
+        <!-- Hier wird der das Forum angezeigt -->
     </div>
-    <!-- Formular zum Hinzufügen von Ereignissen -->
+    <!-- Formular zum Hinzufügen von Beiträgen -->
     <form action="community_do.php" method="post" enctype="multipart/form-data">
         <h1>Forum</h1>
         <br><br>
-        <label for="beitrag"></label>
+        <label for="beitrag">Beitrag hinzufügen:</label>
         <input type="text" placeholder="Beitrag" id="beitrag" name="beitrag" required>
 
         <button type="submit">Beitrag hinzufügen</button>
@@ -56,6 +56,7 @@ echo "<table border='1'>
 foreach ($result as $row) {
     echo "<tr>";
     echo "<td>" . $row['beitrag'] . "</td>";
+    echo "<td>" . $row['datum'] . "</td>";
 
     echo "</tr>";
 }
