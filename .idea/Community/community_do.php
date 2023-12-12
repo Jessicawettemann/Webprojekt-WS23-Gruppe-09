@@ -18,14 +18,14 @@ session_start();
 <?php
 
 
-//Aktivität eintragen
+//Beitrag eintragen
 
 
 $statement = $pdo->prepare("INSERT INTO Beitrag (beitrag) VALUES (?)");
 
 // Feld sollen nicht freigelassen werden:
 
-if(($_POST["beitrag"]) !=null and ($_POST["beschreibung"]) !=null and ($_POST["datum"]) !=null and ($_POST["ort"]) !=null){
+if(($_POST["beitrag"]) !=null {
     
 
 
