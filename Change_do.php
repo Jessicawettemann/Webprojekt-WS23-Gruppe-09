@@ -26,7 +26,8 @@ if(isset($_POST['submit'])){
     $ort=$_POST['ort'];
     $statement=$pdo->prepare("UPDATE Upload SET beschreibung=?, zustand=?, preis=?, ort=? WHERE ID=?");
     if ($statement->execute([$beschreibung, $zustand, $preis, $ort, $id])){
-        header('Location: Change.php');
+        header('Location: ich-biete_Übersicht.php');
+        exit ();
     }else{
         echo "<div class='fail'>Fehlermeldung!</div>";
         echo $statement->errorInfo()[2];
