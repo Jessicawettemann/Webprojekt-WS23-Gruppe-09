@@ -21,11 +21,7 @@ session_start();
 
 
 <?php
-echo "<a href= Upload.php> <button class=button>Hinzufügen</button>";
-"</br>";
-"</br>";
-"</br>";
-"</br>";
+echo "<a href= Upload.php> <button class=button>Hinzufügen</button>"; 
 $statement=$pdo->prepare("SELECT * FROM Upload");
 if ($statement->execute()){
     while($row=$statement->fetch()) {
