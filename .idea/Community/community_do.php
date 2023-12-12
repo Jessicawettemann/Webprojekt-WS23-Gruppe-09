@@ -27,7 +27,7 @@ session_start();
 //Beitrag eintragen
 
 
-$statement = $pdo->prepare("INSERT INTO beitrag (beitrag) VALUES (?)");
+$statement = $pdo->prepare("INSERT INTO Beitrag (beitrag) VALUES (?)");
 
 
 // Feld sollen nicht freigelassen werden:
