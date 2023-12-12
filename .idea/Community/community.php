@@ -22,7 +22,7 @@ include "Datenbank Verbindung.php";
         <!-- Hier wird der Kalender angezeigt -->
     </div>
     <!-- Formular zum Hinzufügen von Ereignissen -->
-    <form action="community.php" method="post" enctype="multipart/form-data">
+    <form action="community_do.php" method="post" enctype="multipart/form-data">
         <h1>Forum</h1>
         <br><br>
         <label for="beitrag"></label>
