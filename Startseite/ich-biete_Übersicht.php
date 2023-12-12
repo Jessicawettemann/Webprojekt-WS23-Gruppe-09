@@ -28,8 +28,9 @@ if ($statement->execute()){
         $chosenSong = $row["ID"];
         echo "<div class='card'>";
         echo "<h1>Beschreibung</h>";
-       echo "<h2>".$row["beschreibung"]."</h2>";
-
+        echo "<h2>".$row["beschreibung"]."</h2>";
+        echo "<a href= Upload.php> <button class=button>Hinzufügen</button>";
+        
         if (!empty($row["foto"])) {
             echo"<div class='image'>";
             echo "<img src='https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/" . $row["foto"] . "'>";
