@@ -44,10 +44,9 @@ if ($statement->execute()){
         echo "<h1>Ort</h1>";
         echo "<h2>".$row["ort"]."</h2>";
         echo "</div>";
-        echo "<a href= Upload.php> <button class=button>Hinzufügen</button>
-        echo "<a href= Change.php> <button class=button>Bearbeiten</button>
-        echo "<a href= Delete_do.php> <button class=button>Löschen</button>
-</a>";
+        echo "<a href= Upload.php> <button class=button>Hinzufügen</button>";
+        echo "<a href Delete_do.php> <button class=button>Löschen</button>";
+        echo "<a href= Delete_do.php> <button class=button>Löschen</button>"; 
     }
 }else{
     echo "<div class='fail'>Fehlermeldung!</div>";
