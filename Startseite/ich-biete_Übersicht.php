@@ -22,6 +22,10 @@ session_start();
 
 <?php
 echo "<a href= Upload.php> <button class=button>Hinzufügen</button>";
+"</br>";
+"</br>";
+"</br>";
+"</br>";
 $statement=$pdo->prepare("SELECT * FROM Upload");
 if ($statement->execute()){
     while($row=$statement->fetch()) {
@@ -29,7 +33,7 @@ if ($statement->execute()){
         echo "<div class='card'>";
         echo "<h1>Beschreibung</h>";
         echo "<h2>".$row["beschreibung"]."</h2>";
-        echo "<a href= Upload.php> <button class=button>Hinzufügen</button>";
+        
 
         if (!empty($row["foto"])) {
             echo"<div class='image'>";
@@ -45,7 +49,6 @@ if ($statement->execute()){
         echo "<h1>Ort</h1>";
         echo "<h2>".$row["ort"]."</h2>";
         echo "</div>";
-        echo "<a href= Upload.php> <button class=button>Hinzufügen</button>";
         echo "<a href=Delete_do.php?id=".$row['ID']."> <button class=button>Löschen</button>";
         echo "<a href= Bearbeiten.php> <button class=button>Bearbeiten</button>"; 
     }
