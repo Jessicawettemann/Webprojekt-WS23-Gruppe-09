@@ -25,7 +25,7 @@ $statement = $pdo->prepare("INSERT INTO Beitrag (beitrag) VALUES (?)");
 
 // Feld sollen nicht freigelassen werden:
 
-if(($_POST["beitrag"]) !=null {
+if(($_POST["beitrag"]) !=null){
     
 
 
