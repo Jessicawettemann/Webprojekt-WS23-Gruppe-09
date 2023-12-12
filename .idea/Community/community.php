@@ -36,9 +36,10 @@ include "Header Sicherheit.php";
 
 <?php 
 // Daten aus der Datenbank abrufen
-$statement = $pdo->prepare("SELECT * FROM Beitrag");
+$statement = $pdo->prepare("SELECT * FROM Beitrag ORDER BY datum ASC");
 $statement->execute();
 $result = $statement->fetchAll();
+
 
 // Überschrift für die Tabelle
 
