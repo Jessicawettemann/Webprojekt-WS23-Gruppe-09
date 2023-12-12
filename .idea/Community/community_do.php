@@ -45,7 +45,6 @@ if(($_POST["beitrag"]) !=null){
 
 
 
-
 ?>
 </body>
 </html>
