@@ -17,11 +17,11 @@ include "Datenbank Verbindung.php";
 
 
     
-    <!-- Kalenderbereich -->
+    <!-- Forum -->
     <div id="forum">
-        <!-- Hier wird der Kalender angezeigt -->
+        <!-- Hier wird das Forum angezeigt -->
     </div>
-    <!-- Formular zum Hinzufügen von Ereignissen -->
+    <!-- Formular zum Hinzufügen von Beiträgen -->
     <form action="community_do.php" method="post" enctype="multipart/form-data">
         <h1>Forum</h1>
         <br><br>
@@ -37,7 +37,7 @@ include "Datenbank Verbindung.php";
 
 <?php 
 // Daten aus der Datenbank abrufen
-$statement = $pdo->prepare("SELECT * FROM Beitrag ORDER BY datum ASC");
+$statement = $pdo->prepare("SELECT * FROM Beitrag");
 $statement->execute();
 $result = $statement->fetchAll();
 
