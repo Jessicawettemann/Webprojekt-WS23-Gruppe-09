@@ -18,7 +18,7 @@ session_start();
     <form action="Upload_do.php" method="post" enctype="multipart/form-data">
         <h1> Upload</h1>
         <label class="label" for="beschreibung"></label><br>
-        <input type="text" name="beschreibung" placeholder="Beschreinbung">
+        <input type="text" name="beschreibung" placeholder="Beschreibung">
         <br>
         <label class="label" for="foto"></label><br>
         <input type="file" name="foto" placeholder="Foto">
@@ -30,7 +30,7 @@ session_start();
         <input type="text" name="preis" placeholder="Preis">
         <br>
         <label class="label" for="ort"></label><br>
-        <input type="text" name="ort" placeholder="Preis">
+        <input type="text" name="ort" placeholder="Ort">
         <br><br><br>
 
         <button class="button" type="submit">Hochladen</button>
