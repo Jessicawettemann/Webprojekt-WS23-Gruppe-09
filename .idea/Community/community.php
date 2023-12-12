@@ -17,18 +17,18 @@ include "Datenbank Verbindung.php";
 
 
     
-    <!-- Forum -->
+    <!-- Kalenderbereich -->
     <div id="forum">
-        <!-- Hier wird der das Forum angezeigt -->
+        <!-- Hier wird der Kalender angezeigt -->
     </div>
-    <!-- Formular zum Hinzufügen von Beiträgen -->
-    <form action="community_do.php" method="post" enctype="multipart/form-data">
+    <!-- Formular zum Hinzufügen von Ereignissen -->
+    <form action="community.php" method="post" enctype="multipart/form-data">
         <h1>Forum</h1>
         <br><br>
-        <label for="beitrag">Beitrag hinzufügen:</label>
+        <label for="beitrag"></label>
         <input type="text" placeholder="Beitrag" id="beitrag" name="beitrag" required>
 
-        <button type="submit">Beitrag hinzufügen</button>
+        <button type="submit">Ereignis hinzufügen</button>
 
     <br>
     <br>
@@ -41,7 +41,6 @@ $statement = $pdo->prepare("SELECT * FROM Beitrag ORDER BY datum ASC");
 $statement->execute();
 $result = $statement->fetchAll();
 
-
 // Überschrift für die Tabelle
 
 echo "<table border='1'>
@@ -49,8 +48,6 @@ echo "<table border='1'>
 <tr>
 <th>Beitrag</th>
 <th>Datum</th>
-<th>Benutzername</th>
-<th>Profilbild</th>
 </tr>";
 
 // Daten aus der Datenbank durchlaufen und in die Tabelle einfügen
@@ -58,7 +55,6 @@ foreach ($result as $row) {
     echo "<tr>";
     echo "<td>" . $row['beitrag'] . "</td>";
     echo "<td>" . $row['datum'] . "</td>";
-
     echo "</tr>";
 }
 
