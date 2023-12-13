@@ -40,8 +40,8 @@ if(!isset($_SESSION["Nutzer_ID"])){
 
         <button class="button" type="submit">Hochladen</button>
         <br>
-        <p>Zurück zum Start <br><br> <a href="Startseite.php"</a>
-        </p>
+         <a href="Startseite.php">Zurück zum Start</a>
+
     </form1>
 
     <?php
