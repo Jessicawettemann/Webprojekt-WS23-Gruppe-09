@@ -13,7 +13,11 @@ session_start();
 </head>
 <body>
 
-
+<?php
+if(!isset($_SESSION["Nutzer_ID"])){
+    echo("<div class='fail'> Bitte melde dich zunächst an! "."<br><br>". "<a href='Login Formular.php'>Hier geht's zum Login</a> </div>");
+}else{
+?>
 
     <form action="Upload_do.php" method="post" enctype="multipart/form-data">
         <h1> Upload</h1>
@@ -36,7 +40,9 @@ session_start();
         <button class="button" type="submit">Hochladen</button>
     </form>
 
-
+    <?php
+}
+?>
 
 </body>
 </html>
