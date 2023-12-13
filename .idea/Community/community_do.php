@@ -14,7 +14,7 @@ session_start();
    <meta name="viewport" content="width=device-width">
 
 
-   <title>Kalender</title>
+   <title>Forum</title>
 </head>
 <body>
 
