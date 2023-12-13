@@ -32,8 +32,8 @@ button:focus {
     background-color: white;
     display: inline-block;
     border: 1px solid #ddd;
-    padding: 10px;
 
+    padding: 60px;
     width: 700px;
     height: auto;
     margin: 10px auto; /* Hier die Änderung */
