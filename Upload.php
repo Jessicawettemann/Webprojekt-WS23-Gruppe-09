@@ -39,9 +39,6 @@ if(!isset($_SESSION["Nutzer_ID"])){
         <br>
 
         <button class="button" type="submit">Hochladen</button>
-        <br><br>
-
-
     </form1>
 
     <?php
