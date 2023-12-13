@@ -80,7 +80,7 @@ input:focus{
     background-color: #D3EBE8;
 }
 input::placeholder{
-    color: #96d5ce;
+    color: black;
 }
 p{
     font-family: "Avenir Next", sans-serif;
