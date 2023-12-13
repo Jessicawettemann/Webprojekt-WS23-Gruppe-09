@@ -2,6 +2,13 @@
 include "Header Sicherheit.php";
 include "Datenbank Verbindung.php";
 session_start();
+?>
+
+<?php
+// Admin kann diese Funktion nur nutzen
+if (!isset($_SESSION["admin"])) {
+    die("<div class='fail'>Diese Funktion steht nur den Admins zu! "."<br><br>". "<a href='Login_Admin.php'>Hier geht's zum Admin-Login</a> </div>");
+}
 
 // Stellen Sie sicher, dass eine Beitrags-ID vorhanden ist
 if (isset($_GET['id'])) {
