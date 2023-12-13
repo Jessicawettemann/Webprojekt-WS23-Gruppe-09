@@ -1,6 +1,6 @@
 <?php
 include "Datenbank Verbindung.php";
-include "Header Sicherheit.php";
+
 session_start();
 ?>
 
@@ -39,6 +39,9 @@ if(!isset($_SESSION["Nutzer_ID"])){
         <br>
 
         <button class="button" type="submit">Hochladen</button>
+        <br>
+        <p>Zurück zum Start <br><br> <a href="Startseite.php"</a>
+        </p>
     </form1>
 
     <?php
