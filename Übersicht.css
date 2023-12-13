@@ -33,7 +33,7 @@ button:focus {
     display: inline-block;
     border: 1px solid #ddd;
     padding: 10px;
-
+   border-radius: 8px;
     width: 700px;
     height: auto;
     margin: 10px auto; /* Hier die Änderung */
