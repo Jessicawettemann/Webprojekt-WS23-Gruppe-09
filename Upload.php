@@ -27,6 +27,9 @@ if(!isset($_SESSION["Nutzer_ID"])){
         <label class="label" for="foto"></label><br>
         <input type="file" name="foto" placeholder="Foto">
         <br>
+       //ist noch nicht fertig <label class="label" for="datei"></label><br>
+        <input type="file" name="datei" placeholder="Weitere Datei optional">
+        <br>
         <label class="label" for="zustand"></label><br>
         <input type="text" name="zustand" placeholder="Zustand">
         <br>
