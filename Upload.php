@@ -7,7 +7,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" type="text/css" href="Formulare.css">
+
     <title>Uploads</title>
 </head>
 <body>
@@ -19,7 +19,7 @@ if(!isset($_SESSION["Nutzer_ID"])){
 }else{
     ?>
 
-    <form1 action="Upload_do.php" method="post" enctype="multipart/form-data">
+    <form action="Upload_do.php" method="post" enctype="multipart/form-data">
         <h1> Upload</h1>
         <label class="label" for="beschreibung"></label><br>
         <input type="text" name="beschreibung" placeholder="Beschreibung">
@@ -35,9 +35,9 @@ if(!isset($_SESSION["Nutzer_ID"])){
         <br>
         <label class="label" for="ort"></label><br>
         <input type="text" name="ort" placeholder="Ort">
-        <br><br><br>
+        <br><br>
         <button class="button" type="submit">Hochladen</button>
-    </form1>
+    </form>
 
 
     <?php
