@@ -23,19 +23,19 @@ if(!isset($_SESSION["Nutzer_ID"])){
         <h1> Upload</h1>
         <label class="label" for="beschreibung"></label><br>
         <input type="text" name="beschreibung" placeholder="Beschreibung">
-        <br>
+
         <label class="label" for="foto"></label><br>
         <input type="file" name="foto" placeholder="Foto">
-        <br>
+
         <label class="label" for="zustand"></label><br>
         <input type="text" name="zustand" placeholder="Zustand">
-        <br>
+
         <label class="label" for="preis"></label><br>
         <input type="text" name="preis" placeholder="Preis">
-        <br>
+
         <label class="label" for="ort"></label><br>
         <input type="text" name="ort" placeholder="Ort">
-        <br><br><br>
+        <br>
         <button class="button" type="submit">Hochladen</button>
     </form1>
 
