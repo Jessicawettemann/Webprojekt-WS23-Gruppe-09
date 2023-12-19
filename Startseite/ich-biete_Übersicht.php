@@ -21,7 +21,7 @@ session_start();
 
 
 <?php
-echo "<a href= Upload.php> <button class=button>Hinzufügen</button>"; 
+
 $statement=$pdo->prepare("SELECT * FROM Upload");
 if ($statement->execute()){
     while($row=$statement->fetch()) {
@@ -45,8 +45,10 @@ if ($statement->execute()){
         echo "<h1>Ort</h1>";
         echo "<h2>".$row["ort"]."</h2>";
         echo "</div>";
+
         echo "<a href=Delete_do.php?id=".$row['ID']."> <button class=button>Löschen</button>";
-        echo "<a href= Bearbeiten.php> <button class=button>Bearbeiten</button>"; 
+        echo "<a href= Bearbeiten.php> <button class=button>Bearbeiten</button>";
+        echo "<a href= Upload.php> <button class=button>Hinzufügen</button>";
     }
 }else{
     echo "<div class='fail'>Fehlermeldung!</div>";
