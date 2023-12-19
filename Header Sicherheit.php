@@ -19,7 +19,7 @@ session_start();
 
             <li class="li"><a href="Startseite.php">Startseite</a></li>
             <li class="li"><a href="Profil_do.php">Mein Profil</a></li>
-            <li class="li"><a href="Login_Admin.php">Login Admin</a></li>
+
 
 
             <?php
@@ -28,6 +28,15 @@ session_start();
                 echo "<li class='li'><a href='Logout.php'>Logout</a></li";
             }else{
                 echo "<li class='li'><a href='Login Formular.php'>Login</a></li";
+            }
+            ?>
+
+            <?php
+            #wenn Nutzer angemeldet ist wird zum Logout verlinkt, anderenfalls zum Login
+            if(isset($_SESSION["admin"])) {
+                echo "<li class='li'><a href='Logout_Admin.php'>Logout Admin</a></li";
+            }else{
+                echo "<li class='li'><a href='Login_Admin.php'>Login Admin</a></li";
             }
             ?>
 
