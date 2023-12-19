@@ -29,9 +29,9 @@ session_start();
             }else{
                 echo "<li class='li'><a href='Login Formular.php'>Login</a></li";
             }
-            ?>
 
-            <?php
+
+
             #wenn Nutzer angemeldet ist wird zum Logout verlinkt, anderenfalls zum Login
             if(isset($_SESSION["admin"])) {
                 echo "<li class='li'><a href='Logout_Admin.php'>Logout Admin</a></li";
