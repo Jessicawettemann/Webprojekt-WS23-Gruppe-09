@@ -32,7 +32,7 @@ if(!isset($_SESSION["Upload_ID"])){
             echo "<label for='foto'>Foto:</label><br>";
             echo "<input type='file' id='Foto' name='foto' value='".$row['Foto']."><br>";
             echo "<label for='optionalImage'>Optional:</label><br>";
-            echo "<input type='file' id='optionalImage' name='Optional' value='".$row['Otional']."><br>";
+            echo "<input type='file' id='optionalImage' name='optional' value='".$row['optional']."><br>";
             echo "<label for='zustand'>Zustand:</label><br>";
             echo "<input type='text' id='Zustand' name='zustand' value='".$row['Zustand']."'><br>";
             echo "<label for='preis'>Preis:</label><br>";
