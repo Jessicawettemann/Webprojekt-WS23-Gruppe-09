@@ -38,6 +38,13 @@ if ($statement->execute()){
         } else{
             echo "<div class='small'>keine Bilddatei vorhanden</div>";
         }
+        if (!empty($row["optionalImage"])) {
+            echo"<div class='pdf'>";
+            echo "<img src='https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/" . $row["optionalImage"] . "'>";
+            echo "</div>";
+        } else{
+            echo "<div class='small'>keine Bilddatei vorhanden</div>";
+        }
         echo "<h1>Zustand</h1>";
         echo "<h2>".$row["zustand"]."</h2>";
         echo "<h1>Preis</h1>";
