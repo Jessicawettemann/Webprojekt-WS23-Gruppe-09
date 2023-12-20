@@ -18,8 +18,8 @@ session_start();
 <br><br>
 
 <?php
-if(isset($_GET['id'])){
-    $id=$_GET['id'];
+if(isset($_GET['ID'])){
+    $id=$_GET['ID'];
     $statement=$pdo->prepare("SELECT * FROM Upload WHERE ID=?");
     if ($statement->execute([$id])){
         while($row=$statement->fetch()){
