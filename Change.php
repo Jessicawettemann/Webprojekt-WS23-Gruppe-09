@@ -20,10 +20,10 @@ session_start();
 <?php
 if(!isset($_SESSION["Upload_ID"])){
 } else {
-    $beitrag = $_SESSION["Upload_ID"];
+    $Upload = $_SESSION["Upload_ID"];
 }
     $statement=$pdo->prepare("SELECT * FROM Upload WHERE ID=?");
-    if ($statement->execute([$beitrag])){
+    if ($statement->execute([$Upload])){
         while($row=$statement->fetch()){
             echo "<form action='Change_do.php' method='post' enctype='multipart/form-data'>";
             echo "<input type='hidden' name='id' value='".$row['ID']."'>";
