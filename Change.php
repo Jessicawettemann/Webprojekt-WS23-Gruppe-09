@@ -34,7 +34,7 @@ if(!isset($_SESSION["Upload_ID"])){
             echo "<label for='optionalImage'>Optional:</label><br>";
             echo "<input type='file' id='optionalImage' name='Optional' value='".$row['Otional']."><br>";
             echo "<label for='zustand'>Zustand:</label><br>";
-            echo "<input type='text' id='Zustand' name='zustand' value='".$row['Zustand']."'><br>";
+            echo "<input type='text' id='zustand' name='zustand' value='".$row['Zustand']."'><br>";
             echo "<label for='preis'>Preis:</label><br>";
             echo "<input type='text' id='preis' name='preis' value='".$row['Preis']."'><br>";
             echo "<label for='ort'>Ort:</label><br>";
