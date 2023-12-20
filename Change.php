@@ -20,8 +20,8 @@ session_start();
 <?php
 if(isset($_GET['id'])){
     $id=$_GET['id'];
-    $statement=$pdo->prepare("SELECT * FROM Upload WHERE ID=id");
-    if ($statement->execute(['id'=$id])){
+    $statement=$pdo->prepare("SELECT * FROM Upload WHERE ID=?");
+    if ($statement->execute([$id])){
         while($row=$statement->fetch()){
             echo "<form action='Change_do.php' method='post' enctype='multipart/form-data'>";
             echo "<input type='hidden' name='id' value='".$row['ID']."'>";
