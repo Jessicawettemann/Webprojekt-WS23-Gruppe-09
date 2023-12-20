@@ -21,12 +21,13 @@ session_start();
 if(isset($_POST['submit'])){
     $id=$_POST['id'];
     $beschreibung=$_POST['beschreibung'];
-    $foto=$_POST['foto'];
+    $foto=$_FILES['foto'];
+    $optionalImage=$_FILES['optionalImage'];
     $zustand=$_POST['zustand'];
     $preis=$_POST['preis'];
     $ort=$_POST['ort'];
-    $statement=$pdo->prepare("UPDATE Upload SET beschreibung=?, foto=?, zustand=?, preis=?, ort=? WHERE ID=?");
-    if ($statement->execute([$id, $beschreibung, $foto, $zustand, $preis, $ort])){
+    $statement=$pdo->prepare("UPDATE Upload SET beschreibung=?, foto=?, optionalImage=?, zustand=?, preis=?, ort=? WHERE ID=?");
+    if ($statement->execute([$id, $beschreibung, $foto, $optionalImage, $zustand, $preis, $ort])){
         header('Location: ich-biete_Übersicht.php');
         exit ();
     }else{
