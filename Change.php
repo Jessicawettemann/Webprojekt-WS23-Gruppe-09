@@ -23,7 +23,7 @@ if(isset($_GET['id'])){
     $statement=$pdo->prepare("SELECT * FROM Upload WHERE ID=:id");
     if ($statement->execute(['id' => $id])){
         while($row=$statement->fetch()){
-            echo "<form action='Change_do.php' method='post' enctype='multipart/form-data'>";
+            echo "<form action='Upload_do.php' method='post' enctype='multipart/form-data'>";
             echo "<input type='hidden' name='id' value='".$row['ID']."'>";
             echo "<label for='beschreibung'>Beschreibung:</label><br>";
             echo "<input type='text' id='Beschreibung' name='beschreibung' value='".$row['Beschreibung']."'><br>";
