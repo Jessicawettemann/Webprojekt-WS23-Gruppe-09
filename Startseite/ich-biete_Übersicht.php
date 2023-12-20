@@ -43,7 +43,7 @@ if ($statement->execute()){
             echo "<img src='https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/" . $row["optionalImage"] . "'>";
             echo "</div>";
         } else{
-            echo "<div class='small'>keine Bilddatei vorhanden</div>";
+            echo "<div class='small'>optional</div>";
         }
         echo "<h1>Zustand</h1>";
         echo "<h2>".$row["zustand"]."</h2>";
