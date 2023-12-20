@@ -26,11 +26,11 @@ if(isset($_GET['id'])){
             echo "<form action='Change_do.php' method='post' enctype='multipart/form-data'>";
             echo "<input type='hidden' name='id' value='".$row['ID']."'>";
             echo "<label for='beschreibung'>Beschreibung:</label><br>";
-            echo "<input type='text' id='Beschreibung' name='beschreibung' value='".$row['<Beschreibung']."'><br>";
+            echo "<input type='text' id='Beschreibung' name='beschreibung' value='".$row['Beschreibung']."'><br>";
             echo "<label for='foto'>Foto:</label><br>";
-            echo "<input type='file' id='Foto' name='foto'><br>";
+            echo "<input type='file' id='Foto' name='foto' value='".$row['Foto']."><br>";
             echo "<label for='optionalImage'>Optional:</label><br>";
-            echo "<input type='file' id='optionalImage' name='Optional'><br>";
+            echo "<input type='file' id='optionalImage' name='Optional' value='".$row['Otional']."><br>";
             echo "<label for='zustand'>Zustand:</label><br>";
             echo "<input type='text' id='Zustand' name='zustand' value='".$row['Zustand']."'><br>";
             echo "<label for='preis'>Preis:</label><br>";
