@@ -18,10 +18,12 @@ session_start();
 <br><br>
 
 <?php
-if(isset($_GET['id'])){
-    $id=$_GET['id'];
-    $statement=$pdo->prepare("SELECT * FROM Upload WHERE ID=:id");
-    if ($statement->execute(['id' => $id])){
+if(!isset($_SESSION["Upload_ID"])){
+} else {
+    $beitrag = $_SESSION["Upload_ID"];
+}
+    $statement=$pdo->prepare("SELECT * FROM Upload WHERE ID=?");
+    if ($statement->execute([$Upload_ID])){
         while($row=$statement->fetch()){
             echo "<form action='Change_do.php' method='post' enctype='multipart/form-data'>";
             echo "<input type='hidden' name='id' value='".$row['ID']."'>";
@@ -46,7 +48,6 @@ if(isset($_GET['id'])){
         echo $statement->errorInfo()[2];
         die();
     }
-}
 ?>
 
 </body>
