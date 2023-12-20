@@ -29,6 +29,8 @@ if(isset($_GET['id'])){
             echo "<input type='text' id='Beschreibung' name='beschreibung' value='".$row['<Beschreibung']."'><br>";
             echo "<label for='foto'>Foto:</label><br>";
             echo "<input type='file' id='Foto' name='foto'><br>";
+            echo "<label for='optionalImage'>Optional:</label><br>";
+            echo "<input type='file' id='optionalImage' name='Optional'><br>";
             echo "<label for='zustand'>Zustand:</label><br>";
             echo "<input type='text' id='Zustand' name='zustand' value='".$row['Zustand']."'><br>";
             echo "<label for='preis'>Preis:</label><br>";
