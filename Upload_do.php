@@ -59,7 +59,7 @@ if (isset($_FILES["optionalImage"]["tmp_name"]) && isset($_FILES["optionalImage"
     
         // Verschiebung zusätzliche Bild in den gewünschten Ordner
         if (!move_uploaded_file($_FILES["optionalImage"]["tmp_name"], "/home/jw170/public_html/Bilder/" . $_FILES["optionalImage"]["name"])) {
-            echo "<div class='fail'> Datenbankfehler 1 </div>";
+            echo "<div class='fail'> Datenbankfehler  optionales Bild</div>";
         }
     }
 
@@ -77,7 +77,7 @@ if (!isset($_POST["ort"])) {
 
 if ((!empty($_POST["beschreibung"])) and (!empty($_FILES["foto"])) and (!empty($_POST["zustand"])) and (!empty($_POST["preis"])) and (!empty($_POST["ort"]))) {
 
-    $statement = $pdo->prepare("INSERT INTO Upload (beschreibung, foto, optionalImage, zustand, preis, ort) VALUES (?, ?, ?, ?, ?)");
+    $statement = $pdo->prepare("INSERT INTO Upload (beschreibung, foto, optionalImage, zustand, preis, ort) VALUES (?, ?, ?, ?, ?,?)");
     if ($statement->execute(array(htmlspecialchars($_POST["beschreibung"]), htmlspecialchars($_FILES["foto"]["name"]), htmlspecialchars($_FILES["optionalImage"]["name"]), htmlspecialchars($_POST["zustand"]), htmlspecialchars($_POST["preis"]), htmlspecialchars($_POST["ort"])))) {
         echo "<div class='fine'> Eintrag wurde erstellt" . "<br><br>" . "<a href='Upload.php'>weiteres Angebot hochladen</a>" . "<br><br>" . "<a href='ich-biete_Übersicht.php'>Zurück zur Übersicht</a> </div>";
     } else {
