@@ -23,7 +23,7 @@ if(!isset($_SESSION["Upload_ID"])){
     $beitrag = $_SESSION["Upload_ID"];
 }
     $statement=$pdo->prepare("SELECT * FROM Upload WHERE ID=?");
-    if ($statement->execute([$Upload_ID])){
+    if ($statement->execute([$beitrag])){
         while($row=$statement->fetch()){
             echo "<form action='Change_do.php' method='post' enctype='multipart/form-data'>";
             echo "<input type='hidden' name='id' value='".$row['ID']."'>";
