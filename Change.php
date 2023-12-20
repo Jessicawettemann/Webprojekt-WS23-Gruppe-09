@@ -20,10 +20,10 @@ session_start();
 <?php
 if(!isset($_SESSION["Upload_ID"])){
 } else {
-    $beitrag = $_SESSION["Upload_ID"];
+    $Upload = $_SESSION["Upload_ID"];
 }
     $statement=$pdo->prepare("SELECT * FROM Upload WHERE ID=?");
-    if ($statement->execute([$beitrag])){
+    if ($statement->execute([$Upload])){
         while($row=$statement->fetch()){
             echo "<form action='Change_do.php' method='post' enctype='multipart/form-data'>";
             echo "<input type='hidden' name='id' value='".$row['ID']."'>";
@@ -33,8 +33,8 @@ if(!isset($_SESSION["Upload_ID"])){
             echo "<input type='file' id='foto' name='foto' value='".$row['Foto']."><br>";
             echo "<label for='optionalImage'>Optional:</label><br>";
             echo "<input type='file' id='optionalImage' name='Optional' value='".$row['Otional']."><br>";
-            echo "<label for='zustand'>zustand:</label><br>";
-            echo "<input type='text' id='zustand' name='zustand' value='".$row['Zustand']."'><br>";
+            echo "<label for='zustand'>Zustand:</label><br>";
+            echo "<input type='text' id='Zustand' name='zustand' value='".$row['Zustand']."'><br>";
             echo "<label for='preis'>Preis:</label><br>";
             echo "<input type='text' id='preis' name='preis' value='".$row['Preis']."'><br>";
             echo "<label for='ort'>Ort:</label><br>";
