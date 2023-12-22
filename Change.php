@@ -2,53 +2,58 @@
 include "Header Sicherheit.php";
 include "Datenbank Verbindung.php";
 session_start();
+
+if(isset($_POST['change'])) {
+    $change = $_POST['change'];
+    $newValue = $_POST['newValue'];
+    $ID = $_POST['ID'];
+
+    $stmt = $pdo->prepare("UPDATE Upload SET " . $change . " = :newValue WHERE ID = :ID");
+    $stmt->bindParam(':newValue', $newValue);
+    $stmt->bindParam(':ID', $ID);
+
+    if($stmt->execute()) {
+        echo "<div class='success'>Der Wert wurde erfolgreich geändert.</div>";
+    } else {
+        echo "<div class='fail'>Fehlermeldung!</div>";
+        echo $stmt->errorInfo()[2];
+    }
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>Bearbeiten</title>
+    <title>Ändern</title>
     <link rel="stylesheet" href="Übersicht.css">
 </head>
 
 <body>
-<br><br>
-<h1> Bearbeiten</h1>
+<h1>Wert ändern</h1>
 <br><br>
 
-<?php
-if(!isset($_SESSION["Upload_ID"])){
-} else {
-    $Upload = $_SESSION["Upload_ID"];
-}
-    $statement=$pdo->prepare("SELECT * FROM Upload WHERE ID=?");
-    if ($statement->execute([$Upload])){
-        while($row=$statement->fetch()){
-            echo "<form action='Change_do.php' method='post' enctype='multipart/form-data'>";
-            echo "<input type='hidden' name='id' value='".$row['ID']."'>";
-            echo "<label for='beschreibung'>Beschreibung:</label><br>";
-            echo "<input type='text' id='beschreibung' name='beschreibung' value='".$row['Beschreibung']."'><br>";
-            echo "<label for='foto'>Foto:</label><br>";
-            echo "<input type='file' id='foto' name='foto' value='".$row['Foto']."><br>";
-            echo "<label for='optionalImage'>Optional:</label><br>";
-            echo "<input type='file' id='optionalImage' name='Optional' value='".$row['Otional']."><br>";
-            echo "<label for='zustand'>Zustand:</label><br>";
-            echo "<input type='text' id='zustand' name='zustand' value='".$row['Zustand']."'><br>";
-            echo "<label for='preis'>Preis:</label><br>";
-            echo "<input type='text' id='preis' name='preis' value='".$row['Preis']."'><br>";
-            echo "<label for='ort'>Ort:</label><br>";
-            echo "<input type='text' id='ort' name='ort' value='".$row['Ort']."'><br>";
-            echo "<br><br>";
-            echo "<input type='submit' name='submit' value='Bearbeiten'>";
-            echo "</form>";
-        }
-    }else{
-        echo "<div class='fail'>Fehlermeldung!</div>";
-        echo $statement->errorInfo()[2];
-        die();
-    }
-?>
+<form method="post">
+    <label for="change">Zu ändernder Wert:</label>
+    <select name="change" id="change">
+        <option value="beschreibung">Beschreibung</option>
+        <option value="zustand">Zustand</option>
+        <option value="preis">Preis</option>
+        <option value="ort">Ort</option>
+    </select>
+    <br><br>
 
+    <label for="newValue">Neuer Wert:</label>
+    <input type="text" name="newValue" id="newValue" required>
+    <br><br>
+
+    <label for="ID">ID:</label>
+    <input type="number" name="ID" id="ID" required>
+    <br><br>
+
+    <input type="submit" value="Ändern">
+</form>
+
+<a href="Uploads.php"> <button class="button">Zurück</button></a>
 </body>
 </html>
