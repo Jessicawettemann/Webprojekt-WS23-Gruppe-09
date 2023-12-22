@@ -25,7 +25,7 @@ if ($statement->execute(array($_GET["ID"]))){
              <input type="text" placeholder="Neuer Preis" name="preis" value="<?php echo $row["preis"];?>" > <br>
 
             <button type="submit">Absenden</button> <br>
-            <a href="ich-biete_Übersicht.php"> <button class="button">Zurück</button></a>
+            <a href="ich-biete_Übersicht.php">Zurück </a>
         </form>
         <?php
 
