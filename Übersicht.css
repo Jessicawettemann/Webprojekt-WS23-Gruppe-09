@@ -35,6 +35,7 @@ button:focus {
     width: 500px;
     height: auto;
     margin: 10px auto; /* Hier die Änderung */
+
 }
 .card h1{
     font-family: "Avenir Next Medium";
