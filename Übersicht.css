@@ -59,6 +59,11 @@ button:focus {
     margin-right: 10px;
 }
 .pdf img{
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
+}
+.small{
+    float: left;
+    font-size: 12px;
+    color: #D3EBE8;
 }
