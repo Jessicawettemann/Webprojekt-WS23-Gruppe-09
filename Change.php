@@ -18,13 +18,14 @@ $statement=$pdo->prepare("SELECT * FROM Upload WHERE ID=?");
 if ($statement->execute(array($_GET["ID"]))){
     if($row=$statement->fetch()){
         ?>
+        <h1>Bearbeiten</h1>
         <form action="Change_do.php?ID=<?php echo $row["ID"];?>" method="post" enctype="multipart/form-data">
             <input type="text" placeholder="Neue Beschreibung" name="beschreibung" value="<?php echo $row["beschreibung"];?>">
              <input type="text" placeholder="Neuer Zustand" name="zustand" value="<?php echo $row["zustand"];?>">
             <input type="file" name="foto" value="<?php echo $row["foto"];?>">
              <input type="text" placeholder="Neuer Preis" name="preis" value="<?php echo $row["preis"];?>" > <br>
 
-            <button type="submit">Absenden</button> <br>
+            <button type="submit">Absenden</button> <br><br>
             <a href="ich-biete_Übersicht.php">Zurück </a>
         </form>
         <?php
