@@ -35,6 +35,6 @@ if (isset($_POST["beschreibung"]) or isset ($_POST["zustand"]) or isset ($_FILES
 }
 
 ?>
-<a class="back" href="ich-biete_Übersicht.php"> zurück zu den Songs </a>
+<a class="back" href="ich-biete_Übersicht.php"> zurück zu den Angeboten </a>
 </body>
 </html>

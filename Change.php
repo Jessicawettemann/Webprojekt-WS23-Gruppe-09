@@ -26,7 +26,7 @@ if ($statement->execute(array($_GET["ID"]))){
         </form1>
         <?php
     }else{
-        die("<div class='fail'>Song nicht vorhanden</div>");
+        die("<div class='fail'>Beitrag schon vorhanden</div>");
     }
 
 } else{
