@@ -23,7 +23,7 @@ if (!move_uploaded_file($_FILES["foto"]["tmp_name"], "/home/jw170/public_html/Bi
     die ("<div class='fail'>Bild konnte nicht hochgeladen werden</div>");
 }
 if (isset($_POST["beschreibung"]) or isset ($_POST["zustand"]) or isset ($_FILES["foto"]) or isset ($_POST["preis"]) and isset ($_GET["ID"])) {
-    $statement = $pdo->prepare("UPDATE Song SET beschreibung=?, zustand=?, foto=?, preis=? WHERE ID=?");
+    $statement = $pdo->prepare("UPDATE Upload SET beschreibung=?, zustand=?, foto=?, preis=? WHERE ID=?");
     if ($statement->execute(array(htmlspecialchars($_POST["beschreibung"]), htmlspecialchars($_POST["zustand"]), htmlspecialchars($_FILES["foto"]["name"]), htmlspecialchars($_POST["preis"]), $_GET["ID"]))) {
         echo "<div class='fine'>Bearbeiten erfolgreich</div>" . "<br>";
     } else {
