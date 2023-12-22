@@ -32,7 +32,7 @@ button:focus {
     border: 1px solid #ddd;
     padding: 10px;
     border-radius: 8px;
-    width: 700px;
+    width: 500px;
     height: auto;
     margin: 10px auto; /* Hier die Änderung */
 }
