@@ -55,7 +55,7 @@ if ($statement->execute()){
 
         echo "<a href=Delete_do.php?id=".$row['ID']."> <button class=button>Löschen</button>";
         echo "<a href= Change.php> <button class=button>Bearbeiten</button>";
-        echo "<a href= Upload.php> <button class=button>Hinzufügen</button>";
+
     }
 }else{
     echo "<div class='fail'>Fehlermeldung!</div>";
