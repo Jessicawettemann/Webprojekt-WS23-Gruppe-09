@@ -18,25 +18,23 @@ session_start();
 <br><br>
 
 <?php
-if(isset($_POST['submit'])){
-    $id=$_POST['id'];
-    $beschreibung=$_POST['beschreibung'];
-    $foto=$_FILES['foto'];
-    $optionalImage=$_FILES['optionalImage'];
-    $zustand=$_POST['zustand'];
-    $preis=$_POST['preis'];
-    $ort=$_POST['ort'];
-    $statement=$pdo->prepare("UPDATE Upload SET beschreibung=?, foto=?, optionalImage=?, zustand=?, preis=?, ort=? WHERE ID=?");
-    if ($statement->execute([$id, $beschreibung, $foto, $optionalImage, $zustand, $preis, $ort])){
-        header('Location: ich-biete_Übersicht.php');
-        exit ();
-    }else{
-        echo "<div class='fail'>Fehlermeldung!</div>";
-        echo $statement->errorInfo()[2];
-        die();
-    }
-}
-?>
 
+if (!move_uploaded_file($_FILES["foto"]["tmp_name"], "/home/jw170/public_html/Bilder/" . $_FILES["foto"]["name"])) {
+    die ("<div class='fail'>Bild konnte nicht hochgeladen werden</div>");
+}
+if (isset($_POST["beschreibung"]) or isset ($_POST["zustand"]) or isset ($_FILES["foto"]) or isset ($_POST["preis"]) and isset ($_GET["ID"])) {
+    $statement = $pdo->prepare("UPDATE Song SET beschreibung=?, zustand=?, foto=?, preis=? WHERE ID=?");
+    if ($statement->execute(array(htmlspecialchars($_POST["beschreibung"]), htmlspecialchars($_POST["zustand"]), htmlspecialchars($_FILES["foto"]["name"]), htmlspecialchars($_POST["preis"]), $_GET["ID"]))) {
+        echo "<div class='fine'>Bearbeiten erfolgreich</div>" . "<br>";
+    } else {
+        echo "<div class='fail'>Datenbank-Fehler</div>";
+        echo $statement->errorInfo()[2];
+    }
+} else {
+    die ("<div class='fail'>Fehler im Formular</div>");
+}
+
+?>
+<a class="back" href="ich-biete_Übersicht.php"> zurück zu den Songs </a>
 </body>
 </html>

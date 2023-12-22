@@ -3,22 +3,30 @@ include "Header Sicherheit.php";
 include "Datenbank Verbindung.php";
 session_start();
 
-$ID = $_GET['id'];
-$newValue = $_POST['newValue'];
-$selectedColumn = $_POST['selectedColumn'];
+$statement=$pdo->prepare("SELECT * FROM Upload WHERE ID=?");
+if ($statement->execute(array($_GET["ID"]))){
+    if($row=$statement->fetch()){
+        ?>
+        <form action="Change_do.php?ID=<?php echo $row["ID"];?>" method="post" enctype="multipart/form-data">
+            neuer Beschreibung: <input type="text" name="beschreibung" value="<?php echo $row["beschreibung"];?>"> <br> <br>
+            neue Zustand: <input type="text" name="zustand" value="<?php echo $row["zustand"];?>"> <br><br>
+            neue Bilddatei einfügen: <input type="file" name="foto" value="<?php echo $row["foto"];?>"> <br><br>
+            neuer Preis einfügen: <input type="text" name="preis" value="<?php echo $row["preis"];?>" > <br><br>
+            <input type="submit">
+        </form>
+        <?php
+    }else{
+        die("<div class='fail'>Song nicht vorhanden</div>");
+    }
 
-$statement=$pdo->prepare("UPDATE Upload SET $selectedColumn = :newValue WHERE ID = :ID");
-$statement->bindParam(':newValue', $newValue);
-$statement->bindParam(':ID', $ID);
-
-if ($statement->execute()){
-    echo "<div class='success'>Der Wert wurde erfolgreich geändert!</div>";
-}else{
-    echo "<div class='fail'>Fehlermeldung!</div>";
-    echo $statement->errorInfo()[2];
-    die();
+} else{
+    die("<div class='fail'>Formular-Fehler</div>");
 }
+
+
+
 ?>
+
 
 <a href="ich-biete_Übersicht.php"> <button class="button">Zurück</button></a>
 </body>
