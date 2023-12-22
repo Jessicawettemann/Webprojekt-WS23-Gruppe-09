@@ -16,9 +16,9 @@ session_start();
 <br><br>
 <h1> Ich biete</h1>
 <br><br>
-
-
-
+<div>
+<a href= Upload.php> <button class=button1>Hinzufügen</button>
+</div>
 
 <?php
 
