@@ -3,56 +3,22 @@ include "Header Sicherheit.php";
 include "Datenbank Verbindung.php";
 session_start();
 
-if(isset($_POST['change'])) {
-    $change = $_POST['change'];
-    $newValue = $_POST['newValue'];
-    $ID = $_POST['ID'];
+$ID = $_GET['id'];
+$newValue = $_POST['newValue'];
+$selectedColumn = $_POST['selectedColumn'];
 
-    $stmt = $pdo->prepare("UPDATE Upload SET " . $change . " = :newValue WHERE ID = :ID");
-    $stmt->bindParam(':newValue', $newValue);
-    $stmt->bindParam(':ID', $ID);
+$statement=$pdo->prepare("UPDATE Upload SET $selectedColumn = :newValue WHERE ID = :ID");
+$statement->bindParam(':newValue', $newValue);
+$statement->bindParam(':ID', $ID);
 
-    if($stmt->execute()) {
-        echo "<div class='success'>Der Wert wurde erfolgreich geändert.</div>";
-    } else {
-        echo "<div class='fail'>Fehlermeldung!</div>";
-        echo $stmt->errorInfo()[2];
-    }
+if ($statement->execute()){
+    echo "<div class='success'>Der Wert wurde erfolgreich geändert!</div>";
+}else{
+    echo "<div class='fail'>Fehlermeldung!</div>";
+    echo $statement->errorInfo()[2];
+    die();
 }
 ?>
-
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <title>Ändern</title>
-    <link rel="stylesheet" href="Übersicht.css">
-</head>
-
-<body>
-<h1>Wert ändern</h1>
-<br><br>
-
-<form method="post">
-    <label for="change">Zu ändernder Wert:</label>
-    <select name="change" id="change">
-        <option value="beschreibung">Beschreibung</option>
-        <option value="zustand">Zustand</option>
-        <option value="preis">Preis</option>
-        <option value="ort">Ort</option>
-    </select>
-    <br><br>
-
-    <label for="newValue">Neuer Wert:</label>
-    <input type="text" name="newValue" id="newValue" required>
-    <br><br>
-
-    <label for="ID">ID:</label>
-    <input type="number" name="ID" id="ID" required>
-    <br><br>
-
-    <input type="submit" value="Ändern">
-</form>
 
 <a href="ich-biete_Übersicht.php"> <button class="button">Zurück</button></a>
 </body>
