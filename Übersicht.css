@@ -8,6 +8,24 @@ font-size: 30px;
 color: white;
 position: relative}
 
+button1{
+    height: 40px;
+    width: 200px;
+    border-radius: 1000px;
+    border: none;
+    color: #D3EBE8;
+    font-family: "Avenir Next", sans-serif;
+    font-size: 14px;
+    background: black;
+}
+button1:hover{
+    width: 200px;
+
+}
+button1:focus {
+    outline: none;
+    width: 200px;
+}
 
 .card {
     background-color: white;
@@ -15,7 +33,7 @@ position: relative}
     border: 1px solid #ddd;
     padding: 10px;
     border-radius: 8px;
-    width: 600px;
+    width: 700px;
     height: auto;
     margin: 10px auto; /* Hier die Änderung */
 
