@@ -44,6 +44,7 @@ button:focus {
 .card h2{
     font-family: "Avenir Next";
     font-size: 11px;
+    color: #000;
 }
 .image {
     float: left;
@@ -63,7 +64,7 @@ button:focus {
     height: 100px;
 }
 .small{
-    float: left;
+   text-align: left;
     font-size: 12px;
     color: #D3EBE8;
 }
