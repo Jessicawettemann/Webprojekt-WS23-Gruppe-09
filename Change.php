@@ -54,6 +54,6 @@ if(isset($_POST['change'])) {
     <input type="submit" value="Ändern">
 </form>
 
-<a href="Uploads.php"> <button class="button">Zurück</button></a>
+<a href="Ich-biete_Übersicht.php"> <button class="button">Zurück</button></a>
 </body>
 </html>
