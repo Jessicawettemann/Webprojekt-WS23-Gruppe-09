@@ -22,9 +22,12 @@ if ($statement->execute(array($_GET["ID"]))){
              <input type="text" placeholder="Neuer Zustand" name="zustand" value="<?php echo $row["zustand"];?>"> <
             <input type="file" name="foto" value="<?php echo $row["foto"];?>">
              <input type="text" placeholder="Neuer Preis" name="preis" value="<?php echo $row["preis"];?>" > <br><br>
-            <input type="submit">
+
+            <button type="submit">Absenden</button>
+            <a href="ich-biete_Übersicht.php"> <button class="button">Zurück</button></a>
         </form1>
         <?php
+
     }else{
         die("<div class='fail'>Beitrag schon vorhanden</div>");
     }
@@ -38,6 +41,6 @@ if ($statement->execute(array($_GET["ID"]))){
 ?>
 
 
-<a href="ich-biete_Übersicht.php"> <button class="button">Zurück</button></a>
+
 </body>
 </html>
