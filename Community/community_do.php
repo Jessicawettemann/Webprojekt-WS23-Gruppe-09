@@ -25,14 +25,5 @@ $stmt->execute([$beitrag, $nutzer]);
 
 header('Location: community.php');
 
-
-$stmt = $pdo->prepare('INSERT INTO Beitrag (beitrag, Nutzer) VALUES (?, ?)');
-if ($stmt->execute([$beitrag, $nutzer])) {
-    echo "Beitrag wurde erfolgreich gespeichert.";
-} else {
-    echo "Beitrag konnte nicht gespeichert werden. Fehler: " . $stmt->errorInfo()[2];
-}
-
-
 exit();
 ?>
