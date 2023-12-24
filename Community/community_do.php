@@ -17,11 +17,6 @@ session_start();
 
 <?php
 
-session_start();
-if (!isset($_SESSION['username'])) {
-    header('Location: Login Formular.php');
-    exit();
-}
 
 $beitrag = $_POST['beitrag'];
 $nutzer = $_SESSION['id'];
