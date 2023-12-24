@@ -18,7 +18,6 @@ session_start();
 
 <?php
 session_start();
-require 'header Sicherheit.php';
 
 if (!isset($_SESSION['username'])) {
     header('Location: login.php');
