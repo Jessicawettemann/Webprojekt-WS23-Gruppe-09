@@ -50,6 +50,7 @@ $result = $statement->fetchAll();
 echo "<table border='1'>
 <br><br><br>
 <tr>
+<th>Benutzername</th>
 <th>Beitrag</th>
 <th>Datum</th>
 </tr>";
@@ -59,6 +60,7 @@ foreach ($result as $row) {
     echo "<tr>";
     echo "<td>" . $row['benutzername'] . "</td>";
     echo "<td>" . $row['beitrag'] . "</td>";
+    echo "<td>" . $row['datum'] . "</td>";
     echo "</tr>";
 }
 
