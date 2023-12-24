@@ -17,9 +17,8 @@ session_start();
 
 <?php
 
-
 $beitrag = $_POST['beitrag'];
-$nutzer = $_SESSION['id'];
+$nutzer = $_SESSION['benutzername'];
 $stmt = $pdo->prepare('INSERT INTO Beitrag (beitrag, Nutzer) VALUES (?, ?)');
 $stmt->execute([$beitrag, $nutzer]);
 
