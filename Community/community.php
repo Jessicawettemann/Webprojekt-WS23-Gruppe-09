@@ -15,7 +15,7 @@ session_start();
    <title>Forum</title>
 </head>
 <body>
-<h1>Willkommen, <?php echo $_SESSION['username']; ?>!</h1>
+<h1>Willkommen, <?php echo $_SESSION['benutzername']; ?>!</h1>
 
 
 <?php
@@ -47,15 +47,6 @@ while ($row = $stmt->fetch()) {
     echo '<strong>Datum:</strong> ' . $row['datum'] . '<br>';
     echo '<strong>Nutzer:</strong> ' . $row['Nutzer'] . '<br><br>';
 }
-
-
-$stmt = $pdo->prepare('INSERT INTO Beitrag (beitrag, Nutzer) VALUES (?, ?)');
-if ($stmt->execute([$beitrag, $nutzer])) {
-    echo "Beitrag wurde erfolgreich gespeichert.";
-} else {
-    echo "Beitrag konnte nicht gespeichert werden. Fehler: " . $stmt->errorInfo()[2];
-}
-
 
 
 ?>
