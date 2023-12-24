@@ -15,6 +15,13 @@ include "Datenbank Verbindung.php";
 <body>
 
     <!-- Forum -->
+<?php
+if (!isset($_SESSION['benutzername'])) {
+    die("Sie müssen sich anmelden, um Beiträge zu erstellen.");
+}
+?>
+
+
     <div id="forum">
 
     </div>
@@ -50,8 +57,8 @@ echo "<table border='1'>
 // Daten aus der Datenbank durchlaufen und in die Tabelle einfügen
 foreach ($result as $row) {
     echo "<tr>";
+    echo "<td>" . $row['benutzername'] . "</td>";
     echo "<td>" . $row['beitrag'] . "</td>";
-    echo "<td>" . $row['datum'] . "</td>";
     echo "</tr>";
 }
 
