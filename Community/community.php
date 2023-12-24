@@ -15,84 +15,44 @@ session_start();
    <title>Forum</title>
 </head>
 <body>
+<h1>Willkommen, <?php echo $_SESSION['username']; ?>!</h1>
+
 
 <?php
-session_start();
 
 session_start();
 if (!isset($_SESSION['username'])) {
-    header('Location: login.php');
+    header('Location: Login Formular.php');
     exit();
 }
-
-if (isset($_POST['beitrag'])) {
-    $beitrag = $_POST['beitrag'];
-
-    $stmt = $pdo->prepare('INSERT INTO Beitrag (benutzername, beitrag) VALUES (?, ?)');
-    $stmt->execute([$_SESSION['benutzername'], $beitrag]);
-}
-
-$beitraege = $pdo->query('SELECT * FROM Beitrag ORDER BY ID DESC')->fetchAll();
 ?>
-
 <!DOCTYPE html>
-<html lang="de">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Community</title>
 </head>
 <body>
-    <h1>Willkommen, <?php echo $_SESSION['benutzername']; ?>!</h1> 
 
+<h2>Beitrag eingeben</h2>
 
-  <!-- Forum -->
-  <div id="forum">
-    
-    </div>
-    <!-- Formular zum Hinzufügen von Beiträgen -->
-    <form action="community_do.php" method="post" enctype="multipart/form-data">
-        <h1>Forum</h1>
-        <br><br>
-        <label for="beitrag"></label>
-        <input type="text" placeholder="Beitrag" id="beitrag" name="beitrag" required>
+<form action="community_do.php" method="post">
+    <textarea name="beitrag" rows="4" cols="50"></textarea><br>
+    <input type="submit" name="submit" value="Submit">
+</form>
 
-        <button type="submit">Beitrag hinzufügen</button>
+<h2>Beiträge</h2>
 
-    <br>
-    <br>
-    <br><br><br><br>
+<?php
 
-
-<?php 
-// Daten aus der Datenbank abrufen
-$statement = $pdo->prepare("SELECT * FROM Beitrag ORDER BY datum ASC");
-$statement->execute();
-$result = $statement->fetchAll();
-
-// Überschrift für die Tabelle
-
-echo "<table border='1'>
-<br><br><br>
-<tr>
-<th>Beitrag</th>
-<th>Datum</th>
-<th>Benutzername</th>
-</tr>";
-
-// Daten aus der Datenbank durchlaufen und in die Tabelle einfügen
-foreach ($result as $row) {
-    echo "<tr>";
-    echo "<td>" . $row['beitrag'] . "</td>";
-    echo "<td>" . $row['datum'] . "</td>";
-    echo "<td>" . $row['benutzername'] . "</td>";
-    echo "</tr>";
+$stmt = $pdo->query('SELECT ID, beitrag, datum, Nutzer FROM Beitrag');
+while ($row = $stmt->fetch()) {
+    echo '<strong>ID:</strong> ' . $row['ID'] . '<br>';
+    echo '<strong>Beitrag:</strong> ' . $row['beitrag'] . '<br>';
+    echo '<strong>Datum:</strong> ' . $row['datum'] . '<br>';
+    echo '<strong>Nutzer:</strong> ' . $row['Nutzer'] . '<br><br>';
 }
+?>
 
-// Tabellenende
-echo "</table>";
-        
- ?>       
-    </form>
 </body>
 </html>
+
