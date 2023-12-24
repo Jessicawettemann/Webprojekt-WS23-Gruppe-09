@@ -44,25 +44,54 @@ $beitraege = $pdo->query('SELECT * FROM Beitrag ORDER BY ID DESC')->fetchAll();
 <body>
     <h1>Willkommen, <?php echo $_SESSION['benutzername']; ?>!</h1> 
 
-    <form action="community_do.php" method="post">
-        <textarea name="beitrag" rows="5" cols="50" placeholder="Gib hier deinen Beitrag ein..."></textarea>
-        <br>
-        <input type="submit" value="Beitrag erstellen">
+
+  <!-- Forum -->
+  <div id="forum">
+    
+    </div>
+    <!-- Formular zum Hinzufügen von Beiträgen -->
+    <form action="community_do.php" method="post" enctype="multipart/form-data">
+        <h1>Forum</h1>
+        <br><br>
+        <label for="beitrag"></label>
+        <input type="text" placeholder="Beitrag" id="beitrag" name="beitrag" required>
+
+        <button type="submit">Beitrag hinzufügen</button>
+
+    <br>
+    <br>
+    <br><br><br><br>
+
+
+<?php 
+// Daten aus der Datenbank abrufen
+$statement = $pdo->prepare("SELECT * FROM Beitrag ORDER BY datum ASC");
+$statement->execute();
+$result = $statement->fetchAll();
+
+// Überschrift für die Tabelle
+
+echo "<table border='1'>
+<br><br><br>
+<tr>
+<th>Beitrag</th>
+<th>Datum</th>
+<th>Benutzername</th>
+</tr>";
+
+// Daten aus der Datenbank durchlaufen und in die Tabelle einfügen
+foreach ($result as $row) {
+    echo "<tr>";
+    echo "<td>" . $row['beitrag'] . "</td>";
+    echo "<td>" . $row['datum'] . "</td>";
+    echo "<td>" . $row['benutzername'] . "</td>";
+    echo "</tr>";
+}
+
+// Tabellenende
+echo "</table>";
+        
+ ?>       
     </form>
-
-    <table border="1">
-        <tr>
-            <th>Benutzername</th>
-            <th>Beitrag</th>
-        </tr>
-        <?php foreach ($beitraege as $beitrag): ?>
-            <tr>
-                <td><?php echo $beitrag['benutzername']; ?></td>
-                <td><?php echo $beitrag['beitrag']; ?></td>
-            </tr>
-        <?php endforeach; ?>
-    </table>
-
-    <a href="logout.php">Logout</a>
 </body>
 </html>
