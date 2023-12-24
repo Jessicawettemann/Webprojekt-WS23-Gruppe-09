@@ -18,22 +18,27 @@ session_start();
 </head>
 <body>
 
-
 <?php
 
-//Beitrag eintragen
-$statement = $pdo->prepare("INSERT INTO Beitrag (beitrag) VALUES (?)");
+// Verarbeiten der Formulardaten
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $beitrag = htmlspecialchars($_POST["beitrag"]);
+    $datum = date("Y-m-d H:i:s");
+    $nutzer = $_SESSION["id"];
 
+    // Prüfen, ob alle erforderlichen Felder ausgefüllt sind
+    if (empty($beitrag)) {
+        echo "Bitte füllen Sie alle Felder aus.";
+    } else {
+        // Speichern des Beitrags in der Datenbank
+        $statement = $pdo->prepare("INSERT INTO Beitrag (beitrag, datum, Nutzer) VALUES (?, ?, ?)");
+        $statement->execute([$beitrag, $datum, $nutzer]);
 
-// Feld sollen nicht freigelassen werden:
-if(($_POST["beitrag"]) !=null){
-
-       if($statement->execute(array(htmlspecialchars($_POST["beitrag"]),))){
-           echo "<div class='fine'> Beitrag gespeichert </div>". "<br><br>" . "<a href='community.php'>Zu den Beiträgen</a> </div>";
-       } else {
-           die("<div class='fail'> Fehlgeschlagen." . "<br><br>" . "<a href='community.php'>Erneut versuchen</a> </div>");
-       }
-   }
+        // Weiterleitung zur Übersichtsseite
+        header("Location: community.php");
+    }
+}
+?>
 
 ?>
 </body>
