@@ -42,7 +42,7 @@ $beitraege = $pdo->query('SELECT * FROM Beitrag ORDER BY id DESC')->fetchAll();
     <title>Community</title>
 </head>
 <body>
-    <h1>Willkommen, <?php echo $_SESSION['Nutzer']; ?>!</h1>
+    <h1>Willkommen, <?php echo $_SESSION['benutzername']; ?>!</h1>
 
     <form action="community.php" method="post">
         <textarea name="beitrag" rows="5" cols="50" placeholder="Gib hier deinen Beitrag ein..."></textarea>
