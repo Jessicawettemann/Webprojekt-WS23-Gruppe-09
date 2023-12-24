@@ -31,7 +31,7 @@ if (isset($_POST['beitrag'])) {
     $stmt->execute([$_SESSION['username'], $beitrag]);
 }
 
-$beitraege = $pdo->query('SELECT * FROM beitraege ORDER BY id DESC')->fetchAll();
+$beitraege = $pdo->query('SELECT * FROM Beitrag ORDER BY id DESC')->fetchAll();
 ?>
 
 <!DOCTYPE html>
