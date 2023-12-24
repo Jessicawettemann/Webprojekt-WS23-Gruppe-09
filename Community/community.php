@@ -27,11 +27,11 @@ session_start();
 if (isset($_POST['beitrag'])) {
     $beitrag = $_POST['beitrag'];
 
-    $stmt = $pdo->prepare('INSERT INTO beitraege (benutzername, beitrag) VALUES (?, ?)');
+    $stmt = $pdo->prepare('INSERT INTO Beitrag (benutzername, beitrag) VALUES (?, ?)');
     $stmt->execute([$_SESSION['benutzername'], $beitrag]);
 }
 
-$beitraege = $pdo->query('SELECT * FROM Beitrag ORDER BY id DESC')->fetchAll();
+$beitraege = $pdo->query('SELECT * FROM Beitrag ORDER BY ID DESC')->fetchAll();
 ?>
 
 <!DOCTYPE html>
