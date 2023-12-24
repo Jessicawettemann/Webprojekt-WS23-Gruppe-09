@@ -19,9 +19,10 @@ session_start();
 <?php
 session_start();
 
-if (!isset($_SESSION['username'])) {
-    header('Location: Login Formular.php');
-}
+//prüft ob man angemeldet ist, sonst Weiterleitung zum Log
+// if (!isset($_SESSION['username'])) {
+    // header('Location: Login Formular.php');
+// }
 
 if (isset($_POST['beitrag'])) {
     $beitrag = $_POST['beitrag'];
