@@ -1,44 +1,40 @@
 <?php
 
-
 include "Datenbank Verbindung.php";
 include "Header Sicherheit.php";
 session_start();
 ?>
 
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
 
-
-   <title>Forum</title>
+    <title>Forum</title>
 </head>
 <body>
 
 <?php
 
-// Verarbeiten der Formulardaten
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $beitrag = htmlspecialchars($_POST["beitrag"]);
-    $datum = date("Y-m-d H:i:s");
-    $nutzer = $_SESSION["id"];
 
-    // Prüfen, ob alle erforderlichen Felder ausgefüllt sind
-    if (empty($beitrag)) {
-        echo "Bitte füllen Sie alle Felder aus.";
-    } else {
-        // Speichern des Beitrags in der Datenbank
-        $statement = $pdo->prepare("INSERT INTO Beitrag (beitrag, datum, Nutzer) VALUES (?, ?, ?)");
-        $statement->execute([$beitrag, $datum, $nutzer]);
+//Beitrag eintragen
 
-        // Weiterleitung zur Übersichtsseite
-        header("Location: community.php");
+
+$statement = $pdo->prepare("INSERT INTO Beitrag (beitrag, benutzername) VALUES (?,?)");
+
+// Feld sollen nicht freigelassen werden:
+
+if($_POST["beitrag"]){
+    
+
+        if($statement->execute(array(htmlspecialchars($_POST["beitrag"]), htmlspecialchars($_POST["benutzername"]),))){
+            echo "<div class='fine'> Ereignis gespeichert </div>". "<br><br>" . "<a href='community.php'>Zu den Beiträgen</a> </div>";
+        } else {
+            die("<div class='fail'> Fehlgeschlagen." . "<br><br>" . "<a href='community.php'>Erneut versuchen</a> </div>");
+        }
     }
-}
-?>
+
 
 ?>
 </body>
