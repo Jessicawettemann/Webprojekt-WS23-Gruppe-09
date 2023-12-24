@@ -47,6 +47,17 @@ while ($row = $stmt->fetch()) {
     echo '<strong>Datum:</strong> ' . $row['datum'] . '<br>';
     echo '<strong>Nutzer:</strong> ' . $row['Nutzer'] . '<br><br>';
 }
+
+
+$stmt = $pdo->prepare('INSERT INTO Beitrag (beitrag, Nutzer) VALUES (?, ?)');
+if ($stmt->execute([$beitrag, $nutzer])) {
+    echo "Beitrag wurde erfolgreich gespeichert.";
+} else {
+    echo "Beitrag konnte nicht gespeichert werden. Fehler: " . $stmt->errorInfo()[2];
+}
+
+
+
 ?>
 
 </body>
