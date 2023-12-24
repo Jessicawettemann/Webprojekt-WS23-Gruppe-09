@@ -20,11 +20,7 @@ session_start();
 
 <?php
 
-session_start();
-if (!isset($_SESSION['username'])) {
-    header('Location: Login Formular.php');
-    exit();
-}
+
 ?>
 <!DOCTYPE html>
 <html>
