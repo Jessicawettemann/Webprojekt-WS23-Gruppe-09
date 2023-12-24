@@ -18,9 +18,9 @@ session_start();
 <?php
 
 $beitrag = $_POST['beitrag'];
-$nutzer = $_SESSION['benutzername'];
+$Nutzer = $_SESSION['benutzername'];
 $stmt = $pdo->prepare('INSERT INTO Beitrag (beitrag, Nutzer) VALUES (?, ?)');
-$stmt->execute([$beitrag, $nutzer]);
+$stmt->execute([$beitrag, $Nutzer]);
 
 header('Location: community.php');
 
