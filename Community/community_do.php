@@ -3,7 +3,7 @@
 include "Datenbank Verbindung.php";
 include "Header Sicherheit.php";
 session_start();
-$username = $_SESSION['benutzername'];
+$benutzername = $_SESSION['benutzername'];
 ?>
 
 <!DOCTYPE html>
