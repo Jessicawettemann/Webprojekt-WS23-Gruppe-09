@@ -1,56 +1,64 @@
 <?php
-
-include "Datenbank Verbindung.php";
 include "Header Sicherheit.php";
-session_start();
+include "Datenbank Verbindung.php";
+
 ?>
 
 <!DOCTYPE html>
 <html lang="de">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width">
-
-
-   <title>Forum</title>
-</head>
-<body>
-<h1>Willkommen, <?php echo $_SESSION['benutzername']; ?>!</h1>
-
-
-<?php
-
-
-?>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Community</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminkalender</title>
+    <link rel="stylesheet" type="text/css" href="Formulare_1.css">
 </head>
 <body>
 
-<h2>Beitrag eingeben</h2>
+    <!-- Forum -->
+    <div id="forum">
 
-<form action="community_do.php" method="post">
-    <textarea name="beitrag" rows="4" cols="50"></textarea><br>
-    <input type="submit" name="submit" value="Submit">
-</form>
+    </div>
+    <!-- Formular zum Hinzufügen von Beiträgen -->
+    <form action="community_do.php" method="post" enctype="multipart/form-data">
+        <h1>Forum</h1>
+        <br><br>
+        <label for="beitrag"></label>
+        <input type="text" placeholder="Beitrag" id="beitrag" name="beitrag" required>
 
-<h2>Beiträge</h2>
+        <button type="submit">Ereignis hinzufügen</button>
 
-<?php
+    <br>
+    <br>
+    <br><br><br><br>
 
-$stmt = $pdo->query('SELECT ID, beitrag, datum, Nutzer FROM Beitrag');
-while ($row = $stmt->fetch()) {
-    echo '<strong>ID:</strong> ' . $row['ID'] . '<br>';
-    echo '<strong>Beitrag:</strong> ' . $row['beitrag'] . '<br>';
-    echo '<strong>Datum:</strong> ' . $row['datum'] . '<br>';
-    echo '<strong>Nutzer:</strong> ' . $row['Nutzer'] . '<br><br>';
+
+<?php 
+// Daten aus der Datenbank abrufen
+$statement = $pdo->prepare("SELECT * FROM Beitrag ORDER BY datum ASC");
+$statement->execute();
+$result = $statement->fetchAll();
+
+// Überschrift für die Tabelle
+
+echo "<table border='1'>
+<br><br><br>
+<tr>
+<th>Beitrag</th>
+<th>Datum</th>
+</tr>";
+
+// Daten aus der Datenbank durchlaufen und in die Tabelle einfügen
+foreach ($result as $row) {
+    echo "<tr>";
+    echo "<td>" . $row['beitrag'] . "</td>";
+    echo "<td>" . $row['datum'] . "</td>";
+    echo "</tr>";
 }
 
-
-?>
-
+// Tabellenende
+echo "</table>";
+        
+ ?>       
+    </form>
 </body>
 </html>
-
