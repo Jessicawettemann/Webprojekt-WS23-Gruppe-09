@@ -4,7 +4,6 @@ include "Header Sicherheit.php";
 session_start();
 ?>
 
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -26,11 +25,11 @@ if (!isset($_SESSION['benutzername'])) {
 if (isset($_POST['beitrag'])) {
     $beitrag = $_POST['beitrag'];
 
-    $stmt = $pdo->prepare('INSERT INTO beitraege (username, beitrag) VALUES (?, ?)');
-    $stmt->execute([$_SESSION['username'], $beitrag]);
+    $stmt = $pdo->prepare('INSERT INTO Beitrag (benutzername, beitrag) VALUES (?, ?)');
+    $stmt->execute([$_SESSION['benutzername'], $beitrag]);
 }
 
-$beitraege = $pdo->query('SELECT * FROM beitraege ORDER BY id DESC')->fetchAll();
+$Beitrag = $pdo->query('SELECT * FROM Beitrag ORDER BY id DESC')->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +40,7 @@ $beitraege = $pdo->query('SELECT * FROM beitraege ORDER BY id DESC')->fetchAll()
     <title>Community</title>
 </head>
 <body>
-    <h1>Willkommen, <?php echo $_SESSION['username']; ?>!</h1>
+    <h1>Willkommen, <?php echo $_SESSION['bentuzername']; ?>!</h1>
 
     <form action="community.php" method="post">
         <textarea name="beitrag" rows="5" cols="50" placeholder="Gib hier deinen Beitrag ein..."></textarea>
@@ -51,12 +50,12 @@ $beitraege = $pdo->query('SELECT * FROM beitraege ORDER BY id DESC')->fetchAll()
 
     <table border="1">
         <tr>
-            <th>Username</th>
+            <th>Benutzername</th>
             <th>Beitrag</th>
         </tr>
-        <?php foreach ($beitraege as $beitrag): ?>
+        <?php foreach ($Beitrag as $beitrag): ?>
             <tr>
-                <td><?php echo $beitrag['username']; ?></td>
+                <td><?php echo $beitrag['benutzername']; ?></td>
                 <td><?php echo $beitrag['beitrag']; ?></td>
             </tr>
         <?php endforeach; ?>
