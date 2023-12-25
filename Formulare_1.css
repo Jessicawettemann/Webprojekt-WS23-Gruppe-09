@@ -99,3 +99,13 @@ th, td {
     text-align: left;
     border-bottom: 1px solid #ddd;
 }
+
+/* Stil für das Profilbild in einem Kreis */
+.profile-image {
+    width: 40px; /* Die gewünschte Breite des Kreises */
+    height: 40px; /* Die gewünschte Höhe des Kreises */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%; /* Dies erstellt einen runden Kreis */
+}
