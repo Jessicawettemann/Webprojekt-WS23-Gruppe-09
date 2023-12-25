@@ -9,10 +9,23 @@ include "Header Sicherheit.php";
 
 
 // Beitrag speichern
+// Beitrag speichern
 $statement = $pdo->prepare("INSERT INTO Beitrag (beitrag, benutzername, profilbild) VALUES (?, ?, ?)");
 
 // Annahme: $_SESSION["benutzername"] enthält den aktuellen Benutzernamen
 $benutzername = $_SESSION["benutzername"];
+
+// Annahme: Das Profilbild ist in der Tabelle "Nutzer" in der Spalte "profilbild" als BLOB gespeichert
+$statementProfilbild = $pdo->prepare("SELECT profilbild FROM Nutzer WHERE benutzername = ?");
+$statementProfilbild->execute([$benutzername]);
+$profilbildRow = $statementProfilbild->fetch(PDO::FETCH_ASSOC);
+
+// Überprüfen, ob das Profilbild vorhanden ist, bevor Sie es verwenden
+if ($profilbildRow && isset($profilbildRow['profilbild'])) {
+    $profilbild = $profilbildRow['profilbild'];
+} else {
+    $profilbild = null; // Setzen Sie einen Standardwert oder NULL, falls kein Profilbild vorhanden ist
+}
 
 if ($statement->execute(array(htmlspecialchars($_POST["beitrag"]), $benutzername, $profilbild))) {
     header("Location: community.php");
