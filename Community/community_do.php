@@ -13,8 +13,10 @@ $statement = $pdo->prepare("INSERT INTO Beitrag (beitrag, benutzername) VALUES (
 
 if ($statement->execute(array(htmlspecialchars($_POST["beitrag"]), $_SESSION["benutzername"]))) {
     header("Location: community.php");
+    exit(); // Fügen Sie exit hinzu, um sicherzustellen, dass der Code nach der Umleitung nicht weiter ausgeführt wird
 } else {
-    die("<div class='fail'> Fehlgeschlagen." . "<br><br>" . "<a href='community.php'>Erneut versuchen</a> </div>");
+    $errorInfo = $statement->errorInfo();
+    die("<div class='fail'>Fehlgeschlagen. Fehlerdetails: " . implode(" ", $errorInfo) . "<br><br><a href='community.php'>Erneut versuchen</a></div>");
 }
 
 ?>
