@@ -51,9 +51,7 @@ foreach ($statement as $row) {
     echo "<td>" . $row['beitrag'] . "</td>";
     echo "<td>" . $row['datum'] . "</td>";
     echo "<td>" . $row['vorname'] . " " . $row['nachname'] . "</td>";
-    // Zeige das Profilbild in einem kleinen Kreis an
-    echo "<td class='profile-image' style='background-image: url(\"" . $row['profilbild'] . "\");'></td>";
-    
+    echo "<td>" . $row['profilbild'] . "</td>";
     echo "</tr>";
 }
 
