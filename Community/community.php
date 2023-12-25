@@ -24,7 +24,6 @@ if(isset($_SESSION['benutzername'])) {
     echo '    <br><br>';
     echo '    <label for="beitrag"></label>';
     echo '    <input type="text" placeholder="Beitrag" id="beitrag" name="beitrag" required>';
-    
     // Verstecktes Feld für den Benutzernamen
     echo '    <input type="hidden" name="benutzername" value="' . $_SESSION['benutzername'] . '">';
     echo '    <button type="submit">Ereignis hinzufügen</button>';
