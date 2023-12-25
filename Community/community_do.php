@@ -27,9 +27,9 @@ $statement = $pdo->prepare("INSERT INTO Beitrag (beitrag) VALUES (?)");
 
 
         if($statement->execute(array(htmlspecialchars($_POST["beitrag"]),))){
-            echo "<div class='fine'> Ereignis gespeichert </div>". "<br><br>" . "<a href='community_do.php'>Zu den Beiträgen</a> </div>";
+            echo "<div class='fine'> Ereignis gespeichert </div>". "<br><br>" . "<a href='community.php'>Zu den Beiträgen</a> </div>";
         } else {
-            die("<div class='fail'> Fehlgeschlagen." . "<br><br>" . "<a href='community_do.php'>Erneut versuchen</a> </div>");
+            die("<div class='fail'> Fehlgeschlagen." . "<br><br>" . "<a href='community.php'>Erneut versuchen</a> </div>");
         }
 
 
