@@ -35,6 +35,7 @@ echo "<tr>";
 echo "<th>Beitrag</th>";
 echo "<th>Datum</th>";
 echo "<th>Nutzer</th>";
+echo "<th>Profilbild</th>";
 echo "</tr>";
 
 // Durch alle Beiträge iterieren
@@ -43,6 +44,7 @@ foreach ($statement as $row) {
     echo "<td>" . $row['beitrag'] . "</td>";
     echo "<td>" . $row['datum'] . "</td>";
     echo "<td>" . $row['vorname'] . " " . $row['nachname'] . "</td>";
+    echo "<td>" . $row['profilbild'] . "</td>";
     echo "</tr>";
 }
 
