@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 //normaler Code
 include "Datenbank Verbindung.php";
 include "Header Sicherheit.php";
-session_start();
+
 
 // Beitrag speichern
 $statement = $pdo->prepare("INSERT INTO Beitrag (beitrag, benutzername) VALUES (?, ?)");
