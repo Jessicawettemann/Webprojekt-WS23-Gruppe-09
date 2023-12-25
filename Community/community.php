@@ -1,29 +1,35 @@
 <?php
 include "Datenbank Verbindung.php";
 include "Header Sicherheit.php";
-?>
 
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
+// Wenn das Formular abgesendet wurde
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    // Beitrag speichern
+    $statement = $pdo->prepare("INSERT INTO Beitrag (beitrag, benutzername, profilbild) VALUES (?, ?, ?)");
 
-    <title>Forum</title>
-</head>
-<body>
+    // Annahme: $_SESSION["benutzername"] enthält den aktuellen Benutzernamen
+    $benutzername = $_SESSION["benutzername"];
 
-<h1>Community</h1>
+    // Annahme: Das Profilbild ist in der Tabelle "Nutzer" in der Spalte "profilbild" als BLOB gespeichert
+    $statementProfilbild = $pdo->prepare("SELECT profilbild FROM Nutzer WHERE benutzername = ?");
+    $statementProfilbild->execute([$benutzername]);
+    $profilbildRow = $statementProfilbild->fetch(PDO::FETCH_ASSOC);
 
-<form action="community_do.php" method="post">
-    <textarea name="beitrag" id="beitrag" rows="5" cols="50" placeholder="Gib hier deinen Beitrag ein..."></textarea><br>
-    <input type="submit" value="Beitrag senden">
-</form>
+    // Überprüfen, ob das Profilbild vorhanden ist, bevor Sie es verwenden
+    if ($profilbildRow && isset($profilbildRow['profilbild'])) {
+        $profilbild = $profilbildRow['profilbild'];
+    } else {
+        $profilbild = null; // Setzen Sie einen Standardwert oder NULL, falls kein Profilbild vorhanden ist
+    }
 
-<?php
-
-// Datenbankverbindung herstellen
-
+    if ($statement->execute(array(htmlspecialchars($_POST["beitrag"]), $benutzername, $profilbild))) {
+        header("Location: community.php");
+        exit();
+    } else {
+        $errorInfo = $statement->errorInfo();
+        die("<div class='fail'>Fehlgeschlagen. Fehlerdetails: " . implode(" ", $errorInfo) . "<br><br><a href='community.php'>Erneut versuchen</a></div>");
+    }
+}
 
 // Alle Beiträge aus der Datenbank auslesen
 $statement = $pdo->prepare("SELECT * FROM Beitrag INNER JOIN Nutzer ON Beitrag.benutzername = Nutzer.benutzername");
@@ -50,8 +56,4 @@ foreach ($statement as $row) {
 
 // Tabellenende
 echo "</table>";
-
 ?>
-
-</body>
-</html>
