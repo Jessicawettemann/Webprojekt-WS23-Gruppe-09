@@ -9,14 +9,18 @@ include "Header Sicherheit.php";
 
 
 // Beitrag speichern
-$statement = $pdo->prepare("INSERT INTO Beitrag (beitrag, benutzername) VALUES (?, ?)");
+$statement = $pdo->prepare("INSERT INTO Beitrag (beitrag, benutzername, profilbild) VALUES (?, ?, ?)");
 
-if ($statement->execute(array(htmlspecialchars($_POST["beitrag"]), $_SESSION["benutzername"]))) {
+// Annahme: $_SESSION["benutzername"] enthält den aktuellen Benutzernamen
+$benutzername = $_SESSION["benutzername"];
+
+if ($statement->execute(array(htmlspecialchars($_POST["beitrag"]), $benutzername, $profilbild))) {
     header("Location: community.php");
-    exit(); // Fügen Sie exit hinzu, um sicherzustellen, dass der Code nach der Umleitung nicht weiter ausgeführt wird
+    exit();
 } else {
     $errorInfo = $statement->errorInfo();
     die("<div class='fail'>Fehlgeschlagen. Fehlerdetails: " . implode(" ", $errorInfo) . "<br><br><a href='community.php'>Erneut versuchen</a></div>");
 }
+
 
 ?>
