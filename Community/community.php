@@ -15,12 +15,23 @@ include "Header Sicherheit.php";
 
 <h1>Community</h1>
 
-<form action="community_do.php" method="post">
-    <textarea name="beitrag" id="beitrag" rows="5" cols="50" placeholder="Gib hier deinen Beitrag ein..."></textarea><br>
-    <input type="submit" value="Beitrag senden">
-</form>
+
+    <!-- Formular zum Hinzufügen von Beiträgen -->
+    <form action="community_do.php" method="post" placeholder="Gib hier deinen Beitrag ein..." enctype="multipart/form-data">
+        <h1>Forum</h1>
+        <br><br>
+        <label for="beitrag"></label>
+        <input type="text" placeholder="Beitrag" id="beitrag" name="beitrag" required>
+
+        <button type="submit">Beitrag hinzufügen</button>
+
+    <br>
+    <br>
+    <br><br><br><br>
+
 
 <?php
+
 // Alle Beiträge aus der Datenbank auslesen
 $statement = $pdo->prepare("SELECT * FROM Beitrag INNER JOIN Nutzer ON Beitrag.benutzername = Nutzer.benutzername");
 $statement->execute();
