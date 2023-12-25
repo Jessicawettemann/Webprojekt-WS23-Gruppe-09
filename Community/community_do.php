@@ -9,7 +9,6 @@ include "Header Sicherheit.php";
 
 
 // Beitrag speichern
-// Beitrag speichern
 $statement = $pdo->prepare("INSERT INTO Beitrag (beitrag, benutzername, profilbild) VALUES (?, ?, ?)");
 
 // Annahme: $_SESSION["benutzername"] enthält den aktuellen Benutzernamen
