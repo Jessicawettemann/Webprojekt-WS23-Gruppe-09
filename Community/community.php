@@ -21,9 +21,6 @@ include "Header Sicherheit.php";
 </form>
 
 <?php
-
-
-
 // Alle Beiträge aus der Datenbank auslesen
 $statement = $pdo->prepare("SELECT * FROM Beitrag INNER JOIN Nutzer ON Beitrag.benutzername = Nutzer.benutzername");
 $statement->execute();
