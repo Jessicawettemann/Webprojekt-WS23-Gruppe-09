@@ -1,3 +1,8 @@
+<?php
+include "Datenbank Verbindung.php";
+include "Header Sicherheit.php";
+?>
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -17,9 +22,6 @@
 
 <?php
 
-// Datenbankverbindung herstellen
-include "Datenbank Verbindung.php";
-include "Header Sicherheit.php";
 
 // Alle Beiträge aus der Datenbank auslesen
 $statement = $pdo->prepare("SELECT * FROM Beitrag INNER JOIN Nutzer ON Beitrag.benutzername = Nutzer.benutzername");
