@@ -1,68 +1,51 @@
-<?php
-include "Header Sicherheit.php";
-
-?>
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width">
+
     <title>Forum</title>
-    <link rel="stylesheet" type="text/css" href="Formulare_1.css">
 </head>
 <body>
 
+<h1>Community</h1>
 
+<form action="community_do.php" method="post">
+    <textarea name="beitrag" id="beitrag" rows="5" cols="50" placeholder="Gib hier deinen Beitrag ein..."></textarea><br>
+    <input type="submit" value="Beitrag senden">
+</form>
 
-    
-    <!-- Forum -->
-    <div id="forum">
-    
-    </div>
-    <!-- Formular zum Hinzufügen von Beiträgen -->
-    <form action="community_do.php" method="post" enctype="multipart/form-data">
-        <h1>Forum</h1>
-        <br><br>
-        <label for="beitrag"></label>
-        <input type="text" placeholder="Beitrag" id="beitrag" name="beitrag" required>
+<?php
 
-        <button type="submit">Beitrag hinzufügen</button>
+// Datenbankverbindung herstellen
+include "Datenbank Verbindung.php";
+include "Header Sicherheit.php";
 
-    <br>
-    <br>
-    <br><br><br><br>
-
-
-<?php 
-// Daten aus der Datenbank abrufen
-$statement = $pdo->prepare("SELECT * FROM Beitrag ORDER BY datum ASC");
+// Alle Beiträge aus der Datenbank auslesen
+$statement = $pdo->prepare("SELECT * FROM Beitrag INNER JOIN Nutzer ON Beitrag.benutzername = Nutzer.benutzername");
 $statement->execute();
-$result = $statement->fetchAll();
 
-// Überschrift für die Tabelle
+// Beiträge in einer Tabelle anzeigen
+echo "<table border='1'>";
+echo "<tr>";
+echo "<th>Beitrag</th>";
+echo "<th>Datum</th>";
+echo "<th>Nutzer</th>";
+echo "</tr>";
 
-echo "<table border='1'>
-<br><br><br>
-<tr>
-<th>Beitrag</th>
-<th>Datum</th>
-<th>Nutzer</th>
-</tr>";
-
-// Daten aus der Datenbank durchlaufen und in die Tabelle einfügen
-foreach ($result as $row) {
+// Durch alle Beiträge iterieren
+foreach ($statement as $row) {
     echo "<tr>";
     echo "<td>" . $row['beitrag'] . "</td>";
     echo "<td>" . $row['datum'] . "</td>";
-    echo "<td>" . $row['Nutzer'] . "</td>";
+    echo "<td>" . $row['vorname'] . " " . $row['nachname'] . "</td>";
     echo "</tr>";
 }
 
 // Tabellenende
 echo "</table>";
-        
- ?>       
-    </form>
+
+?>
+
 </body>
 </html>
