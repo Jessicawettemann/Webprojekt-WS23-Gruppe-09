@@ -20,12 +20,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Benutzername: " . $userRow['benutzername'] . "<br>";
         echo "Vorname: " . $userRow['vorname'] . "<br>";
         echo "Nachname: " . $userRow['nachname'] . "<br>";
+
+        // Überprüfen, ob der Benutzer bereits folgt
+        $checkStatement = $pdo->prepare("SELECT * FROM Follower WHERE follower_username = ? AND followed_username = ?");
+        $checkStatement->execute([$_SESSION["benutzername"], $userRow['benutzername']]);
+
+        echo "<form action='follow.php' method='post'>";
+        echo "<input type='hidden' name='followed_username' value='" . $userRow['benutzername'] . "'>";
+
+        if ($checkStatement->rowCount() == 0) {
+            // Der Benutzer folgt noch nicht, zeige den Follow-Button
+            echo "<button type='submit'>Follow</button>";
+        } else {
+            // Der Benutzer folgt bereits, zeige den Unfollow-Button
+            echo "<button type='submit' formaction='unfollow.php'>Unfollow</button>";
+        }
+
+        echo "</form>";
     } else {
         // Nutzer nicht gefunden
         echo "<p>Nutzer nicht gefunden.</p>";
     }
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -50,6 +66,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <br>
     <br>
     <br><br><br><br>
+</form>
+
+<!-- Formular zur Suche nach einem Nutzer -->
+<form action="community.php" method="post">
+    <label for="search_user">Nutzer suchen:</label>
+    <input type="text" id="search_user" name="search_user" required>
+    <button type="submit">Suchen</button>
 </form>
 
 <!-- Beiträge in einer Tabelle anzeigen -->
