@@ -8,21 +8,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["followed_username"])) 
     $benutzername = $_SESSION["benutzername"];
     $followedUsername = $_POST["followed_username"];
 
-    // Überprüfen, ob der Benutzer bereits folgt
-    $checkStatement = $pdo->prepare("SELECT * FROM Follower WHERE follower_username = ? AND followed_username = ?");
-    $checkStatement->execute([$benutzername, $followedUsername]);
+    // Überprüfen, ob der Nutzer existiert
+    $checkUserStatement = $pdo->prepare("SELECT * FROM Nutzer WHERE benutzername = ? OR (vorname = ? AND nachname = ?)");
+    $checkUserStatement->execute([$followedUsername, $followedUsername, $followedUsername]);
 
-    if ($checkStatement->rowCount() == 0) {
-        // Der Benutzer folgt noch nicht, füge ihn hinzu
-        $insertStatement = $pdo->prepare("INSERT INTO Follower (follower_username, followed_username) VALUES (?, ?)");
-        $insertStatement->execute([$benutzername, $followedUsername]);
-        echo "Du folgst jetzt " . $followedUsername;
+    if ($checkUserStatement->rowCount() > 0) {
+        // Der Nutzer existiert, überprüfe, ob der Benutzer bereits folgt
+        $checkStatement = $pdo->prepare("SELECT * FROM Follower WHERE follower_username = ? AND followed_username = ?");
+        $checkStatement->execute([$benutzername, $followedUsername]);
+
+        if ($checkStatement->rowCount() == 0) {
+            // Der Benutzer folgt noch nicht, füge ihn hinzu
+            $insertStatement = $pdo->prepare("INSERT INTO Follower (follower_username, followed_username) VALUES (?, ?)");
+            $insertStatement->execute([$benutzername, $followedUsername]);
+            echo "Du folgst jetzt " . $followedUsername;
+        } else {
+            // Der Benutzer folgt bereits
+            echo "Du folgst bereits " . $followedUsername;
+        }
     } else {
-        // Der Benutzer folgt bereits
-        echo "Du folgst bereits " . $followedUsername;
+        echo "Der Nutzer existiert nicht.";
     }
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -44,18 +51,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["followed_username"])) 
     <label for="beitrag"></label>
     <input type="text" placeholder="Beitrag" id="beitrag" name="beitrag" required>
     <button type="submit">Beitrag hinzufügen</button>
-    <br><br><br><br>
 </form>
 
-<!-- Follow-Formular oberhalb der Tabelle -->
-<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-    <label for="followed_username">Folge einem Nutzer: </label>
-    <input type="text" id="followed_username" name="followed_username" required>
-    <button type="submit">Folgen</button>
-</form>
+<br>    
+<br>
+<br><br><br><br>
 
 <?php
-
 // Alle Beiträge aus der Datenbank auslesen
 $statement = $pdo->prepare("SELECT * FROM Beitrag INNER JOIN Nutzer ON Beitrag.benutzername = Nutzer.benutzername");
 $statement->execute();
@@ -67,7 +69,7 @@ echo "<th>Beitrag</th>";
 echo "<th>Datum</th>";
 echo "<th>Nutzer</th>";
 echo "<th>Profilbild</th>";
-echo "<th>Actions</th>"; // Neue Spalte für Follow-Button
+echo "<th>Aktion</th>";
 echo "</tr>";
 
 // Durch alle Beiträge iterieren
@@ -80,32 +82,29 @@ foreach ($statement as $row) {
 
     // Hier füge den Follow-Button hinzu
     echo "<td>";
-
     // Überprüfen, ob der Benutzer bereits folgt
     $checkStatement = $pdo->prepare("SELECT * FROM Follower WHERE follower_username = ? AND followed_username = ?");
     $checkStatement->execute([$_SESSION["benutzername"], $row['benutzername']]);
 
     if ($checkStatement->rowCount() == 0) {
         // Der Benutzer folgt noch nicht, zeige den Follow-Button
-        echo "<form action='follow.php' method='post'>";
+        echo "<form action='community.php' method='post'>";
         echo "<input type='hidden' name='followed_username' value='" . $row['benutzername'] . "'>";
         echo "<button type='submit'>Follow</button>";
         echo "</form>";
     } else {
         // Der Benutzer folgt bereits, zeige den Unfollow-Button
-        echo "<form action='unfollow.php' method='post'>";
+        echo "<form action='community.php' method='post'>";
         echo "<input type='hidden' name='followed_username' value='" . $row['benutzername'] . "'>";
         echo "<button type='submit'>Unfollow</button>";
         echo "</form>";
     }
-
     echo "</td>";
     echo "</tr>";
 }
 
 // Tabellenende
 echo "</table>";
-
 ?>
 
 </body>
