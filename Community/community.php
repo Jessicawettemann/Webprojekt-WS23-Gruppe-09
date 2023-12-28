@@ -1,6 +1,40 @@
 <?php
 include "Datenbank Verbindung.php";
 include "Header Sicherheit.php";
+?>
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css">
+    <title>Forum</title>
+</head>
+<body>
+
+<h1>Community</h1>
+
+<!-- Formular zum Hinzufügen von Beiträgen -->
+<form action="community_do.php" method="post" placeholder="Gib hier deinen Beitrag ein..." enctype="multipart/form-data">
+    <h1>Forum</h1>
+    <br><br>
+    <label for="beitrag"></label>
+    <input type="text" placeholder="Beitrag" id="beitrag" name="beitrag" required>
+    <button type="submit">Beitrag hinzufügen</button>
+    <br>
+    <br>
+    <br><br><br><br>
+</form>
+
+<!-- Formular zur Suche nach einem Nutzer -->
+<form action="community.php" method="post">
+    <label for="search_user">Nutzer suchen:</label>
+    <input type="text" id="search_user" name="search_user" required>
+    <button type="submit">Suchen</button>
+</form>
+
+<?php
 
 // Überprüfen, ob das Formular zur Nutzersuche abgeschickt wurde
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -44,36 +78,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" type="text/css">
-    <title>Forum</title>
-</head>
-<body>
-
-<h1>Community</h1>
-
-<!-- Formular zum Hinzufügen von Beiträgen -->
-<form action="community_do.php" method="post" placeholder="Gib hier deinen Beitrag ein..." enctype="multipart/form-data">
-    <h1>Forum</h1>
-    <br><br>
-    <label for="beitrag"></label>
-    <input type="text" placeholder="Beitrag" id="beitrag" name="beitrag" required>
-    <button type="submit">Beitrag hinzufügen</button>
-    <br>
-    <br>
-    <br><br><br><br>
-</form>
-
-<!-- Formular zur Suche nach einem Nutzer -->
-<form action="community.php" method="post">
-    <label for="search_user">Nutzer suchen:</label>
-    <input type="text" id="search_user" name="search_user" required>
-    <button type="submit">Suchen</button>
-</form>
 
 <br><br><br>
 
