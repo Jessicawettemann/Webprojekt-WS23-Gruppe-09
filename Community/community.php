@@ -20,30 +20,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Benutzername: " . $userRow['benutzername'] . "<br>";
         echo "Vorname: " . $userRow['vorname'] . "<br>";
         echo "Nachname: " . $userRow['nachname'] . "<br>";
-
-        // Überprüfen, ob der Benutzer bereits folgt
-        $checkStatement = $pdo->prepare("SELECT * FROM Follower WHERE follower_username = ? AND followed_username = ?");
-        $checkStatement->execute([$_SESSION["benutzername"], $userRow['benutzername']]);
-        $isFollowing = ($checkStatement->rowCount() > 0);
-
-        // Formular zum Folgen/Entfolgen
-        echo "<form action='follow.php' method='post'>";
-        echo "<input type='hidden' name='followed_username' value='" . $userRow['benutzername'] . "'>";
-
-        if (!$isFollowing) {
-            // Der Benutzer folgt noch nicht, zeige den Follow-Button
-            echo "<button type='submit'>Follow</button>";
-        } else {
-            // Der Benutzer folgt bereits, zeige den Unfollow-Button
-            echo "<button formaction='unfollow.php' type='submit'>Unfollow</button>";
-        }
-
-        echo "</form>";
     } else {
         // Nutzer nicht gefunden
         echo "<p>Nutzer nicht gefunden.</p>";
     }
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -51,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="Formulare_1.css">
     <title>Forum</title>
 </head>
 <body>
@@ -88,6 +70,7 @@ echo "<th>Beitrag</th>";
 echo "<th>Datum</th>";
 echo "<th>Nutzer</th>";
 echo "<th>Profilbild</th>";
+echo "<th>Folgen</th>"; // Folgen-Spalte hinzugefügt
 echo "</tr>";
 
 foreach ($statement as $row) {
@@ -96,29 +79,26 @@ foreach ($statement as $row) {
     echo "<td>" . $row['datum'] . "</td>";
     echo "<td>" . $row['vorname'] . " " . $row['nachname'] . "</td>";
     echo "<td>" . $row['profilbild'] . "</td>";
-
+    
     // Hier fügen Sie den Follow-Button hinzu, wenn ein Nutzer gefunden wurde
-    if (isset($userRow) && $userRow['benutzername'] == $row['benutzername']) {
-        echo "<td>";
-        // Überprüfen, ob der Benutzer bereits folgt
-        $checkStatement = $pdo->prepare("SELECT * FROM Follower WHERE follower_username = ? AND followed_username = ?");
-        $checkStatement->execute([$_SESSION["benutzername"], $row['benutzername']]);
+    echo "<td>";
+    // Überprüfen, ob der Benutzer bereits folgt
+    $checkStatement = $pdo->prepare("SELECT * FROM Follower WHERE follower_username = ? AND followed_username = ?");
+    $checkStatement->execute([$_SESSION["benutzername"], $row['benutzername']]);
 
-        // Formular zum Folgen/Entfolgen
-        echo "<form action='follow.php' method='post'>";
-        echo "<input type='hidden' name='followed_username' value='" . $row['benutzername'] . "'>";
+    echo "<form action='follow.php' method='post'>";
+    echo "<input type='hidden' name='followed_username' value='" . $row['benutzername'] . "'>";
 
-        if ($checkStatement->rowCount() == 0) {
-            // Der Benutzer folgt noch nicht, zeige den Follow-Button
-            echo "<button type='submit'>Follow</button>";
-        } else {
-            // Der Benutzer folgt bereits, zeige den Unfollow-Button
-            echo "<button type='submit'>Unfollow</button>";
-        }
-
-        echo "</form>";
-        echo "</td>";
+    if ($checkStatement->rowCount() == 0) {
+        // Der Benutzer folgt noch nicht, zeige den Follow-Button
+        echo "<button type='submit'>Follow</button>";
+    } else {
+        // Der Benutzer folgt bereits, zeige den Unfollow-Button
+        echo "<button type='submit'>Unfollow</button>";
     }
+
+    echo "</form>";
+    echo "</td>";
 
     echo "</tr>";
 }
