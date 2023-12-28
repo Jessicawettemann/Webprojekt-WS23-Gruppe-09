@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["followed_username"])) 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" type="text/css" href="Formulare_1.css">
+    <link rel="stylesheet" type="text/css">
     <title>Forum</title>
 </head>
 <body>
