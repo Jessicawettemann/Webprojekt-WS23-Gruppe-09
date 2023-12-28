@@ -1,6 +1,28 @@
 <?php
 include "Datenbank Verbindung.php";
 include "Header Sicherheit.php";
+
+// Überprüfen, ob ein Follow-Button geklickt wurde
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["followed_username"])) {
+    // Annahme: $_SESSION["benutzername"] enthält den aktuellen Benutzernamen
+    $benutzername = $_SESSION["benutzername"];
+    $followedUsername = $_POST["followed_username"];
+
+    // Überprüfen, ob der Benutzer bereits folgt
+    $checkStatement = $pdo->prepare("SELECT * FROM Follower WHERE follower_username = ? AND followed_username = ?");
+    $checkStatement->execute([$benutzername, $followedUsername]);
+
+    if ($checkStatement->rowCount() == 0) {
+        // Der Benutzer folgt noch nicht, füge ihn hinzu
+        $insertStatement = $pdo->prepare("INSERT INTO Follower (follower_username, followed_username) VALUES (?, ?)");
+        $insertStatement->execute([$benutzername, $followedUsername]);
+        echo "Du folgst jetzt " . $followedUsername;
+    } else {
+        // Der Benutzer folgt bereits
+        echo "Du folgst bereits " . $followedUsername;
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -8,27 +30,29 @@ include "Header Sicherheit.php";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="Formulare_1.css">
     <title>Forum</title>
 </head>
 <body>
 
 <h1>Community</h1>
 
-
-    <!-- Formular zum Hinzufügen von Beiträgen -->
-    <form action="community_do.php" method="post" placeholder="Gib hier deinen Beitrag ein..." enctype="multipart/form-data">
-        <h1>Forum</h1>
-        <br><br>
-        <label for="beitrag"></label>
-        <input type="text" placeholder="Beitrag" id="beitrag" name="beitrag" required>
-
-        <button type="submit">Beitrag hinzufügen</button>
-
-    <br>    
-    <br>
+<!-- Formular zum Hinzufügen von Beiträgen -->
+<form action="community_do.php" method="post" placeholder="Gib hier deinen Beitrag ein..." enctype="multipart/form-data">
+    <h1>Forum</h1>
+    <br><br>
+    <label for="beitrag"></label>
+    <input type="text" placeholder="Beitrag" id="beitrag" name="beitrag" required>
+    <button type="submit">Beitrag hinzufügen</button>
     <br><br><br><br>
+</form>
 
+<!-- Follow-Formular oberhalb der Tabelle -->
+<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+    <label for="followed_username">Folge einem Nutzer: </label>
+    <input type="text" id="followed_username" name="followed_username" required>
+    <button type="submit">Folgen</button>
+</form>
 
 <?php
 
@@ -43,7 +67,7 @@ echo "<th>Beitrag</th>";
 echo "<th>Datum</th>";
 echo "<th>Nutzer</th>";
 echo "<th>Profilbild</th>";
-echo "<th>Folgen</th>";
+echo "<th>Actions</th>"; // Neue Spalte für Follow-Button
 echo "</tr>";
 
 // Durch alle Beiträge iterieren
@@ -52,7 +76,6 @@ foreach ($statement as $row) {
     echo "<td>" . $row['beitrag'] . "</td>";
     echo "<td>" . $row['datum'] . "</td>";
     echo "<td>" . $row['vorname'] . " " . $row['nachname'] . "</td>";
-
     echo "<td>" . $row['profilbild'] . "</td>";
 
     // Hier füge den Follow-Button hinzu
