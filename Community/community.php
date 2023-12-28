@@ -34,6 +34,8 @@ include "Header Sicherheit.php";
     <button type="submit">Suchen</button>
 </form>
 
+<br> <br> 
+
 <?php
 
 // Überprüfen, ob das Formular zur Nutzersuche abgeschickt wurde
