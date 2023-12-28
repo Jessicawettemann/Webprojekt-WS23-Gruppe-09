@@ -25,9 +25,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $checkStatement = $pdo->prepare("SELECT * FROM Follower WHERE follower_username = ? AND followed_username = ?");
         $checkStatement->execute([$_SESSION["benutzername"], $userRow['benutzername']]);
 
+        // Formular zum Folgen
         echo "<form action='follow.php' method='post'>";
         echo "<input type='hidden' name='followed_username' value='" . $userRow['benutzername'] . "'>";
-
         if ($checkStatement->rowCount() == 0) {
             // Der Benutzer folgt noch nicht, zeige den Follow-Button
             echo "<button type='submit'>Follow</button>";
@@ -35,7 +35,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Der Benutzer folgt bereits, zeige den Unfollow-Button
             echo "<button type='submit'>Unfollow</button>";
         }
-
         echo "</form>";
     } else {
         // Nutzer nicht gefunden
@@ -102,6 +101,7 @@ foreach ($statement as $row) {
         $checkStatement = $pdo->prepare("SELECT * FROM Follower WHERE follower_username = ? AND followed_username = ?");
         $checkStatement->execute([$_SESSION["benutzername"], $row['benutzername']]);
 
+        // Formular zum Folgen/Entfolgen
         echo "<form action='follow.php' method='post'>";
         echo "<input type='hidden' name='followed_username' value='" . $row['benutzername'] . "'>";
 
