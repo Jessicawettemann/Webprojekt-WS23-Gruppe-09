@@ -52,13 +52,15 @@ foreach ($statement as $row) {
     echo "<td>" . $row['datum'] . "</td>";
     echo "<td>" . $row['vorname'] . " " . $row['nachname'] . "</td>";
 
-        // Überprüfen, ob der Benutzer bereits folgt
-        $checkStatement = $pdo->prepare("SELECT * FROM Follower WHERE follower_username = ? AND followed_username = ?");
-        $checkStatement->execute([$_SESSION["benutzername"], $row['benutzername']]);
 
     echo "<td>" . $row['profilbild'] . "</td>";
 
     // Hier füge den Follow-Button hinzu
+
+            // Überprüfen, ob der Benutzer bereits folgt
+            $checkStatement = $pdo->prepare("SELECT * FROM Follower WHERE follower_username = ? AND followed_username = ?");
+            $checkStatement->execute([$_SESSION["benutzername"], $row['benutzername']]);
+    
     echo "<td>";
 
     if ($checkStatement->rowCount() == 0) {
