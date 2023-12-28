@@ -52,7 +52,6 @@ foreach ($statement as $row) {
     echo "<td>" . $row['datum'] . "</td>";
     echo "<td>" . $row['vorname'] . " " . $row['nachname'] . "</td>";
 
-
     echo "<td>" . $row['profilbild'] . "</td>";
 
     // Hier füge den Follow-Button hinzu
@@ -80,8 +79,6 @@ foreach ($statement as $row) {
     echo "</td>";
     echo "</tr>";
 }
-
-    echo "</tr>";
 
 
 // Tabellenende
