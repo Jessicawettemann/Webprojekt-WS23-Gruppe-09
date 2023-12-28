@@ -52,16 +52,6 @@ foreach ($statement as $row) {
     echo "<td>" . $row['datum'] . "</td>";
     echo "<td>" . $row['vorname'] . " " . $row['nachname'] . "</td>";
 
-    if ($checkStatement->rowCount() == 0) {
-        // Der Benutzer folgt noch nicht, zeige den Follow-Button
-        echo "<form action='follow.php' method='post'>";
-        echo "<input type='hidden' name='followed_username' value='" . $row['benutzername'] . "'>";
-        echo "<button type='submit'>Follow</button>";
-        echo "</form>";
-    } else {
-        // Der Benutzer folgt bereits
-        echo " (Du folgst bereits)";
-    }
 
     echo "<td>" . $row['profilbild'] . "</td>";
     echo "</tr>";
