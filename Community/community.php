@@ -75,6 +75,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <button type="submit">Suchen</button>
 </form>
 
+<br><br><br>
+
 <!-- Beiträge in einer Tabelle anzeigen -->
 <?php
 $statement = $pdo->prepare("SELECT * FROM Beitrag INNER JOIN Nutzer ON Beitrag.benutzername = Nutzer.benutzername");
