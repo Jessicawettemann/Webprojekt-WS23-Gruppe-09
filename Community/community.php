@@ -52,10 +52,35 @@ foreach ($statement as $row) {
     echo "<td>" . $row['datum'] . "</td>";
     echo "<td>" . $row['vorname'] . " " . $row['nachname'] . "</td>";
 
+        // Überprüfen, ob der Benutzer bereits folgt
+        $checkStatement = $pdo->prepare("SELECT * FROM Follower WHERE follower_username = ? AND followed_username = ?");
+        $checkStatement->execute([$_SESSION["benutzername"], $row['benutzername']]);
 
     echo "<td>" . $row['profilbild'] . "</td>";
+
+    // Hier füge den Follow-Button hinzu
+    echo "<td>";
+
+    if ($checkStatement->rowCount() == 0) {
+        // Der Benutzer folgt noch nicht, zeige den Follow-Button
+        echo "<form action='follow.php' method='post'>";
+        echo "<input type='hidden' name='followed_username' value='" . $row['benutzername'] . "'>";
+        echo "<button type='submit'>Follow</button>";
+        echo "</form>";
+    } else {
+        // Der Benutzer folgt bereits, zeige den Unfollow-Button
+        echo "<form action='unfollow.php' method='post'>";
+        echo "<input type='hidden' name='followed_username' value='" . $row['benutzername'] . "'>";
+        echo "<button type='submit'>Unfollow</button>";
+        echo "</form>";
+    }
+
+    echo "</td>";
     echo "</tr>";
 }
+
+    echo "</tr>";
+
 
 // Tabellenende
 echo "</table>";
