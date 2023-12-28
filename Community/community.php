@@ -43,6 +43,7 @@ echo "<th>Beitrag</th>";
 echo "<th>Datum</th>";
 echo "<th>Nutzer</th>";
 echo "<th>Profilbild</th>";
+echo "<th>Folgen</th>";
 echo "</tr>";
 
 // Durch alle Beiträge iterieren
@@ -55,12 +56,11 @@ foreach ($statement as $row) {
     echo "<td>" . $row['profilbild'] . "</td>";
 
     // Hier füge den Follow-Button hinzu
-
-            // Überprüfen, ob der Benutzer bereits folgt
-            $checkStatement = $pdo->prepare("SELECT * FROM Follower WHERE follower_username = ? AND followed_username = ?");
-            $checkStatement->execute([$_SESSION["benutzername"], $row['benutzername']]);
-    
     echo "<td>";
+
+    // Überprüfen, ob der Benutzer bereits folgt
+    $checkStatement = $pdo->prepare("SELECT * FROM Follower WHERE follower_username = ? AND followed_username = ?");
+    $checkStatement->execute([$_SESSION["benutzername"], $row['benutzername']]);
 
     if ($checkStatement->rowCount() == 0) {
         // Der Benutzer folgt noch nicht, zeige den Follow-Button
@@ -79,7 +79,6 @@ foreach ($statement as $row) {
     echo "</td>";
     echo "</tr>";
 }
-
 
 // Tabellenende
 echo "</table>";
