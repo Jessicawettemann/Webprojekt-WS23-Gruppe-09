@@ -34,6 +34,9 @@ include "Header Sicherheit.php";
     <button type="submit">Suchen</button>
 </form>
 
+<!-- Navigationslink zu den Benachrichtigungen -->
+<a href="notifications.php">Benachrichtigungen</a>
+
 <br> <br> 
 
 <?php
