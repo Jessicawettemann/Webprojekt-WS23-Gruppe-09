@@ -6,6 +6,11 @@ include "Header Sicherheit.php";
 $notificationStatement = $pdo->prepare("SELECT * FROM Benachrichtigungen WHERE empfaenger_username = ?");
 $notificationStatement->execute([$_SESSION["benutzername"]]);
 
+// E-Mail-Parameter
+$empfaenger = $_SESSION["email"]; // Hier sollte die Spalte für die E-Mail-Adresse in Ihrer Datenbank stehen
+$betreff = 'Neue Benachrichtigung';
+$header = 'From: webmaster@example.com'; // Ändern Sie dies entsprechend Ihrer Konfiguration
+
 ?>
 
 <!DOCTYPE html>
@@ -27,6 +32,9 @@ while ($notification = $notificationStatement->fetch(PDO::FETCH_ASSOC)) {
     echo "<p>Benachrichtigung: " . $notification['nachricht'] . "</p>";
     echo "<p>Von: " . $notification['absender_username'] . "</p>";
     echo "</div>";
+
+    // E-Mail senden
+    mail($empfaenger, $betreff, $notification['nachricht'], $header);
 }
 ?>
 
