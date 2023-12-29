@@ -8,6 +8,12 @@ session_start();
 // Beispiel: Annahme, dass Sie eine Spalte "gelesen" in Ihrer Benachrichtigungstabelle haben.
 $hasNewNotifications = false; // Setzen Sie diesen Wert basierend auf Ihren Daten in der Datenbank.
 
+// Beispiel: Überprüfen Sie, ob es neue Benachrichtigungen gibt
+if (isset($_SESSION["benutzername"])) {
+    $checkNewNotifications = $pdo->prepare("SELECT COUNT(*) FROM Benachrichtigungen WHERE benutzername = ? AND gelesen = 0");
+    $checkNewNotifications->execute([$_SESSION["benutzername"]]);
+    $hasNewNotifications = ($checkNewNotifications->fetchColumn() > 0);
+}
 ?>
 
 <!DOCTYPE html>
@@ -48,45 +54,4 @@ $hasNewNotifications = false; // Setzen Sie diesen Wert basierend auf Ihren Date
             </li>
 
             <?php
-            #wenn Nutzer angemeldet ist wird zum Logout verlinkt, anderenfalls zum Login
-            if(isset($_SESSION["benutzername"])) {
-                echo "<li class='li'><a href='Logout.php'>Logout</a></li";
-            } else {
-                echo "<li class='li'><a href='Login Formular.php'>Login</a></li";
-            }
-            ?>
-
-            <?php
-            #wenn Nutzer angemeldet ist wird zum Logout verlinkt, anderenfalls zum Login
-            if(isset($_SESSION["admin"])) {
-                echo "<li class='li'><a href='Logout_Admin.php'>Logout Admin</a></li";
-            } else {
-                echo "<li class='li'><a href='Login_Admin.php'>Login Admin</a></li";
-            }
-            ?>
-
-            <div>
-                <?php
-                #ist Nutzer angemeldet wird das Profilbild angezeigt, wenn nicht dann der Platzhalter
-                if (!isset($_SESSION["Nutzer_ID"])) {
-                    echo "<div>nicht angemeldet</div>";
-                } else {
-
-                    $statement = $pdo->prepare("SELECT profilbild FROM Nutzer WHERE ID= :Nutzer_ID ");
-                    $statement->bindParam(":Nutzer_ID", $_SESSION["Nutzer_ID"]);
-                    if ($statement->execute()) {
-                        if ($row = $statement->fetch()) {
-                            if (($row["profilbild"]) == null or "") {
-                                echo "<div>kein Profilbild</div>";
-                            } else {
-                                echo "<div><img class='profilpicture' src='https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/" . $row['profilbild'] . "'></div>";
-                            }
-                        }
-                    }
-                }
-                ?>
-            </div>
-        </ul>
-    </div>
-</header>
-</body>
+            #wenn Nutzer angemeldet ist wird zum Logout verlink
