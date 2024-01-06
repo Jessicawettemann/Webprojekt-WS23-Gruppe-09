@@ -11,7 +11,7 @@ $empfaenger = $_SESSION["email"];
 $betreff = 'Neue Benachrichtigung';
 
 // Hier geben Sie Ihre neue E-Mail-Adresse an
-$absenderEmail = 'ihre.email@example.com';
+$absenderEmail = 'pilo-hdm@gmx.de';
 
 // Der Header wird mit der neuen Absender-E-Mail-Adresse erstellt
 $header = 'From: ' . $absenderEmail;
