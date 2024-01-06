@@ -7,9 +7,14 @@ $notificationStatement = $pdo->prepare("SELECT * FROM Benachrichtigungen WHERE e
 $notificationStatement->execute([$_SESSION["benutzername"]]);
 
 // E-Mail-Parameter
-$empfaenger = $_SESSION["email"]; // Hier sollte die Spalte für die E-Mail-Adresse in Ihrer Datenbank stehen
+$empfaenger = $_SESSION["email"];
 $betreff = 'Neue Benachrichtigung';
-$header = 'From: webmaster@example.com'; // Ändern Sie dies entsprechend Ihrer Konfiguration
+
+// Hier geben Sie Ihre neue E-Mail-Adresse an
+$absenderEmail = 'ihre.email@example.com';
+
+// Der Header wird mit der neuen Absender-E-Mail-Adresse erstellt
+$header = 'From: ' . $absenderEmail;
 
 ?>
 
