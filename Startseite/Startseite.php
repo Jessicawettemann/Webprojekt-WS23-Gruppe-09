@@ -19,7 +19,9 @@ include "Header Sicherheit.php";
 
 </section>
 <body>
-<div class="row"> </div>
+<div class="row">
+
+
 
 
     <div class="picture">

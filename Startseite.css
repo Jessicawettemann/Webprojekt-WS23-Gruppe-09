@@ -48,20 +48,15 @@ button:focus {
 }
 
 .picture{
-    flex-basis: 15%;
+    flex-basis: 32%;
     border-radius: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     position: relative;
     overflow: hidden;
 
 }
 .picture img{
-    width: 230px;
-    height: 240px;
-    border-radius: 10px;
-    position: center;
-    display: flex;
-    gap: 20px;
+    width: 100%;
 }
 .Layer{
     background: transparent;
@@ -73,7 +68,7 @@ button:focus {
     transition: 0.5s;
 }
 .Layer:hover{
-    background: rgb(236, 255, 253);
+    background: rgb(248, 201, 84);
 }
 .Layer h3{
     width: 100%;
