@@ -20,7 +20,7 @@ include "Header Sicherheit.php";
 </section>
 <br><br><br><br<br<br><br>
 <body>
-<br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br>
 
 <div class="row">
 
