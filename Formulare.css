@@ -1,5 +1,5 @@
 body{
-    background-color: #D3EBE8;
+
 }
 img{
     background-image: url("https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/Business Event Website in Blue Dark Blue Light Blue Modern Style.png");
@@ -72,7 +72,7 @@ input{
 
 }
 input:hover{
-    background-color: #D3EBE8;
+    background-color: #f8c954;
 
 }
 input:focus{
@@ -89,7 +89,7 @@ p{
 }
 a{
     font-family: "Avenir Next", sans-serif;
-    color: #a1d0cc;
+    color: white;
     font-size: 14px;
     position: page;
 }
@@ -104,7 +104,7 @@ button{
     color: white;
     font-family: "Avenir Next", sans-serif;
     font-size: 14px;
-    background: linear-gradient(45deg, #f26b70, #f8c954); /* Farbverlauf */;;
+    background: linear-gradient(45deg, #f26b70, #f8c954); /* Farbverlauf */;
 }
 button:hover{
     width: 200px;
