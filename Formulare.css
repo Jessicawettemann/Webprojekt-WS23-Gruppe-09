@@ -17,7 +17,7 @@ form{
     width: 270px;
     padding: 60px;
     border-radius: 8px;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.5);
     opacity: inherit;
     box-shadow: 2px 2px 1px rgb(199, 184, 184);
     position: absolute;
