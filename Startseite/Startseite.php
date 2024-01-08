@@ -11,9 +11,9 @@ include "Header Sicherheit.php";
 </head>
 <body>
 <section class="Header">
-    <br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
     <h1>Willkommen  </h1>
-    <p> bei Landify </p><br><br>
+    <p> bei Landify </p><br><br><br>
     <button type="button">Finde mehr heraus</button>
 
 </section>
