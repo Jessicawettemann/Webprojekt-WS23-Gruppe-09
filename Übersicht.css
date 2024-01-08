@@ -1,6 +1,6 @@
 body {
     font-family: "Avenir Next Medium", sans-serif;
-    background-color: #D3EBE8;
+    background: linear-gradient(45deg, #f26b70, #f8c954); /* Farbverlauf */;
 }
 h1{
     font-family: "Avenir Next Medium";
