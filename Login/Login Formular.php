@@ -12,8 +12,9 @@ session_start();
     <link rel="stylesheet" type="text/css" href="Formulare.css">
     <title>Login</title>
 </head>
-<img src="https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/Teal Green Simple Illustrated Social Media Policy Presentation.png">
+
 <body>
+
 <form
 <div class="input_container"
 <form action="Login%20Do.php" method="post">
