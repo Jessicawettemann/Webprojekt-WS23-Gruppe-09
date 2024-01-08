@@ -51,7 +51,7 @@ button:focus {
 
 .picture{ flex-basis: 15%; border-radius: 5px; margin-bottom: 30px; position: relative; overflow: hidden; }
 
-.picture img{ width: 100%; height: auto; }
+.picture img{ width: 120%; height: 120%; }
 
 .Layer{ background: transparent; height: 100%; width: 100%; position: absolute; top:0; left: 0; transition: 0.5s; }
 
