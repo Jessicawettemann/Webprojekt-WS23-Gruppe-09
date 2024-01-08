@@ -28,7 +28,7 @@ button1:focus {
 }
 
 .card {
-    background-color: white;
+    background-color: black;
     display: inline-block;
     border: 1px solid #ddd;
     padding: 10px;
@@ -41,12 +41,12 @@ button1:focus {
 .card h1{
     font-family: "Avenir Next Medium";
     font-size: 16px;
-    color: #D3EBE8;
+    color: #f26b70;
 }
 .card h2{
     font-family: "Avenir Next";
     font-size: 11px;
-    color: #000;
+    color: white;
 }
 .image {
     float: left;
@@ -75,7 +75,7 @@ button{
     width: 110px;
     border-radius: 1000px;
     border: none;
-    color: #D3EBE8;
+    color: white;
     font-family: "Avenir Next", sans-serif;
     font-size: 14px;
     background: black;
