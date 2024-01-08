@@ -17,7 +17,7 @@ form{
     width: 270px;
     padding: 60px;
     border-radius: 8px;
-    background-color: #0c0c0c;
+    background-color: transparent;
     opacity: inherit;
     box-shadow: 2px 2px 1px rgb(199, 184, 184);
     position: absolute;
@@ -43,7 +43,7 @@ form1{
 }
 
 h1{
-    color: #f26b70;
+    color: black;
     font-family: "Avenir Next Medium";
     font-size: 38px;
     background-position: top left;
@@ -66,9 +66,9 @@ input{
     padding: 0px 25px;
     border-radius: 10px;
     border: none;
-    background-color: white;
+    background-color: black;
     box-shadow: 3px 3px 6px rgba(0,0,0,0.212);
-    color: black;
+    color: white;
     font-size: 12px;
 
 }
@@ -81,7 +81,7 @@ input:focus{
     background-color: #f26b70;
 }
 input::placeholder{
-    color: black;
+    color: #f8c954;
 }
 p{
     font-family: "Avenir Next", sans-serif;
@@ -90,7 +90,7 @@ p{
 }
 a{
     font-family: "Avenir Next", sans-serif;
-    color: white;
+    color: black;
     font-size: 14px;
     position: page;
 }
