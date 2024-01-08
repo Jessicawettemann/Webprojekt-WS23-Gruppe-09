@@ -56,12 +56,12 @@ button:focus {
 
 }
 .picture img{
-    width: 50%;
+    width: 15%;
 }
 .Layer{
     background: transparent;
-    height: 50%;
-    width: 50%;
+    height: 100%;
+    width: 15%;
     position: absolute;
     top:0;
     left: 0;
