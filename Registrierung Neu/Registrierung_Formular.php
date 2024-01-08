@@ -16,7 +16,7 @@ include"Datenbank Verbindung.php";
 <body>
 
 <div>
-    <form1 action="Registrierung_do.php" method="post" enctype="multipart/form-data">
+    <form action="Registrierung_do.php" method="post" enctype="multipart/form-data">
         <h1>Registrieren</h1>
         <label class="label" for="profilbild"></label>
         <input type="file" placeholder="Profilbild" name="profilbild">
@@ -37,7 +37,7 @@ include"Datenbank Verbindung.php";
         <input type="password" placeholder="Passwort" name="passwort">
 
         <button type="submit">Registrieren</button>
-    </form1>
+    </form>
 </div>
 
 </body>
