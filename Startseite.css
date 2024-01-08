@@ -1,5 +1,5 @@
 body {
-    background-color: #D3EBE8;
+    background-color: white;
 }
 .Header{
     min-height: 100vh;
@@ -19,8 +19,8 @@ body {
     font-family:"Avenir Next Medium";
 }
 .Header h1 {
-    color: white;
-    font-size: 80px;
+    color: black;
+    font-size: 90px;
 
 }
 .Header p{
@@ -33,6 +33,20 @@ body {
     margin: auto;
     font-size: 40px;
 }
+nav ul {
+    padding: 0;
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.main {
+    padding: 20px;
+}
+
 .picture{
     flex-basis: 15%;
     border-radius: 5px;
