@@ -18,9 +18,9 @@ include "Header Sicherheit.php";
     <button type="button" onclick="window.location.href='ich-biete_Übersicht.php';">Finde mehr heraus!</button>
 
 </section>
-<br><br><br>
+<br><br><br><br<br<br><br>
 <body>
-<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br>
 
 <div class="row">
 
