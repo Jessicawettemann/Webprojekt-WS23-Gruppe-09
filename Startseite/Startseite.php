@@ -21,9 +21,7 @@ include "Header Sicherheit.php";
 <br><br><br>
 <body>
 <br><br><br><br><br><br><br><br><br><br>
-<section class="Funktion"
-<h2>Funktionen </h2>
-</section
+
 <div class="row">
 
 
