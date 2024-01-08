@@ -3,7 +3,7 @@ include "Header Sicherheit.php";
 ?>
 
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Startseite</title>
@@ -18,8 +18,12 @@ include "Header Sicherheit.php";
     <button type="button" onclick="window.location.href='ich-biete_Übersicht.php';">Finde mehr heraus!</button>
 
 </section>
+<br><br><br>
 <body>
 <br><br><br><br><br><br><br><br><br><br>
+<section class="Funktion"
+<h2>Funktionen </h2>
+</section
 <div class="row">
 
 
