@@ -47,46 +47,19 @@ button:focus {
     width: 240px;
 }
 
-.picture{
-    flex-basis: 10%;
-    border-radius: 5px;
-    margin-bottom: 15px;
-    position: relative;
-    overflow: hidden;
+.row{ display: flex; flex-wrap: wrap; justify-content: space-around; }
 
-}
-.picture img{
-    width: 15%;
-}
-.Layer{
-    background: transparent;
-    height: 100%;
-    width: 15%;
-    position: absolute;
-    top:0;
-    left: 0;
-    transition: 0.5s;
-}
-.Layer:hover{
-    background: rgb(248, 201, 84);
-}
-.Layer h3{
-    width: 100%;
-    font-weight: 500;
-    color: black;
-    font-size: 20px;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    position: absolute;
+.picture{ flex-basis: 10%; border-radius: 5px; margin-bottom: 15px; position: relative; overflow: hidden; }
 
-    font-family: "Avenir Next Medium";
+.picture img{ width: 100%; height: auto; }
 
-}
-.Layer:hover h3{
-    bottom: 49%;
-    opacity: 0.5;
-}
+.Layer{ background: transparent; height: 100%; width: 100%; position: absolute; top:0; left: 0; transition: 0.5s; }
+
+.Layer:hover{ background: rgb(248, 201, 84); }
+
+.Layer h3{ width: 100%; font-weight: 500; color: black; font-size: 20px; bottom: 0; left: 50%; transform: translateX(-50%); position: absolute; font-family: "Avenir Next Medium"; }
+
+.Layer:hover h3{ bottom: 49%; opacity: 0.5; }
 
 
 
