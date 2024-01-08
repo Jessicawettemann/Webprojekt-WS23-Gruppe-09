@@ -38,16 +38,16 @@
     list-style: none;
 }
 .li a{
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     display: block;
-    color: white;
+    color: rgb(255, 255, 255);
     font-weight: lighter;
     text-decoration: none;
     font-family: "Avenir Next Medium";
 }
 .li a:hover{
-    color: white;
+    color: #f8c954;
     font-weight: bolder;
 }
 
