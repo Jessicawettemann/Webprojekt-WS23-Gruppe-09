@@ -53,7 +53,7 @@ button:focus {
 
 .picture img{ width: 140%; height: 80%; }
 
-.Layer{ background: transparent; height: 100%; width: 80%; position: absolute; top:0; left: 0; transition: 0.5s; }
+.Layer{ background: transparent; height: 140%; width: 80%; position: absolute; top:0; left: 0; transition: 0.5s; }
 
 .Layer:hover{ background: linear-gradient(45deg, #f26b70, #f8c954); /* Farbverlauf */; }
 
