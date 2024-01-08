@@ -14,7 +14,7 @@ include "Header Sicherheit.php";
     <br><br><br><br><br><br><br><br><br><br><br><br>
     <h1>Willkommen  </h1>
     <p> bei Landify </p><br><br><br>
-    <button href="ich-biete_Übersicht.php">Finde mehr heraus</button>
+    <button type="button" onclick="ich-biete_Übersicht.php">Finde mehr heraus</button>
 
 </section>
 <body>
