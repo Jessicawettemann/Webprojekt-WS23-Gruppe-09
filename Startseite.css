@@ -24,27 +24,27 @@ body {
 
 }
 .Header p{
-    color: white;
+    color: black;
     margin: auto;
     font-size: 80px;
 }
-.Header h2{
-    color: white;
-    margin: auto;
-    font-size: 40px;
+button{
+    height: 40px;
+    width: 110px;
+    border-radius: 1000px;
+    border: none;
+    color: #D3EBE8;
+    font-family: "Avenir Next", sans-serif;
+    font-size: 14px;
+    background: black;
 }
-nav ul {
-    padding: 0;
-    list-style: none;
-}
+button:hover{
+    width: 200px;
 
-nav ul li {
-    display: inline;
-    margin-right: 10px;
 }
-
-.main {
-    padding: 20px;
+button:focus {
+    outline: none;
+    width: 200px;
 }
 
 .picture{

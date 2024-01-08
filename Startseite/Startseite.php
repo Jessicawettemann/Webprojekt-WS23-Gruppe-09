@@ -11,14 +11,11 @@ include "Header Sicherheit.php";
 </head>
 <body>
 <section class="Header">
-    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br>
     <h1>Willkommen  </h1>
-    <p> bei Landify </p><br><br><br>
-    <nav>
-        <ul>
-            <li><a href="Ich-biete_Übersicht.php">Finde mehr heraus!</a></li>
-        </ul>
-    </nav>
+    <p> bei Landify </p><br><br>
+    <button type="button">Finde mehr heraus</button>
+
 </section>
 <body>
 <div class="row"> </div>
