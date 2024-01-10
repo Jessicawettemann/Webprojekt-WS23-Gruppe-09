@@ -40,7 +40,7 @@ include "Header Sicherheit.php";
     <div class="picture">
         <img src="https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/Kalender.png" alt=" placeholder" >
        <div class="Layer">
-        <a href="aktivitaeten.php"> <h3>aktivitaeten</h3> </a>
+        <a href="aktivitaeten.php"> <h3>Aktivitäten</h3> </a>
     </div>
     </div>
 </div>
