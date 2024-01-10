@@ -55,6 +55,24 @@ body {
 }
 
 
+a {
+    color: white;
+}
+
+
+a:visited {
+    color: #f26b70;
+}
+
+
+a:active {
+    color: white;
+}
+
+
+a:hover {
+    color: white;
+}
 
 /* Die Bearbeiten-Links */
  .edit {
