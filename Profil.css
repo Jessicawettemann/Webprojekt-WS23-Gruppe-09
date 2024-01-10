@@ -61,7 +61,7 @@ a {
 
 
 a:visited {
-    color: #f26b70;
+    color: white;
 }
 
 
@@ -71,7 +71,7 @@ a:active {
 
 
 a:hover {
-    color: white;
+    color: #f26b70;
 }
 
 /* Die Bearbeiten-Links */
