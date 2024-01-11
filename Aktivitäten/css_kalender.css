@@ -63,7 +63,7 @@ button {
 .nav-button {
     display: inline-block;
     padding: 10px;
-    margin: 0 auto;
+    margin: 10px auto;
     text-decoration: none;
     color: #fff;
     background-color: #4caf50;
