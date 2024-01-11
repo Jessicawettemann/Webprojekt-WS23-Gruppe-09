@@ -15,6 +15,14 @@ body {
     position: relative;
 }
 
+#navigation-bar {
+    width: 100%; /* Navigationsleiste über die gesamte Breite */
+    background-color: #333; /* Hintergrundfarbe der Navigationsleiste anpassen */
+    color: white; /* Textfarbe anpassen */
+    padding: 10px; /* Innenabstand der Navigationsleiste anpassen */
+    box-sizing: border-box;
+}
+
 #calendar {
     margin-top: 20px;
 }
