@@ -16,6 +16,8 @@ include "Header Sicherheit.php";
     <div id="calendar">
         <!-- Hier wird der Kalender angezeigt -->
     </div>
+    <br>
+    <br>
 
         <!-- Pfeile für den Monatswechsel -->
         <button id="prevMonth">Previous Month</button>
