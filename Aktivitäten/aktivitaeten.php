@@ -1,6 +1,5 @@
 <?php
 include "Header Sicherheit.php";
-include "Datenbank Verbindung.php";
 ?>
 
 <!DOCTYPE html>
@@ -13,15 +12,22 @@ include "Datenbank Verbindung.php";
 </head>
 <body>
 
+<!-- Vorheriger und Nächster Monat Buttons -->
+<div style="text-align: center; margin-top: 20px;">
+    <button onclick="loadPreviousMonth()">Vorheriger Monat</button>
+    <button onclick="loadNextMonth()">Nächster Monat</button>
+</div>
+
 <!-- Kalenderbereich -->
 <div id="calendar">
-    <?php include "calendar.php"; ?>
+    <!-- Hier wird der Kalender angezeigt -->
 </div>
 
 <!-- Formular zum Hinzufügen von Ereignissen -->
 <form action="aktivitaeten_do.php" method="post" enctype="multipart/form-data">
     <h1>Kalender</h1>
     <br><br>
+    <!-- Weitere Eingabefelder für Ereignisse hier einfügen -->
     <label for="thema"></label>
     <input type="text" placeholder="Thema" id="thema" name="thema" required>
 
@@ -37,10 +43,34 @@ include "Datenbank Verbindung.php";
     <br>
     <br>
     <button type="submit">Ereignis hinzufügen</button>
-
-    <br>
-    <br>
 </form>
+
+<!-- JavaScript für die Monatsnavigation -->
+<script>
+    let currentDate = new Date(); // Aktuelles Datum
+
+    // Funktion zum Laden des vorherigen Monats
+    function loadPreviousMonth() {
+        currentDate.setMonth(currentDate.getMonth() - 1);
+        loadCalendar();
+    }
+
+    // Funktion zum Laden des nächsten Monats
+    function loadNextMonth() {
+        currentDate.setMonth(currentDate.getMonth() + 1);
+        loadCalendar();
+    }
+
+    // Funktion zum Laden des Kalenders basierend auf dem aktuellen Datum
+    function loadCalendar() {
+        // Hier kannst du die Logik implementieren, um den Kalender für das aktuelle Datum zu laden
+        // und die Ereignisse für den aktuellen Monat anzeigen
+        // Tipp: Du kannst Ajax verwenden, um Daten vom Server zu laden oder die Seite neu zu rendern
+    }
+
+    // Initialen Kalender laden
+    loadCalendar();
+</script>
 
 </body>
 </html>
