@@ -6,8 +6,14 @@ $firstDay = new DateTime("$year-$month-01");
 $firstDayOfWeek = $firstDay->format('N');
 $daysInMonth = cal_days_in_month(CAL_GREGORIAN, $month, $year);
 
+echo "<div class='calendar-container'>";
+echo "<div class='calendar-header'>";
+echo "<a href='?year=" . ($month == 1 ? $year - 1 : $year) . "&month=" . ($month == 1 ? 12 : $month - 1) . "'>&lt; Vorheriger Monat</a>";
+echo "<span>" . date('F Y', strtotime("$year-$month-01")) . "</span>";
+echo "<a href='?year=" . ($month == 12 ? $year + 1 : $year) . "&month=" . ($month == 12 ? 1 : $month + 1) . "'>Nächster Monat &gt;</a>";
+echo "</div>";
+
 echo "<table class='calendar'>";
-echo "<tr><th colspan='7'>" . date('F Y', strtotime("$year-$month-01")) . "</th></tr>";
 echo "<tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>";
 
 $dayCounter = 1;
@@ -43,6 +49,7 @@ for ($i = 0; $i < 6; $i++) {
 }
 
 echo "</table>";
+echo "</div>";
 
 function getEventsForDate($date)
 {
