@@ -13,7 +13,7 @@ h1 {
 
 .notification-container {
     max-width: 800px;
-    margin: 20px 0 20px 20px; /* Hier die Änderung für linksbündige Ausrichtung */
+    margin: left; /* Hier die Änderung für linksbündige Ausrichtung */
     padding: 20px;
 }
 
