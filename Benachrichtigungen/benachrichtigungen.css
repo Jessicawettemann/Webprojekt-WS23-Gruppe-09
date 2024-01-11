@@ -11,30 +11,29 @@ h1 {
     color: #333;
 }
 
-div {
+.notification-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.notification {
     background-color: #fff;
     border: 1px solid #ddd;
-    margin: 10px;
+    margin-bottom: 20px;
     padding: 15px;
     border-radius: 5px;
 }
 
-p {
+.notification p {
     margin: 0;
 }
 
-/* Styling für die Benachrichtigungselemente */
-div p:nth-child(1) {
+/* Styling nur für die Benachrichtigungselemente innerhalb des .notification-Containers */
+.notification-container .notification p:nth-child(1) {
     font-weight: bold;
 }
 
-div p:nth-child(2) {
+.notification-container .notification p:nth-child(2) {
     color: #777;
-}
-
-/* Optional: Stil für den gesamten Seitencontainer */
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
 }
