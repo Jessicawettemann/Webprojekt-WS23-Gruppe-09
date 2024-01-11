@@ -37,14 +37,17 @@ $header = 'From: ' . $absenderEmail;
         echo "<div class='notification'>"; // Änderung hier, um die Klasse hinzuzufügen
         echo "<p>Benachrichtigung: " . $notification['nachricht'] . "</p>";
         echo "<p>Von: " . $notification['absender_username'] . "</p>";
+
+        // Hier das Datum hinzufügen
+        echo "<p>Datum: " . $notification['datum'] . "</p>";
+
         echo "</div>";
 
         // E-Mail senden
         mail($empfaenger, $betreff, $notification['nachricht'], $header);
     }
     ?>
-
 </div>
-
+<!-- ..
 </body>
 </html>
