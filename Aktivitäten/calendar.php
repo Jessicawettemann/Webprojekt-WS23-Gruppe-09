@@ -19,7 +19,19 @@ for ($i = 0; $i < 6; $i++) {
             echo "<td></td>";
         } elseif ($dayCounter <= $daysInMonth) {
             $currentDate = "$year-$month-" . str_pad($dayCounter, 2, '0', STR_PAD_LEFT);
-            echo "<td>$dayCounter</td>";
+
+            // Datenbankabfrage für Ereignisse an diesem Tag
+            $events = getEventsForDate($currentDate);
+
+            echo "<td>";
+            echo "<strong>$dayCounter</strong>";
+            echo "<ul>";
+            foreach ($events as $event) {
+                echo "<li>{$event['thema']}</li>";
+            }
+            echo "</ul>";
+            echo "</td>";
+
             $dayCounter++;
         } else {
             echo "<td></td>";
@@ -29,4 +41,13 @@ for ($i = 0; $i < 6; $i++) {
 }
 
 echo "</table>";
+
+function getEventsForDate($date)
+{
+    global $pdo;
+
+    $statement = $pdo->prepare("SELECT * FROM Aktivitäten WHERE datum = ?");
+    $statement->execute([$date]);
+    return $statement->fetchAll();
+}
 ?>
