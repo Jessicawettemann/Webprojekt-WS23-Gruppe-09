@@ -127,3 +127,25 @@ function addEventsToCalendar($year, $month) {
         ["date" => "$year-$month-25", "event" => "Event 2"],
     ];
 
+    echo "<script>";
+    foreach ($events as $event) {
+        echo "let cell = document.querySelector('[data-date=\"{$event['date']}\"]');
+              if (cell) {
+                  cell.classList.add('event-cell');
+                  cell.innerHTML += '<br>{$event['event']}';
+              }";
+    }
+    echo "</script>";
+}
+
+// Hilfsfunktionen
+function getMonthName($month) {
+    $monthNames = [
+        "Januar", "Februar", "März", "April", "Mai", "Juni",
+        "Juli", "August", "September", "Oktober", "November", "Dezember"
+    ];
+    return $monthNames[$month - 1];
+}
+?>
+</body>
+</html>
