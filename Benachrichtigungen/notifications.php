@@ -26,7 +26,7 @@ $header = 'From: ' . $absenderEmail;
 </head>
 <body>
 
-<div class="notification-container">
+
 
     <h1>Benachrichtigungen</h1>
 
@@ -42,7 +42,7 @@ while ($notification = $notificationStatement->fetch(PDO::FETCH_ASSOC)) {
     mail($empfaenger, $betreff, $notification['nachricht'], $header);
 }
 ?>
-</div>
+
 
 </body>
 </html>
