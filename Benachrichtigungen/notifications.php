@@ -1,3 +1,8 @@
+<?php
+include "Header Sicherheit.php";
+include "Datenbank Verbindung.php";
+?>
+
 <!-- ... -->
 <div class="notification-container">
 
