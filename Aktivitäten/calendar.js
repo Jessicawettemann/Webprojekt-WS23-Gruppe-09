@@ -13,39 +13,37 @@ document.addEventListener("DOMContentLoaded", function () {
         xhr.send();
     }
 
+    function updateCalendar(direction) {
+        const currentDate = new Date();
+        let currentYear = currentDate.getFullYear();
+        let currentMonth = currentDate.getMonth() + 1;
+
+        if (direction === "prev") {
+            if (currentMonth === 1) {
+                currentYear--;
+                currentMonth = 12;
+            } else {
+                currentMonth--;
+            }
+        } else if (direction === "next") {
+            if (currentMonth === 12) {
+                currentYear++;
+                currentMonth = 1;
+            } else {
+                currentMonth++;
+            }
+        }
+
+        loadCalendar(currentYear, currentMonth);
+    }
+
     loadCalendar(new Date().getFullYear(), new Date().getMonth() + 1);
 
     document.getElementById("prevMonth").addEventListener("click", function () {
-        const currentDate = new Date();
-        const currentYear = currentDate.getFullYear();
-        const currentMonth = currentDate.getMonth() + 1;
-
-        let prevYear, prevMonth;
-        if (currentMonth === 1) {
-            prevYear = currentYear - 1;
-            prevMonth = 12;
-        } else {
-            prevYear = currentYear;
-            prevMonth = currentMonth - 1;
-        }
-
-        loadCalendar(prevYear, prevMonth);
+        updateCalendar("prev");
     });
 
     document.getElementById("nextMonth").addEventListener("click", function () {
-        const currentDate = new Date();
-        const currentYear = currentDate.getFullYear();
-        const currentMonth = currentDate.getMonth() + 1;
-
-        let nextYear, nextMonth;
-        if (currentMonth === 12) {
-            nextYear = currentYear + 1;
-            nextMonth = 1;
-        } else {
-            nextYear = currentYear;
-            nextMonth = currentMonth + 1;
-        }
-
-        loadCalendar(nextYear, nextMonth);
+        updateCalendar("next");
     });
 });
