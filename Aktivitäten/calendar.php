@@ -35,7 +35,7 @@ for ($i = 0; $i < 6; $i++) {
             foreach ($events as $event) {
                 echo "<div class='event'>";
                 echo "<div>{$event['thema']}</div>";
-                echo "<div>Beschreibung: {$event['beschreibung']}</div>";
+                echo "<div>{$event['beschreibung']}</div>";
                 echo "<div>Ort: {$event['ort']}</div>";
                 echo "</div>";
             }
