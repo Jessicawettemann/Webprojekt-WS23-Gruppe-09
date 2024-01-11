@@ -13,11 +13,6 @@ include "Datenbank Verbindung.php";
 </head>
 <body>
 
-<!-- Kalenderbereich -->
-<div id="calendar">
-    <?php include "calendar.php"; ?>
-</div>
-
 <!-- Formular zum Hinzufügen von Ereignissen -->
 <form action="aktivitaeten_do.php" method="post" enctype="multipart/form-data">
     <h1>Kalender</h1>
@@ -41,6 +36,11 @@ include "Datenbank Verbindung.php";
     <br>
     <br>
 </form>
+
+<!-- Kalenderbereich -->
+<div id="calendar">
+    <?php include "calendar.php"; ?>
+</div>
 
 </body>
 </html>
