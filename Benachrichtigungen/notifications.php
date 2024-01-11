@@ -30,18 +30,19 @@ $header = 'From: ' . $absenderEmail;
 
     <h1>Benachrichtigungen</h1>
 
-<?php
-// Benachrichtigungen anzeigen
-while ($notification = $notificationStatement->fetch(PDO::FETCH_ASSOC)) {
-    echo "<div>";
-    echo "<p>Benachrichtigung: " . $notification['nachricht'] . "</p>";
-    echo "<p>Von: " . $notification['absender_username'] . "</p>";
-    echo "</div>";
+    <?php
+    // Benachrichtigungen anzeigen
+    while ($notification = $notificationStatement->fetch(PDO::FETCH_ASSOC)) {
+        echo "<div class='notification'>"; // Änderung hier, um die Klasse hinzuzufügen
+        echo "<p>Benachrichtigung: " . $notification['nachricht'] . "</p>";
+        echo "<p>Von: " . $notification['absender_username'] . "</p>";
+        echo "</div>";
 
-    // E-Mail senden
-    mail($empfaenger, $betreff, $notification['nachricht'], $header);
-}
-?>
+        // E-Mail senden
+        mail($empfaenger, $betreff, $notification['nachricht'], $header);
+    }
+    ?>
+
 </div>
 
 </body>
