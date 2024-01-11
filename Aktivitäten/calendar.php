@@ -2,7 +2,7 @@
 $year = $_GET['year'];
 $month = $_GET['month'];
 
-include "Datenbank Verbindung.php"; // Stelle sicher, dass die Datenbankverbindung eingebunden ist
+include "Datenbank Verbindung.php";
 
 $firstDay = new DateTime("$year-$month-01");
 $firstDayOfWeek = $firstDay->format('N');
@@ -26,12 +26,13 @@ for ($i = 0; $i < 6; $i++) {
             $events = getEventsForDate($currentDate);
 
             echo "<td>";
-            echo "<strong>$dayCounter</strong>";
-            echo "<ul>";
+            echo "<strong>$dayCounter</strong><br>";
             foreach ($events as $event) {
-                echo "<li>{$event['thema']}</li>";
+                echo "Benutzername: {$event['benutzername']}<br>";
+                echo "Thema: {$event['thema']}<br>";
+                echo "Beschreibung: {$event['beschreibung']}<br>";
+                echo "Ort: {$event['ort']}<br>";
             }
-            echo "</ul>";
             echo "</td>";
 
             $dayCounter++;
