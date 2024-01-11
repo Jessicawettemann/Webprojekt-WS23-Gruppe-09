@@ -36,11 +36,12 @@ include "Header Sicherheit.php";
         <label for="ort"></label>
         <input type="text"  placeholder="Ort" id="ort" name="ort" required>
 
+        <br>
+        <br>
         <button type="submit">Ereignis hinzufügen</button>
 
     <br>
     <br>
-    <br><br><br><br>
 
 
 <?php 
