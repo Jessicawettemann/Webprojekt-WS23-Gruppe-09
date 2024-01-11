@@ -28,9 +28,9 @@ form {
 }
 
 table {
-    width: 80%;
+    width: 80%; /* Verkleinere die Breite der Tabelle */
     border-collapse: collapse;
-    margin: 20px auto;
+    margin: 20px auto; /* Zentriere die Tabelle */
 }
 
 table, th, td {
@@ -38,18 +38,18 @@ table, th, td {
 }
 
 th, td {
-    width: 14.28%;
-    padding: 10px;
+    width: 14.28%; /* Jeder Tag hat 14.28% der Breite im 7-Tage-Kalender */
+    padding: 10px; /* Kleinere Polsterung */
     text-align: left;
-    max-height: 100px; /* Maximale Höhe für die Zellen */
-    overflow: auto; /* Scrollen, wenn der Text die maximale Höhe überschreitet */
-    vertical-align: top;
-    font-size: 12px;
+    height: 80px; /* Kleinere Höhe für die Zellen */
+    max-height: 100px;
+    vertical-align: top; /* Obere Ausrichtung */
+    font-size: 12px; /* Kleinere Schriftgröße */
 }
 
 th {
     background-color: #f2f2f2;
-    height: 30px;
+    height: 30px; /* Kleinere Höhe für die Tage in der oberen Zeile */
 }
 
 button {
