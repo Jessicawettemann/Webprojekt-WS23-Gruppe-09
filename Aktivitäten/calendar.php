@@ -6,7 +6,7 @@ $firstDay = new DateTime("$year-$month-01");
 $firstDayOfWeek = $firstDay->format('N');
 $daysInMonth = cal_days_in_month(CAL_GREGORIAN, $month, $year);
 
-echo "<div class='calendar-container'>";
+
 echo "<div class='calendar-header'>";
 echo "<a href='?year=" . ($month == 1 ? $year - 1 : $year) . "&month=" . ($month == 1 ? 12 : $month - 1) . "'>&lt; Vorheriger Monat</a>";
 echo "<span>" . date('F Y', strtotime("$year-$month-01")) . "</span>";
