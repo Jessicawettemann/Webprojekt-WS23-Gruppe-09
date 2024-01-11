@@ -1,16 +1,16 @@
 <?php
-$year = isset($_GET['year']) ? (int)$_GET['year'] : date('Y');
-$month = isset($_GET['month']) ? (int)$_GET['month'] : date('m');
+$year = isset($_GET['year']) ? $_GET['year'] : date('Y');
+$month = isset($_GET['month']) ? $_GET['month'] : date('m');
 
 $firstDay = new DateTime("$year-$month-01");
 $firstDayOfWeek = $firstDay->format('N');
-$daysInMonth = cal_days_in_month(CAL_GREGORIAN, $month, $year);
+$daysInMonth = cal_days_in_month(CAL_GREGORIAN, (int)$month, (int)$year);
 
 echo "<div class='calendar-container'>";
 echo "<div class='calendar-header'>";
-echo "<a href='?year=" . ($month == 1 ? $year - 1 : $year) . "&month=" . ($month == 1 ? 12 : $month - 1) . "'>&lt; Vorheriger Monat</a>";
+echo "<a href='?year=" . ($month == 1 ? $year - 1 : $year) . "&month=" . ($month == 1 ? 12 : $month - 1) . "' class='nav-button'>&lt; Vorheriger Monat</a>";
 echo "<span>" . date('F Y', strtotime("$year-$month-01")) . "</span>";
-echo "<a href='?year=" . ($month == 12 ? $year + 1 : $year) . "&month=" . ($month == 12 ? 1 : $month + 1) . "'>Nächster Monat &gt;</a>";
+echo "<a href='?year=" . ($month == 12 ? $year + 1 : $year) . "&month=" . ($month == 12 ? 1 : $month + 1) . "' class='nav-button'>Nächster Monat &gt;</a>";
 echo "</div>";
 
 echo "<table class='calendar'>";
