@@ -21,7 +21,7 @@ $header = 'From: ' . $absenderEmail;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="benachrichtigungen.css">
     <title>Benachrichtigungen</title>
 </head>
 <body>
