@@ -38,12 +38,7 @@ include "Datenbank Verbindung.php";
     <br>
 </form>
 
-<!-- Container für Navigationsbuttons -->
-<div class="nav-button-container">
-    <a href='?year=<?php echo ($month == 1 ? $year - 1 : $year) . "&month=" . ($month == 1 ? 12 : $month - 1); ?>' class='nav-button'>&lt; Vorheriger Monat</a>
-    <span><?php echo date('F Y', strtotime("$year-$month-01")); ?></span>
-    <a href='?year=<?php echo ($month == 12 ? $year + 1 : $year) . "&month=" . ($month == 12 ? 1 : $month + 1); ?>' class='nav-button'>Nächster Monat &gt;</a>
-</div>
+
 
 <!-- Kalenderbereich -->
 <div id="calendar">
