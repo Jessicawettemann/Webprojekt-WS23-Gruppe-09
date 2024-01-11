@@ -38,8 +38,6 @@ include "Datenbank Verbindung.php";
     <br>
 </form>
 
-
-
 <!-- Kalenderbereich -->
 <div id="calendar">
     <?php include "calendar.php"; ?>
