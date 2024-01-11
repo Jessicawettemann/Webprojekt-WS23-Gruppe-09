@@ -1,6 +1,6 @@
 <?php
-$year = isset($_GET['year']) ? $_GET['year'] : date('Y');
-$month = isset($_GET['month']) ? $_GET['month'] : date('m');
+$year = isset($_GET['year']) ? (int)$_GET['year'] : date('Y');
+$month = isset($_GET['month']) ? (int)$_GET['month'] : date('m');
 
 $firstDay = new DateTime("$year-$month-01");
 $firstDayOfWeek = $firstDay->format('N');
