@@ -49,7 +49,7 @@ function getEventsForDate($date)
 {
     global $pdo;
 
-    $statement = $pdo->prepare("SELECT * FROM Aktivitäten WHERE datum = ?");
+    $statement = $pdo->prepare("SELECT * FROM Beitrag WHERE datum = ?");
     $statement->execute([$date]);
     return $statement->fetchAll();
 }
