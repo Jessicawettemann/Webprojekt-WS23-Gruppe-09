@@ -20,6 +20,7 @@ include "Header Sicherheit.php";
 
 <!-- Kalenderbereich -->
 <div id="calendar">
+<?php include "calendar.php"; ?>
     <!-- Hier wird der Kalender angezeigt -->
 </div>
 
