@@ -2,6 +2,8 @@
 $year = $_GET['year'];
 $month = $_GET['month'];
 
+include "Datenbank Verbindung.php"; // Stelle sicher, dass die Datenbankverbindung eingebunden ist
+
 $firstDay = new DateTime("$year-$month-01");
 $firstDayOfWeek = $firstDay->format('N');
 $daysInMonth = cal_days_in_month(CAL_GREGORIAN, $month, $year);
