@@ -43,6 +43,7 @@ th, td {
     text-align: left;
     height: 80px; /* Kleinere Höhe für die Zellen */
     vertical-align: top; /* Obere Ausrichtung */
+    font-size: 12px; /* Kleinere Schriftgröße */
 }
 
 th {
