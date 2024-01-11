@@ -11,11 +11,6 @@ h1 {
     color: #333;
 }
 
-.notification-container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-}
 
 .notification {
     background-color: #fff;
