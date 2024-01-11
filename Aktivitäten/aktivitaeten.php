@@ -13,12 +13,6 @@ include "Datenbank Verbindung.php";
 </head>
 <body>
 
-<!-- Container für Navigationsbuttons -->
-<div class="nav-button-container">
-    <a href='?year=<?php echo ($month == 1 ? $year - 1 : $year) . "&month=" . ($month == 1 ? 12 : $month - 1); ?>' class='nav-button'>&lt; Vorheriger Monat</a>
-    <span><?php echo date('F Y', strtotime("$year-$month-01")); ?></span>
-    <a href='?year=<?php echo ($month == 12 ? $year + 1 : $year) . "&month=" . ($month == 12 ? 1 : $month + 1); ?>' class='nav-button'>Nächster Monat &gt;</a>
-</div>
 
 <!-- Formular zum Hinzufügen von Ereignissen -->
 <form action="aktivitaeten_do.php" method="post" enctype="multipart/form-data">
