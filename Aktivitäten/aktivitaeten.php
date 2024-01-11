@@ -17,6 +17,14 @@ include "Header Sicherheit.php";
         <!-- Hier wird der Kalender angezeigt -->
     </div>
 
+        <!-- Pfeile für den Monatswechsel -->
+        <button id="prevMonth">Previous Month</button>
+    <button id="nextMonth">Next Month</button>
+
+    <!-- JavaScript-Datei einbinden -->
+    <script src="calendar.js"></script>
+
+
     <!-- Formular zum Hinzufügen von Ereignissen -->
     <form action="aktivitaeten_do.php" method="post" enctype="multipart/form-data">
         <h1>Kalender</h1>
@@ -40,13 +48,6 @@ include "Header Sicherheit.php";
         <br>
 
     </form>
-
-    <!-- Pfeile für den Monatswechsel -->
-    <button id="prevMonth">Previous Month</button>
-    <button id="nextMonth">Next Month</button>
-
-    <!-- JavaScript-Datei einbinden -->
-    <script src="calendar.js"></script>
 
 </body>
 </html>
