@@ -6,11 +6,6 @@ $firstDay = new DateTime("$year-$month-01");
 $firstDayOfWeek = $firstDay->format('N');
 $daysInMonth = cal_days_in_month(CAL_GREGORIAN, $month, $year);
 
-echo "<div class='calendar-header'>";
-echo "<a class='nav-button' href='?year=" . ($month == 1 ? $year - 1 : $year) . "&month=" . ($month == 1 ? 12 : $month - 1) . "'>&lt; Vorheriger Monat</a>";
-echo "<span>" . date('F Y', strtotime("$year-$month-01")) . "</span>";
-echo "<a class='nav-button' href='?year=" . ($month == 12 ? $year + 1 : $year) . "&month=" . ($month == 12 ? 1 : $month + 1) . "'>Nächster Monat &gt;</a>";
-echo "</div>";
 
 
 echo "<table class='calendar'>";
