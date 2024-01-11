@@ -6,11 +6,11 @@ $firstDay = new DateTime("$year-$month-01");
 $firstDayOfWeek = $firstDay->format('N');
 $daysInMonth = cal_days_in_month(CAL_GREGORIAN, $month, $year);
 
-
-echo "<div class='calendar-header'>";
-echo "<a href='?year=" . ($month == 1 ? $year - 1 : $year) . "&month=" . ($month == 1 ? 12 : $month - 1) . "'>&lt; Vorheriger Monat</a>";
+echo "<div class='calendar-container'>";
+echo "<div class='nav-button-container'>";
+echo "<a href='?year=" . ($month == 1 ? $year - 1 : $year) . "&month=" . ($month == 1 ? 12 : $month - 1) . "' class='nav-button'>&lt; Vorheriger Monat</a>";
 echo "<span>" . date('F Y', strtotime("$year-$month-01")) . "</span>";
-echo "<a href='?year=" . ($month == 12 ? $year + 1 : $year) . "&month=" . ($month == 12 ? 1 : $month + 1) . "'>Nächster Monat &gt;</a>";
+echo "<a href='?year=" . ($month == 12 ? $year + 1 : $year) . "&month=" . ($month == 12 ? 1 : $month + 1) . "' class='nav-button'>Nächster Monat &gt;</a>";
 echo "</div>";
 
 echo "<table class='calendar'>";
@@ -34,7 +34,7 @@ for ($i = 0; $i < 6; $i++) {
             foreach ($events as $event) {
                 echo "<div class='event'>";
                 echo "<div>{$event['thema']}</div>";
-                echo "<div>Beschreibung: {$event['beschreibung']}</div>";
+                echo "<div>{$event['beschreibung']}</div>";
                 echo "<div>Ort: {$event['ort']}</div>";
                 echo "</div>";
             }
@@ -59,4 +59,5 @@ function getEventsForDate($date)
     $statement->execute([$date]);
     return $statement->fetchAll();
 }
+
 ?>
