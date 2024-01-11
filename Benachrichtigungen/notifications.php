@@ -29,6 +29,7 @@ $header = 'From: ' . $absenderEmail;
 <div class="notification-container">
 
     <h1>Benachrichtigungen</h1>
+    <br><br>
 
     <?php
     // Benachrichtigungen anzeigen
