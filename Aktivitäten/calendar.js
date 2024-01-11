@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const calendar = document.getElementById("calendar");
+    let currentYear = new Date().getFullYear();
+    let currentMonth = new Date().getMonth() + 1;
 
     function loadCalendar(year, month) {
         const xhr = new XMLHttpRequest();
@@ -13,37 +15,35 @@ document.addEventListener("DOMContentLoaded", function () {
         xhr.send();
     }
 
-    function updateCalendar(direction) {
-        const currentDate = new Date();
-        let currentYear = currentDate.getFullYear();
-        let currentMonth = currentDate.getMonth() + 1;
-
-        if (direction === "prev") {
-            if (currentMonth === 1) {
-                currentYear--;
-                currentMonth = 12;
-            } else {
-                currentMonth--;
-            }
-        } else if (direction === "next") {
-            if (currentMonth === 12) {
-                currentYear++;
-                currentMonth = 1;
-            } else {
-                currentMonth++;
-            }
-        }
-
+    function updateCalendar() {
         loadCalendar(currentYear, currentMonth);
     }
 
-    loadCalendar(new Date().getFullYear(), new Date().getMonth() + 1);
+    function prevMonth() {
+        if (currentMonth === 1) {
+            currentYear--;
+            currentMonth = 12;
+        } else {
+            currentMonth--;
+        }
 
-    document.getElementById("prevMonth").addEventListener("click", function () {
-        updateCalendar("prev");
-    });
+        updateCalendar();
+    }
 
-    document.getElementById("nextMonth").addEventListener("click", function () {
-        updateCalendar("next");
-    });
+    function nextMonth() {
+        if (currentMonth === 12) {
+            currentYear++;
+            currentMonth = 1;
+        } else {
+            currentMonth++;
+        }
+
+        updateCalendar();
+    }
+
+    loadCalendar(currentYear, currentMonth);
+
+    document.getElementById("prevMonth").addEventListener("click", prevMonth);
+
+    document.getElementById("nextMonth").addEventListener("click", nextMonth);
 });
