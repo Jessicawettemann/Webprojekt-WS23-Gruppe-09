@@ -74,6 +74,10 @@ button {
     
 }
 
+.nav-button-container {
+    text-align: center;
+    margin-top: 20px; /* Einstellbarer Abstand vom Kalender */
+}
 
 .nav-button:hover {
     background-color: #45a049;
