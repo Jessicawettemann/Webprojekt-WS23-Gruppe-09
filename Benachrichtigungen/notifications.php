@@ -69,7 +69,7 @@ $header = 'From: ' . $absenderEmail;
             $mail->Port       = 587;
 
             // E-Mail-Inhalte
-            $mail->setFrom($absenderEmail, 'Your Name');
+            $mail->setFrom($email_gesendet, 'Your Name');
             $mail->addAddress($empfaenger);
             $mail->isHTML(true);
             $mail->Subject = $betreff;
