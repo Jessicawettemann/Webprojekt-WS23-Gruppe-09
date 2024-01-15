@@ -74,7 +74,7 @@ $header = 'From: ' . $absenderEmail;
 
         try {
             // Server-Einstellungen
-            $mail->SMTPDebug = 0;
+            $mail->SMTPDebug = 2;
             $mail->isSMTP();
             $mail->Host       = 'smtp.example.com'; // Setzen Sie Ihren SMTP-Host hier
             $mail->SMTPAuth   = true;
