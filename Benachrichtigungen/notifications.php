@@ -70,7 +70,7 @@ $header = 'From: ' . $absenderEmail;
 
             // E-Mail-Inhalte
             $mail->setFrom($email_gesendet, 'Your Name');
-            $mail->addAddress($empfaenger);
+            $mail->addAddress($email);
             $mail->isHTML(true);
             $mail->Subject = $betreff;
             $mail->Body    = $notification['nachricht'];
