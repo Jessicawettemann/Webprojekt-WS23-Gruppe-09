@@ -39,16 +39,21 @@ $header = 'From: ' . $absenderEmail;
     <br><br>
 
     <?php
-    // Benachrichtigungen anzeigen
-    //while ($notification = $notificationStatement->fetch(PDO::FETCH_ASSOC)) {
-    //    echo "<div class='notification'>"; // Änderung hier, um die Klasse hinzuzufügen
-    //    echo "<p>Benachrichtigung: " . $notification['nachricht'] . "</p>";
-    //    echo "<p>Von: " . $notification['absender_username'] . "</p>";
-    //    echo "</div>";
 
-        // E-Mail senden
-    //    mail($empfaenger, $betreff, $notification['nachricht'], $header);
-    //}
+//    use PHPMailer\PHPMailer\PHPMailer;
+//    use PHPMailer\PHPMailer\Exception;
+    
+//    require '/home/fb106/public_html/Exception.php';
+//    require '/home/fb106/public_html/PHPMailer.php';
+//    require '/home/fb106/public_html/SMTP.php';
+
+    // Benachrichtigungen anzeigen
+    while ($notification = $notificationStatement->fetch(PDO::FETCH_ASSOC)) {
+        echo "<div class='notification'>"; // Änderung hier, um die Klasse hinzuzufügen
+        echo "<p>Benachrichtigung: " . $notification['nachricht'] . "</p>";
+        echo "<p>Von: " . $notification['absender_username'] . "</p>";
+        echo "</div>";
+    
     // PHPMailer einsetzen
         $mail = new PHPMailer(true);
 
@@ -77,6 +82,7 @@ $header = 'From: ' . $absenderEmail;
             echo 'Message could not be sent.';
             echo 'Mailer Error: ' . $mail->ErrorInfo;
         }
+    }    
     ?>
 
 </div>
