@@ -85,7 +85,7 @@ $header = 'From: ' . $absenderEmail;
 
             // E-Mail-Inhalte
             $absenderEmail = getEmailFromDatabase($notification['absender_username']);
-            $mail->setFrom($email_gesendet, 'Your Name');
+            $mail->setFrom($absenderEmail, 'Your Name');
             $mail->addAddress($empfaenger);
             $mail->isHTML(true);
             $mail->Subject = $betreff;
