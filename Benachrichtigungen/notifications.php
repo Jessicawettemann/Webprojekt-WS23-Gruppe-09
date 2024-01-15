@@ -6,8 +6,8 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 require '/home/fb106/public_html/Exception.php';
-require 'path/to/PHPMailer/src/PHPMailer.php';
-require 'path/to/PHPMailer/src/SMTP.php';
+require '/home/fb106/public_html/PHPMailer.php';
+require '/home/fb106/public_html/SMTP.php';
 
 // Benachrichtigungen abrufen
 $notificationStatement = $pdo->prepare("SELECT * FROM Benachrichtigungen WHERE empfaenger_username = ?");
