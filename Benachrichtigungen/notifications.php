@@ -9,6 +9,21 @@ require '/home/fb106/public_html/Exception.php';
 require '/home/fb106/public_html/PHPMailer.php';
 require '/home/fb106/public_html/SMTP.php';
 
+function getEmailFromDatabase($Nutzer) {
+    global $pdo;
+
+    $statement = $pdo->prepare("SELECT email FROM Nutzer WHERE benutzername = ?");
+    $statement->execute([$Nutzer]);
+
+    $result = $statement->fetch(PDO::FETCH_ASSOC);
+
+    if ($result) {
+        return $result['email'];
+    } else {
+        return 'default@example.com';
+    }
+}
+
 // Benachrichtigungen abrufen
 $notificationStatement = $pdo->prepare("SELECT * FROM Benachrichtigungen WHERE empfaenger_username = ?");
 $notificationStatement->execute([$_SESSION["benutzername"]]);
@@ -69,8 +84,9 @@ $header = 'From: ' . $absenderEmail;
             $mail->Port       = 587;
 
             // E-Mail-Inhalte
+            $absenderEmail = getEmailFromDatabase($notification['absender_username']);
             $mail->setFrom($email_gesendet, 'Your Name');
-            $mail->addAddress($email);
+            $mail->addAddress($empfaenger);
             $mail->isHTML(true);
             $mail->Subject = $betreff;
             $mail->Body    = $notification['nachricht'];
