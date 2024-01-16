@@ -31,6 +31,7 @@ table {
     width: 80%; /* Verkleinere die Breite der Tabelle */
     border-collapse: collapse;
     margin: 20px auto; /* Zentriere die Tabelle */
+    background-image: url("https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/Business Event Website in Blue Dark Blue Light Blue Modern Style.png");
 }
 
 table, th, td {
