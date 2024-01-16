@@ -17,6 +17,6 @@ include "Header Sicherheit.php";
 </section>
 <br><br><br><br<br<br><br>
 <body>
-    <p> Infos </p>
+    <p>Informationen über uns</p>
 </body>
 </html>
