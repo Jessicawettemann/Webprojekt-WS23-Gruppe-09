@@ -68,12 +68,12 @@ $header = 'From: ' . $absenderEmail;
             // Server-Einstellungen
             $mail->SMTPDebug = 0;
             $mail->isSMTP();
-            $mail->Host       = 'smtp.example.com'; // Setzen Sie Ihren SMTP-Host hier
+            $mail->Host       = 'smtp.hdm-stuttgart.de'; // Setzen Sie Ihren SMTP-Host hier
             $mail->SMTPAuth   = true;
-            $mail->Username   = 'your@email.com'; // Setzen Sie Ihre E-Mail-Adresse hier
-            $mail->Password   = 'your-password'; // Setzen Sie Ihr Passwort hier
+            $mail->Username   = 'fb106@hdm-stuttgart.de'; // Setzen Sie Ihre E-Mail-Adresse hier
+            $mail->Password   = 'Fabio1998!'; // Setzen Sie Ihr Passwort hier
             $mail->SMTPSecure = 'tls';
-            $mail->Port       = 587;
+            $mail->Port       = 25;
 
             // E-Mail-Inhalte
             $absenderEmail = getEmailFromDatabase($notification['absender_username']);
