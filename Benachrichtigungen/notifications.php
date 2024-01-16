@@ -55,14 +55,6 @@ $header = 'From: ' . $absenderEmail;
 
     <?php
 
-//    use PHPMailer\PHPMailer\PHPMailer;
-//    use PHPMailer\PHPMailer\Exception;
-    
-//    require '/home/fb106/public_html/Exception.php';
-//    require '/home/fb106/public_html/PHPMailer.php';
-//    require '/home/fb106/public_html/SMTP.php';
-
-    // Benachrichtigungen anzeigen
     while ($notification = $notificationStatement->fetch(PDO::FETCH_ASSOC)) {
         echo "<div class='notification'>"; // Änderung hier, um die Klasse hinzuzufügen
         echo "<p>Benachrichtigung: " . $notification['nachricht'] . "</p>";
@@ -86,7 +78,7 @@ $header = 'From: ' . $absenderEmail;
             // E-Mail-Inhalte
             $absenderEmail = getEmailFromDatabase($notification['absender_username']);
             $mail->setFrom($absenderEmail, 'Your Name');
-            $mail->addAddress($empfaenger);
+            $mail->addAddress('fb106@hdm-stuttgart.de');
             $mail->isHTML(true);
             $mail->Subject = $betreff;
             $mail->Body    = $notification['nachricht'];
