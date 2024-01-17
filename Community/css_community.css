@@ -45,7 +45,7 @@ button:hover {
     background-color: #45a049;
 }
 
-.chat-container {
+.forum-container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -53,15 +53,15 @@ button:hover {
 
 .comment {
     background-color: #fff;
-    padding: 10px;
+    padding: 15px;
     margin-bottom: 15px;
     border-radius: 8px;
-    max-width: 70%;
+    width: 70%;
 }
 
 .comment img {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     margin-right: 10px;
 }
