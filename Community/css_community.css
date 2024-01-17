@@ -71,26 +71,3 @@ button:hover {
     margin: 0;
 }
 
-.comment:after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    right: 100%;
-    margin-top: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: transparent #e0f7fa transparent transparent;
-}
-
-.follow-button {
-    background-color: #3498db;
-    color: white;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.follow-button:hover {
-    background-color: #2980b9;
-}
