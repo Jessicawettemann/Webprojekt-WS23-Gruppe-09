@@ -45,35 +45,10 @@ button:hover {
     background-color: #45a049;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-table, th, td {
-    border: 1px solid #ddd;
-}
-
-th, td {
-    padding: 15px;
-    text-align: left;
-}
-
-th {
-    background-color: #4caf50;
-    color: white;
-}
-
-tr:hover {
-    background-color: #f5f5f5;
-}
-
-.avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 10px;
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .comment {
@@ -81,6 +56,18 @@ tr:hover {
     padding: 10px;
     margin-bottom: 15px;
     border-radius: 8px;
+    max-width: 70%;
+}
+
+.comment img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.comment p {
+    margin: 0;
 }
 
 .follow-button {
@@ -95,4 +82,3 @@ tr:hover {
 .follow-button:hover {
     background-color: #2980b9;
 }
-
