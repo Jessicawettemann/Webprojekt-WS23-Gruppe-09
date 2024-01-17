@@ -16,6 +16,6 @@ include "Header Sicherheit.php";
     <p> bei Landify </p><br><br><br>
 </section>
 <br><br><br><br<br<br><br>
-    <p>Landify ist eine Plattform von Studierenden für Studierende. Bei uns finden Sie nicht nur aktuelle News rund um das Studentendarsein, sondern hast auch die Möglichkeit Events oder anstehende Termine mit den Nutzern zu teilen. Das war aber noch nicht alles. Landify bietet ihren Nutzern auch die Möglichkeit Dinge aller Art anzubieten. Sei es das alte Bett, eine Lampe aus der ehemaligen WG oder gar ein WG Zimmer zur Miete. Schaut rein und connected euch mit anderen Studierenden an eurer Hochschule!</p>
+    <p>lLandify ist eine Plattform von Studierenden für Studierende. Bei uns finden Sie nicht nur aktuelle News rund um das Studentendarsein, sondern hast auch die Möglichkeit Events oder anstehende Termine mit den Nutzern zu teilen. Das war aber noch nicht alles. Landify bietet ihren Nutzern auch die Möglichkeit Dinge aller Art anzubieten. Sei es das alte Bett, eine Lampe aus der ehemaligen WG oder gar ein WG Zimmer zur Miete. Schaut rein und connected euch mit anderen Studierenden an eurer Hochschule!</p>
 </body>
 </html>
