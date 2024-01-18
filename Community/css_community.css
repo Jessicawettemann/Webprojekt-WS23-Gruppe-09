@@ -52,12 +52,13 @@ button:hover {
 }
 
 .comment {
-    background-color: #e0f7fa;
+    background-color: #fff;
     padding: 15px;
     margin-bottom: 15px;
     border-radius: 8px;
     width: 70%;
-    position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .comment img {
@@ -69,17 +70,6 @@ button:hover {
 
 .comment p {
     margin: 0;
-}
-
-.comment:after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    right: 100%;
-    margin-top: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: transparent #e0f7fa transparent transparent;
 }
 
 .follow-button {
