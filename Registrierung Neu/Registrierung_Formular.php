@@ -9,10 +9,10 @@ include"Datenbank Verbindung.php";
 <head>
     <meta charset="UTF-8">
     <title>Registrierung</title>
-    <link rel="stylesheet" type="text/css" href="Formulare.css">
+    <link rel="stylesheet" type="text/css" href="Registrierung.css">
 
 </head>
-<img src="https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/Teal Green Simple Illustrated Social Media Policy Presentation.png">
+
 <body>
 
 <div>

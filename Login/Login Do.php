@@ -20,7 +20,7 @@ session_start();
 $statement = $pdo->prepare("SELECT * FROM Nutzer WHERE benutzername=?");
 $statement->bindParam(":benutzername", $_POST["benutzername"]);
 $p="hjfew3545r8c0szhwgfsdafghjgfdhj";
-if($statement->execute(array(htmlspecialchars($_POST["benutzername"])))){
+if($statement->execute(array(htmlspecialchars($_POST["benutzername"])))){ #htmlspecialcharts=
 
     if($row = $statement->fetch()){
 
