@@ -1,76 +1,97 @@
-/* Allgemeine Formatierung des Body-Elements */
 body {
-    font-family: Arial, sans-serif; /* Verwendete Schriftart für den Body */
-    margin: 0; /* Kein Außenabstand für den Body */
-    padding: 0; /* Kein Innenabstand für den Body */
-    background-color: #f4f4f4; /* Hintergrundfarbe des Body */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
 }
 
-/* Hintergrundbild für den Body mit Cover und zentrierter Position */
 body {
-    min-height: 100vh; /* Mindesthöhe des Body auf 100% der Bildschirmhöhe setzen */
-    width: 100%; /* Body nimmt die volle Breite ein */
-    background-position: center; /* Zentrierte Position des Hintergrundbilds */
-    background-size: cover; /* Hintergrundbild wird gestreckt, um den gesamten Bereich abzudecken */
-    position: relative; /* Relative Positionierung für zentriertes Bild */
+    min-height: 100vh;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    position: relative;
 }
 
-/* Oberer Abstand für den Kalenderbereich */
 #calendar {
-    margin-top: 20px; /* 20px Abstand vom oberen Rand für den Kalenderbereich */
+    margin-top: 20px;
 }
 
-/* Formatierung für das Formular zum Hinzufügen von Ereignissen */
 form {
-    max-width: 600px; /* Maximale Breite des Formulars auf 600px begrenzen */
-    margin: 20px auto; /* 20px Abstand oben und unten, zentriertes Formular */
-    padding: 20px; /* Innenabstand des Formulars */
-    background: #fff; /* Hintergrundfarbe des Formulars */
-    border-radius: 10px; /* Runde Ecken für das Formular */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Leichter Schatten für das Formular */
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Stil für die Tabelle (Kalender) mit einem Farbverlauf als Hintergrund */
 table {
-    width: 80%; /* Verkleinere die Breite der Tabelle auf 80% */
-    border-collapse: collapse; /* Rand zwischen den Tabellenzellen entfernen */
-    margin: 20px auto; /* Zentriere die Tabelle mit 20px Abstand oben und unten */
-    background: linear-gradient(45deg, #f26b70, #f8c954); /* Farbverlauf für den Hintergrund */
+    width: 80%; /* Verkleinere die Breite der Tabelle */
+    border-collapse: collapse;
+    margin: 20px auto; /* Zentriere die Tabelle */
+    background: linear-gradient(45deg, #f26b70, #f8c954); /* Farbverlauf */;
 }
 
-/* Allgemeine Formatierung für Tabellen, Tabellenzellen und Tabellenüberschriften */
 table, th, td {
-    border: 1px solid #ddd; /* Leichter Rahmen für Tabellenzellen und -überschriften */
+    border: 1px solid #ddd;
 }
 
-/* Formatierung für Tabellenzellen mit fester Breite, Höhe, und Ausrichtung */
 th, td {
     width: 14.28%; /* Jeder Tag hat 14.28% der Breite im 7-Tage-Kalender */
     padding: 10px; /* Kleinere Polsterung */
-    text-align: left; /* Text links ausrichten */
+    text-align: left;
     height: 80px; /* Kleinere Höhe für die Zellen */
-    vertical-align: top; /* Obere Ausrichtung des Inhalts */
+    vertical-align: top; /* Obere Ausrichtung */
     font-size: 12px; /* Kleinere Schriftgröße */
 }
 
-/* Stil für Tabellenüberschriften mit Hintergrundfarbe und angepasster Höhe */
 th {
-    background-color: #f2f2f2; /* Hintergrundfarbe für Tabellenüberschriften */
-    height: 30px; /* Angepasste Höhe für die Tage in der oberen Zeile */
+    background-color: #f2f2f2;
+    height: 30px; /* Kleinere Höhe für die Tage in der oberen Zeile */
 }
 
-/* Stil für den Header des Kalenders mit Flexbox-Layout und Farbverlauf */
 .calendar-header {
-    display: flex; /* Verwende Flexbox-Layout für den Header */
-    justify-content: space-between; /* Platziere die Elemente gleichmäßig im Header */
-    align-items: center; /* Zentriere die Elemente vertikal im Header */
-    background: linear-gradient(45deg, #f26b70, #f8c954); /* Farbverlauf für den Header */
-    padding: 10px; /* Innenabstand des Headers */
-    border-radius: 10px; /* Runde Ecken für den Header */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(45deg, #f26b70, #f8c954);
+    padding: 10px;
+    border-radius: 10px;
 }
 
-/* Stil für den Monat-Jahr-Bereich mit Schriftgröße, Farbe und Fettdruck */
 .month-year {
-    font-size: 20px; /* Schriftgröße für den Monat und das Jahr */
-    color: #fff; /* Textfarbe weiß */
-    font-weight: bold; /* Fettdruck für
+    font-size: 20px; /* Ändere die Schriftgröße nach Bedarf */
+    color: #fff;
+    font-weight: bold;
+}
+
+.nav-button {
+    display: inline-block;
+    padding: 10px;
+    margin: 0;
+    text-decoration: none;
+    color: #fff;
+    background-color: #4caf50;
+    border: 1px solid #45a049;
+    border-radius: 5px;
+    width: 100px; /* Setze eine feste Breite für beide Buttons */
+    text-align: center; /* Zentriere den Text innerhalb des Buttons */
+    transition: background-color 0.3s;
+}
+
+.nav-button:hover {
+    background-color: #45a049;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.fail {
+    color: #ff0000;
+}
+
+.fine {
+    color: #008000;
+}
