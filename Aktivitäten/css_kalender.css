@@ -64,11 +64,12 @@ button {
 }
 
 .nav-buttons {
-    position: absolute;
-    top: 0;
-    right: 0;
+    position: fixed;
+    top: 20px;
+    right: 20px;
     text-align: center;
 }
+
 
 .nav-button {
     display: inline-block;
