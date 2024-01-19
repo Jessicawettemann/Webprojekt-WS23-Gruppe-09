@@ -15,6 +15,7 @@ body {
 
 #calendar {
     margin-top: 20px;
+    position: relative; /* Stelle sicher, dass die Position relativ ist */
 }
 
 form {
@@ -31,6 +32,7 @@ table {
     border-collapse: collapse;
     margin: 20px auto;
     background: linear-gradient(45deg, #f26b70, #f8c954);
+    position: relative; /* Stelle sicher, dass die Position relativ ist */
 }
 
 table, th, td {
@@ -41,36 +43,44 @@ th, td {
     width: 14.28%;
     padding: 15px;
     text-align: left;
-    height: 100px; /* Ändere die Höhe für die Zellen */
+    height: 100px;
     vertical-align: top;
-    font-size: 14px; /* Ändere die Schriftgröße */
+    font-size: 14px;
 }
 
 th {
     background-color: #f2f2f2;
-    height: 50px; /* Ändere die Höhe für die Tage in der oberen Zeile */
-    font-size: 16px; /* Ändere die Schriftgröße für die Wochentage */
+    height: 50px;
+    font-size: 16px;
 }
 
 button {
     background-color: #4caf50;
     color: white;
-    padding: 15px 20px; /* Ändere die Polsterung für die Buttons */
+    padding: 15px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
 .nav-button {
+    position: absolute; /* Setze die Position auf absolute */
     display: inline-block;
-    padding: 15px 20px; /* Ändere die Polsterung für die Navigation Buttons */
-    margin: 0 20px; /* Ändere den Abstand zwischen den Navigation Buttons */
+    padding: 15px 20px;
     text-decoration: none;
     color: #fff;
     background-color: #4caf50;
     border: 1px solid #45a049;
     border-radius: 5px;
     transition: background-color 0.3s;
+}
+
+.prev-month {
+    left: 0; /* Setze die Position für den Vorherigen Monat Button auf die linke Seite */
+}
+
+.next-month {
+    right: 0; /* Setze die Position für den Nächsten Monat Button auf die rechte Seite */
 }
 
 .nav-button:hover {
