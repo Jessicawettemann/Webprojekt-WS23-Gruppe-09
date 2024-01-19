@@ -80,10 +80,8 @@ button {
     background-color: #4caf50;
     border: 1px solid #45a049;
     border-radius: 5px;
-    width: 150px; /* Füge dieses Attribut hinzu und passe die Breite nach Bedarf an */
     transition: background-color 0.3s;
 }
-
 
 
 .nav-button:hover {
