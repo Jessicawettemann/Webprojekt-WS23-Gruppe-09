@@ -15,7 +15,6 @@ body {
 
 #calendar {
     margin-top: 20px;
-    position: relative;
 }
 
 form {
@@ -28,11 +27,10 @@ form {
 }
 
 table {
-    width: 80%;
+    width: 80%; /* Verkleinere die Breite der Tabelle */
     border-collapse: collapse;
-    margin: 20px auto;
-    background: linear-gradient(45deg, #f26b70, #f8c954);
-    position: relative;
+    margin: 20px auto; /* Zentriere die Tabelle */
+    background: linear-gradient(45deg, #f26b70, #f8c954); /* Farbverlauf */;
 }
 
 table, th, td {
@@ -40,49 +38,45 @@ table, th, td {
 }
 
 th, td {
-    width: 14.28%;
-    padding: 15px;
+    width: 14.28%; /* Jeder Tag hat 14.28% der Breite im 7-Tage-Kalender */
+    padding: 10px; /* Kleinere Polsterung */
     text-align: left;
-    height: 100px;
-    vertical-align: top;
-    font-size: 14px;
+    height: 80px; /* Kleinere Höhe für die Zellen */
+    vertical-align: top; /* Obere Ausrichtung */
+    font-size: 12px; /* Kleinere Schriftgröße */
 }
 
 th {
     background-color: #f2f2f2;
-    height: 50px;
-    font-size: 16px;
+    height: 30px; /* Kleinere Höhe für die Tage in der oberen Zeile */
 }
 
-button {
-    background-color: #4caf50;
-    color: white;
-    padding: 15px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(45deg, #f26b70, #f8c954);
+    padding: 10px;
+    border-radius: 10px;
 }
 
-.nav-buttons {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    text-align: center;
+.month-year {
+    font-size: 20px; /* Ändere die Schriftgröße nach Bedarf */
+    color: #fff;
+    font-weight: bold;
 }
-
 
 .nav-button {
     display: inline-block;
     padding: 10px;
-    margin: 0 20px; /* Ändere diesen Wert, um den Abstand zu erhöhen */
     text-decoration: none;
     color: #fff;
     background-color: #4caf50;
     border: 1px solid #45a049;
     border-radius: 5px;
+    width: 150px;
     transition: background-color 0.3s;
 }
-
 
 .nav-button:hover {
     background-color: #45a049;
