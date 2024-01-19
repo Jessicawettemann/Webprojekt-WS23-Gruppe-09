@@ -3,7 +3,7 @@ include "Header Sicherheit.php";
 ?>
 
 <!DOCTYPE html>
-<html lang="de" xmlns="http://www.w3.org/1999/html">
+<html lang="de" >
 <head>
     <meta charset="UTF-8">
     <title>Startseite</title>
