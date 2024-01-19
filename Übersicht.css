@@ -34,7 +34,8 @@ button1:focus {
 }
 
 .card {
-    background-color: black;
+    background-color:  rgba(0, 0, 0, 0.8);
+
     display: inline-block;
     border: 1px solid #ddd;
     padding: 10px;
