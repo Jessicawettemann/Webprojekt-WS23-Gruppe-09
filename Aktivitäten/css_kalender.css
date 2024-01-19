@@ -15,7 +15,7 @@ body {
 
 #calendar {
     margin-top: 20px;
-    position: relative; /* Stelle sicher, dass die Position relativ ist */
+    position: relative;
 }
 
 form {
@@ -32,7 +32,7 @@ table {
     border-collapse: collapse;
     margin: 20px auto;
     background: linear-gradient(45deg, #f26b70, #f8c954);
-    position: relative; /* Stelle sicher, dass die Position relativ ist */
+    position: relative;
 }
 
 table, th, td {
@@ -63,24 +63,31 @@ button {
     cursor: pointer;
 }
 
+.nav-buttons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.prev-month {
+    float: left;
+}
+
+.next-month {
+    float: right;
+}
+
 .nav-button {
-    position: absolute; /* Setze die Position auf absolute */
     display: inline-block;
-    padding: 15px 20px;
     text-decoration: none;
     color: #fff;
     background-color: #4caf50;
     border: 1px solid #45a049;
     border-radius: 5px;
+    margin: 0 5px;
     transition: background-color 0.3s;
-}
-
-.prev-month {
-    left: 0; /* Setze die Position für den Vorherigen Monat Button auf die linke Seite */
-}
-
-.next-month {
-    right: 0; /* Setze die Position für den Nächsten Monat Button auf die rechte Seite */
 }
 
 .nav-button:hover {
