@@ -26,19 +26,19 @@ include "Header Sicherheit.php";
 
 
     <div class="picture">
-        <img src="https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/verkaufen.png" alt=" placeholder" >
+        <img src="https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/verkaufen.jpg" alt=" placeholder" >
         <div class="Layer">
         <a href="ich-biete_Übersicht.php"> <h3>Ich biete</h3></a>
     </div>
 </div>
     <div class="picture">
-        <img src="https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/Frau.png" alt=" placeholder" >
+        <img src="https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/Frau.jpg" alt=" placeholder" >
         <div class="Layer">
         <a href="community.php"> <h3>Community</h3></a>
     </div>
     </div>
     <div class="picture">
-        <img src="https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/Kalender.png" alt=" placeholder" >
+        <img src="https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/Kalender.jpg" alt=" placeholder" >
        <div class="Layer">
         <a href="aktivitaeten.php"> <h3>Aktivitäten</h3> </a>
     </div>
