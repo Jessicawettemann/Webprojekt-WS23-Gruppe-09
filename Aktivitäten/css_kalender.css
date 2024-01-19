@@ -1,101 +1,76 @@
-/* Allgemeine Formatierung für den Body */
+/* Allgemeine Formatierung des Body-Elements */
 body {
-    font-family: Arial, sans-serif; /* Verwendete Schriftart */
-    margin: 0; /* Kein Außenabstand */
-    padding: 0; /* Kein Innenabstand */
-    background-color: #f4f4f4; /* Hintergrundfarbe */
+    font-family: Arial, sans-serif; /* Verwendete Schriftart für den Body */
+    margin: 0; /* Kein Außenabstand für den Body */
+    padding: 0; /* Kein Innenabstand für den Body */
+    background-color: #f4f4f4; /* Hintergrundfarbe des Body */
 }
 
-/* Hintergrundbild und Positionierung des Body */
+/* Hintergrundbild für den Body mit Cover und zentrierter Position */
 body {
-    min-height: 100vh; /* Mindesthöhe des Viewports */
-    width: 100%; /* Vollständige Breite */
-    background-position: center; /* Zentrierung des Hintergrundbilds */
-    background-size: cover; /* Anpassung des Hintergrundbilds an die Größe */
-    position: relative; /* Positionseigenschaft relativ */
+    min-height: 100vh; /* Mindesthöhe des Body auf 100% der Bildschirmhöhe setzen */
+    width: 100%; /* Body nimmt die volle Breite ein */
+    background-position: center; /* Zentrierte Position des Hintergrundbilds */
+    background-size: cover; /* Hintergrundbild wird gestreckt, um den gesamten Bereich abzudecken */
+    position: relative; /* Relative Positionierung für zentriertes Bild */
 }
 
-/* Styling für den Kalenderbereich */
+/* Oberer Abstand für den Kalenderbereich */
 #calendar {
-    margin-top: 20px; /* Abstand nach oben */
+    margin-top: 20px; /* 20px Abstand vom oberen Rand für den Kalenderbereich */
 }
 
-/* Styling für das Formular zum Hinzufügen von Ereignissen */
+/* Formatierung für das Formular zum Hinzufügen von Ereignissen */
 form {
-    max-width: 600px; /* Maximale Breite des Formulars */
-    margin: 20px auto; /* Zentrierung des Formulars */
+    max-width: 600px; /* Maximale Breite des Formulars auf 600px begrenzen */
+    margin: 20px auto; /* 20px Abstand oben und unten, zentriertes Formular */
     padding: 20px; /* Innenabstand des Formulars */
     background: #fff; /* Hintergrundfarbe des Formulars */
-    border-radius: 10px; /* Abrundung der Ecken */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Schatten */
+    border-radius: 10px; /* Runde Ecken für das Formular */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Leichter Schatten für das Formular */
 }
 
-/* Styling für die Tabelle im Kalender */
+/* Stil für die Tabelle (Kalender) mit einem Farbverlauf als Hintergrund */
 table {
-    width: 80%; /* Verkleinere die Breite der Tabelle */
-    border-collapse: collapse; /* Randzellen verschmelzen */
-    margin: 20px auto; /* Zentrierung der Tabelle */
-    background: linear-gradient(45deg, #f26b70, #f8c954); /* Farbverlauf */
+    width: 80%; /* Verkleinere die Breite der Tabelle auf 80% */
+    border-collapse: collapse; /* Rand zwischen den Tabellenzellen entfernen */
+    margin: 20px auto; /* Zentriere die Tabelle mit 20px Abstand oben und unten */
+    background: linear-gradient(45deg, #f26b70, #f8c954); /* Farbverlauf für den Hintergrund */
 }
 
-/* Allgemeines Styling für Tabellen und Zellen */
+/* Allgemeine Formatierung für Tabellen, Tabellenzellen und Tabellenüberschriften */
 table, th, td {
-    border: 1px solid #ddd; /* Rand um Tabellen und Zellen */
+    border: 1px solid #ddd; /* Leichter Rahmen für Tabellenzellen und -überschriften */
 }
 
-/* Styling für Tag- und Zellenelemente in der Tabelle */
+/* Formatierung für Tabellenzellen mit fester Breite, Höhe, und Ausrichtung */
 th, td {
     width: 14.28%; /* Jeder Tag hat 14.28% der Breite im 7-Tage-Kalender */
-    padding: 10px; /* Innenabstand von Zellen */
-    text-align: left; /* Textausrichtung links */
-    height: 80px; /* Höhe der Zellen */
+    padding: 10px; /* Kleinere Polsterung */
+    text-align: left; /* Text links ausrichten */
+    height: 80px; /* Kleinere Höhe für die Zellen */
     vertical-align: top; /* Obere Ausrichtung des Inhalts */
-    font-size: 12px; /* Schriftgröße */
+    font-size: 12px; /* Kleinere Schriftgröße */
 }
 
-/* Styling für die oberste Zeile der Tabelle (Wochentage) */
+/* Stil für Tabellenüberschriften mit Hintergrundfarbe und angepasster Höhe */
 th {
-    background-color: #f2f2f2; /* Hintergrundfarbe der Wochentage */
-    height: 30px; /* Höhe der obersten Zeile */
+    background-color: #f2f2f2; /* Hintergrundfarbe für Tabellenüberschriften */
+    height: 30px; /* Angepasste Höhe für die Tage in der oberen Zeile */
 }
 
-/* Styling für den Kopfteil des Kalenders mit Monatsanzeige */
+/* Stil für den Header des Kalenders mit Flexbox-Layout und Farbverlauf */
 .calendar-header {
-    display: flex; /* Verwendung von Flexbox */
-    justify-content: space-between; /* Gleichmäßige Verteilung der Elemente */
-    align-items: center; /* Zentrierung vertikal */
-    background: linear-gradient(45deg, #f26b70, #f8c954); /* Farbverlauf */
-    padding: 10px; /* Innenabstand des Kopfteils */
-    border-radius: 10px; /* Abrundung der Ecken */
+    display: flex; /* Verwende Flexbox-Layout für den Header */
+    justify-content: space-between; /* Platziere die Elemente gleichmäßig im Header */
+    align-items: center; /* Zentriere die Elemente vertikal im Header */
+    background: linear-gradient(45deg, #f26b70, #f8c954); /* Farbverlauf für den Header */
+    padding: 10px; /* Innenabstand des Headers */
+    border-radius: 10px; /* Runde Ecken für den Header */
 }
 
-/* Styling für die Monats- und Jahresanzeige im Kopfteil */
+/* Stil für den Monat-Jahr-Bereich mit Schriftgröße, Farbe und Fettdruck */
 .month-year {
-    font-size: 20px; /* Schriftgröße der Monats- und Jahresanzeige */
-    color: #fff; /* Textfarbe */
-    font-weight: bold; /* Fettdruck */
-}
-
-/* Styling für die Navigationsbuttons im Kopfteil */
-.nav-button {
-    display: inline-block; /* Inline-Block-Element */
-    padding: 10px; /* Innenabstand des Buttons */
-    margin: 0; /* Kein Außenabstand */
-    text-decoration: none; /* Keine Unterstreichung des Textes */
-    color: #fff; /* Textfarbe */
-    background-color: #4caf50; /* Hintergrundfarbe des Buttons */
-    border: 1px solid #45a049; /* Rand des Buttons */
-    border-radius: 5px; /* Abrundung der Ecken */
-    width: 100px; /* Feste Breite für beide Buttons */
-    text-align: center; /* Zentrierung des Textes innerhalb des Buttons */
-    transition: background-color 0.3s; /* Animierter Übergang bei Hover */
-}
-
-/* Styling für Hover-Effekt der Navigationsbuttons */
-.nav-button:hover {
-    background-color: #45a049; /* Hintergrundfarbe bei Hover */
-}
-
-/* Styling für Hover-Effekt allgemeiner Buttons */
-button:hover {
-    background-color
+    font-size: 20px; /* Schriftgröße für den Monat und das Jahr */
+    color: #fff; /* Textfarbe weiß */
+    font-weight: bold; /* Fettdruck für
