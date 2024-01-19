@@ -27,10 +27,10 @@ form {
 }
 
 table {
-    width: 80%; /* Verkleinere die Breite der Tabelle */
+    width: 80%;
     border-collapse: collapse;
-    margin: 20px auto; /* Zentriere die Tabelle */
-    background: linear-gradient(45deg, #f26b70, #f8c954); /* Farbverlauf */;
+    margin: 20px auto;
+    background: linear-gradient(45deg, #f26b70, #f8c954);
 }
 
 table, th, td {
@@ -38,23 +38,24 @@ table, th, td {
 }
 
 th, td {
-    width: 14.28%; /* Jeder Tag hat 14.28% der Breite im 7-Tage-Kalender */
-    padding: 10px; /* Kleinere Polsterung */
+    width: 14.28%;
+    padding: 15px;
     text-align: left;
-    height: 80px; /* Kleinere Höhe für die Zellen */
-    vertical-align: top; /* Obere Ausrichtung */
-    font-size: 12px; /* Kleinere Schriftgröße */
+    height: 100px; /* Ändere die Höhe für die Zellen */
+    vertical-align: top;
+    font-size: 14px; /* Ändere die Schriftgröße */
 }
 
 th {
     background-color: #f2f2f2;
-    height: 30px; /* Kleinere Höhe für die Tage in der oberen Zeile */
+    height: 50px; /* Ändere die Höhe für die Tage in der oberen Zeile */
+    font-size: 16px; /* Ändere die Schriftgröße für die Wochentage */
 }
 
 button {
     background-color: #4caf50;
     color: white;
-    padding: 10px 15px;
+    padding: 15px 20px; /* Ändere die Polsterung für die Buttons */
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -62,21 +63,19 @@ button {
 
 .nav-button {
     display: inline-block;
-    padding: 10px;
-    margin: 0 10px;
+    padding: 15px 20px; /* Ändere die Polsterung für die Navigation Buttons */
+    margin: 0 20px; /* Ändere den Abstand zwischen den Navigation Buttons */
     text-decoration: none;
     color: #fff;
     background-color: #4caf50;
     border: 1px solid #45a049;
     border-radius: 5px;
     transition: background-color 0.3s;
-    
 }
 
 .nav-button:hover {
     background-color: #45a049;
 }
-
 
 button:hover {
     background-color: #45a049;
