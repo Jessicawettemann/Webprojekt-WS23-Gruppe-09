@@ -85,7 +85,7 @@ button{
     color: white;
     font-family: "Avenir Next", sans-serif;
     font-size: 14px;
-    background: black;
+    background: #45a049;
 }
 button:hover{
     width: 200px;
