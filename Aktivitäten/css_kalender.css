@@ -69,12 +69,14 @@ th {
 .nav-button {
     display: inline-block;
     padding: 10px;
+    margin: 0;
     text-decoration: none;
     color: #fff;
     background-color: #4caf50;
     border: 1px solid #45a049;
     border-radius: 5px;
-    width: auto; /* Breite automatisch an den Inhalt anpassen */
+    width: 100px; /* Setze eine feste Breite für beide Buttons */
+    text-align: center; /* Zentriere den Text innerhalb des Buttons */
     transition: background-color 0.3s;
 }
 
