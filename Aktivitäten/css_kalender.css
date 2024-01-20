@@ -130,7 +130,7 @@ button:hover {
     background-color: #4caf50; /* Hintergrundfarbe Grün */
     border: 1px solid #45a049; /* Einzelner 1px dicker Rand mit Grünton */
     border-radius: 5px; /* Abgerundete Ecken für einen weicheren Look */
-    width: 150px; /* Feste Breite für den Button */
+    width: 200px; /* Feste Breite für den Button */
     transition: background-color 0.3s; /* Sanfter Farbübergang bei Hover-Effekt */
     font-size: 14px; /* Setzen Sie hier die gewünschte Schriftgröße */
 }
