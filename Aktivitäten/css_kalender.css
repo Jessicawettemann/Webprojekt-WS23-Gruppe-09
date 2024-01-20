@@ -103,7 +103,6 @@ th {
     padding: 10px; /* Innenabstand für die Navigationsbutton */
     text-decoration: none; /* Keine Unterstreichung für den Text */
     color: #fff; /* Textfarbe weiß */
-    font-size: 20px; /* Schriftgröße */
     background-color: #4caf50; /* Hintergrundfarbe für die Navigationsbutton */
     border: 1px solid #45a049; /* Rahmen für die Navigationsbutton */
     border-radius: 5px; /* Runde Ecken für die Navigationsbutton */
@@ -126,6 +125,7 @@ button:hover {
     display: inline-block; /* Inline-Block-Element, um Breite und Höhe anzuwenden */
     padding: 10px; /* Innenabstand für den Button-Inhalt */
     text-decoration: none; /* Keine Unterstreichung für Textlinks */
+    font-size: 20px; /* Schriftgröße für den Monat und das Jahr */
     color: #fff; /* Textfarbe Weiß */
     background-color: #4caf50; /* Hintergrundfarbe Grün */
     border: 1px solid #45a049; /* Einzelner 1px dicker Rand mit Grünton */
