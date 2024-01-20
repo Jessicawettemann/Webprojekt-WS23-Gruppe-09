@@ -79,7 +79,7 @@ th {
 }
 
 /* Stil für den Monat-Jahr-Bereich mit Schriftgröße, Farbe und Fettdruck */
-.calendar-header .month-year {
+.month-year {
     font-size: 20px; /* Schriftgröße für den Monat und das Jahr */
     color: #780f0f; /* Textfarbe weiß */
     font-weight: bold; /* Fettdruck für den Monat und das Jahr */
