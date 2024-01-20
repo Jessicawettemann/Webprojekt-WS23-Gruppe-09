@@ -82,14 +82,16 @@ th {
     font-weight: bold; /* Fettdruck für den Monat und das Jahr */
 }
 
-/* Neue Regel für die Kalenderzellen mit fester Breite und Höhe */
 .day {
-    width: 100%; /* 100% Breite für die Kalenderzelle */
-    height: 80px; /* Feste Höhe für die Kalenderzelle */
-    box-sizing: border-box; /* Berücksichtige die Rahmen- und Padding-Breite in der Gesamtbreite */
-    overflow: hidden; /* Verhindere das Überlaufen von Text über die Kalenderzelle */
+    width: 100px; /* Setze eine feste Breite für die Kalenderfelder */
+    height: 100px; /* Setze eine feste Höhe für die Kalenderfelder */
+    overflow: hidden; /* Verhindere, dass langer Text das Feld übersteigt */
 }
 
+.event {
+    max-height: 80px; /* Setze eine maximale Höhe für Ereignisse innerhalb des Feldes */
+    overflow: hidden; /* Verhindere, dass lange Ereignistexte das Feld übersteigen */
+}
 
 /* Stil für Navigationsbutton mit festen Abständen, Breite und Farben */
 .nav-button {
