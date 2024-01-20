@@ -75,6 +75,7 @@ th {
     background-color: #fff; /* Farbverlauf für den Header */
     padding: 10px; /* Innenabstand des Headers */
     border-radius: 10px; /* Runde Ecken für den Header */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
 }
 
 /* Stil für den Monat-Jahr-Bereich mit Schriftgröße, Farbe und Fettdruck */
