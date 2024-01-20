@@ -96,7 +96,7 @@ th {
 /* Stil für Navigationsbutton mit festen Abständen, Breite und Farben */
 .nav-button {
     display: inline-block; /* Navigationsbutton als Inline-Block-Elemente */
-    padding: 40px; /* Innenabstand für die Navigationsbutton */
+    padding: 10px; /* Innenabstand für die Navigationsbutton */
     text-decoration: none; /* Keine Unterstreichung für den Text */
     color: #fff; /* Textfarbe weiß */
     background-color: #4caf50; /* Hintergrundfarbe für die Navigationsbutton */
