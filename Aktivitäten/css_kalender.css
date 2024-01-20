@@ -77,7 +77,7 @@ th {
 
 /* Stil für den Monat-Jahr-Bereich mit Schriftgröße, Farbe und Fettdruck */
 .month-year {
-    font-size: 20px; /* Schriftgröße für den Monat und das Jahr */
+    font-size: 40px; /* Schriftgröße für den Monat und das Jahr */
     color: #fff; /* Textfarbe weiß */
     font-weight: bold; /* Fettdruck für den Monat und das Jahr */
 }
