@@ -9,7 +9,7 @@ $daysInMonth = cal_days_in_month(CAL_GREGORIAN, (int)$month, (int)$year);
 echo "<div class='calendar-container'>";
 echo "<div class='calendar-header' style='text-align: center;'>";
 echo "<a href='?year=" . ($month == 1 ? $year - 1 : $year) . "&month=" . ($month == 1 ? 12 : $month - 1) . "' class='nav-button'>Vorheriger Monat</a>";
-echo "<span class='month-year'>" . date('F Y', strtotime("$year-$month-01")) . "</span>";
+echo "<span>" . date('F Y', strtotime("$year-$month-01")) . "</span>";
 echo "<a href='?year=" . ($month == 12 ? $year + 1 : $year) . "&month=" . ($month == 12 ? 1 : $month + 1) . "' class='nav-button'>Nächster Monat</a>";
 echo "</div>";
 
