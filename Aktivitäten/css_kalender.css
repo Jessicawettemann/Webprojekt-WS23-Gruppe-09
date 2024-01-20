@@ -77,9 +77,10 @@ th {
 
 /* Stil für den Monat-Jahr-Bereich mit Schriftgröße, Farbe und Fettdruck */
 .month-year {
-    font-size: 40px; /* Schriftgröße für den Monat und das Jahr */
+    font-size: 20px; /* Schriftgröße für den Monat und das Jahr */
     color: #fff; /* Textfarbe weiß */
     font-weight: bold; /* Fettdruck für den Monat und das Jahr */
+    flex-grow: 1; /* Der Monat nimmt so viel Platz wie möglich ein */
 }
 
 .day {
@@ -95,7 +96,7 @@ th {
 
 /* Stil für Navigationsbutton mit festen Abständen, Breite und Farben */
 .nav-button {
-    display: inline-block; /* Navigationsbutton als Inline-Block-Elemente */
+    
     padding: 10px; /* Innenabstand für die Navigationsbutton */
     text-decoration: none; /* Keine Unterstreichung für den Text */
     color: #fff; /* Textfarbe weiß */
@@ -104,6 +105,8 @@ th {
     border-radius: 5px; /* Runde Ecken für die Navigationsbutton */
     width: 200px; /* Feste Breite für beide Navigationsbutton */
     transition: background-color 0.3s; /* Sanfter Farbübergang beim Hovern */
+    display: flex; /* Flexbox für die Navigationsschaltflächen */
+    gap: 10px; /* Füge einen Abstand zwischen den Schaltflächen hinzu */
 }
 
 /* Stil für den Hover-Effekt der Navigationsbutton */
