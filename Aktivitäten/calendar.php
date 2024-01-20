@@ -11,7 +11,6 @@ echo "<div class='calendar-header' style='text-align: center;'>";
 echo "<a href='?year=" . ($month == 1 ? $year - 1 : $year) . "&month=" . ($month == 1 ? 12 : $month - 1) . "' class='nav-button'>Vorheriger Monat</a>";
 echo "<span>" . date('F Y', strtotime("$year-$month-01")) . "</span>";
 echo "<a href='?year=" . ($month == 12 ? $year + 1 : $year) . "&month=" . ($month == 12 ? 1 : $month + 1) . "' class='nav-button'>Nächster Monat</a>";
-echo "<a href='#' class='nav-button create-event-button'>Ereignis erstellen</a>"; // Hinzugefügt
 echo "</div>";
 
 
