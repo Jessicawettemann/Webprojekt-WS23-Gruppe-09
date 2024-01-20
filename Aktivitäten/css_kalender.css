@@ -81,7 +81,7 @@ th {
 /* Stil für den Monat-Jahr-Bereich mit Schriftgröße, Farbe und Fettdruck */
 .month-year {
     font-size: 20px; /* Schriftgröße für den Monat und das Jahr */
-    color: #fff; /* Textfarbe weiß */
+    color: #611616; /* Textfarbe weiß */
     font-weight: bold; /* Fettdruck für den Monat und das Jahr */
     flex-grow: 1; /* Der Monat nimmt so viel Platz wie möglich ein */
 }
@@ -125,7 +125,6 @@ button:hover {
     display: inline-block; /* Inline-Block-Element, um Breite und Höhe anzuwenden */
     padding: 10px; /* Innenabstand für den Button-Inhalt */
     text-decoration: none; /* Keine Unterstreichung für Textlinks */
-    font-size: 10px; /* Schriftgröße für den Monat und das Jahr */
     color: #fff; /* Textfarbe Weiß */
     background-color: #4caf50; /* Hintergrundfarbe Grün */
     border: 1px solid #45a049; /* Einzelner 1px dicker Rand mit Grünton */
