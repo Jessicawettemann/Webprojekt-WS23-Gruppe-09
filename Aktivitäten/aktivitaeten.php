@@ -15,7 +15,7 @@ include "Datenbank Verbindung.php";
 
 
 <!-- Formular zum Hinzufügen von Ereignissen -->
-<form action="aktivitaeten_do.php" method="post" enctype="multipart/form-data">
+<form action="aktivitaeten_do.php" method="post" enctype="multipart/form-data" href="css_kalender.css">
     <h1>Kalender</h1>
     <br><br>
     <label for="thema"></label>
@@ -32,7 +32,7 @@ include "Datenbank Verbindung.php";
 
     <br>
     <br>
-    <button class="ereignis-button"  type="submit">Ereignis hinzufügen</button>
+    <button class="ereignis-button" type="submit">Ereignis hinzufügen</button>
 
     <br>
     <br>
