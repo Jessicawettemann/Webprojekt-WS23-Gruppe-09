@@ -120,20 +120,22 @@ button:hover {
     background-color: #45a049; /* Hintergrundfarbe ändert sich bei Hover */
 }
 
+/* Stil für den Ereignis-Button */
 .ereignis-button {
-    display: inline-block;
-    padding: 10px;
-    text-decoration: none;
-    color: #fff;
-    background-color: #4caf50;
-    border: 1px solid #45a049;
-    border-radius: 5px;
-    width: 150px;
-    transition: background-color 0.3s;
+    display: inline-block; /* Inline-Block-Element, um Breite und Höhe anzuwenden */
+    padding: 10px; /* Innenabstand für den Button-Inhalt */
+    text-decoration: none; /* Keine Unterstreichung für Textlinks */
+    color: #fff; /* Textfarbe Weiß */
+    background-color: #4caf50; /* Hintergrundfarbe Grün */
+    border: 1px solid #45a049; /* Einzelner 1px dicker Rand mit Grünton */
+    border-radius: 5px; /* Abgerundete Ecken für einen weicheren Look */
+    width: 150px; /* Feste Breite für den Button */
+    transition: background-color 0.3s; /* Sanfter Farbübergang bei Hover-Effekt */
 }
 
+/* Stiländerungen beim Hovern über den Ereignis-Button */
 .ereignis-button:hover {
-    background-color: #45a049;
+    background-color: #45a049; /* Ändere die Hintergrundfarbe beim Hovern zu einem dunkleren Grünton */
 }
 
 
