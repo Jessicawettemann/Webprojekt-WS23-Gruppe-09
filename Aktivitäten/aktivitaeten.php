@@ -32,7 +32,7 @@ include "Datenbank Verbindung.php";
 
     <br>
     <br>
-    <button type="submit">Ereignis hinzufügen</button>
+    <button class="ereignis-button"  type="submit">Ereignis hinzufügen</button>
 
     <br>
     <br>
