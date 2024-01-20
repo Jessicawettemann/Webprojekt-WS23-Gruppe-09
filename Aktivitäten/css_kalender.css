@@ -96,7 +96,7 @@ th {
 
 /* Stil für Navigationsbutton mit festen Abständen, Breite und Farben */
 .nav-button {
-    
+    display: inline-block; /* Navigationsbutton als Inline-Block-Elemente */
     padding: 10px; /* Innenabstand für die Navigationsbutton */
     text-decoration: none; /* Keine Unterstreichung für den Text */
     color: #fff; /* Textfarbe weiß */
@@ -105,8 +105,6 @@ th {
     border-radius: 5px; /* Runde Ecken für die Navigationsbutton */
     width: 200px; /* Feste Breite für beide Navigationsbutton */
     transition: background-color 0.3s; /* Sanfter Farbübergang beim Hovern */
-    display: flex; /* Flexbox für die Navigationsschaltflächen */
-    gap: 10px; /* Füge einen Abstand zwischen den Schaltflächen hinzu */
 }
 
 /* Stil für den Hover-Effekt der Navigationsbutton */
