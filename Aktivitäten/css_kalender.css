@@ -1,100 +1,116 @@
+/* Allgemeine Formatierung des Body-Elements */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+    font-family: Arial, sans-serif; /* Verwendete Schriftart für den Body */
+    margin: 0; /* Kein Außenabstand für den Body */
+    padding: 0; /* Kein Innenabstand für den Body */
+    background-color: #f4f4f4; /* Hintergrundfarbe des Body */
 }
 
+/* Hintergrundbild für den Body mit Cover und zentrierter Position */
 body {
-    min-height: 100vh;
-    width: 100%;
-    background-position: center;
-    background-size: cover;
-    position: relative;
+    min-height: 100vh; /* Mindesthöhe des Body auf 100% der Bildschirmhöhe setzen */
+    width: 100%; /* Body nimmt die volle Breite ein */
+    background-position: center; /* Zentrierte Position des Hintergrundbilds */
+    background-size: cover; /* Hintergrundbild wird gestreckt, um den gesamten Bereich abzudecken */
+    position: relative; /* Relative Positionierung für zentriertes Bild */
 }
 
+/* Oberer Abstand für den Kalenderbereich */
 #calendar {
-    margin-top: 20px;
+    margin-top: 20px; /* 20px Abstand vom oberen Rand für den Kalenderbereich */
 }
 
+/* Formatierung für das Formular zum Hinzufügen von Ereignissen */
 form {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px; /* Maximale Breite des Formulars auf 600px begrenzen */
+    margin: 20px auto; /* 20px Abstand oben und unten, zentriertes Formular */
+    padding: 20px; /* Innenabstand des Formulars */
+    background: #fff; /* Hintergrundfarbe des Formulars */
+    border-radius: 10px; /* Runde Ecken für das Formular */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Leichter Schatten für das Formular */
 }
 
+/* Kommentar-Stil für bestimmte Bereiche mit kleinerer Schrift und grauer Farbe */
 .comment span {
-    font-size: 12px;
-    color: #888;
+    font-size: 12px; /* Schriftgröße 12px */
+    color: #888; /* Graue Textfarbe */
 }
 
+/* Stil für die Tabelle (Kalender) mit einem Farbverlauf als Hintergrund */
 table {
-    width: 80%;
-    border-collapse: collapse;
-    margin: 20px auto;
-    background: linear-gradient(45deg, #f26b70, #f8c954);
+    width: 80%; /* Verkleinere die Breite der Tabelle auf 80% */
+    border-collapse: collapse; /* Rand zwischen den Tabellenzellen entfernen */
+    margin: 20px auto; /* Zentriere die Tabelle mit 20px Abstand oben und unten */
+    background: linear-gradient(45deg, #f26b70, #f8c954); /* Farbverlauf für den Hintergrund */
 }
 
+/* Allgemeine Formatierung für Tabellen, Tabellenzellen und Tabellenüberschriften */
 table, th, td {
-    border: 1px solid #ddd;
+    border: 1px solid #ddd; /* Leichter Rahmen für Tabellenzellen und -überschriften */
 }
 
+/* Formatierung für Tabellenzellen mit fester Breite, Höhe, und Ausrichtung */
 th, td {
-    width: 14.28%;
-    padding: 10px;
-    text-align: left;
-    height: 80px;
-    vertical-align: top;
-    font-size: 12px;
+    width: 14.28%; /* Jeder Tag hat 14.28% der Breite im 7-Tage-Kalender */
+    padding: 10px; /* Kleinere Polsterung */
+    text-align: left; /* Text links ausrichten */
+    height: 80px; /* Kleinere Höhe für die Zellen */
+    vertical-align: top; /* Obere Ausrichtung des Inhalts */
+    font-size: 12px; /* Kleinere Schriftgröße */
 }
 
+/* Stil für Tabellenüberschriften mit Hintergrundfarbe und angepasster Höhe */
 th {
-    background-color: #f2f2f2;
-    height: 30px;
+    background-color: #f2f2f2; /* Hintergrundfarbe für Tabellenüberschriften */
+    height: 30px; /* Angepasste Höhe für die Tage in der oberen Zeile */
 }
 
+/* Stil für den Header des Kalenders mit Flexbox-Layout und Farbverlauf */
 .calendar-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: linear-gradient(45deg, #f26b70, #f8c954);
-    padding: 10px;
-    border-radius: 10px;
+    display: flex; /* Verwende Flexbox-Layout für den Header */
+    justify-content: space-between; /* Platziere die Elemente gleichmäßig im Header */
+    align-items: center; /* Zentriere die Elemente vertikal im Header */
+    background: linear-gradient(45deg, #f26b70, #f8c954); /* Farbverlauf für den Header */
+    padding: 10px; /* Innenabstand des Headers */
+    border-radius: 10px; /* Runde Ecken für den Header */
 }
 
+/* Stil für den Monat-Jahr-Bereich mit Schriftgröße, Farbe und Fettdruck */
 .month-year {
-    font-size: 20px;
-    color: #fff;
-    font-weight: bold;
+    font-size: 20px; /* Schriftgröße für den Monat und das Jahr */
+    color: #fff; /* Textfarbe weiß */
+    font-weight: bold; /* Fettdruck für den Monat und das Jahr */
 }
 
+/* Stil für Navigationsbutton mit festen Abständen, Breite und Farben */
 .nav-button {
-    display: inline-block;
-    padding: 10px;
-    text-decoration: none;
-    color: #fff;
-    background-color: #4caf50;
-    border: 1px solid #45a049;
-    border-radius: 5px;
-    width: 150px;
-    transition: background-color 0.3s;
+    display: inline-block; /* Navigationsbutton als Inline-Block-Elemente */
+    padding: 10px; /* Innenabstand für die Navigationsbutton */
+    text-decoration: none; /* Keine Unterstreichung für den Text */
+    color: #fff; /* Textfarbe weiß */
+    background-color: #4caf50; /* Hintergrundfarbe für die Navigationsbutton */
+    border: 1px solid #45a049; /* Rahmen für die Navigationsbutton */
+    border-radius: 5px; /* Runde Ecken für die Navigationsbutton */
+    width: 150px; /* Feste Breite für beide Navigationsbutton */
+    transition: background-color 0.3s; /* Sanfter Farbübergang beim Hovern */
 }
 
+/* Stil für den Hover-Effekt der Navigationsbutton */
 .nav-button:hover {
-    background-color: #45a049;
+    background-color: #45a049; /* Hintergrundfarbe ändert sich bei Hover */
 }
 
+/* Stil für den Hover-Effekt aller Buttons im Dokument */
 button:hover {
-    background-color: #45a049;
+    background-color: #45a049; /* Hintergrundfarbe ändert sich bei Hover */
 }
 
+/* Stil für den Text mit roter Farbe bei Misserfolg */
 .fail {
-    color: #ff0000;
+    color: #ff0000; /* Rote Textfarbe für Misserfolgsmeldungen */
 }
 
+/* Stil für den Text mit grüner Farbe bei Erfolg */
 .fine {
-    color: #008000;
+    color: #008000; /* Grüne Textfarbe für Erfolgsmeldungen */
 }
