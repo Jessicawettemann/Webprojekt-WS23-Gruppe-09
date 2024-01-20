@@ -41,7 +41,7 @@ table {
     width: 80%; /* Verkleinere die Breite der Tabelle auf 80% */
     border-collapse: collapse; /* Rand zwischen den Tabellenzellen entfernen */
     margin: 20px auto; /* Zentriere die Tabelle mit 20px Abstand oben und unten */
-    background: linear-gradient(45deg, #f26b70, #f8c954); /* Farbverlauf für den Hintergrund */
+    
 }
 
 /* Allgemeine Formatierung für Tabellen, Tabellenzellen und Tabellenüberschriften */
