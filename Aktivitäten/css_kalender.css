@@ -70,7 +70,7 @@ th {
     display: flex; /* Verwende Flexbox-Layout für den Header */
     justify-content: space-between; /* Platziere die Elemente gleichmäßig im Header */
     align-items: center; /* Zentriere die Elemente vertikal im Header */
-    background-color: darkgrey; /* Farbverlauf für den Header */
+    background-color: #f8c954; /* Farbverlauf für den Header */
     padding: 10px; /* Innenabstand des Headers */
     border-radius: 10px; /* Runde Ecken für den Header */
 }
