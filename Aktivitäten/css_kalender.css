@@ -103,6 +103,7 @@ th {
     padding: 10px; /* Innenabstand für die Navigationsbutton */
     text-decoration: none; /* Keine Unterstreichung für den Text */
     color: #fff; /* Textfarbe weiß */
+    font-size: 20px; /* Schriftgröße */
     background-color: #4caf50; /* Hintergrundfarbe für die Navigationsbutton */
     border: 1px solid #45a049; /* Rahmen für die Navigationsbutton */
     border-radius: 5px; /* Runde Ecken für die Navigationsbutton */
