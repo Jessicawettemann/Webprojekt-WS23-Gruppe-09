@@ -82,6 +82,15 @@ th {
     font-weight: bold; /* Fettdruck für den Monat und das Jahr */
 }
 
+/* Neue Regel für die Kalenderzellen mit fester Breite und Höhe */
+.day {
+    width: 100%; /* 100% Breite für die Kalenderzelle */
+    height: 80px; /* Feste Höhe für die Kalenderzelle */
+    box-sizing: border-box; /* Berücksichtige die Rahmen- und Padding-Breite in der Gesamtbreite */
+    overflow: hidden; /* Verhindere das Überlaufen von Text über die Kalenderzelle */
+}
+
+
 /* Stil für Navigationsbutton mit festen Abständen, Breite und Farben */
 .nav-button {
     display: inline-block; /* Navigationsbutton als Inline-Block-Elemente */
