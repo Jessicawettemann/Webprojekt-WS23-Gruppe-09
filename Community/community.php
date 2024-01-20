@@ -105,15 +105,12 @@ echo "<th>Folgen</th>"; // Folgen-Spalte hinzugefügt
 echo "</tr>";
 
 foreach ($statement as $row) {
-    echo "<div class='chat-bubble'>";
-    echo "<div class='user-info'>";
-    echo "<img src='profilbilder/" . $row['profilbild'] . "' alt='Profilbild'>";
-    echo "<span class='username'>" . $row['vorname'] . " " . $row['nachname'] . "</span>";
-    echo "</div>";
-    echo "<p class='message'>" . $row['beitrag'] . "</p>";
-    echo "<span class='timestamp'>" . date('d.m.Y H:i', strtotime($row['datum'])) . "</span>";
-    echo "</div>";
-
+    echo "<tr>";
+    echo "<td>" . $row['beitrag'] . "</td>";
+    echo "<td>" . $row['datum'] . "</td>";
+    echo "<td>" . $row['vorname'] . " " . $row['nachname'] . "</td>";
+    echo "<td>" . $row['profilbild'] . "</td>";
+    
     // Hier fügen Sie den Follow-Button hinzu
     echo "<td>";
     // Überprüfen, ob der Benutzer bereits folgt
