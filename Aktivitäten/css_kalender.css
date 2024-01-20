@@ -67,6 +67,7 @@ th {
 
 /* Stil für den Header des Kalenders mit Flexbox-Layout und Farbverlauf */
 .calendar-header {
+    width: 80%; /* Verkleinere die Breite auf 80% */
     display: flex; /* Verwende Flexbox-Layout für den Header */
     justify-content: space-between; /* Platziere die Elemente gleichmäßig im Header */
     align-items: center; /* Zentriere die Elemente vertikal im Header */
