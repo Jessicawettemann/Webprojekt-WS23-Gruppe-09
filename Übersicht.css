@@ -34,7 +34,7 @@ button1:focus {
 }
 
 .card {
-    background-color:  rgba(0, 0, 0, 0.8);
+    background: linear-gradient(45deg, #f26b70, #f8c954); /* Farbverlauf für den Hintergrund */
 
     display: inline-block;
     border: 1px solid #ddd;
@@ -48,7 +48,7 @@ button1:focus {
 .card h1{
     font-family: "Avenir Next Medium";
     font-size: 16px;
-    color: #45a049;
+    color: black;
 }
 .card h2{
     font-family: "Avenir Next";
