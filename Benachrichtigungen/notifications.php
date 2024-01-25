@@ -12,7 +12,7 @@ require '/home/fb106/public_html/SMTP.php';
 function getEmailFromDatabase($Nutzer) {
     global $pdo;
 
-    $statement = $pdo->prepare("SELECT email FROM Nutzer WHERE benutzername = ?");
+    $statement = $pdo->prepare("SELECT email FROM Nutzer WHERE benutzername =?");
     $statement->execute([$Nutzer]);
 
     $result = $statement->fetch(PDO::FETCH_ASSOC);
@@ -29,7 +29,11 @@ $notificationStatement = $pdo->prepare("SELECT * FROM Benachrichtigungen WHERE e
 $notificationStatement->execute([$_SESSION["benutzername"]]);
 
 // E-Mail-Parameter
-$empfaenger = $_SESSION["email"];
+$benutzername = $_SESSION["benutzername"]; 
+$statmentEmpfaenger = $pdo->prepare("SELECT email FROM Nutzer WHERE benutzername =?");
+echo ($statmentEmpfaenger);
+$statementEmpfaenger->execute(array($benutzername)); 
+$result = $statmentEmpfaenger-> fetch(PDO::FETCH_ASSOC);
 $betreff = 'Neue Benachrichtigung';
 
 
@@ -77,8 +81,8 @@ $header = 'From: ' . $absenderEmail;
 
             // E-Mail-Inhalte
             $absenderEmail = getEmailFromDatabase($notification['absender_username']);
-            $mail->setFrom($absenderEmail, 'Your Name');
-            $mail->addAddress($empfaenger);
+            $mail->setFrom($absenderEmail, 'Landify');
+            $mail->addAddress($statmentEmpfaenger);
             $mail->isHTML(true);
             $mail->Subject = $betreff;
             $mail->Body    = $notification['nachricht'];
