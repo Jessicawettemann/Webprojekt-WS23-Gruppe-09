@@ -48,28 +48,25 @@ ini_set('display_errors', 1);
             echo "<div class='comment'>";
 
             // Profilbild anzeigen
-            $statement = $pdo->prepare("SELECT profilbild FROM Nutzer WHERE ID= :Nutzer_ID ");
-            $statement->bindParam(":Nutzer_ID", $_SESSION["Nutzer_ID"]);
-            
-            if ($statement->execute()) {
-                $profilbildRow = $statement->fetch();
+            $statementProfilbild = $pdo->prepare("SELECT profilbild FROM Nutzer WHERE benutzername = ?");
+            $statementProfilbild->execute([$row['benutzername']]);
+            $profilbildRow = $statementProfilbild->fetch();
 
-                // Profilbild einbetten, wenn ein Bildlink vorhanden ist
-                if (!empty($profilbildRow['profilbild'])) {
-                    echo "<div><img class='profilpicture' src='https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/" . $profilbildRow['profilbild'] . "'></div>";
-                } else {
-                    echo "<div>Kein Profilbild</div>";
-                }
-
-                echo "<p><strong>" . $row['vorname'] . " " . $row['nachname'] . "</strong></p>";
-                echo "<p>" . $row['beitrag'] . "</p>";
-                echo "<span>" . $row['datum'] . "</span>";
-
-                // ... (Rest deines Codes) ...
-
-                echo "</div>";
-                echo "</div>";
+            // Profilbild einbetten, wenn ein Bildlink vorhanden ist
+            if (!empty($profilbildRow['profilbild'])) {
+                echo "<div><img class='profilpicture' src='https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/" . $profilbildRow['profilbild'] . "'></div>";
+            } else {
+                echo "<div>Kein Profilbild</div>";
             }
+
+            echo "<p><strong>" . $row['vorname'] . " " . $row['nachname'] . "</strong></p>";
+            echo "<p>" . $row['beitrag'] . "</p>";
+            echo "<span>" . $row['datum'] . "</span>";
+
+            // ... (Rest deines Codes) ...
+
+            echo "</div>";
+            echo "</div>";
         }
 
         echo "</div>";
