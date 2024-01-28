@@ -1,14 +1,5 @@
-
-
-
 <?php
-
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
-
 include "Datenbank Verbindung.php";
-include "Header Sicherheit.php";
 session_start();
 ?>
 
@@ -17,73 +8,61 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" type="text/css" href="css_community.css">
-    <title>Forum</title>
+    <title>Übersicht</title>
+    <link rel="stylesheet" type="text/css" href="Header.css">
+
 </head>
 <body>
+<header>
+    <div class="header">
+        <ul class="ul">
 
-<div class="container">
+            <li class="li"><a href="Startseite.php">Startseite</a></li>
+            <li class="li"><a href="Profil_do.php">Mein Profil</a></li>
 
-    <h1>Community</h1>
+            <!-- Neuer Navigationslink zu den Benachrichtigungen -->
+            <li class="li"><a href="notifications.php">Benachrichtigungen</a></li>
 
-    <!-- Formular zum Hinzufügen von Beiträgen -->
-    <form id="communityForm" action="community_do.php" method="post" placeholder="Gib hier deinen Beitrag ein..." enctype="multipart/form-data" class="forum-form">
-        <label for="beitrag"></label>
-        <input type="text" placeholder="Beitrag" id="beitrag" name="beitrag" required>
-        <button type="submit">Beitrag hinzufügen</button>
-    </form>
-
-    <!-- Formular zur Suche nach einem Nutzer -->
-    <form action="community.php" method="post" class="forum-form">
-        <label for="search_user">Nutzer suchen:</label>
-        <input type="text" id="search_user" name="search_user" required>
-        <button type="submit">Suchen</button>
-    </form>
-
-    <?php
-    $statementBeitrag = $pdo->prepare("SELECT * FROM Beitrag INNER JOIN Nutzer ON Beitrag.benutzername = Nutzer.benutzername");
-    $statementBeitrag->execute();
-
-    // Überprüfen, ob Daten vorhanden sind, bevor die foreach-Schleife gestartet wird
-    if ($statementBeitrag->rowCount() > 0) {
-        echo "<div class='forum-container'>";
-
-        foreach ($statementBeitrag as $row) {
-            echo "<div class='comment-container'>";
-            
-            $statementProfilbild = $pdo->prepare("SELECT profilbild FROM Nutzer WHERE benutzername = :Benutzername ");
-            $statementProfilbild->bindParam(":Benutzername", $row['benutzername']);
-            
-            if ($statementProfilbild->execute()) {
-                $profilbildRow = $statementProfilbild->fetch();
-                
-                echo "<div class='comment'>";
-                echo "<p><strong>" . $row['vorname'] . " " . $row['nachname'] . "</strong></p>";
-                echo "<p>" . $row['beitrag'] . "</p>";
-                echo "<span>" . $row['datum'] . "</span>";
-                
-                if ($profilbildRow && !empty($profilbildRow["profilbild"])) {
-                    // Wenn Profilbild vorhanden ist, zeige es an
-                    echo "<div><img class='profilpicture' src='data:image/jpeg;base64," . base64_encode($profilbildRow['profilbild']) . "' alt='Profilbild'></div>";
-                } else {
-                    echo "<div>Kein Profilbild</div>";
-                }
-
-                // ... (wie vorheriger Code für Follow-Button)
-
-                echo "</div>";
+            <?php
+            #wenn Nutzer angemeldet ist wird zum Logout verlinkt, anderenfalls zum Login
+            if(isset($_SESSION["benutzername"])) {
+                echo "<li class='li'><a href='Logout.php'>Logout</a></li";
+            } else {
+                echo "<li class='li'><a href='Login Formular.php'>Login</a></li";
             }
+            ?>
 
-            echo "</div>";
-        }
+            <?php
+            #wenn Nutzer angemeldet ist wird zum Logout verlinkt, anderenfalls zum Login
+            if(isset($_SESSION["admin"])) {
+                echo "<li class='li'><a href='Logout_Admin.php'>Logout Admin</a></li";
+            } else {
+                echo "<li class='li'><a href='Login_Admin.php'>Login Admin</a></li";
+            }
+            ?>
 
-        echo "</div>";
-    } else {
-        echo "<p>Es gibt keine Beiträge.</p>";
-    }
-    ?>
+            <div>
+                <?php
+                #ist Nutzer angemeldet wird das Profilbild angezeigt, wenn nicht dann der Platzhalter
+                if (!isset($_SESSION["Nutzer_ID"])) {
+                    echo "<div>nicht angemeldet</div>";
+                } else {
 
-</div>
-
+                    $statement = $pdo->prepare("SELECT profilbild FROM Nutzer WHERE ID= :Nutzer_ID ");
+                    $statement->bindParam(":Nutzer_ID", $_SESSION["Nutzer_ID"]);
+                    if ($statement->execute()) {
+                        if ($row = $statement->fetch()) {
+                            if (($row["profilbild"]) == null or "") {
+                                echo "<div>kein Profilbild</div>";
+                            } else {
+                                echo "<div><img class='profilpicture' src='https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/" . $row['profilbild'] . "'></div>";
+                            }
+                        }
+                    }
+                }
+                ?>
+            </div>
+        </ul>
+    </div>
+</header>
 </body>
-</html>
