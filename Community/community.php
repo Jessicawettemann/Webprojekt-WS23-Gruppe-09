@@ -52,6 +52,10 @@ ini_set('display_errors', 1);
             echo "<p>" . $row['beitrag'] . "</p>";
             echo "<span>" . $row['datum'] . "</span>";
 
+            // Debugging-Ausgabe
+            var_dump($row['profilbild']);
+            echo base64_encode($row['profilbild']);
+
             // Profilbild anzeigen
             if ($row['profilbild']) {
                 echo "<div><img class='profilpicture' src='data:image/jpeg;base64," . base64_encode($row['profilbild']) . "' alt='Profilbild'></div>";
