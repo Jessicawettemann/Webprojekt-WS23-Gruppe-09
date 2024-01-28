@@ -102,7 +102,6 @@ ini_set('display_errors', 1);
                 echo "<p><strong>" . $row['vorname'] . " " . $row['nachname'] . "</strong></p>";
                 echo "<p>" . $row['beitrag'] . "</p>";
                 echo "<span>" . $row['datum'] . "</span>";
-                echo "</div>";
 
                 // Follow-Button
                 echo "<form action='follow.php' method='post' class='follow-form'>";
@@ -119,11 +118,13 @@ ini_set('display_errors', 1);
 
                 echo "</form>";
 
-                echo "</div>";
-                echo "</div>";
+                echo "</div>"; // Schließt die 'user-info' <div>
+
+                echo "</div>"; // Schließt die 'comment' <div>
+                echo "</div>"; // Schließt die 'comment-container' <div>
             }
 
-            echo "</div>";
+            echo "</div>"; // Schließt die 'forum-container' <div>
         } else {
             echo "<p>Es gibt keine Beiträge.</p>";
         }
