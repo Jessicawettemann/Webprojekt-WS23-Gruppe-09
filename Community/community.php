@@ -64,6 +64,15 @@ ini_set('display_errors', 1);
                 echo "<p>Kein Profilbild vorhanden</p>";
             }
 
+            $tempStatement = $pdo->prepare("SELECT profilbild FROM Nutzer WHERE benutzername = ? LIMIT 1");
+$tempStatement->execute([$row['benutzername']]);
+$tempRow = $tempStatement->fetch(PDO::FETCH_ASSOC);
+
+// Direkten Zugriff auf das Bild für Debugging-Zwecke
+header("Content-type: image/jpeg");
+echo $tempRow['profilbild'];
+
+
             // ... (wie vorheriger Code für Follow-Button)
 
             echo "</div>";
