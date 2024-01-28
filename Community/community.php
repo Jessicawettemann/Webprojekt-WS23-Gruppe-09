@@ -42,7 +42,14 @@ session_start();
 
         foreach ($statement as $row) {
             echo "<div class='comment-container'>";
-            echo "<img src='data:image/jpeg;base64," . base64_encode($row['profilbild']) . "' alt='Profilbild' class='profile-picture'>";
+            $statement = $pdo->prepare("SELECT profilbild FROM Nutzer WHERE ID= :Nutzer_ID ");
+                    $statement->bindParam(":Nutzer_ID", $_SESSION["Nutzer_ID"]);
+                    if ($statement->execute()) {
+                        if ($row = $statement->fetch()) {
+                            if (($row["profilbild"]) == null or "") {
+                                echo "<div>kein Profilbild</div>";
+                            } else {
+                                echo "<div><img class='profilpicture' src='https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/" . $row['profilbild'] . "'></div>";
             echo "<div class='comment'>";
             echo "<p><strong>" . $row['vorname'] . " " . $row['nachname'] . "</strong></p>";
             echo "<p>" . $row['beitrag'] . "</p>";
