@@ -32,9 +32,13 @@ session_start();
         <button type="submit">Suchen</button>
     </form>
 
-    <div class="forum-container">
-        <?php
-        // ... (wie vorheriger Code)
+    <?php
+    $statement = $pdo->prepare("SELECT * FROM Beitrag INNER JOIN Nutzer ON Beitrag.benutzername = Nutzer.benutzername");
+    $statement->execute();
+
+    // Überprüfen, ob Daten vorhanden sind, bevor die foreach-Schleife gestartet wird
+    if ($statement->rowCount() > 0) {
+        echo "<div class='forum-container'>";
 
         foreach ($statement as $row) {
             echo "<div class='comment-container'>";
@@ -51,8 +55,12 @@ session_start();
             echo "</div>";
             echo "</div>";
         }
-        ?>
-    </div>
+
+        echo "</div>";
+    } else {
+        echo "<p>Es gibt keine Beiträge.</p>";
+    }
+    ?>
 
 </div>
 
