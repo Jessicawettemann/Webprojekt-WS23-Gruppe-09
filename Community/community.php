@@ -42,7 +42,7 @@ session_start();
 
         foreach ($statement as $row) {
             echo "<div class='comment-container'>";
-            echo "<img src='" . $row['profilbild'] . "' alt='Profilbild' class='profile-picture'>";
+            echo "<img src='data:image/jpeg;base64," . base64_encode($row['profilbild']) . "' alt='Profilbild' class='profile-picture'>";
             echo "<div class='comment'>";
             echo "<p><strong>" . $row['vorname'] . " " . $row['nachname'] . "</strong></p>";
             echo "<p>" . $row['beitrag'] . "</p>";
