@@ -97,10 +97,14 @@ ini_set('display_errors', 1);
                     echo "<div>Kein Profilbild</div>";
                 }
 
+                // Nutzerinformationen
+                echo "<div class='user-info'>";
                 echo "<p><strong>" . $row['vorname'] . " " . $row['nachname'] . "</strong></p>";
                 echo "<p>" . $row['beitrag'] . "</p>";
                 echo "<span>" . $row['datum'] . "</span>";
+                echo "</div>";
 
+                // Follow-Button
                 echo "<form action='follow.php' method='post' class='follow-form'>";
                 echo "<input type='hidden' name='followed_username' value='" . $row['benutzername'] . "'>";
 
