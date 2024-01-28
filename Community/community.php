@@ -33,23 +33,29 @@ session_start();
     </form>
 
     <?php
-    $statement = $pdo->prepare("SELECT * FROM Beitrag INNER JOIN Nutzer ON Beitrag.benutzername = Nutzer.benutzername");
-    $statement->execute();
+    $statementBeitrag = $pdo->prepare("SELECT * FROM Beitrag INNER JOIN Nutzer ON Beitrag.benutzername = Nutzer.benutzername");
+    $statementBeitrag->execute();
 
     // Überprüfen, ob Daten vorhanden sind, bevor die foreach-Schleife gestartet wird
-    if ($statement->rowCount() > 0) {
+    if ($statementBeitrag->rowCount() > 0) {
         echo "<div class='forum-container'>";
 
-        foreach ($statement as $row) {
+        foreach ($statementBeitrag as $row) {
             echo "<div class='comment-container'>";
-            $statement = $pdo->prepare("SELECT profilbild FROM Nutzer WHERE ID= :Nutzer_ID ");
-                    $statement->bindParam(":Nutzer_ID", $_SESSION["Nutzer_ID"]);
-                    if ($statement->execute()) {
-                        if ($row = $statement->fetch()) {
-                            if (($row["profilbild"]) == null or "") {
-                                echo "<div>kein Profilbild</div>";
-                            } else {
-                                echo "<div><img class='profilpicture' src='https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/" . $row['profilbild'] . "'></div>";
+            
+            $statementProfilbild = $pdo->prepare("SELECT profilbild FROM Nutzer WHERE ID= :Nutzer_ID ");
+            $statementProfilbild->bindParam(":Nutzer_ID", $_SESSION["Nutzer_ID"]);
+            
+            if ($statementProfilbild->execute()) {
+                if ($profilbildRow = $statementProfilbild->fetch()) {
+                    if (empty($profilbildRow["profilbild"])) {
+                        echo "<div>kein Profilbild</div>";
+                    } else {
+                        echo "<div><img class='profilpicture' src='https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/" . $profilbildRow['profilbild'] . "'></div>";
+                    }
+                }
+            }
+
             echo "<div class='comment'>";
             echo "<p><strong>" . $row['vorname'] . " " . $row['nachname'] . "</strong></p>";
             echo "<p>" . $row['beitrag'] . "</p>";
