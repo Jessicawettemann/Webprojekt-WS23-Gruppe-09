@@ -53,9 +53,8 @@ ini_set('display_errors', 1);
             echo "<span>" . $row['datum'] . "</span>";
 
             // Profilbild anzeigen
-            $profilbildPath = "Bilder/" . $row['profilbild']; // Annahme: Profilbilder sind im Ordner "Bilder"
-            if (file_exists($profilbildPath)) {
-                echo "<div><img class='profilpicture' src='" . $profilbildPath . "' alt='Profilbild'></div>";
+            if ($row['profilbild']) {
+                echo "<div><img class='profilpicture' src='data:image/jpeg;base64," . base64_encode($row['profilbild']) . "' alt='Profilbild'></div>";
             } else {
                 echo "<div>Kein Profilbild</div>";
             }
