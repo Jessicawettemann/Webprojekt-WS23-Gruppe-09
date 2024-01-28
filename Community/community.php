@@ -2,10 +2,6 @@
 include "Datenbank Verbindung.php";
 include "Header Sicherheit.php";
 session_start();
-
-// Fehlerprotokollierung aktivieren
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
 ?>
 
 <!DOCTYPE html>
@@ -54,24 +50,17 @@ ini_set('display_errors', 1);
 
             // Profilbild anzeigen
             $statementProfilbild = $pdo->prepare("SELECT profilbild FROM Nutzer WHERE benutzername = ?");
-            $statementProfilbild->execute([$row['benutzername']]);
-            $profilbildRow = $statementProfilbild->fetch(PDO::FETCH_ASSOC);
-
-            if ($profilbildRow && isset($profilbildRow['profilbild'])) {
-                $profilbild = $profilbildRow['profilbild'];
-                echo "<img src='data:image/jpeg;base64," . base64_encode($profilbild) . "' alt='Profilbild'>";
-            } else {
-                echo "<p>Kein Profilbild vorhanden</p>";
+            if (!$statementProfilbild->execute([$row['benutzername']])) {
+                die("<div class='fail'>Datensatz nicht verfügbar</div>");
             }
+            $rowProfilbild = $statementProfilbild->fetch();
 
-            $tempStatement = $pdo->prepare("SELECT profilbild FROM Nutzer WHERE benutzername = ? LIMIT 1");
-$tempStatement->execute([$row['benutzername']]);
-$tempRow = $tempStatement->fetch(PDO::FETCH_ASSOC);
-
-// Direkten Zugriff auf das Bild für Debugging-Zwecke
-header("Content-type: image/jpeg");
-echo $tempRow['profilbild'];
-
+            // Bild im HTML-Code einbetten
+            if ($rowProfilbild && isset($rowProfilbild['profilbild'])) {
+                echo "<div><img class='profilpicture' src='data:image/jpeg;base64," . base64_encode($rowProfilbild['profilbild']) . "'></div>";
+            } else {
+                echo "<div>Kein Profilbild</div>";
+            }
 
             // ... (wie vorheriger Code für Follow-Button)
 
