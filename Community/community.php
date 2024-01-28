@@ -53,9 +53,9 @@ ini_set('display_errors', 1);
             echo "<span>" . $row['datum'] . "</span>";
 
             // Profilbild anzeigen
-            if (!empty($row['profilbild'])) {
-                $base64Image = base64_encode($row['profilbild']);
-                echo "<img src='data:image/jpeg;base64," . $base64Image . "' alt='Profilbild'>";
+            $profilbild = $row['profilbild'];
+            if (!empty($profilbild)) {
+                echo "<img src='data:image/jpeg;base64," . base64_encode($profilbild) . "' alt='Profilbild'>";
             } else {
                 echo "<p>Kein Profilbild vorhanden</p>";
             }
