@@ -36,7 +36,6 @@ ini_set('display_errors', 1);
         <button type="submit">Suchen</button>
     </form>
 
-
     <?php
 
     if (!isset($_SESSION["Nutzer_ID"])){
@@ -85,7 +84,6 @@ ini_set('display_errors', 1);
         }
     }
 
-
     $statementBeitrag = $pdo->prepare("SELECT * FROM Beitrag INNER JOIN Nutzer ON Beitrag.benutzername = Nutzer.benutzername");
     $statementBeitrag->execute();
 
@@ -105,10 +103,8 @@ ini_set('display_errors', 1);
             if (!empty($profilbildRow['profilbild'])) {
                 echo "<div class='profil-container'>";
                 echo "<img class='profilpicture' src='https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/" . $profilbildRow['profilbild'] . "' alt='Profilbild'>";
-                echo "</div>";
 
-                // Follow-Button anzeigen
-                echo "<div class='follow-container'>";
+                // Hier fügst du den Follow-Button hinzu
                 echo "<form action='follow.php' method='post' class='follow-form'>";
                 echo "<input type='hidden' name='followed_username' value='" . $row['benutzername'] . "'>";
                 if (!isset($_SESSION["Nutzer_ID"])) {
@@ -125,7 +121,7 @@ ini_set('display_errors', 1);
                         echo "<button type='submit' formaction='unfollow.php'>Unfollow</button>";
                     }
                 }
-                echo "</form>";
+                echo "</div>";
                 echo "</div>";
             } else {
                 echo "<div>Kein Profilbild</div>";
