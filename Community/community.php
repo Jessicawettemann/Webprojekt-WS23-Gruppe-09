@@ -52,9 +52,10 @@ ini_set('display_errors', 1);
             echo "<p>" . $row['beitrag'] . "</p>";
             echo "<span>" . $row['datum'] . "</span>";
 
-            // Debugging-Ausgabe
-            // var_dump($row['profilbild']);
-            // echo base64_encode($row['profilbild']);
+          // Debugging-Ausgabe für Base64-codierte Daten
+    echo "<pre>";
+    echo base64_encode($row['profilbild']);
+    echo "</pre>";
 
             // Profilbild anzeigen
             if ($row['profilbild']) {
