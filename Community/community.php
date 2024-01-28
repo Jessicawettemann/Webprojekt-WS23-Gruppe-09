@@ -2,6 +2,10 @@
 include "Datenbank Verbindung.php";
 include "Header Sicherheit.php";
 session_start();
+
+// Fehlerprotokollierung aktivieren
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 ?>
 
 <!DOCTYPE html>
@@ -49,18 +53,7 @@ session_start();
             echo "<span>" . $row['datum'] . "</span>";
 
             // Profilbild anzeigen
-            $statementProfilbild = $pdo->prepare("SELECT profilbild FROM Nutzer WHERE benutzername = ?");
-            if (!$statementProfilbild->execute([$row['benutzername']])) {
-                die("<div class='fail'>Datensatz nicht verfügbar</div>");
-            }
-            $rowProfilbild = $statementProfilbild->fetch();
-
-            // Bild im HTML-Code einbetten
-            if ($rowProfilbild && isset($rowProfilbild['profilbild'])) {
-                echo "<div><img class='profilpicture' src='data:image/jpeg;base64," . base64_encode($rowProfilbild['profilbild']) . "'></div>";
-            } else {
-                echo "<div>Kein Profilbild</div>";
-            }
+            echo "<div><img class='profilpicture' src='profilbild_ausgeben_community.php?benutzername=" . $row['benutzername'] . "' alt='Profilbild'></div>";
 
             // ... (wie vorheriger Code für Follow-Button)
 
