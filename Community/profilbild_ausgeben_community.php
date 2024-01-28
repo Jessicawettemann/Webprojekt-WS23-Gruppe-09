@@ -14,5 +14,4 @@ if ($rowProfilbild && isset($rowProfilbild['profilbild'])) {
     header("Content-type: image/jpeg");
     // echo file_get_contents("Pfad/Zum/Standardbild.jpg");
 }
-
 ?>
