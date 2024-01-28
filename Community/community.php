@@ -56,17 +56,12 @@ session_start();
                 
                 if ($profilbildRow && !empty($profilbildRow["profilbild"])) {
                     // Wenn Profilbild vorhanden ist, zeige es an
-                    $imageFileName = "Bilder/" . $row['benutzername'] . ".jpg";  // Annahme: Die Bilder werden als JPEG gespeichert
-                    echo "<img class='profilpicture' src='$imageFileName' alt='Profilbild'>";
+                    echo "<div><img class='profilpicture' src='data:image/jpeg;base64," . base64_encode($profilbildRow['profilbild']) . "' alt='Profilbild'></div>";
                 } else {
                     echo "<div>Kein Profilbild</div>";
                 }
 
-                // Hier fügen Sie den Follow-Button hinzu
-                echo "<form action='follow.php' method='post'>";
-                echo "<input type='hidden' name='followed_username' value='" . $row['benutzername'] . "'>";
                 // ... (wie vorheriger Code für Follow-Button)
-                echo "</form>";
 
                 echo "</div>";
             }
