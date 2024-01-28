@@ -53,8 +53,12 @@ ini_set('display_errors', 1);
             echo "<span>" . $row['datum'] . "</span>";
 
             // Profilbild anzeigen
-            $Nutzer_Id = $row["ID"];
-            $profilbild = $row["profilbild"];
+            if ($row['profilbild'] != null) {
+                $base64Image = base64_encode($row['profilbild']);
+                echo "<img src='data:image/jpeg;base64," . $base64Image . "' alt='Profilbild'>";
+            } else {
+                echo "<p>Kein Profilbild vorhanden</p>";
+            }
 
             // ... (wie vorheriger Code für Follow-Button)
 
