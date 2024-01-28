@@ -52,14 +52,7 @@ ini_set('display_errors', 1);
             echo "<p>" . $row['beitrag'] . "</p>";
             echo "<span>" . $row['datum'] . "</span>";
 
-
             // Profilbild anzeigen
-            $statement=$pdo->prepare("SELECT * FROM Nutzer WHERE ID = ?");
-            if (!$statement->execute([$Nutzer])){
-                die("<div class='fail'>Datensatz nicht verfügbar</div>");
-            
-            }
-            $row = $statement->fetch();
             $Nutzer_Id = $row["ID"];
             $profilbild = $row["profilbild"];
 
