@@ -40,25 +40,27 @@ ini_set('display_errors', 1);
     $statementBeitrag = $pdo->prepare("SELECT * FROM Beitrag INNER JOIN Nutzer ON Beitrag.benutzername = Nutzer.benutzername");
     $statementBeitrag->execute();
 
-    // Überprüfen, ob Daten vorhanden sind, bevor die foreach-Schleife gestartet wird
     if ($statementBeitrag->rowCount() > 0) {
         echo "<div class='forum-container'>";
 
         foreach ($statementBeitrag as $row) {
             echo "<div class='comment-container'>";
-
             echo "<div class='comment'>";
+
+            // Profilbild einbetten, wenn ein Bildlink vorhanden ist
+            if (!empty($row['profilbild'])) {
+                echo "<img class='profilpicture' src='profilbild_ausgeben_community.php?benutzername=" . $row['benutzername'] . "' alt='Profilbild'>";
+            } else {
+                echo "<div>Kein Profilbild</div>";
+            }
+
             echo "<p><strong>" . $row['vorname'] . " " . $row['nachname'] . "</strong></p>";
             echo "<p>" . $row['beitrag'] . "</p>";
             echo "<span>" . $row['datum'] . "</span>";
 
-            // Profilbild anzeigen
-            echo "<div><img class='profilpicture' src='profilbild_ausgeben_community.php?benutzername=" . $row['benutzername'] . "' alt='Profilbild'></div>";
-
-            // ... (wie vorheriger Code für Follow-Button)
+            // ... (Rest deines Codes) ...
 
             echo "</div>";
-
             echo "</div>";
         }
 
