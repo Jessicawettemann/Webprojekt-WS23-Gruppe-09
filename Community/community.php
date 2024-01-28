@@ -46,15 +46,10 @@ ini_set('display_errors', 1);
         foreach ($statementBeitrag as $row) {
             echo "<div class='comment-container'>";
             echo "<div class='comment'>";
-
-            // Profilbild anzeigen
-            $statementProfilbild = $pdo->prepare("SELECT profilbild FROM Nutzer WHERE benutzername = ?");
-            $statementProfilbild->execute([$row['benutzername']]);
-            $profilbildRow = $statementProfilbild->fetch();
-
-            // Profilbild einbetten, wenn ein Bildlink vorhanden ist
-            if (!empty($profilbildRow['profilbild'])) {
-                echo "<div><img class='profilpicture' src='https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/" . $profilbildRow['profilbild'] . "'></div>";
+        
+            # Profilbild einbetten, wenn ein Bildlink vorhanden ist
+            if (!empty($row['profilbild'])) {
+                echo "<img class='profilpicture' src='profilbild_ausgeben_community.php?benutzername=" . $row['benutzername'] . "' alt='Profilbild'>";
             } else {
                 echo "<div>Kein Profilbild</div>";
             }
@@ -62,6 +57,12 @@ ini_set('display_errors', 1);
             echo "<p><strong>" . $row['vorname'] . " " . $row['nachname'] . "</strong></p>";
             echo "<p>" . $row['beitrag'] . "</p>";
             echo "<span>" . $row['datum'] . "</span>";
+
+            // Follow-Button hinzufügen
+            echo "<form action='follow.php' method='post'>";
+            echo "<input type='hidden' name='followed_username' value='" . $row['benutzername'] . "'>";
+            echo "<button type='submit'>Folgen</button>";
+            echo "</form>";
 
             // ... (Rest deines Codes) ...
 
