@@ -2,13 +2,17 @@
 include "Datenbank Verbindung.php";
 include "Header Sicherheit.php";
 session_start();
+
+// Fehlerprotokollierung aktivieren
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 ?>
 
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" type="text/css" href="css_community.css">
     <title>Forum</title>
 </head>
@@ -33,25 +37,34 @@ session_start();
     </form>
 
     <?php
-    $statement = $pdo->prepare("SELECT * FROM Beitrag INNER JOIN Nutzer ON Beitrag.benutzername = Nutzer.benutzername");
-    $statement->execute();
+    $statementBeitrag = $pdo->prepare("SELECT * FROM Beitrag INNER JOIN Nutzer ON Beitrag.benutzername = Nutzer.benutzername");
+    $statementBeitrag->execute();
 
-    // Überprüfen, ob Daten vorhanden sind, bevor die foreach-Schleife gestartet wird
-    if ($statement->rowCount() > 0) {
+    if ($statementBeitrag->rowCount() > 0) {
         echo "<div class='forum-container'>";
 
-        foreach ($statement as $row) {
+        foreach ($statementBeitrag as $row) {
             echo "<div class='comment-container'>";
-            echo "<img src='" . $row['profilbild'] . "' alt='Profilbild' class='profile-picture'>";
             echo "<div class='comment'>";
+
+            // Profilbild anzeigen
+            $statementProfilbild = $pdo->prepare("SELECT profilbild FROM Nutzer WHERE benutzername = ?");
+            $statementProfilbild->execute([$row['benutzername']]);
+            $profilbildRow = $statementProfilbild->fetch();
+
+            // Profilbild einbetten, wenn ein Bildlink vorhanden ist
+            if (!empty($profilbildRow['profilbild'])) {
+                echo "<div><img class='profilpicture' src='https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/" . $profilbildRow['profilbild'] . "'></div>";
+            } else {
+                echo "<div>Kein Profilbild</div>";
+            }
+
             echo "<p><strong>" . $row['vorname'] . " " . $row['nachname'] . "</strong></p>";
             echo "<p>" . $row['beitrag'] . "</p>";
             echo "<span>" . $row['datum'] . "</span>";
-            // Hier fügen Sie den Follow-Button hinzu
-            echo "<form action='follow.php' method='post'>";
-            echo "<input type='hidden' name='followed_username' value='" . $row['benutzername'] . "'>";
-            // ... (wie vorheriger Code für Follow-Button)
-            echo "</form>";
+
+            // ... (Rest deines Codes) ...
+
             echo "</div>";
             echo "</div>";
         }
