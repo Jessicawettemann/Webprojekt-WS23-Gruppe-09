@@ -56,9 +56,8 @@ session_start();
                 
                 if ($profilbildRow && !empty($profilbildRow["profilbild"])) {
                     // Wenn Profilbild vorhanden ist, zeige es an
-                    $base64Image = base64_encode($profilbildRow['profilbild']);
-                    $imageSrc = "data:image/jpeg;base64," . $base64Image;
-                    echo "<img class='profilpicture' src='$imageSrc' alt='Profilbild'>";
+                    $imageFileName = "Bilder/" . $row['benutzername'] . ".jpg";  // Annahme: Die Bilder werden als JPEG gespeichert
+                    echo "<img class='profilpicture' src='$imageFileName' alt='Profilbild'>";
                 } else {
                     echo "<div>Kein Profilbild</div>";
                 }
