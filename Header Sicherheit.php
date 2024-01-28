@@ -1,4 +1,12 @@
+
+
+
 <?php
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+
 include "Datenbank Verbindung.php";
 include "Header Sicherheit.php";
 session_start();
