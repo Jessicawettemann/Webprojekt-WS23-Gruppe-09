@@ -52,17 +52,16 @@ ini_set('display_errors', 1);
             echo "<p>" . $row['beitrag'] . "</p>";
             echo "<span>" . $row['datum'] . "</span>";
 
-          // Debugging-Ausgabe für Base64-codierte Daten
-    echo "<pre>";
-    echo base64_encode($row['profilbild']);
-    echo "</pre>";
 
             // Profilbild anzeigen
-            if ($row['profilbild']) {
-                echo "<div><img class='profilpicture' src='data:image/jpeg;base64," . base64_encode($row['profilbild']) . "' alt='Profilbild'></div>";
-            } else {
-                echo "<div>Kein Profilbild</div>";
+            $statement=$pdo->prepare("SELECT * FROM Nutzer WHERE ID = ?");
+            if (!$statement->execute([$Nutzer])){
+                die("<div class='fail'>Datensatz nicht verfügbar</div>");
+            
             }
+            $row = $statement->fetch();
+            $Nutzer_Id = $row["ID"];
+            $profilbild = $row["profilbild"];
 
             // ... (wie vorheriger Code für Follow-Button)
 
