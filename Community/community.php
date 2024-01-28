@@ -1,21 +1,18 @@
 <?php
-
 include "Datenbank Verbindung.php";
 include "Header Sicherheit.php";
 session_start();
 
+// Fehlerprotokollierung aktivieren
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-
-
-
 ?>
 
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" type="text/css" href="css_community.css">
     <title>Forum</title>
 </head>
@@ -49,29 +46,23 @@ ini_set('display_errors', 1);
 
         foreach ($statementBeitrag as $row) {
             echo "<div class='comment-container'>";
-            
-            $statementProfilbild = $pdo->prepare("SELECT profilbild FROM Nutzer WHERE benutzername = :Benutzername ");
-            $statementProfilbild->bindParam(":Benutzername", $row['benutzername']);
-            
-            if ($statementProfilbild->execute()) {
-                $profilbildRow = $statementProfilbild->fetch();
-                
-                echo "<div class='comment'>";
-                echo "<p><strong>" . $row['vorname'] . " " . $row['nachname'] . "</strong></p>";
-                echo "<p>" . $row['beitrag'] . "</p>";
-                echo "<span>" . $row['datum'] . "</span>";
-                
-                if ($profilbildRow && !empty($profilbildRow["profilbild"])) {
-                    // Wenn Profilbild vorhanden ist, zeige es an
-                    echo "<div><img class='profilpicture' src='data:image/jpeg;base64," . base64_encode($profilbildRow['profilbild']) . "' alt='Profilbild'></div>";
-                } else {
-                    echo "<div>Kein Profilbild</div>";
-                }
 
-                // ... (wie vorheriger Code für Follow-Button)
+            echo "<div class='comment'>";
+            echo "<p><strong>" . $row['vorname'] . " " . $row['nachname'] . "</strong></p>";
+            echo "<p>" . $row['beitrag'] . "</p>";
+            echo "<span>" . $row['datum'] . "</span>";
 
-                echo "</div>";
+            // Profilbild anzeigen
+            $profilbild = base64_encode($row['profilbild']);
+            if (!empty($profilbild)) {
+                echo "<div><img class='profilpicture' src='data:image/jpeg;base64," . $profilbild . "' alt='Profilbild'></div>";
+            } else {
+                echo "<div>Kein Profilbild</div>";
             }
+
+            // ... (wie vorheriger Code für Follow-Button)
+
+            echo "</div>";
 
             echo "</div>";
         }
