@@ -53,8 +53,12 @@ ini_set('display_errors', 1);
             echo "<span>" . $row['datum'] . "</span>";
 
             // Profilbild anzeigen
-            $profilbild = $row['profilbild'];
-            if (!empty($profilbild)) {
+            $statementProfilbild = $pdo->prepare("SELECT profilbild FROM Nutzer WHERE benutzername = ?");
+            $statementProfilbild->execute([$row['benutzername']]);
+            $profilbildRow = $statementProfilbild->fetch(PDO::FETCH_ASSOC);
+
+            if ($profilbildRow && isset($profilbildRow['profilbild'])) {
+                $profilbild = $profilbildRow['profilbild'];
                 echo "<img src='data:image/jpeg;base64," . base64_encode($profilbild) . "' alt='Profilbild'>";
             } else {
                 echo "<p>Kein Profilbild vorhanden</p>";
