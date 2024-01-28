@@ -43,29 +43,33 @@ session_start();
         foreach ($statementBeitrag as $row) {
             echo "<div class='comment-container'>";
             
-            $statementProfilbild = $pdo->prepare("SELECT profilbild FROM Nutzer WHERE ID= :Nutzer_ID ");
-            $statementProfilbild->bindParam(":Nutzer_ID", $_SESSION["Nutzer_ID"]);
+            $statementProfilbild = $pdo->prepare("SELECT profilbild FROM Nutzer WHERE benutzername = :Benutzername ");
+            $statementProfilbild->bindParam(":Benutzername", $row['benutzername']);
             
             if ($statementProfilbild->execute()) {
-                if ($profilbildRow = $statementProfilbild->fetch()) {
-                    if (empty($profilbildRow["profilbild"])) {
-                        echo "<div>kein Profilbild</div>";
-                    } else {
-                        echo "<div><img class='profilpicture' src='https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/" . $profilbildRow['profilbild'] . "'></div>";
-                    }
+                $profilbildRow = $statementProfilbild->fetch();
+                
+                echo "<div class='comment'>";
+                echo "<p><strong>" . $row['vorname'] . " " . $row['nachname'] . "</strong></p>";
+                echo "<p>" . $row['beitrag'] . "</p>";
+                echo "<span>" . $row['datum'] . "</span>";
+                
+                if ($profilbildRow && !empty($profilbildRow["profilbild"])) {
+                    // Wenn Profilbild vorhanden ist, zeige es an
+                    echo "<img class='profilpicture' src='data:image/jpeg;base64," . base64_encode($profilbildRow['profilbild']) . "' alt='Profilbild'>";
+                } else {
+                    echo "<div>Kein Profilbild</div>";
                 }
+
+                // Hier fügen Sie den Follow-Button hinzu
+                echo "<form action='follow.php' method='post'>";
+                echo "<input type='hidden' name='followed_username' value='" . $row['benutzername'] . "'>";
+                // ... (wie vorheriger Code für Follow-Button)
+                echo "</form>";
+
+                echo "</div>";
             }
 
-            echo "<div class='comment'>";
-            echo "<p><strong>" . $row['vorname'] . " " . $row['nachname'] . "</strong></p>";
-            echo "<p>" . $row['beitrag'] . "</p>";
-            echo "<span>" . $row['datum'] . "</span>";
-            // Hier fügen Sie den Follow-Button hinzu
-            echo "<form action='follow.php' method='post'>";
-            echo "<input type='hidden' name='followed_username' value='" . $row['benutzername'] . "'>";
-            // ... (wie vorheriger Code für Follow-Button)
-            echo "</form>";
-            echo "</div>";
             echo "</div>";
         }
 
