@@ -6,7 +6,6 @@ session_start();
 // Fehlerprotokollierung aktivieren
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-
 ?>
 
 <!DOCTYPE html>
@@ -15,6 +14,17 @@ ini_set('display_errors', 1);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" type="text/css" href="css_community.css">
+    <style>
+        /* Füge diesen zusätzlichen CSS-Stil hinzu */
+        .user-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .follow-form {
+            margin-left: 10px;
+        }
+    </style>
     <title>Forum</title>
 </head>
 <body>
@@ -41,11 +51,9 @@ ini_set('display_errors', 1);
     if (!isset($_SESSION["Nutzer_ID"])) {
         echo("<div class='fail'> Bitte melde dich zunächst an! " . "<br><br>" . "<a href='Login Formular.php'>Hier geht's zum Login</a> </div>");
     } else {
-        // Überprüfen, ob das Formular zur Nutzersuche abgeschickt wurde
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $searchUser = htmlspecialchars($_POST["search_user"]);
 
-            // Überprüfen, ob der Nutzer existiert
             $searchStatement = $pdo->prepare("SELECT * FROM Nutzer WHERE benutzername = ? OR CONCAT(vorname, ' ', nachname) = ?");
             $searchStatement->execute([$searchUser, $searchUser]);
 
@@ -57,7 +65,6 @@ ini_set('display_errors', 1);
                 echo "Vorname: " . $userRow['vorname'] . "<br>";
                 echo "Nachname: " . $userRow['nachname'] . "<br>";
 
-                // Überprüfen, ob der Benutzer bereits folgt
                 $checkStatement = $pdo->prepare("SELECT * FROM Follower WHERE follower_username = ? AND followed_username = ?");
                 $checkStatement->execute([$_SESSION["benutzername"], $userRow['benutzername']]);
 
@@ -86,7 +93,6 @@ ini_set('display_errors', 1);
                 echo "<div class='comment-container'>";
                 echo "<div class='comment'>";
 
-                // Profilbild anzeigen
                 $statementProfilbild = $pdo->prepare("SELECT profilbild FROM Nutzer WHERE benutzername = ?");
                 $statementProfilbild->execute([$row['benutzername']]);
                 $profilbildRow = $statementProfilbild->fetch();
@@ -97,13 +103,11 @@ ini_set('display_errors', 1);
                     echo "<div>Kein Profilbild</div>";
                 }
 
-                // Nutzerinformationen
                 echo "<div class='user-info'>";
                 echo "<p><strong>" . $row['vorname'] . " " . $row['nachname'] . "</strong></p>";
                 echo "<p>" . $row['beitrag'] . "</p>";
                 echo "<span>" . $row['datum'] . "</span>";
 
-                // Follow-Button
                 echo "<form action='follow.php' method='post' class='follow-form'>";
                 echo "<input type='hidden' name='followed_username' value='" . $row['benutzername'] . "'>";
 
@@ -117,9 +121,7 @@ ini_set('display_errors', 1);
                 }
 
                 echo "</form>";
-
                 echo "</div>"; // Schließt die 'user-info' <div>
-
                 echo "</div>"; // Schließt die 'comment' <div>
                 echo "</div>"; // Schließt die 'comment-container' <div>
             }
