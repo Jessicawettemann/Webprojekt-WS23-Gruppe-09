@@ -23,7 +23,7 @@ ini_set('display_errors', 1);
     <h1>Community</h1>
 
     <!-- Formular zum Hinzufügen von Beiträgen -->
-    <form id="communityForm" action="community_do.php" method="post" placeholder="Gib hier deinen Beitrag ein..." enctype="multipart/form-data" class="forum-form">
+    <form id="communityForm" action="community_do.php" method="post" enctype="multipart/form-data" class="forum-form">
         <label for="beitrag"></label>
         <input type="text" placeholder="Beitrag" id="beitrag" name="beitrag" required>
         <button type="submit">Beitrag hinzufügen</button>
@@ -37,43 +37,128 @@ ini_set('display_errors', 1);
     </form>
 
     <?php
-    $statementBeitrag = $pdo->prepare("SELECT * FROM Beitrag INNER JOIN Nutzer ON Beitrag.benutzername = Nutzer.benutzername");
-    $statementBeitrag->execute();
+    if (!isset($_SESSION["Nutzer_ID"])) {
+        echo("<div class='fail'> Bitte melde dich zunächst an! " . "<br><br>" . "<a href='Login Formular.php'>Hier geht's zum Login</a> </div>");
+    } else {
+        // Überprüfen, ob das Formular zur Nutzersuche abgeschickt wurde
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $searchUser = htmlspecialchars($_POST["search_user"]);
 
-    if ($statementBeitrag->rowCount() > 0) {
-        echo "<div class='forum-container'>";
+            // Überprüfen, ob der Nutzer existiert
+            $searchStatement = $pdo->prepare("SELECT * FROM Nutzer WHERE benutzername = ? OR CONCAT(vorname, ' ', nachname) = ?");
+            $searchStatement->execute([$searchUser, $searchUser]);
 
-        foreach ($statementBeitrag as $row) {
-            echo "<div class='comment-container'>";
-            echo "<div class='comment'>";
+            if ($searchStatement->rowCount() > 0) {
+                $userRow = $searchStatement->fetch(PDO::FETCH_ASSOC);
 
-            // Profilbild anzeigen
-            $statementProfilbild = $pdo->prepare("SELECT profilbild FROM Nutzer WHERE benutzername = ?");
-            $statementProfilbild->execute([$row['benutzername']]);
-            $profilbildRow = $statementProfilbild->fetch();
+                echo "<h2>Gefundener Nutzer:</h2>";
+                echo "Benutzername: " . $userRow['benutzername'] . "<br>";
+                echo "Vorname: " . $userRow['vorname'] . "<br>";
+                echo "Nachname: " . $userRow['nachname'] . "<br>";
 
-            // Profilbild einbetten, wenn ein Bildlink vorhanden ist
-            if (!empty($profilbildRow['profilbild'])) {
-                echo "<div><img class='profilpicture' src='https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/" . $profilbildRow['profilbild'] . "'></div>";
+                // Überprüfen, ob der Benutzer bereits folgt
+                $checkStatement = $pdo->prepare("SELECT * FROM Follower WHERE follower_username = ? AND followed_username = ?");
+                $checkStatement->execute([$_SESSION["benutzername"], $userRow['benutzername']]);
+
+                echo "<form action='follow.php' method='post'>";
+                echo "<input type='hidden' name='followed_username' value='" . $userRow['benutzername'] . "'>";
+
+                if ($checkStatement->rowCount() == 0) {
+                    echo "<button type='submit'>Follow</button>";
+                } else {
+                    echo "<button type='submit' formaction='unfollow.php'>Unfollow</button>";
+                }
+
+                echo "</form>";
             } else {
-                echo "<div>Kein Profilbild</div>";
+                echo "<p>Nutzer nicht gefunden.</p>";
             }
-
-            echo "<p><strong>" . $row['vorname'] . " " . $row['nachname'] . "</strong></p>";
-            echo "<p>" . $row['beitrag'] . "</p>";
-            echo "<span>" . $row['datum'] . "</span>";
-
-            // ... (Rest deines Codes) ...
-
-            echo "</div>";
-            echo "</div>";
         }
 
-        echo "</div>";
-    } else {
-        echo "<p>Es gibt keine Beiträge.</p>";
+        $statementBeitrag = $pdo->prepare("SELECT * FROM Beitrag INNER JOIN Nutzer ON Beitrag.benutzername = Nutzer.benutzername");
+        $statementBeitrag->execute();
+
+        if ($statementBeitrag->rowCount() > 0) {
+            echo "<div class='forum-container'>";
+
+            foreach ($statementBeitrag as $row) {
+                echo "<div class='comment-container'>";
+                echo "<div class='comment'>";
+
+                // Profilbild anzeigen
+                $statementProfilbild = $pdo->prepare("SELECT profilbild FROM Nutzer WHERE benutzername = ?");
+                $statementProfilbild->execute([$row['benutzername']]);
+                $profilbildRow = $statementProfilbild->fetch();
+
+                if (!empty($profilbildRow['profilbild'])) {
+                    echo "<div><img class='profilpicture' src='https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/" . $profilbildRow['profilbild'] . "'></div>";
+                } else {
+                    echo "<div>Kein Profilbild</div>";
+                }
+
+                echo "<p><strong>" . $row['vorname'] . " " . $row['nachname'] . "</strong></p>";
+                echo "<p>" . $row['beitrag'] . "</p>";
+                echo "<span>" . $row['datum'] . "</span>";
+
+                // Follow-Button
+                echo "<form action='follow.php' method='post' class='follow-form'>";
+                echo "<input type='hidden' name='followed_username' value='" . $row['benutzername'] . "'>";
+
+                $checkStatement = $pdo->prepare("SELECT * FROM Follower WHERE follower_username = ? AND followed_username = ?");
+                $checkStatement->execute([$_SESSION["benutzername"], $row['benutzername']]);
+
+                if ($checkStatement->rowCount() == 0) {
+                    echo "<button type='submit'>Follow</button>";
+                } else {
+                    echo "<button type='submit' formaction='unfollow.php'>Unfollow</button>";
+                }
+
+                echo "</form>";
+
+                echo "</div>";
+                echo "</div>";
+            }
+
+            echo "</div>";
+
+            // Pfeile zum Blättern
+            echo "<div class='pagination-container'>";
+            echo "<button class='pagination-button' onclick='prevPage()'>&lt; Zurück</button>";
+            echo "<button class='pagination-button' onclick='nextPage()'>Weiter &gt;</button>";
+            echo "</div>";
+        } else {
+            echo "<p>Es gibt keine Beiträge.</p>";
+        }
     }
     ?>
+
+    <script>
+        // JavaScript-Funktionen für das Blättern durch Beiträge
+        let currentPage = 1;
+
+        function prevPage() {
+            if (currentPage > 1) {
+                currentPage--;
+                updatePage();
+            }
+        }
+
+        function nextPage() {
+            // Annahme: Du möchtest alle Beiträge auf einer Seite anzeigen
+            // Andernfalls müsste hier die Anzahl der Beiträge pro Seite berücksichtigt werden
+            if (currentPage < 2) {
+                currentPage++;
+                updatePage();
+            }
+        }
+
+        function updatePage() {
+            // Hier kannst du die Logik zum Aktualisieren der Beiträge basierend auf der aktuellen Seite implementieren
+            // Dies kann durch AJAX-Aufrufe oder das Laden aller Beiträge und Anzeigen/Ausblenden erfolgen
+            // Hier ist es wichtig, dass du die Anzahl der Beiträge pro Seite berücksichtigst
+            console.log("Aktualisiere Seite: " + currentPage);
+        }
+    </script>
 
 </div>
 
