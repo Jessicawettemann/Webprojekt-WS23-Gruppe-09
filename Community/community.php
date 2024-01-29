@@ -6,7 +6,6 @@ session_start();
 // Fehlerprotokollierung aktivieren
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-
 ?>
 
 <!DOCTYPE html>
@@ -101,6 +100,7 @@ ini_set('display_errors', 1);
                 echo "<p>" . $row['beitrag'] . "</p>";
                 echo "<span>" . $row['datum'] . "</span>";
 
+                // Follow-Button
                 echo "<form action='follow.php' method='post' class='follow-form'>";
                 echo "<input type='hidden' name='followed_username' value='" . $row['benutzername'] . "'>";
 
@@ -120,11 +120,45 @@ ini_set('display_errors', 1);
             }
 
             echo "</div>";
+
+            // Pfeile zum Blättern
+            echo "<div class='pagination-container'>";
+            echo "<button class='pagination-button' onclick='prevPage()'>&lt; Zurück</button>";
+            echo "<button class='pagination-button' onclick='nextPage()'>Weiter &gt;</button>";
+            echo "</div>";
         } else {
             echo "<p>Es gibt keine Beiträge.</p>";
         }
     }
     ?>
+
+    <script>
+        // JavaScript-Funktionen für das Blättern durch Beiträge
+        let currentPage = 1;
+
+        function prevPage() {
+            if (currentPage > 1) {
+                currentPage--;
+                updatePage();
+            }
+        }
+
+        function nextPage() {
+            // Annahme: Du möchtest alle Beiträge auf einer Seite anzeigen
+            // Andernfalls müsste hier die Anzahl der Beiträge pro Seite berücksichtigt werden
+            if (currentPage < 2) {
+                currentPage++;
+                updatePage();
+            }
+        }
+
+        function updatePage() {
+            // Hier kannst du die Logik zum Aktualisieren der Beiträge basierend auf der aktuellen Seite implementieren
+            // Dies kann durch AJAX-Aufrufe oder das Laden aller Beiträge und Anzeigen/Ausblenden erfolgen
+            // Hier ist es wichtig, dass du die Anzahl der Beiträge pro Seite berücksichtigst
+            console.log("Aktualisiere Seite: " + currentPage);
+        }
+    </script>
 
 </div>
 
