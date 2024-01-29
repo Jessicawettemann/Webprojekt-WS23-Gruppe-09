@@ -126,7 +126,10 @@ ini_set('display_errors', 1);
     }
     ?>
 
-    <!-- Füge JavaScript am Ende der Datei hinzu, um die aktive Klasse zu steuern -->
+</div>
+
+<!-- Füge JavaScript am Ende der Datei hinzu, um die aktive Klasse zu steuern -->
+
 <script>
     let currentIndex = 0;
     const commentContainers = document.querySelectorAll('.comment-container');
@@ -143,8 +146,6 @@ ini_set('display_errors', 1);
         commentContainers[currentIndex].classList.add('active');
     }
 </script>
-
-</div>
 
 </body>
 </html>
