@@ -135,10 +135,7 @@ ini_set('display_errors', 1);
 
     function showPost(index) {
         commentContainers.forEach((container, i) => {
-            container.classList.remove('active');
-            if (i === index) {
-                container.classList.add('active');
-            }
+            container.style.display = i === index ? 'flex' : 'none';
         });
     }
 
@@ -152,6 +149,7 @@ ini_set('display_errors', 1);
         showPost(currentIndex);
     }
 </script>
+
 
 
 </body>
