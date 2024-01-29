@@ -65,7 +65,7 @@ h1 {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    margin-right: 15px;
+    margin-right: 0;
 }
 
 .comment {
@@ -81,4 +81,22 @@ h1 {
 .comment span {
     color: #888;
     font-size: 12px;
+}
+
+/* Füge diese Regel hinzu, um die Kommentare zentriert darzustellen */
+.comment-container {
+    align-items: center;
+    text-align: center;
+}
+
+/* Füge diese Regel hinzu, um den Follow-Button unterhalb des Beitrags zu zentrieren */
+.follow-form {
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Füge diese Regel hinzu, um die Pagination zu zentrieren */
+.pagination {
+    margin-top: 20px;
+    text-align: center;
 }
