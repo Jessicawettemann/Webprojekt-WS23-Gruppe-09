@@ -24,10 +24,12 @@ h2 {
     text-align: center;
 }
 
-logout_text {
+.logout_text {
     font-size: 1.2rem;
     color: #333;
     margin-bottom: 2rem;
+    font-family:"Avenir Next Medium";
+    justify-content: center;
 }
 
 .logout {
