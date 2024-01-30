@@ -1,10 +1,8 @@
 <?php
-// Start der Session am Anfang des Skripts
-session_start();
-
 // Einbinden der erforderlichen Dateien
-include "Datenbank_Verbindung.php"; // Achten Sie darauf, dass Leerzeichen in Dateinamen vermieden werden
-include "Header_Sicherheit.php";
+include "Datenbank Verbindung.php"; // Achten Sie darauf, dass Leerzeichen in Dateinamen vermieden werden
+include "Header Sicherheit.php";// Start der Session am Anfang des Skripts
+session_start();
 
 // Überprüfen, ob der Benutzername in der Session gesetzt ist
 if (!isset($_SESSION["benutzername"])) {
