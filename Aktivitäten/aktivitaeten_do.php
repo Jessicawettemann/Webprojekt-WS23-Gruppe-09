@@ -64,6 +64,11 @@ function displayMessage($message, $messageType) {
                 background-color: #f8d7da;
                 color: #721c24;
             }
+
+            .fail-message p {
+                margin: 0; /* Entferne das Standard-Margin für das <p>-Element */
+            }
+            
           </style>";
 }
 
