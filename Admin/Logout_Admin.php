@@ -40,10 +40,10 @@ if (!isset($_SESSION["Admin_ID"])){ //Überprüfen, ob Admin angemeldet ist und 
 <div>
     <div class="logout">
     <form action="Logout_Admin_do.php" method="post">
-        <button type="submit">Ja</button>
+        <button  class="logout_button" type="submit">Ja</button>
     </form>
     <form action="Startseite.php">
-        <button type="submit">Nein</button>
+        <button  class="logout_button" type="submit">Nein</button>
     </form>
 </div>
 
