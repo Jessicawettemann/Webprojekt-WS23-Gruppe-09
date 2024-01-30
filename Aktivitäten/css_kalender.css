@@ -140,28 +140,30 @@ button:hover {
     background-color: #45a049; /* Ändere die Hintergrundfarbe beim Hovern zu einem dunkleren Grünton */
 }
 
-
-/* Stil für den Text mit roter Farbe bei Misserfolg */
-.fail {
-    color: #ff0000; /* Rote Textfarbe für Misserfolgsmeldungen */
+/* Stil für die Meldungsboxen */
+.fail-message,
+.fine-message {
+    display: inline-block;
+    padding: 15px;
+    text-align: center;
+    color: #333;
+    background-color: #f3f3f3;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 20px auto;
+    max-width: 400px;
 }
 
-/* Stil für den Text mit grüner Farbe bei Erfolg */
-.fine {
-    color: #008000; /* Grüne Textfarbe für Erfolgsmeldungen */
+/* Stil für die Fehlermeldung */
+.fail-message {
+    color: #d9534f;
+    background-color: #f2dede;
+    border-color: #ebccd1;
 }
 
-
-/* Stil für den Text mit roter Farbe bei Misserfolg */
-.fail {
-    color: #ff0000; /* Rote Textfarbe für Misserfolgsmeldungen */
-    text-align: center; /* Zentriere den Text */
-    margin: 20px; /* Füge etwas Abstand um die Meldung hinzu */
-}
-
-/* Stil für den Text mit grüner Farbe bei Erfolg */
-.fine {
-    color: #008000; /* Grüne Textfarbe für Erfolgsmeldungen */
-    text-align: center; /* Zentriere den Text */
-    margin: 20px; /* Füge etwas Abstand um die Meldung hinzu */
+/* Stil für die Erfolgsmeldung */
+.fine-message {
+    color: #5cb85c;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
 }
