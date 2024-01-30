@@ -14,6 +14,8 @@ session_start();
 </head>
 <body>
 
+<div class="message-box" id="messageBox"></div>
+
 <?php
 if (!isset($_SESSION["Nutzer_ID"])){
     displayMessage("Bitte melde dich zunächst an! <br><a href='Login Formular.php'>Hier geht's zum Login</a>", 'fail');
@@ -40,7 +42,11 @@ if (!isset($_SESSION["Nutzer_ID"])){
 }
 
 function displayMessage($message, $messageType) {
-    echo "<div class='$messageType-message'>$message</div>";
+    echo "<script>
+            document.getElementById('messageBox').innerHTML = '$message';
+            document.getElementById('messageBox').className = 'message-box $messageType-message';
+            document.getElementById('messageBox').style.display = 'block';
+          </script>";
 }
 ?>
 </body>
