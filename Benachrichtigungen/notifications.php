@@ -1,11 +1,18 @@
 <?php
-include "Datenbank Verbindung.php";
-include "Header Sicherheit.php";
+// Einbinden der erforderlichen Dateien
+include "Datenbank Verbindung.php"; // Achten Sie darauf, dass Leerzeichen in Dateinamen vermieden werden
+include "Header Sicherheit.php";// Start der Session am Anfang des Skripts
 session_start();
-?>
 
+// Überprüfen, ob der Benutzername in der Session gesetzt ist
+if (!isset($_SESSION["benutzername"])) {
+    // Umleitung auf eine andere Seite oder Fehlerbehandlung
+    exit("Benutzer nicht angemeldet.");
+}
+
+?>
 <!DOCTYPE html>
-<html lang="de" >
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <title>Startseite</title>
@@ -13,50 +20,47 @@ session_start();
 </head>
 <body>
 <?php
-function getEmailFromDatabase($Nutzer) {
-    global $pdo;
 
-    $statement = $pdo->prepare("SELECT email FROM Nutzer WHERE benutzername =?");
-    $statement->execute([$Nutzer]);
-
+function getEmailFromDatabase($pdo, $Nutzer) {
+    $statement = $pdo->prepare("SELECT email FROM Nutzer WHERE benutzername = :benutzername");
+    $statement->execute(['benutzername' => $Nutzer]);
     $result = $statement->fetch(PDO::FETCH_ASSOC);
 
-    if ($result) {
-        return $result['email'];
-    } else {
-        return 'default@example.com';
-    }
+    return $result ? $result['email'] : 'default@example.com';
 }
 
 // Benachrichtigungen abrufen
-$notificationStatement = $pdo->prepare("SELECT * FROM Benachrichtigungen WHERE empfaenger_username = ? AND email_gesendet = 0");
-$notificationStatement->execute([$_SESSION["benutzername"]]);
-
-// E-Mail-Parameter
-$benutzername = $_SESSION["benutzername"];
+$notificationStatement = $pdo->prepare("SELECT * FROM Benachrichtigungen WHERE empfaenger_username = :benutzername AND email_gesendet = 0");
+$notificationStatement->execute(['benutzername' => $_SESSION["benutzername"]]);
 
 while ($notification = $notificationStatement->fetch(PDO::FETCH_ASSOC)) {
+    // Escape von Output für HTML
+    $nachricht = htmlspecialchars($notification['nachricht']);
+    $absender = htmlspecialchars($notification['absender_username']);
+
     echo "<div class='notification'>"; 
-    echo "<p>Benachrichtigung: " . $notification['nachricht'] . "</p>";
-    echo "<p>Von: " . $notification['absender_username'] . "</p>";
+    echo "<p>Benachrichtigung: " . $nachricht . "</p>";
+    echo "<p>Von: " . $absender . "</p>";
     echo "</div>";
 
-    // E-Mail-Inhalte
-    $absenderEmail = getEmailFromDatabase($notification['absender_username']);
-    $empfaengerEmail = getEmailFromDatabase($notification['empfaenger_username']);
+    // E-Mail-Parameter
+    $absenderEmail = getEmailFromDatabase($pdo, $notification['absender_username']);
+    $empfaengerEmail = getEmailFromDatabase($pdo, $notification['empfaenger_username']);
     $betreff = 'Neue Benachrichtigung';
-    $nachricht = $notification['nachricht'];
-
-    // Der Header wird mit der neuen Absender-E-Mail-Adresse erstellt
-    $header = 'From: ' . $absenderEmail ='Landify';
+    
+    // Der Header wird mit der Absender-E-Mail-Adresse erstellt
+    $header = 'From: ' . $absenderEmail;
 
     // E-Mail senden
-    mail($empfaengerEmail, $betreff, $nachricht, $header);
-    echo 'Message has been sent';
+    if(mail($empfaengerEmail, $betreff, $nachricht, $header)){
+        echo 'Message has been sent';
 
-    // Markiere die Benachrichtigung als gesendet, um Doppelversand zu verhindern
-    $updateNotificationStatement = $pdo->prepare("UPDATE Benachrichtigungen SET email_gesendet = 1 WHERE ID = ?");
-    $updateNotificationStatement->execute([$notification['ID']]);
+        // Markiere die Benachrichtigung als gesendet, um Doppelversand zu verhindern
+        $updateNotificationStatement = $pdo->prepare("UPDATE Benachrichtigungen SET email_gesendet = 1 WHERE ID = :id");
+        $updateNotificationStatement->execute(['id' => $notification['ID']]);
+    } else {
+        echo 'Message could not be sent';
+    }
 }
 ?>
 </body>
