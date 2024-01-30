@@ -76,8 +76,9 @@ ini_set('display_errors', 1);
             }
         }
 
-        $statementBeitrag = $pdo->prepare("SELECT * FROM Beitrag INNER JOIN Nutzer ON Beitrag.benutzername = Nutzer.benutzername");
+        $statementBeitrag = $pdo->prepare("SELECT * FROM Beitrag INNER JOIN Nutzer ON Beitrag.benutzername = Nutzer.benutzername ORDER BY datum DESC");
         $statementBeitrag->execute();
+        
 
         if ($statementBeitrag->rowCount() > 0) {
             echo "<div class='forum-container'>";
