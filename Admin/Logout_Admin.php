@@ -18,7 +18,7 @@ session_start();
 <body>
 
 
-
+<br><br><br><br>
 <div>
 <br<br<br><br>
     <h2>Logout</h2>
@@ -38,6 +38,7 @@ if (!isset($_SESSION["Admin_ID"])){ //Überprüfen, ob Admin angemeldet ist und 
 
 <p>Möchtest du dich wirklich ausloggen?</p><br>
 <div>
+    <div class="logout">
     <form action="Logout_Admin_do.php" method="post">
         <button type="submit">Ja</button>
     </form>
