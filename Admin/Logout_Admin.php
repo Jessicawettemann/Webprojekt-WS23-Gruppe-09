@@ -9,8 +9,10 @@ session_start();
 <head>
 
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="Logout.css">
+    <title>Logout Admin</title>
 
-    <title>Logout</title>
 
 
 <body>
@@ -18,8 +20,9 @@ session_start();
 
 
 <div>
-
+<br<br<br><br>
     <h2>Logout</h2>
+    <br><br>
 </div>
 
 <?php
