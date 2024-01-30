@@ -14,7 +14,6 @@ session_start();
 </head>
 <body>
 
-<div class="message-box" id="messageBox"></div>
 
 <?php
 if (!isset($_SESSION["Nutzer_ID"])){
@@ -42,7 +41,7 @@ if (!isset($_SESSION["Nutzer_ID"])){
 }
 
 function displayMessage($message, $messageType) {
- 
+    echo "<div class='message-box $messageType-message' id='messageBox'>";
     echo "<p>$message</p>";
     echo "</div>";
     echo "<style>
