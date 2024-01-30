@@ -1,25 +1,26 @@
 
 
-
-
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
-    font-family: "Avenir Next Medium";
-}
 
-.container {
+    min-height: 100vh;
+    width: 100%;
+    background-image: url("https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/Business Event Website in Blue Dark Blue Light Blue Modern Style.png");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+}
+.container
+{
     text-align: center;
 }
 
-h2 {
+
+.h2 {
     font-size: 2.5rem;
     color: #333;
     margin-bottom: 1rem;
+    font-family:"Avenir Next Medium";
 }
 
 .logout_text {
@@ -46,6 +47,11 @@ h2 {
     transition: background-color 0.3s;
 }
 
-.logout_button:hover {
-    background-color: #45a049;
+button:hover{
+    width: 240px;
+
+}
+button:focus {
+    outline: none;
+    width: 240px;
 }
