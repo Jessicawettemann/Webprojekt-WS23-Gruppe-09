@@ -14,6 +14,8 @@ session_start();
 </head>
 <body>
 
+<div class="message-box" id="messageBox"></div>
+
 <?php
 if (!isset($_SESSION["Nutzer_ID"])){
     displayMessage("Bitte melde dich zunächst an! <br><a href='Login Formular.php'>Hier geht's zum Login</a>", 'fail');
@@ -40,8 +42,14 @@ if (!isset($_SESSION["Nutzer_ID"])){
 }
 
 function displayMessage($message, $messageType) {
-    echo "<div class='$messageType-message'>$message</div>";
+    echo "<div class='message-box $messageType-message' id='messageBox'>$message</div>";
+    echo "<script>
+            setTimeout(function() {
+                document.getElementById('messageBox').style.display = 'none';
+            }, 5000); // Die Meldung wird nach 5 Sekunden automatisch ausgeblendet
+          </script>";
 }
+
 ?>
 </body>
 </html>
