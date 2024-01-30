@@ -42,12 +42,29 @@ if (!isset($_SESSION["Nutzer_ID"])){
 }
 
 function displayMessage($message, $messageType) {
-    echo "<div class='message-box $messageType-message' id='messageBox'>$message</div>";
-    echo "<script>
-            setTimeout(function() {
-                document.getElementById('messageBox').style.display = 'none';
-            }, 5000); // Die Meldung wird nach 5 Sekunden automatisch ausgeblendet
-          </script>";
+    echo "<div class='message-box $messageType-message' id='messageBox'>";
+    echo "<p>$message</p>";
+    echo "</div>";
+    echo "<style>
+            .message-box {
+                width: 300px;
+                margin: 20px auto;
+                padding: 10px;
+                text-align: center;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+            }
+
+            .fine-message {
+                background-color: #d4edda;
+                color: #155724;
+            }
+
+            .fail-message {
+                background-color: #f8d7da;
+                color: #721c24;
+            }
+          </style>";
 }
 
 ?>
