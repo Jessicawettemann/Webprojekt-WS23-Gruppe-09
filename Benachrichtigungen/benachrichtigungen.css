@@ -19,19 +19,28 @@ h1 {
 }
 
 .notification-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    max-width: 800px;
+    margin: left; /* Hier die Änderung für linksbündige Ausrichtung */
     padding: 20px;
 }
 
 .notification {
-    background-color: #f0f0f0; /* Hintergrundfarbe der Box */
-    border: 1px solid #d4d4d4; /* Rand der Box */
-    border-radius: 10px; /* Abgerundete Ecken */
-    padding: 10px 20px; /* Innenabstand */
-    margin-bottom: 10px; /* Abstand zwischen den Boxen */
-    width: 80%; /* Breite der Boxen */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Schattenwurf */
-    text-align: center; /* Zentrierter Text */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.notification p {
+    margin: 0;
+}
+
+/* Styling nur für die Benachrichtigungselemente innerhalb des .notification-Containers */
+.notification-container .notification p:nth-child(1) {
+    font-weight: bold;
+}
+
+.notification-container .notification p:nth-child(2) {
+    color: #777;
 }
