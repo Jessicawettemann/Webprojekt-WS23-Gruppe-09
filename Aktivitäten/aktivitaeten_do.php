@@ -42,7 +42,7 @@ if (!isset($_SESSION["Nutzer_ID"])){
 }
 
 function displayMessage($message, $messageType) {
-    echo "<div class='message-box $messageType-message' id='messageBox'>";
+ 
     echo "<p>$message</p>";
     echo "</div>";
     echo "<style>
@@ -53,7 +53,6 @@ function displayMessage($message, $messageType) {
                 text-align: center;
                 border: 1px solid #ddd;
                 border-radius: 5px;
-                box-sizing: border-box; /* Box-Sizing hinzufügen */
             }
 
             .fine-message {
@@ -65,9 +64,9 @@ function displayMessage($message, $messageType) {
                 background-color: #f8d7da;
                 color: #721c24;
             }
+
           </style>";
 }
-
 
 ?>
 </body>
