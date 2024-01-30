@@ -135,7 +135,7 @@ ini_set('display_errors', 1);
 
     function showPost(index) {
         commentContainers.forEach((container, i) => {
-            container.style.display = i === index ? 'flex' : 'none';
+            container.classList.toggle('active', i === index);
         });
     }
 
@@ -148,8 +148,10 @@ ini_set('display_errors', 1);
         currentIndex = (currentIndex + 1) % commentContainers.length;
         showPost(currentIndex);
     }
-</script>
 
+    // Zeige den ersten Beitrag an
+    showPost(currentIndex);
+</script>
 
 
 </body>
