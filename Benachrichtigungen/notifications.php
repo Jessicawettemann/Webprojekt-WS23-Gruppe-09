@@ -1,67 +1,39 @@
 <?php
 // Einbinden der erforderlichen Dateien
-include "Datenbank Verbindung.php"; // Achten Sie darauf, dass Leerzeichen in Dateinamen vermieden werden
-include "Header Sicherheit.php";// Start der Session am Anfang des Skripts
+include "Datenbank Verbindung.php";
+include "Header Sicherheit.php";
 session_start();
 
-// Überprüfen, ob der Benutzername in der Session gesetzt ist
-if (!isset($_SESSION["benutzername"])) {
-    // Umleitung auf eine andere Seite oder Fehlerbehandlung
-    exit("Benutzer nicht angemeldet.");
-}
+if (isset($_POST["add_friend"])) {
+    // Fügt eine neue Zeile in die Follower-Tabelle ein
+    $statement = $pdo->prepare("INSERT INTO Follower (follower_username, followed_username) VALUES (:follower_username, :followed_username)");
+    $statement->bindParam(":follower_username", $_SESSION["username"]);
+    $statement->bindParam(":followed_username", $_POST["user_id_friend"]);
+    $statement->execute();
 
-?>
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <title>Startseite</title>
-    <link rel="stylesheet" type="text/css" href="benachrichtigungen.css">
-</head>
-<body>
-<?php
+    // E-Mail-Benachrichtigung vorbereiten
+    $subject = "Ein neuer Nutzer folgt dir nun!";
+    $message = "Der Nutzer " . $_SESSION['username'] . " folgt dir nun";
+    $headers = "From: fb106@hdm-stuttgart.de";
 
-function getEmailFromDatabase($pdo, $Nutzer) {
-    $statement = $pdo->prepare("SELECT email FROM Nutzer WHERE benutzername = :benutzername");
-    $statement->execute(['benutzername' => $Nutzer]);
-    $result = $statement->fetch(PDO::FETCH_ASSOC);
+    // Abrufen der E-Mail-Adresse des Freundes
+    $getNutzerDaten = $pdo->prepare("SELECT email FROM Nutzer WHERE benutzername = :benutzername");
+    $getNutzerDaten->bindParam(":benutzername", $_POST["user_id_friend"]);
+    $getNutzerDaten->execute();
+    $NutzerDaten = $getNutzerDaten->fetch(PDO::FETCH_ASSOC);
 
-    return $result ? $result['email'] : 'default@example.com';
-}
+    if ($NutzerDaten) {
+        $friendsemail = $NutzerDaten["email"];
 
-// Benachrichtigungen abrufen
-$notificationStatement = $pdo->prepare("SELECT * FROM Benachrichtigungen WHERE empfaenger_username = :benutzername AND email_gesendet = 0");
-$notificationStatement->execute(['benutzername' => $_SESSION["benutzername"]]);
+        // E-Mail senden
+        mail($friendsemail, $subject, $message, $headers);
 
-while ($notification = $notificationStatement->fetch(PDO::FETCH_ASSOC)) {
-    // Escape von Output für HTML
-    $nachricht = htmlspecialchars($notification['nachricht']);
-    $absender = htmlspecialchars($notification['absender_username']);
-
-    echo "<div class='notification'>"; 
-    echo "<p>Benachrichtigung: " . $nachricht . "</p>";
-    echo "<p>Von: " . $absender . "</p>";
-    echo "</div>";
-
-    // E-Mail-Parameter
-    $absenderEmail = getEmailFromDatabase($pdo, $notification['absender_username']);
-    $empfaengerEmail = getEmailFromDatabase($pdo, $notification['empfaenger_username']);
-    $betreff = 'Neue Benachrichtigung';
-    
-    // Der Header wird mit der Absender-E-Mail-Adresse erstellt
-    $header = 'From: ' . $absenderEmail;
-
-    // E-Mail senden
-    if(mail($empfaengerEmail, $betreff, $nachricht, $header)){
-        echo 'Message has been sent';
-
-        // Markiere die Benachrichtigung als gesendet, um Doppelversand zu verhindern
-        $updateNotificationStatement = $pdo->prepare("UPDATE Benachrichtigungen SET email_gesendet = 1 WHERE ID = :id");
-        $updateNotificationStatement->execute(['id' => $notification['ID']]);
-    } else {
-        echo 'Message could not be sent';
+        // Benachrichtigung in der Datenbank speichern
+        $insertNotification = $pdo->prepare("INSERT INTO Benachrichtigungen (empfaenger_username, absender_username, nachricht, gelesen) VALUES (:empfaenger_username, :absender_username, :nachricht, 0)");
+        $insertNotification->bindParam(":empfaenger_username", $_POST["user_id_friend"]);
+        $insertNotification->bindParam(":absender_username", $_SESSION["username"]);
+        $insertNotification->bindParam(":nachricht", $message);
+        $insertNotification->execute();
     }
 }
 ?>
-</body>
-</html>
