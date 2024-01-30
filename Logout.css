@@ -21,15 +21,16 @@ h2 {
     color: #333;
     margin-bottom: 1rem;
     font-family:"Avenir Next Medium";
+    text-align: center;
 }
 
-.logout_text {
+logout_text {
     font-size: 1.2rem;
     color: #333;
     margin-bottom: 2rem;
 }
 
-.logout {
+logout {
     display: flex;
     justify-content: center;
 }
