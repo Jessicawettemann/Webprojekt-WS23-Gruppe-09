@@ -9,17 +9,20 @@ session_start();
 <head>
 
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="Logout.css">
+    <title>Logout Admin</title>
 
-    <title>Logout</title>
 
 
 <body>
 
 
-
+<br><br><br><br>
 <div>
-
+<br<br<br><br>
     <h2>Logout</h2>
+    <br><br>
 </div>
 
 <?php
@@ -31,22 +34,16 @@ if (!isset($_SESSION["Admin_ID"])){ //Überprüfen, ob Admin angemeldet ist und 
 }
 ?>
 
-<?php
-#if(isset($_SESSION["admin"])){
-#$statement = $pdo->prepare("SELECT * FROM Admin WHERE ID=:ID");
-#$statement->bindParam(":ID", $_SESSION["ID"]);
-#if ($statement->execute()) { //Alles aus Tabelle holen, was zur Session ID gehört (angemeldeter Nutzer)
-# $Admin = $statement->fetch();
-#}}
-?>
+
 
 <p>Möchtest du dich wirklich ausloggen?</p><br>
 <div>
+    <div class="logout">
     <form action="Logout_Admin_do.php" method="post">
-        <button type="submit">Ja</button>
+        <button  class="logout_button" type="submit">Ja</button>
     </form>
     <form action="Startseite.php">
-        <button type="submit">Nein</button>
+        <button  class="logout_button" type="submit">Nein</button>
     </form>
 </div>
 

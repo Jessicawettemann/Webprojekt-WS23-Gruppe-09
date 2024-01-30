@@ -53,7 +53,7 @@ button:focus {
 
 .picture{ flex-basis: 15%; border-radius: 5px; margin-bottom: 30px; position: relative; overflow: hidden; }
 
-.picture img{ width: 140%; height: 80%; }
+.picture img{ width: 200%; height: 80%; }
 .picture img :hover {
     width: 200%;
     height: 100%;

@@ -1,33 +1,45 @@
 
 
-
-
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
-    font-family: "Avenir Next Medium";
-}
 
-.container {
+    min-height: 100vh;
+    width: 100%;
+    background-image: url("https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/Business Event Website in Blue Dark Blue Light Blue Modern Style.png");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+}
+.container
+{
     text-align: center;
 }
+
 
 h2 {
     font-size: 2.5rem;
     color: #333;
     margin-bottom: 1rem;
+    font-family:"Avenir Next Medium";
+    text-align: center;
 }
 
 .logout_text {
     font-size: 1.2rem;
     color: #333;
     margin-bottom: 2rem;
+    font-family:"Avenir Next Medium";
+    justify-content: center;
+    text-align: center;
 }
-
+p{
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 2rem;
+    font-family:"Avenir Next Medium";
+    justify-content: center;
+    text-align: center;
+}
 .logout {
     display: flex;
     justify-content: center;
@@ -45,7 +57,24 @@ h2 {
     cursor: pointer;
     transition: background-color 0.3s;
 }
+.button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin: 0 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
 
-.logout_button:hover {
-    background-color: #45a049;
+button:hover{
+    width: 240px;
+    justify-content: center;
+}
+button:focus {
+    outline: none;
+    width: 240px;
 }
