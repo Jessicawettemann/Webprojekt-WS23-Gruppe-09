@@ -13,6 +13,7 @@ session_start();
     <link rel="stylesheet" type="text/css" href="Logout.css">
     <title>Logout</title>
 </head>
+<br><br><br><br>
 <body>
 <div>
 
