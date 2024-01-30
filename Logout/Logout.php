@@ -16,8 +16,9 @@ session_start();
 <br><br><br><br>
 <body>
 <div>
-
+<br<br><br>
     <h2>Logout</h2>
+    <br><br>
 </div>
 
 <?php
@@ -26,14 +27,7 @@ if (!isset($_SESSION["Nutzer_ID"])){ //Überprüfen, ob Nutzer angemeldet ist un
 }
 ?>
 
-<?php
-#if(isset($_SESSION["login"])){
-#$statement = $pdo->prepare("SELECT * FROM Nutzer WHERE ID=:ID");
-#$statement->bindParam(":ID", $_SESSION["ID"]);
-#if ($statement->execute()) { //Alles aus Tabelle holen, was zur Session ID gehört (angemeldeter Nutzer)
-#$Nutzer = $statement->fetch();
-#}}
-?>
+
 
 <p class="logout_text">Möchtest du dich wirklich ausloggen?</p><br>
 <div class="logout">
