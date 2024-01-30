@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if ($statement->execute(array(htmlspecialchars($_POST["beitrag"]), $benutzername, $profilbild))) {
-        echo "<div class='fine'> Ereignis gespeichert </div>" . "<br><br>" . "<a href='community.php'>Zu den Beiträgen</a> </div>";
+        displayMessage("Ereignis erfolgreich gespeichert! <br><a href='community.php'>Zu den Beiträgen</a>", 'fine');
 
         // Benachrichtigungen für Follower erstellen
         $neuerBeitragID = $pdo->lastInsertId();
@@ -48,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Deaktiviere das Formular nach dem Absenden, um doppelte Einreichungen zu verhindern
         echo "<script>document.getElementById('communityForm').disabled = true;</script>";
     } else {
-        die("<div class='fail'> Fehlgeschlagen." . "<br><br>" . "<a href='community.php'>Erneut versuchen</a> </div>");
+        displayMessage("Fehler beim Speichern des Ereignisses. <br><a href='community.php'>Erneut versuchen</a>", 'fail');
     }
 }
 
