@@ -44,7 +44,7 @@ if (!$notificationStatement->execute()) {
     }
 }
 // Anzeigen der Benachrichtigungen, unabhängig davon, ob die E-Mail gesendet wurde oder nicht
-$notificationQuery= "SELECT Benachrichtigungen * Beitrag.datum AS beitrag_datum FROM Benachrichtigungen JOIN Beitrag ON Benachrichtigungen.beitrags_id = Beitrag.ID WHERE Benachrichtigungen.empfaenger_username = ?";
+$notificationQuery= "SELECT Benachrichtigungen.*, Beitrag.datum AS beitrag_datum FROM Benachrichtigungen JOIN Beitrag ON Benachrichtigungen.beitrags_id = Beitrag.ID WHERE Benachrichtigungen.empfaenger_username = ?";
 
 $notificationStatement = $pdo->prepare($notificationQuery);
 $notificationStatement->execute([$_SESSION["benutzername"]]);
