@@ -150,3 +150,18 @@ button:hover {
 .fine {
     color: #008000; /* Grüne Textfarbe für Erfolgsmeldungen */
 }
+
+
+/* Stil für den Text mit roter Farbe bei Misserfolg */
+.fail {
+    color: #ff0000; /* Rote Textfarbe für Misserfolgsmeldungen */
+    text-align: center; /* Zentriere den Text */
+    margin: 20px; /* Füge etwas Abstand um die Meldung hinzu */
+}
+
+/* Stil für den Text mit grüner Farbe bei Erfolg */
+.fine {
+    color: #008000; /* Grüne Textfarbe für Erfolgsmeldungen */
+    text-align: center; /* Zentriere den Text */
+    margin: 20px; /* Füge etwas Abstand um die Meldung hinzu */
+}
