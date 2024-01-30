@@ -34,14 +34,7 @@ if (!isset($_SESSION["Admin_ID"])){ //Überprüfen, ob Admin angemeldet ist und 
 }
 ?>
 
-<?php
-#if(isset($_SESSION["admin"])){
-#$statement = $pdo->prepare("SELECT * FROM Admin WHERE ID=:ID");
-#$statement->bindParam(":ID", $_SESSION["ID"]);
-#if ($statement->execute()) { //Alles aus Tabelle holen, was zur Session ID gehört (angemeldeter Nutzer)
-# $Admin = $statement->fetch();
-#}}
-?>
+
 
 <p>Möchtest du dich wirklich ausloggen?</p><br>
 <div>

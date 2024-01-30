@@ -32,13 +32,32 @@ h2 {
     justify-content: center;
     text-align: center;
 }
-
+.p{
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 2rem;
+    font-family:"Avenir Next Medium";
+    justify-content: center;
+    text-align: center;
+}
 .logout {
     display: flex;
     justify-content: center;
 }
 
 .logout_button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin: 0 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.button {
     background-color: #4CAF50;
     color: white;
     border: none;
