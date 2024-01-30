@@ -46,6 +46,11 @@ h2 {
     transition: background-color 0.3s;
 }
 
-.logout_button:hover {
-    background-color: #45a049;
+button:hover{
+    width: 240px;
+
+}
+button:focus {
+    outline: none;
+    width: 240px;
 }
