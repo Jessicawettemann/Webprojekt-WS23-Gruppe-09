@@ -30,6 +30,7 @@ h2 {
     margin-bottom: 2rem;
     font-family:"Avenir Next Medium";
     justify-content: center;
+    text-align: center;
 }
 
 .logout {
