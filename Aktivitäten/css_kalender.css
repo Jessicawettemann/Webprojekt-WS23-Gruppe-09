@@ -141,16 +141,18 @@ button:hover {
 }
 
 /* Stil für die Meldungsboxen */
-.fail-message,
-.fine-message {
-    display: inline-block;
+.message-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
     padding: 15px;
     text-align: center;
     color: #333;
     background-color: #f3f3f3;
     border: 1px solid #ccc;
     border-radius: 5px;
-    margin: 20px auto;
     max-width: 400px;
 }
 
