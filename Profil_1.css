@@ -12,7 +12,7 @@ body{
 
 form{
 
-    height: 300px;
+    height: 340px;
     width: 300px;
     padding: 60px;
     border-radius: 8px;
@@ -51,9 +51,9 @@ input{
     padding: 0px 25px;
     border-radius: 10px;
     border: none;
-    background-color: #f26b70;
+    background-color: white;
     box-shadow: 3px 3px 6px rgba(0,0,0,0.212);
-    color: black;
+    color: #f26b70;
     font-size: 12px;
 
 }
