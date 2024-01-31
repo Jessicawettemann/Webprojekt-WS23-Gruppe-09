@@ -91,3 +91,29 @@ button:focus {
 
 
 
+/* Stile für Geräte mit einer Ansichtsbreite von 480px oder weniger */
+@media (max-width: 480px) {
+
+
+    form {
+
+        height: 550px;
+        width: 250px;
+
+    }
+
+    h1 {
+
+        font-size: 35px;
+
+    }
+
+
+    input {
+        height: 29px;
+        width: 140px;
+
+        font-size: 11px;
+
+    }
+}

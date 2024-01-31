@@ -117,22 +117,29 @@ button:focus {
 
 
 
-@media( max-width: 650px){
-    form{
-        height: 100%;
-        width: 100%;
-        justify-content: center;
-    }
-    .inputs_container{
-        margin: 80px;
-    }
-    h1{
-        font-size: 32px;
-    }
-}
+/* Stile für Geräte mit einer Ansichtsbreite von 480px oder weniger */
+@media (max-width: 480px) {
 
-.big{
-    text-align: center;
-    color: black;
 
+    form {
+
+        height: 550px;
+        width: 250px;
+
+    }
+
+    h1 {
+
+        font-size: 35px;
+
+    }
+
+
+    input {
+        height: 29px;
+        width: 140px;
+
+        font-size: 11px;
+
+    }
 }
