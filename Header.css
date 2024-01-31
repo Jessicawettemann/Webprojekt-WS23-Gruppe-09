@@ -52,7 +52,7 @@
 }
 
 
-@media (min-width: 750px) {
+@media (max-width: 750px) {
     .ul {
         flex-direction: row;
     }
@@ -62,4 +62,30 @@
         padding-bottom: 12px;
     }
 }
+
+    /* Stile für Geräte mit einer Ansichtsbreite von 480px oder weniger */
+    @media (max-width: 480px) {
+        .container {
+            padding: 0 10px;
+        }
+
+        .header {
+            padding: 10px;
+        }
+
+        .ul {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .li a {
+            margin: 5px 0;
+            font-size: 10px;
+        }
+        .profilpicture {
+            width: 30px;
+            height: 29px;
+        }
+    }
+
 
