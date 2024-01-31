@@ -11,6 +11,7 @@ session_start();
     <meta name="viewport" content="width=device-width">
     <title>Kalender</title>
     <link rel="stylesheet" type="text/css" href="css_kalender.css">
+    <link rel="stylesheet" type="text/css" href="fehlermeldung.css">
 </head>
 <body>
 
@@ -30,42 +31,20 @@ if (!isset($_SESSION["Nutzer_ID"])){
             $statement = $pdo->prepare("INSERT INTO Aktivitäten (thema, beschreibung, datum, ort) VALUES (?,?,?,?)");
 
             if ($statement->execute([$thema, $beschreibung, $datum, $ort])) {
+                // Rufe die displayMessage-Funktion auf
+                include 'fehlermeldung.php';
                 displayMessage("Ereignis erfolgreich gespeichert! <br><a href='aktivitaeten.php'>Zu den Aktivitäten</a>", 'fine');
             } else {
+                // Rufe die displayMessage-Funktion auf
+                include 'fehlermeldung.php';
                 displayMessage("Fehler beim Speichern des Ereignisses. <br><a href='aktivitaeten.php'>Erneut versuchen</a>", 'fail');
             }
         } else {
+            // Rufe die displayMessage-Funktion auf
+            include 'fehlermeldung.php';
             displayMessage("Das eingegebene Datum darf nicht in der Vergangenheit liegen. <br><a href='aktivitaeten.php'>Erneut versuchen</a>", 'fail');
         }
     }
-}
-
-function displayMessage($message, $messageType) {
-    echo "<div class='message-box $messageType-message' id='messageBox'>";
-    echo "<p>$message</p>";
-    echo "</div>";
-    echo "<style>
-            .message-box {
-                width: 300px;
-                margin: 20px auto;
-                padding: 10px;
-                text-align: center;
-                border: 1px solid #ddd;
-                border-radius: 5px;
-                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Hinzugefügter Schatten */
-            }
-
-            .fine-message {
-                background-color: #d4edda;
-                color: #155724;
-            }
-
-            .fail-message {
-                background-color: #f8d7da;
-                color: #721c24;
-            }
-
-          </style>";
 }
 
 ?>
