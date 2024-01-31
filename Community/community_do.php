@@ -10,9 +10,9 @@ include "Header Sicherheit.php";
 // Überprüfen, ob das Formular abgeschickt wurde
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-        // Überprüfen, ob der Benutzer angemeldet ist
-        if (isset($_SESSION["benutzername"])) {
-            
+    // Überprüfen, ob der Benutzer angemeldet ist
+    if (isset($_SESSION["benutzername"])) {
+        
     // Beitrag speichern
     $statement = $pdo->prepare("INSERT INTO Beitrag (beitrag, benutzername, profilbild) VALUES (?, ?, ?)");
 
@@ -54,6 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         displayMessage("Fehler beim Speichern des Ereignisses. <br><a href='community.php'>Erneut versuchen</a>", 'fail');
     }
+}
 }
 
 function displayMessage($message, $messageType) {
