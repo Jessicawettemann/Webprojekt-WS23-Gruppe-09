@@ -8,7 +8,7 @@ include "Datenbank Verbindung.php";
 include "Header Sicherheit.php";
 
 // Überprüfen, ob das Formular abgeschickt wurde
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST") 
 
     // Überprüfen, ob der Benutzer angemeldet ist
     if (isset($_SESSION["benutzername"])) {
@@ -55,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         displayMessage("Fehler beim Speichern des Ereignisses. <br><a href='community.php'>Erneut versuchen</a>", 'fail');
     }
 }
-}
+
 
 function displayMessage($message, $messageType) {
     echo "<div class='message-box $messageType-message' id='messageBox'>";
