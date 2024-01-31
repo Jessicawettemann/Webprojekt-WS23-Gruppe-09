@@ -6,8 +6,18 @@ error_reporting(E_ALL);
 // Normaler Code
 include "Datenbank Verbindung.php";
 include "Header Sicherheit.php";
-include "fehlermeldung.css";
+?>
 
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="fehlermeldung.css">
+</head>
+<body>
+
+<?php
 // Überprüfen, ob das Formular abgeschickt wurde
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Überprüfen, ob der Benutzer angemeldet ist
@@ -61,8 +71,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Benutzer ist nicht angemeldet
         // Rufe die displayMessage-Funktion auf
         include 'fehlermeldung.php';
-        displayMessage("Bitte melde dich zunächst an! <br><a href='Login Formular.php'>Hier geht's zum Login</a>", 'fail-message');
+        displayMessage("Bitte melde dich zunächst an! <br><a href='Login Formular.php'>Hier geht's zum Login</a>", 'fail');
+
     }
 }
 
 ?>
+</body>
+</html>
