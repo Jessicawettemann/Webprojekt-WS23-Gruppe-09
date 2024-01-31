@@ -8,7 +8,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" type="text/css" href="Registrierung.css">
+    <link rel="stylesheet" type="text/css" href="Bearbeiten.css">
     <title>Bearbeiten</title>
 </head>
 <body>
@@ -18,8 +18,9 @@ $statement=$pdo->prepare("SELECT * FROM Upload WHERE ID=?");
 if ($statement->execute(array($_GET["ID"]))){
     if($row=$statement->fetch()){
         ?>
-        <h1>Bearbeiten</h1>
+
         <form action="Change_do.php?ID=<?php echo $row["ID"];?>" method="post" enctype="multipart/form-data">
+            <h1>Bearbeiten</h1>
             <input type="text" placeholder="Neue Beschreibung" name="beschreibung" value="<?php echo $row["beschreibung"];?>">
              <input type="text" placeholder="Neuer Zustand" name="zustand" value="<?php echo $row["zustand"];?>">
             <input type="file" name="foto" value="<?php echo $row["foto"];?>">
