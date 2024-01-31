@@ -12,7 +12,7 @@ body{
 
 form{
 
-    height: 540px;
+    height: 610px;
     width: 270px;
     padding: 60px;
     border-radius: 8px;
@@ -97,7 +97,7 @@ button:focus {
 
     form {
 
-        height: 550px;
+        height: 620px;
         width: 250px;
 
     }
