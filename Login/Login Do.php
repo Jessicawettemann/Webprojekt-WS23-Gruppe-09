@@ -40,7 +40,7 @@ if($statement->execute(array(htmlspecialchars($_POST["benutzername"])))){ #htmls
         } else{
              // Rufe die displayMessage-Funktion auf
              include 'fehlermeldung.php';
-            echo ("<div class='fail-message'>Passwort falsch</div>");
+             displayMessage("Passwort falsch. <br><a href='Login Formular.php>Erneut versuchen</a>", 'fail');
             echo $statement->errorInfo()[2];
         }
     }else{
