@@ -8,7 +8,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" type="text/css" href="Formulare_1.css">
+    <link rel="stylesheet" type="text/css" href="Registrierung.css">
     <title>Bearbeiten</title>
 </head>
 <body>
