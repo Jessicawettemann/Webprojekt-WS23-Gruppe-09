@@ -13,7 +13,7 @@ body{
 form{
 
     height: 300px;
-    width: 200px;
+    width: 300px;
     padding: 60px;
     border-radius: 8px;
     background-color: rgba(0, 0, 0, 0.6);
@@ -30,7 +30,7 @@ form{
 h1{
     color: white;
     font-family: "Avenir Next Medium";
-    font-size: 38px;
+    font-size: 36px;
     background-position: top left;
 
 
@@ -51,9 +51,9 @@ input{
     padding: 0px 25px;
     border-radius: 10px;
     border: none;
-    background-color: white;
+    background-color: #f26b70;
     box-shadow: 3px 3px 6px rgba(0,0,0,0.212);
-    color: white;
+    color: black;
     font-size: 12px;
 
 }
