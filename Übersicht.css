@@ -12,7 +12,9 @@ h1{
     font-family: "Avenir Next Medium";
 font-size: 30px;
 color: black;
-position: relative}
+position: relative;
+text-align: center
+}
 
 button1{
     height: 40px;
@@ -42,7 +44,7 @@ button1:focus {
     border-radius: 8px;
     width: 700px;
     height: auto;
-    margin: 10px auto; /* Hier die Änderung */
+    margin: 10px auto;
 
 }
 .card h1{
