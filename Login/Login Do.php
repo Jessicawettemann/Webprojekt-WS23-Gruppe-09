@@ -45,11 +45,12 @@ if($statement->execute(array(htmlspecialchars($_POST["benutzername"])))){ #htmls
         }
     }else{
 
-        echo "<div class='fail'>Nutzer nicht vorhanden</div>";
-        echo "<a href='Registrierung_Formular.php'> hier registrieren </a>";
+        include 'fehlermeldung.php';
+        displayMessage("Nutzer nicht vorhanden. <br><a href='Registrierung_Formular.php'>Hier registrieren</a>", 'fail');
     }
 }else{
-    die("<div class='fail'>Datenbank-Fehler</div>");
+    include 'fehlermeldung.php';
+    displayMessage("Datenbank-Fehler. <br><a href='Login Formular.php'>Erneut versuchen</a>", 'fail');
 
 }
 ?>
