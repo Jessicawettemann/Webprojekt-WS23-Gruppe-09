@@ -13,12 +13,12 @@ if(!isset($_SESSION["Nutzer_ID"])){
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-
+    <link rel="stylesheet" type="text/css" href="Profil_1.css">
     <title>Username bearbeiten</title>
 
 </head>
 <body>
-<h1>Username bearbeiten</h1>
+
 
 <!-- Datensatz aus der Datenbank holen von angemeldetem Nutzer -->
 <?php
@@ -34,6 +34,7 @@ $benutzername = $row["benutzername"];
 
 <!-- Formular Profil Benutzername bearbeiten-->
 <form class='rows' action = "benutzername_do.php?Nutzer_id=<?php echo $Nutzer_id; ?>" method="post">
+    <h1>Username bearbeiten</h1>
     <label for="benutzernameinput"></label>
     <input type="text" name="username" id="benutzernameinput" value="<?php echo $row["benutzername"]; ?>"> <br>
     <p><input type="submit" value="Änderung bestätigen"></p>
