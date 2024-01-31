@@ -8,10 +8,8 @@ include "Datenbank Verbindung.php";
 include "Header Sicherheit.php";
 
 // Überprüfen, ob das Formular abgeschickt wurde
-if ($_SERVER["REQUEST_METHOD"] == "POST") 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    // Überprüfen, ob der Benutzer angemeldet ist
-    if (isset($_SESSION["benutzername"])) {
         
     // Beitrag speichern
     $statement = $pdo->prepare("INSERT INTO Beitrag (beitrag, benutzername, profilbild) VALUES (?, ?, ?)");
