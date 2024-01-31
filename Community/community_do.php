@@ -6,6 +6,7 @@ error_reporting(E_ALL);
 // Normaler Code
 include "Datenbank Verbindung.php";
 include "Header Sicherheit.php";
+include "fehlermeldung.css";
 
 // Überprüfen, ob das Formular abgeschickt wurde
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -30,6 +31,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         if ($statement->execute(array(htmlspecialchars($_POST["beitrag"]), $benutzername, $profilbild))) {
+            // Rufe die displayMessage-Funktion auf
+            include 'fehlermeldung.php';
             displayMessage("Ereignis erfolgreich gespeichert! <br><a href='community.php'>Zu den Beiträgen</a>", 'fine');
 
             // Benachrichtigungen für Follower erstellen
@@ -50,38 +53,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Deaktiviere das Formular nach dem Absenden, um doppelte Einreichungen zu verhindern
             echo "<script>document.getElementById('communityForm').disabled = true;</script>";
         } else {
+            // Rufe die displayMessage-Funktion auf
+            include 'fehlermeldung.php';
             displayMessage("Fehler beim Speichern des Ereignisses. <br><a href='community.php'>Erneut versuchen</a>", 'fail');
         }
     } else {
         // Benutzer ist nicht angemeldet
+        // Rufe die displayMessage-Funktion auf
+        include 'fehlermeldung.php';
         displayMessage("Bitte melde dich zunächst an! <br><a href='Login Formular.php'>Hier geht's zum Login</a>", 'fail');
     }
 }
 
-function displayMessage($message, $messageType) {
-    echo "<div class='message-box $messageType-message' id='messageBox'>";
-    echo "<p>$message</p>";
-    echo "</div>";
-    echo "<style>
-            .message-box {
-                width: 300px;
-                margin: 20px auto;
-                padding: 10px;
-                text-align: center;
-                border: 1px solid #ddd;
-                border-radius: 5px;
-                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Hinzugefügter Schatten */
-            }
-
-            .fine-message {
-                background-color: #d4edda;
-                color: #155724;
-            }
-
-            .fail-message {
-                background-color: #f8d7da;
-                color: #721c24;
-            }
-          </style>";
-}
 ?>
