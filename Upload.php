@@ -21,7 +21,7 @@ if(!isset($_SESSION["Nutzer_ID"])){
     ?>
 
     <form action="Upload_do.php" method="post" enctype="multipart/form-data">
-        <h1> Upload</h1> <br><br>
+        <h1> Upload</h1>
         <label class="label" for="beschreibung"></label><br>
         <input type="text" name="beschreibung" placeholder="Beschreibung">
         <br>
