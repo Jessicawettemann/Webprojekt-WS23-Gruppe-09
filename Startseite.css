@@ -62,7 +62,7 @@ button:focus {
 
 .picture img {
     width: 100%;
-    height: auto;
+    height: 200px;
 }
 
 .picture:hover img {
@@ -90,7 +90,7 @@ button:focus {
     color: white;
     font-size: 16px;
     bottom: 0;
-    left: 50%;
+    left: 80%;
     transform: translateX(-50%);
     position: absolute;
     font-family: "Avenir Next Medium";
@@ -166,7 +166,7 @@ button:focus {
 
     button {
         height: 25px;
-        width: 100px;
+        width: 150px;
         border-radius: 100px;
         border: none;
         color: white;
