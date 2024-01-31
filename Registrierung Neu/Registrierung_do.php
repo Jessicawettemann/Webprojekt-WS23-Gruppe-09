@@ -12,6 +12,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <title>Registrierung</title>
+    <link rel="stylesheet" type="text/css" href="fehlermeldung.css">
 
 </head>
 <body>
@@ -45,13 +46,22 @@ $p = "hjfew3545r8c0szhwgfsdafghjgfdhj";
 // Felder sollen nicht freigelassen werden:
 if(($_POST["vorname"]) !=null and ($_POST["nachname"]) !=null and ($_POST["benutzername"]) !=null and ($_POST["email"]) !=null and ($_POST["passwort"]) !=null){
     if($statement->execute(array(htmlspecialchars($_POST["vorname"]), htmlspecialchars($_POST["nachname"]), htmlspecialchars($_POST["benutzername"]), htmlspecialchars($_POST["email"]), htmlspecialchars($_FILES["profilbild"]["name"]), password_hash($_POST["passwort"].$p, PASSWORD_BCRYPT), ))){
-        echo"<div class='fine'> Du wurdest erfolgreich registriert "."<br><br>"."<a href='Startseite.php'>Hier kommst du zur Startseite</a> </div>";
+        // Rufe die displayMessage-Funktion auf
+        include 'fehlermeldung.php';
+        displayMessage("Du wurdest erfolgreich registriert. <br><a href='Startseite.php'>Hier kommst du zur Startseite</a> ", 'fine');
+
     }else{
-        die("<div class='fail'> Diese Zugangsdaten sind bereits vergeben "."<br><br>". "<a href='Registrierung_Formular.php'>Erneut versuchen</a> </div>");
+         // Rufe die displayMessage-Funktion auf
+         include 'fehlermeldung.php';
+         displayMessage("Diese Zugangsdaten sind bereits vergeben. <br><a href='Registrierung_Formular.php'>Erneut versuchen</a>", 'fail');
     }
+    
 }else{
-    echo"<div class='fail'> Alle Felder müssen ausgefüllt sein! "."<br><br>"."<a href='Registrierung_Formular.php'>Erneut versuchen</a> </div>";
-}
+     // Rufe die displayMessage-Funktion auf
+     include 'fehlermeldung.php';
+     displayMessage("Alle Felder müssen ausgefüllt sein! <br><a href='Registrierung_Formular.php'>Erneut versuchen</a>", 'fail');
+ }
+
 
 ?>
 
