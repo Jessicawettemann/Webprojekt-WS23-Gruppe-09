@@ -54,7 +54,7 @@ button1:focus {
 }
 .card h2{
     font-family: "Avenir Next";
-
+float: left;
     font-size: 11px;
     color: white;
 }
