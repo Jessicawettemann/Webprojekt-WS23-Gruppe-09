@@ -39,6 +39,15 @@
     font-weight: bolder;
 
 }
+.header{padding-top: 15px;
+    padding-bottom: 15px;
+    display: block;
+    color: rgb(255, 255, 255);
+    font-weight: lighter;
+    text-decoration: none;
+    font-family: "Avenir Next Medium";
+
+}
 .ul{
     width: auto;
     background: black;
