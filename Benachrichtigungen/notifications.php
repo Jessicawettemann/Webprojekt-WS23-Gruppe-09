@@ -16,7 +16,7 @@ session_start();
 function getEmailFromDatabase($pdo, $Nutzer) {
     $statement = $pdo->prepare("SELECT email FROM Nutzer WHERE benutzername = ?");
     $statement->execute([$Nutzer]);
-    $result = $statement->fetch(PDO::FETCH_ASSOC);
+    $result = $statement->fetch();
 
     return $result ? $result['email'] : 'default@example.com';
 }
@@ -45,12 +45,12 @@ if (!$notificationStatement->execute()) {
 }
 
 // Anzeigen der Benachrichtigungen, unabhängig davon, ob die E-Mail gesendet wurde oder nicht
-$notificationQuery= "SELECT Benachrichtigungen.*, Beitrag.datum AS beitrag_datum FROM Benachrichtigungen JOIN Beitrag ON Benachrichtigungen.beitrags_id = Beitrag.ID WHERE Benachrichtigungen.empfaenger_username = ?";
+$notificationQuery= "SELECT Benachrichtigungen.*, Beitrag.datum AS beitrag_datum FROM Benachrichtigungen JOIN Beitrag ON Benachrichtigungen.beitrags_id = Beitrag.ID WHERE Benachrichtigungen.empfaenger_username = ? ORDER BY datum DESC";
 
 $notificationStatement = $pdo->prepare($notificationQuery);
 $notificationStatement->execute([$_SESSION["benutzername"]]);
 
-while ($notification = $notificationStatement->fetch(PDO::FETCH_ASSOC)) {
+while ($notification = $notificationStatement->fetch()) {
 echo "<div class='notification'>"; 
 echo "<p>Benachrichtigung: Neuer Beitrag </p>";
 echo "<p>Datum des Beitrags: " . $notification['beitrag_datum'] . "</p>"; // Hier wird das  Datum des Beitrags hinzufügt (Aus der Datenbank)
