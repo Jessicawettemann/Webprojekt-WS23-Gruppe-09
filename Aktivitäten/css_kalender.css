@@ -1,6 +1,6 @@
 /* Allgemeine Formatierung des Body-Elements */
 body {
-    font-family: Arial, sans-serif; /* Verwendete Schriftart für den Body */
+    font-family:   "Avenir Next Medium"; /* Verwendete Schriftart für den Body */
     margin: 0; /* Kein Außenabstand für den Body */
     padding: 0; /* Kein Innenabstand für den Body */
     background-color: #f4f4f4; /* Hintergrundfarbe des Body */
