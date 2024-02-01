@@ -45,21 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             include 'fehlermeldung.php';
             displayMessage("Ereignis erfolgreich gespeichert! <br><a href='community.php'>Zu den Beiträgen</a>", 'fine');
 
-            // Benachrichtigungen für Follower erstellen
-            $neuerBeitragID = $pdo->lastInsertId();
-
-            $followerStatement = $pdo->prepare("SELECT follower_username FROM Follower WHERE followed_username = ?");
-            $followerStatement->execute([$benutzername]);
-
-            while ($follower = $followerStatement->fetch(PDO::FETCH_ASSOC)) {
-                $empfaenger = $follower['follower_username'];
-                $absender = $benutzername;
-                $nachricht = "Neuer Beitrag von " . $benutzername;
-
-                $benachrichtigungsStatement = $pdo->prepare("INSERT INTO Benachrichtigungen (empfaenger_username, absender_username, beitrags_id, nachricht) VALUES (?, ?, ?, ?)");
-                $benachrichtigungsStatement->execute([$empfaenger, $absender, $neuerBeitragID, $nachricht]);
-            }
-
+       
             // Deaktiviere das Formular nach dem Absenden, um doppelte Einreichungen zu verhindern
             echo "<script>document.getElementById('communityForm').disabled = true;</script>";
         } else {
