@@ -55,6 +55,10 @@
     align-items: center;
     list-style: none;
 }
+.ul:hover{
+    color: #f8c954;
+    font-weight: bolder;
+}
 .li a{
     padding-top: 15px;
     padding-bottom: 15px;
