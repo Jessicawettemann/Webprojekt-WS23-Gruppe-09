@@ -10,7 +10,7 @@ include "Header Sicherheit.php";
     <link rel="stylesheet" type="text/css" href="Startseite.css">
 </head>
 <body>
-<section class="Header">
+<div class="Header">
     <br><br><br><br><br><br><br><br><br><br><br><br>
     <h1>Willkommen  </h1>
     <p> bei Landify </p><br><br><br>
@@ -19,7 +19,8 @@ include "Header Sicherheit.php";
         Das war aber noch nicht alles.<br>
         Landify bietet ihren Nutzern auch die Möglichkeit Dinge aller Art anzubieten. Sei es das alte Bett, eine Lampe aus der ehemaligen WG oder gar ein WG Zimmer zur Miete.<br> 
         <br>
-        Schaut rein und connected euch mit anderen Studierenden an eurer Hochschule!</div>
-</section>
+        Schaut rein und connected euch mit anderen Studierenden an eurer Hochschule!
+    </div>
+</div>
 </body>
 </html>
