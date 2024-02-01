@@ -29,7 +29,7 @@ if (!$notificationStatement->execute()) {
     while ($notification = $notificationStatement->fetch(PDO::FETCH_ASSOC)) {
         $absenderEmail = getEmailFromDatabase($pdo, $notification['absender_username']);
         $empfaengerEmail = getEmailFromDatabase($pdo, $notification['empfaenger_username']);
-        $betreff = 'Es wurde ein neuer Beitrag veröffentlicht!';
+        $betreff = 'Es wurde auf Landify ein neuer Beitrag veröffentlicht!';
         $nachricht = $notification['nachricht'];
         $header = 'From:' . ($absenderEmail);
 
