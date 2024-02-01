@@ -26,18 +26,18 @@ if (empty($_POST["benutzername"])) {
 
 # Prüfen ob Nutzername bereits vorhanden
 $benutzername = htmlspecialchars($_POST["benutzername"], ENT_QUOTES);
-$statement=$pdo->prepare("SELECT * FROM Nutzer WHERE benutzername = ?");
+$statement=$pdo->prepare("SELECT * FROM Nutzer WHERE benutzername = ?"); #alle Informationen aus der Tabelle "Nutzer" abzurufen, bei denen der Benutzername stimmt
 $statement->execute([$benutzername]);
-$benutzername2 = $statement-> fetch();
+$benutzername2 = $statement-> fetch(); #Nutzer mit dem übergebenen Benutzernamen existiert, werden dessen Informationen in der Variable $benutzername2 gespeichert
 
 
 if ($benutzername2){
-    die ("<div class='fail'>Der Nutzername existiert bereits, bitte wähle einen anderen.</div>"."</p> <a href= 'benutzername.php'> Profil bearbeiten</a>");
+    die ("<div class='fail'>Der Nutzername existiert bereits, bitte wähle einen anderen.</div>"."</p> <a href= 'benutzername.php'> Profil bearbeiten</a>"); # wenn nicht fehlermeldung
 }else{
     # Änderung der Nutzerdaten in der Datenbank
     $statement2=$pdo->prepare("UPDATE Nutzer SET benutzername=? WHERE ID=?");
-    $Nutzer_id= htmlspecialchars($_GET["Nutzer_id"], ENT_QUOTES);
-    $statement2->execute([$benutzername, $Nutzer_id]);
+    $Nutzer_id= htmlspecialchars($_GET["Nutzer_id"], ENT_QUOTES); #htmi angriffe schützen durch html
+    $statement2->execute([$benutzername, $Nutzer_id]);# gibt true zurück, wenn die Aktualisierung erfolgreich war, andernfalls false.
 }
 if($statement->execute()){
     echo '<p>'. "<div class='fine'>Deine Änderung war erfolgreich!</div>";

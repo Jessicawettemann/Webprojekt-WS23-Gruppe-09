@@ -99,3 +99,65 @@ a:hover {
     color: #dc3545;
     margin-bottom: 20px;
 }
+@media (max-width: 750px) {
+
+    .profile-card {
+
+        width: 370px;
+        height: 550px;
+
+    }
+
+    .profile-card img {
+        width: 150px;
+        height: 150px;
+
+    }
+
+    .rows {
+
+        font-size: 14px;
+
+    }
+
+
+    .rows h5 {
+
+        font-size: 34px;
+
+    }
+}
+
+
+/* Stile für Geräte mit einer Ansichtsbreite von 480px oder weniger */
+@media (max-width: 480px) {
+
+    .profile-card {
+
+        width: 250px;
+        height: 300px;
+
+    }
+
+    .profile-card img {
+        width: 90px;
+        height: 90px;
+
+    }
+
+    .rows {
+
+        font-size: 11px;
+
+    }
+
+
+    .rows h5 {
+
+        font-size: 28px;
+
+    }
+}
+
+
+

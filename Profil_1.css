@@ -1,5 +1,5 @@
-
 body{
+
     min-height: 100vh;
     width: 100%;
     background-image: url("https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/Business Event Website in Blue Dark Blue Light Blue Modern Style.png");
@@ -7,14 +7,13 @@ body{
     background-size: cover;
     position: relative;
 
+
 }
-
-
 
 form{
 
-    height: 360px;
-    width: 270px;
+    height: 340px;
+    width: 300px;
     padding: 60px;
     border-radius: 8px;
     background-color: rgba(0, 0, 0, 0.6);
@@ -26,26 +25,12 @@ form{
     transform: translate(-50%,-50%);
     text-align: center;
 }
-form1{
 
-    height: 510px;
-    width: 240px;
-    padding: 60px;
-    border-radius: 8px;
-    background-color: white;
-    opacity: inherit;
-    box-shadow: 2px 2px 1px rgb(199, 184, 184);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    text-align: center;
-}
 
 h1{
     color: white;
     font-family: "Avenir Next Medium";
-    font-size: 38px;
+    font-size: 36px;
     background-position: top left;
 
 
@@ -68,7 +53,7 @@ input{
     border: none;
     background-color: white;
     box-shadow: 3px 3px 6px rgba(0,0,0,0.212);
-    color: white;
+    color: #f26b70;
     font-size: 12px;
 
 }
@@ -83,20 +68,7 @@ input:focus{
 input::placeholder{
     color: #f8c954;
 }
-p{
-    font-family: "Avenir Next", sans-serif;
-    color: white;
-    font-size: 14px;
-}
-a{
-    font-family: "Avenir Next", sans-serif;
-    color: white;
-    font-size: 14px;
-    position: page;
-}
-a:hover{
-    color: #f8c954;
-}
+
 button{
     height: 40px;
     width: 110px;
@@ -115,6 +87,15 @@ button:focus {
     outline: none;
     width: 200px;
 }
+p{
+    font-family: "Avenir Next", sans-serif;
+    color: white;
+    font-size: 14px;
+}
+
+p:hover{
+    color: #f8c954;
+}
 
 
 
@@ -124,14 +105,14 @@ button:focus {
 
     form {
 
-        height: 340px;
-        width: 250px;
+        height: 260px;
+        width: 180px;
 
     }
 
     h1 {
 
-        font-size: 35px;
+        font-size: 30px;
 
     }
 
@@ -149,10 +130,5 @@ button:focus {
         font-size: 11px;
     }
 
-    a {
 
-        font-size: 11px;
-
-    }
 }
-

@@ -1,6 +1,6 @@
 /* Allgemeine Formatierung des Body-Elements */
 body {
-    font-family: Arial, sans-serif; /* Verwendete Schriftart für den Body */
+    font-family:   "Avenir Next Medium"; /* Verwendete Schriftart für den Body */
     margin: 0; /* Kein Außenabstand für den Body */
     padding: 0; /* Kein Innenabstand für den Body */
     background-color: #f4f4f4; /* Hintergrundfarbe des Body */
@@ -105,7 +105,7 @@ th {
     color: #fff; /* Textfarbe weiß */
     background-color: #4caf50; /* Hintergrundfarbe für die Navigationsbutton */
     border: 1px solid #45a049; /* Rahmen für die Navigationsbutton */
-    border-radius: 5px; /* Runde Ecken für die Navigationsbutton */
+    border-radius: 100px; /* Runde Ecken für die Navigationsbutton */
     width: 200px; /* Feste Breite für beide Navigationsbutton */
     transition: background-color 0.3s; /* Sanfter Farbübergang beim Hovern */
     font-size: 14px; /* Setzen Sie hier die gewünschte Schriftgröße */
@@ -129,7 +129,7 @@ button:hover {
     color: #fff; /* Textfarbe Weiß */
     background-color: #4caf50; /* Hintergrundfarbe Grün */
     border: 1px solid #45a049; /* Einzelner 1px dicker Rand mit Grünton */
-    border-radius: 5px; /* Abgerundete Ecken für einen weicheren Look */
+    border-radius: 100px; /* Abgerundete Ecken für einen weicheren Look */
     width: 200px; /* Feste Breite für den Button */
     transition: background-color 0.3s; /* Sanfter Farbübergang bei Hover-Effekt */
     font-size: 14px; /* Setzen Sie hier die gewünschte Schriftgröße */
@@ -138,6 +138,14 @@ button:hover {
 /* Stiländerungen beim Hovern über den Ereignis-Button */
 .ereignis-button:hover {
     background-color: #45a049; /* Ändere die Hintergrundfarbe beim Hovern zu einem dunkleren Grünton */
+}
+@media (max-width: 480px) {
+    .ereignis-button {
+
+        width: 150px; /* Feste Breite für den Button */
+
+        font-size: 10px; /* Setzen Sie hier die gewünschte Schriftgröße */
+    }
 }
 
 

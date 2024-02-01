@@ -13,11 +13,11 @@ if(!isset($_SESSION["Nutzer_ID"])){
 <html lang="de">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="Profil_1.css">
     <title>Profilbild bearbeiten</title>
 
 </head>
 <body>
-<h1>Profilbild bearbeiten</h1>
 
 <!-- Datensatz aus der Datenbank holen von angemeldetem Nutzer -->
 <?php
@@ -35,6 +35,7 @@ $profilbild = $row["profilbild"];
 
 <!-- Formular Profilbild bearbeiten-->
 <form class="rows" action = "profilbild_do.php?Nutzer_Id=<?php echo $row["ID"]; ?>" method="post" enctype="multipart/form-data">
+    <h1>Profilbild bearbeiten</h1>
     <label for="profilbildinput"></label>
     <input type="file" name="profilbild" value="<?php echo $row["profilbild"];?>"> <br>
     <p>

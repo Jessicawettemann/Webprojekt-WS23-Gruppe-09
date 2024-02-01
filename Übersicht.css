@@ -10,9 +10,11 @@ body{
 
 h1{
     font-family: "Avenir Next Medium";
-font-size: 30px;
+font-size: 38px;
 color: black;
-position: relative}
+position: relative;
+text-align: center
+}
 
 button1{
     height: 40px;
@@ -42,7 +44,7 @@ button1:focus {
     border-radius: 8px;
     width: 700px;
     height: auto;
-    margin: 10px auto; /* Hier die Änderung */
+    margin: 10px auto;
 
 }
 .card h1{
@@ -95,4 +97,53 @@ button:hover{
 button:focus {
     outline: none;
     width: 200px;
+}
+@media (max-width: 480px) {
+
+    .card {
+
+        width: 480px;
+
+
+    }
+
+    .card h1 {
+
+        font-size: 14px;
+
+    }
+
+    .card h2 {
+
+
+        font-size: 9px;
+
+    }
+
+
+    .image img {
+        width: 150px;
+        height: 1500px;
+    }
+
+    .pdf img {
+        width: 100px;
+        height: 100px;
+    }
+
+    button {
+        height: 30px;
+        width: 90px;
+
+    }
+
+    button:hover {
+        width: 130px;
+
+    }
+
+    button:focus {
+        outline: none;
+        width: 130px;
+    }
 }

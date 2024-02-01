@@ -16,11 +16,12 @@ if(!isset($_SESSION["Nutzer_ID"])){
 <html lang="de">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="Profil_1.css">
     <title>Mail bearbeiten</title>
 
 </head>
 <body>
-<h1>E-Mail bearbeiten</h1>
+
 
 <!-- Datensatz aus der Datenbank holen von angemeldetem Nutzer -->
 <?php
@@ -36,6 +37,7 @@ $email = $row["email"];
 
 <!-- Formular Profil mail bearbeiten-->
 <form class="rows" action = "email_do.php?Nutzer_Id=<?php echo $Nutzer_Id ;?>" method="post">
+    <h1>E-Mail bearbeiten</h1>
     <label for="mailinput"></label>
     <input type="email" name="email" id="email_input" value="<?php echo $row["email"]; ?>"> <br>
     <p><input type="submit" value="Änderung bestätigen"></p>

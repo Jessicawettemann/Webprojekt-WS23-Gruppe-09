@@ -78,3 +78,38 @@ button:focus {
     outline: none;
     width: 240px;
 }
+@media (max-width: 480px) {
+    h2 {
+        font-size: 30px;
+
+    }
+
+    .logout_text {
+        font-size: 12px;
+
+    }
+    p{
+        font-size: 12px;
+    }
+
+
+    .logout_button {
+
+        font-size: 12px;
+
+    }
+    .button {
+
+        font-size: 12px;
+
+    }
+
+    button:hover{
+        width: 200px;
+        justify-content: center;
+    }
+    button:focus {
+        outline: none;
+        width: 200px;
+    }
+}

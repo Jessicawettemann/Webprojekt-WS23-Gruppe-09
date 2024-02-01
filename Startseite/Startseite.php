@@ -28,7 +28,7 @@ include "Header Sicherheit.php";
     <div class="picture">
         <img src="https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/verkaufen.jpg" alt=" placeholder" >
         <div class="Layer">
-        <a href="ich-biete_Übersicht.php"> <h3>Ich biete</h3></a>
+        <a href="ich-biete_Übersicht.php"> <h3>Angebote</h3></a>
     </div>
 </div>
     <div class="picture">
