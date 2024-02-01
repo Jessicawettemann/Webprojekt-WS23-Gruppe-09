@@ -1,0 +1,28 @@
+
+/* Desig für die einzelnen Benachrichtigungsboxen */
+.notification {
+    background-color: white;    
+    border: 2px solid lightgrey;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 10px;
+    border-radius: 40px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/*Stil für die Texte innerhalb der Benachrichtigungen (p= gesamte Box / child(1)= Ist Benachrichtigung / child (2/3) = Ist Datum & Von:)*/
+.notification p {
+    margin: 10px;
+}
+
+.notification p:nth-child(1) {
+    font-weight: bold;
+    color: #000;
+}
+
+.notification p:nth-child(2), .notification p:nth-child(3) {
+    color: #555;
+}
