@@ -62,7 +62,19 @@
     color: #f8c954;
     font-weight: bolder;
 }
-
+li a{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: block;
+    color: rgb(255, 255, 255);
+    font-weight: lighter;
+    text-decoration: none;
+    font-family: "Avenir Next Medium";
+}
+li a:hover{
+    color: #f8c954;
+    font-weight: bolder;
+}
 
 @media (max-width: 750px) {
     .ul {
