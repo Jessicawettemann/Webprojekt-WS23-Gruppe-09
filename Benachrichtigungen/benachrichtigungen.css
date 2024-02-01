@@ -17,8 +17,8 @@ h1 {
 }
 
 .notification-container {
-    max-width: 800px;
-    margin: left; /* Hier die Änderung für linksbündige Ausrichtung */
+    max-width: 200px;
+    margin: auto; /* Hier die Änderung für linksbündige Ausrichtung */
     padding: 20px;
 }
 
@@ -37,6 +37,7 @@ h1 {
 /* Styling nur für die Benachrichtigungselemente innerhalb des .notification-Containers */
 .notification-container .notification p:nth-child(1) {
     font-weight: bold;
+    margin: auto;
 }
 
 .notification-container .notification p:nth-child(2) {
