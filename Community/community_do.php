@@ -16,7 +16,7 @@ function sendNotificationsAndEmails($pdo, $beitragErsteller, $neuerBeitragID) {
 
         if ($nutzer['email']) {
             $betreff = "Neuer Beitrag von $beitragErsteller";
-            $nachricht = "Ein neuer Beitrag wurde veröffentlicht.";
+            $nachricht = "Ein neuer Beitrag wurde veröffentlicht. Beitrag-ID: $neuerBeitragID";
             $header = "From: info@ihrewebseite.de";
             mail($nutzer['email'], $betreff, $nachricht, $header);
         }
