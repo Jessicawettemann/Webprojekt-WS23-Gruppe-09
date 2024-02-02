@@ -14,7 +14,7 @@ session_start();
 <?php
 
 if (!isset($_SESSION["admin"])) {#prüft, ob Admin eingeloggt ist
-    die("<div class='fail'>Du musst eingeloggt sein, um Angebote aus der Datenbank löschen zu können!" . "<br><br>" . "<a href=Login_Admin.php'>Hier geht's zum Admin-Login</a> </div>");
+    die("<div class='fail'>Du musst als Admin eingeloggt sein, um Angebote aus der Datenbank löschen zu können!" . "<br><br>" . "<a href=Login_Admin.php'>Hier geht's zum Admin-Login</a> </div>");
 }
 
 
