@@ -9,6 +9,7 @@ include "Header Sicherheit.php";
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="fehlermeldung.css">
 
 
     <title>Logout</title>
@@ -23,10 +24,15 @@ include "Header Sicherheit.php";
 
 <?php
 if (!isset($_SESSION["Nutzer_ID"])) {
-    die("<div class='fail'> Du bist nicht angemeldet! " . "<br><br>" . "<a href='Login Formular.php'>Hier geht's zum Login</a> </div>");
+     //displayMessage-Funktion
+     include 'fehlermeldung.php';
+     displayMessage("Du bist nicht angemeldet. <br><a href='Login Formular.php'>Hier geht's zum Login</a>", 'fail');
 }
 
 session_destroy();
-    echo "<div class='fine'> Logout war erfolgreich " . "<br><br>" . "<a href='Startseite.php'>zurück zur Startseite</a> </div>";
+     //displayMessage-Funktion
+     include 'fehlermeldung.php';
+     displayMessage("Logout war erfolgreich. <br><a href='Startseite.php'>Zurück zur Startseite</a>", 'fine');
+    
 ?>
 
