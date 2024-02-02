@@ -10,6 +10,7 @@ session_start();
     <meta charset="UTF-8">
     <title>Bearbeiten</title>
     <link rel="stylesheet" href="Übersicht.css">
+    <link rel="stylesheet" type="text/css" href="fehlermeldung.css">
 </head>
 
 <body>
@@ -20,18 +21,27 @@ session_start();
 <?php
 
 if (!move_uploaded_file($_FILES["foto"]["tmp_name"], "/home/jw170/public_html/Bilder/" . $_FILES["foto"]["name"])) {
-    die ("<div class='fail'>Bild konnte nicht hochgeladen werden</div>");
+    //displayMessage-Funktion
+    include 'fehlermeldung.php';
+    displayMessage("Bild konnte nicht hochgeladen werden. <br>", 'fail');
 }
 if (isset($_POST["beschreibung"]) or isset ($_POST["zustand"]) or isset ($_FILES["foto"]) or isset ($_POST["preis"]) and isset ($_GET["ID"])) {
     $statement = $pdo->prepare("UPDATE Upload SET beschreibung=?, zustand=?, foto=?, preis=? WHERE ID=?");
     if ($statement->execute(array(htmlspecialchars($_POST["beschreibung"]), htmlspecialchars($_POST["zustand"]), htmlspecialchars($_FILES["foto"]["name"]), htmlspecialchars($_POST["preis"]), $_GET["ID"]))) {
-        echo "<div class='fine'>Bearbeiten erfolgreich</div>" . "<br>";
+        //displayMessage-Funktion
+        include 'fehlermeldung.php';
+        displayMessage("Bearbeiten erfolgreich. <br>", 'fine');
+
     } else {
-        echo "<div class='fail'>Datenbank-Fehler</div>";
-        echo $statement->errorInfo()[2];
+        //displayMessage-Funktion
+        include 'fehlermeldung.php';
+        displayMessage("Datenbank-Fehler. <br>", 'fail');
+
     }
 } else {
-    die ("<div class='fail'>Fehler im Formular</div>");
+    //displayMessage-Funktion
+    include 'fehlermeldung.php';
+    displayMessage("Fehler im Formular. <br>", 'fail');
 }
 
 ?>
