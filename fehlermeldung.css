@@ -1,6 +1,7 @@
 .message-box {
     width: 300px;
-    margin: 100px;
+    height: 50vh;
+    margin: 20px;
     padding: 10px;
     text-align: center;
     border: 1px solid #ddd;
