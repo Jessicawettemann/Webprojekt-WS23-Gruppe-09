@@ -96,9 +96,7 @@ li a:hover{
 
     /* Stile für Geräte mit einer Ansichtsbreite von 480px oder weniger */
     @media (max-width: 480px) {
-        .container {
-            padding: 0 10px;
-        }
+
 
         .header {
             padding: 10px;
