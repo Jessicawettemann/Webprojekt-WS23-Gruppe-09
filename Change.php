@@ -19,7 +19,7 @@ session_start();
 $statement=$pdo->prepare("SELECT * FROM Upload WHERE ID=?"); // Vorbereitung Abfrage für aus Upload für eine bestimmte ID
 if ($statement->execute(array($_GET["ID"]))){  //Ausführung Abfrage mit der ID aus der URL / Wenn erfolgreich gehts weiter
     if($row=$statement->fetch()){ // Versuch Zeile aus Ergebniss der Abfrage in $row zu speichern wenn gefunden gehts weiter
-        
+
 // Unten werden Eingabefelder erstellt, welche vorab den ursprünglichen Wert aus der Datenbank anzeigen
 ?> 
 
@@ -33,6 +33,7 @@ if ($statement->execute(array($_GET["ID"]))){  //Ausführung Abfrage mit der ID 
             <button type="submit">Absenden</button> <br><br>
             <a href="ich-biete_Übersicht.php">Zurück </a>
         </form>
+
 <?php
     }else{
     //displayMessage-Funktion
@@ -40,7 +41,7 @@ if ($statement->execute(array($_GET["ID"]))){  //Ausführung Abfrage mit der ID 
     displayMessage("Beitrag schon vorhanden. <br>", 'fail');
     }
     } else{
-        die("<div class='fail'>Formular-Fehler</div>");
+        die("<div class='fail'>Formulare-Fehler</div>");
     }
 ?>
 
