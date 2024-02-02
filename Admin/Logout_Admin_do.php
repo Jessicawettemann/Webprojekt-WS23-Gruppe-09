@@ -9,6 +9,7 @@ session_start();
 <head>
 
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="fehlermeldung.css">
 
     <title>Logout</title>
 
@@ -21,9 +22,17 @@ session_start();
 
 <?php
 if (!isset($_SESSION["Admin_ID"])) {
-    die("<div class='fail'> Du bist nicht angemeldet! " . "<br><br>" . "<a href='Login_Admin.php'>Hier geht's zum Login</a> </div>");
+    
+    // Rufe die displayMessage-Funktion auf
+    include 'fehlermeldung.php';
+    displayMessage("Du bist nicht angemeldet. <br><a href='Login_Admin.php'>Hier geht's zum Login</a>", 'fail');
+
 }
 session_destroy();
-echo "<div class='fine'> Logout war erfolgreich " . "<br><br>" . "<a href='Startseite.php'>zurück zur Startseite</a> </div>";
+
+    // Rufe die displayMessage-Funktion auf
+    include 'fehlermeldung.php';
+    displayMessage("Logout war erfolgreich. <br><a href='Startseite.php'>Zurück zur Startseite</a>", 'fine');
+
 ?>
 </html>
