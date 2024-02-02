@@ -1,24 +1,27 @@
 .message-box {
     width: 300px;
     height: 100px;
-    margin: 20px;
+    margin: auto; /* Änderung für die horizontale Zentrierung */
+    margin-top: 20px; /* Hinzugefügter Abstand nach oben */
     padding: 10px;
     text-align: center;
     border: 1px solid #ddd;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 
 .fine-message {
     background-color: #d4edda;
     color: #155724;
     font-family: Arial, sans-serif;
-    text-align: center;
 }
 
 .fail-message {
     background-color: #f8d7da;
     color: #721c24;
     font-family: Arial, sans-serif;
-    text-align: center;
 }
