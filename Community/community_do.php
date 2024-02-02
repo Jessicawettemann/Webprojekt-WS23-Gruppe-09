@@ -3,9 +3,26 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-// Normaler Code
 include "Datenbank Verbindung.php";
 include "Header Sicherheit.php";
+
+function sendNotificationsAndEmails($pdo, $beitragErsteller, $neuerBeitragID) {
+    $nutzerStatement = $pdo->prepare("SELECT benutzername, email FROM Nutzer");
+    $nutzerStatement->execute();
+
+    while ($nutzer = $nutzerStatement->fetch(PDO::FETCH_ASSOC)) {
+        $benachrichtigungsStatement = $pdo->prepare("INSERT INTO Benachrichtigungen (empfaenger_username, absender_username, beitrags_id, nachricht, email_gesendet) VALUES (?, ?, ?, ?, 0)");
+        $benachrichtigungsStatement->execute([$nutzer['benutzername'], $beitragErsteller, $neuerBeitragID, "Neuer Beitrag veröffentlicht"]);
+
+        if ($nutzer['email']) {
+            $betreff = "Neuer Beitrag von $beitragErsteller";
+            $nachricht = "Ein neuer Beitrag wurde veröffentlicht.";
+            $header = "From: info@ihrewebseite.de";
+            mail($nutzer['email'], $betreff, $nachricht, $header);
+        }
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -18,49 +35,33 @@ include "Header Sicherheit.php";
 <body>
 
 <?php
-// Überprüfen, ob das Formular abgeschickt wurde
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Überprüfen, ob der Benutzer angemeldet ist
     if (isset($_SESSION["benutzername"])) {
-        // Beitrag speichern
         $statement = $pdo->prepare("INSERT INTO Beitrag (beitrag, benutzername, profilbild) VALUES (?, ?, ?)");
-
-        // $_SESSION["benutzername"] enthält den aktuellen Benutzernamen
         $benutzername = $_SESSION["benutzername"];
 
-        // Das Profilbild ist in der Tabelle "Nutzer" in der Spalte "profilbild" als BLOB gespeichert
         $statementProfilbild = $pdo->prepare("SELECT profilbild FROM Nutzer WHERE benutzername = ?");
         $statementProfilbild->execute([$benutzername]);
         $profilbildRow = $statementProfilbild->fetch(PDO::FETCH_ASSOC);
-
-        // Überprüfen, ob das Profilbild vorhanden ist, bevor Sie es verwenden
-        if ($profilbildRow && isset($profilbildRow['profilbild'])) {
-            $profilbild = $profilbildRow['profilbild'];
-        } else {
-            $profilbild = null; // Setzen Sie einen Standardwert oder NULL, falls kein Profilbild vorhanden ist
-        }
+        $profilbild = $profilbildRow && isset($profilbildRow['profilbild']) ? $profilbildRow['profilbild'] : null;
 
         if ($statement->execute(array(htmlspecialchars($_POST["beitrag"]), $benutzername, $profilbild))) {
-            //displayMessage-Funktion
             include 'fehlermeldung.php';
             displayMessage("Ereignis erfolgreich gespeichert! <br><a href='community.php'>Zu den Beiträgen</a>", 'fine');
 
-            // Deaktiviere das Formular nach dem Absenden, um doppelte Einreichungen zu verhindern
+            $neuerBeitragID = $pdo->lastInsertId();
+            sendNotificationsAndEmails($pdo, $benutzername, $neuerBeitragID);
+
             echo "<script>document.getElementById('communityForm').disabled = true;</script>";
         } else {
-            //displayMessage-Funktion
             include 'fehlermeldung.php';
             displayMessage("Fehler beim Speichern des Ereignisses. <br><a href='community.php'>Erneut versuchen</a>", 'fail');
         }
     } else {
-        // Benutzer ist nicht angemeldet
-        //displayMessage-Funktion
         include 'fehlermeldung.php';
         displayMessage("Bitte melde dich zunächst an! <br><a href='Login Formular.php'>Hier geht's zum Login</a>", 'fail');
-
     }
 }
-
 ?>
 </body>
 </html>
