@@ -20,7 +20,7 @@ session_start();
 # Sicherstellung, dass alle für das Editieren notwendigen Felder ausgefüllt sind -> funktioniert nicht
 if (empty($_POST["benutzername"])) {
     die("<div class='fail'>Bitte fülle für die Änderung alle Felder aus</div>"."<a href= 'benutzername.php'> Zurück zum Bearbeiten</a>");
-} else if(empty($_GET["Nutzer_id"])) {
+} else if(empty($_GET["Nutzer_Id"])) {
     die("<div class='fail'>Es ist ein Problem bei der Bearbeitung passiert. Bitte probieren es erneut.</div>"."<a href= 'benutzername_do.php'> Zurück zum Bearbeiten</a>");
 }
 
