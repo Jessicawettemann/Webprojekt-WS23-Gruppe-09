@@ -1,7 +1,7 @@
 .message-box {
     width: 300px;
     height: 100px;
-    margin: 20px;
+    margin: auto; /* Änderung für die horizontale Zentrierung */
     padding: 10px;
     text-align: center;
     border: 1px solid #ddd;
