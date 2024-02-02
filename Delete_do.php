@@ -21,11 +21,11 @@ if (!isset($_SESSION["admin"])) {
 
 // Stellen Sie sicher, dass eine Beitrags-ID vorhanden ist
 if (isset($_GET['id'])) {
-    $chosenSong = $_GET['id'];
+    $chosenAngebot = $_GET['id'];
 
     // Löschen Sie den Beitrag aus der Datenbank
-    $statement=$pdo->prepare("DELETE FROM Upload WHERE ID=:chosenSong");
-    $statement->execute(['chosenSong' => $chosenSong]);
+    $statement=$pdo->prepare("DELETE FROM Upload WHERE ID=:chosenAngebot");
+    $statement->execute(['chosenSong' => $chosenAngebot]);
 
     // Umleiten Sie den Benutzer zur Übersichtsseite
     header('Location: ich-biete_Übersicht.php');
