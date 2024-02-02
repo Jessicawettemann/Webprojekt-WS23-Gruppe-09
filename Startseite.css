@@ -192,7 +192,7 @@ button:focus {
         font-weight: 500;
         color: white;
         font-size: 9px;
-        bottom: 0;
+        bottom: 15px;
         left: 45%;
         transform: translateX(-20%);
         position: absolute;
