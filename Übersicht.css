@@ -85,7 +85,8 @@ button1:focus {
 .small{
    text-align: left;
     font-size: 12px;
-    color: #D3EBE8;
+    color: #45a049;
+    font-family: "Avenir Next Medium";
 }
 button{
     height: 40px;
