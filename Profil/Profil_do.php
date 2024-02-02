@@ -12,6 +12,7 @@ session_start();
 
     <title>Profil bearbeiten</title>
     <link rel="stylesheet" type="text/css" href="Profil.css">
+    <link rel="stylesheet" type="text/css" href="fehlermeldung.css">
 </head>
 <body>
 
