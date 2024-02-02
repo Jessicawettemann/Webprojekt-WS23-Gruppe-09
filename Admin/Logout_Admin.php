@@ -11,6 +11,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" type="text/css" href="Logout.css">
+    <link rel="stylesheet" type="text/css" href="fehlermeldung.css">
     <title>Logout Admin</title>
 
 
@@ -27,9 +28,10 @@ session_start();
 
 <?php
 if (!isset($_SESSION["Admin_ID"])){ //Überprüfen, ob Admin angemeldet ist und Zugriff hat
-    echo "<div class='fail'> Du bist nicht angemeldet.</div>";
-    echo "<br>";
-    echo "<a href='Login_Admin.php'>Klicke hier</a>, um dich als Admin anzumelden";
+    //displayMessage-Funktion
+    include 'fehlermeldung.php';
+    displayMessage("Du bist nicht angemeldet. <br><a href='Login_Admin.php'>Hier geht's zum Admin Login</a>", 'fail');
+    
     die();
 }
 ?>
