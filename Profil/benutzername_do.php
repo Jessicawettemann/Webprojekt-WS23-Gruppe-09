@@ -50,18 +50,7 @@ if ($benutzername2){
     $Nutzer_id= htmlspecialchars($_GET["Nutzer_id"], ENT_QUOTES); #htmi angriffe schützen durch html
     $statement2->execute([$benutzername, $Nutzer_id]);# gibt true zurück, wenn die Aktualisierung erfolgreich war, andernfalls false.
 }
-if($statement->execute()){
-     //displayMessage-Funktion
-    include 'fehlermeldung.php';
-    displayMessage("Deine Änderung war erfolgreich.<br><a href='Profil übersicht.php'>Zurück zum Profil</a>", 'fine');
-    
 
-}else{
-    //displayMessage-Funktion
-    include 'fehlermeldung.php';
-    displayMessage("Beim Bearbeiten ist etwas schiefgelaufen, bitte versuche es erneut.<br><a href='benutzername.php'>Benutzername bearbeiten</a>", 'fail');
-   
-}
 ?>
 </body>
 </html>
