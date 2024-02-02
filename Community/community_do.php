@@ -41,20 +41,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         if ($statement->execute(array(htmlspecialchars($_POST["beitrag"]), $benutzername, $profilbild))) {
-            // Rufe die displayMessage-Funktion auf
+            //displayMessage-Funktion
             include 'fehlermeldung.php';
             displayMessage("Ereignis erfolgreich gespeichert! <br><a href='community.php'>Zu den Beiträgen</a>", 'fine');
 
             // Deaktiviere das Formular nach dem Absenden, um doppelte Einreichungen zu verhindern
             echo "<script>document.getElementById('communityForm').disabled = true;</script>";
         } else {
-            // Rufe die displayMessage-Funktion auf
+            //displayMessage-Funktion
             include 'fehlermeldung.php';
             displayMessage("Fehler beim Speichern des Ereignisses. <br><a href='community.php'>Erneut versuchen</a>", 'fail');
         }
     } else {
         // Benutzer ist nicht angemeldet
-        // Rufe die displayMessage-Funktion auf
+        //displayMessage-Funktion
         include 'fehlermeldung.php';
         displayMessage("Bitte melde dich zunächst an! <br><a href='Login Formular.php'>Hier geht's zum Login</a>", 'fail');
 
