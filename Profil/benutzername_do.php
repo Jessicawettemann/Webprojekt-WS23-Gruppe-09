@@ -18,18 +18,7 @@ session_start();
 
 <?php
 
-# Sicherstellung, dass alle für das Editieren notwendigen Felder ausgefüllt sind -> funktioniert nicht
-if (empty($_POST["benutzername"])) {
-    //displayMessage-Funktion
-    include 'fehlermeldung.php';
-    displayMessage("Bitte fülle für die Änderung alle Felder aus. <br><a href='benutzername.php'>Zurück zum Bearbeiten</a>", 'fail');
 
-
-} else if(empty($_GET["Nutzer_id"])) {
-    //displayMessage-Funktion
-    include 'fehlermeldung.php';
-    displayMessage("Es ist ein Problem bei der Bearbeitung passiert. Bitte probieren es erneut.<br><a href='benutzername.php'>Zurück zum Bearbeiten</a>", 'fail');
-}
 
 # Prüfen ob Nutzername bereits vorhanden
 $benutzername = htmlspecialchars($_POST["benutzername"], ENT_QUOTES);
