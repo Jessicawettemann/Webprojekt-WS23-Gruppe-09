@@ -49,21 +49,21 @@ if($statement->execute(array(htmlspecialchars($_POST["admin"])))) {
                 echo "<a class='go' href='ich-biete_Übersicht.php'> Übersicht </a> <br>";
             } else {
 
-                // Rufe die displayMessage-Funktion auf
+                //displayMessage-Funktion
                  include 'fehlermeldung.php';
                  displayMessage("Passwort falsch. <br><a href='Login_Admin.php'>Erneut versuchen</a>", 'fail');
 
             }
         } else {
 
-            // Rufe die displayMessage-Funktion auf
+            //displayMessage-Funktion
             include 'fehlermeldung.php';
             displayMessage("Nutzer nicht vorhanden. <br><a href='Login_Admin.php'>Erneut versuchen</a>", 'fail');
 
         }
     } else {
 
-        // Rufe die displayMessage-Funktion auf
+        //displayMessage-Funktion
         include 'fehlermeldung.php';
         displayMessage("Passwort falsch. <br><a href='Login_Admin.php'>Erneut versuchen</a>", 'fail');
 
