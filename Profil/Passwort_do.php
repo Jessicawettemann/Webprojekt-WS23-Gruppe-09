@@ -23,7 +23,7 @@ $hash= password_hash($_POST["passwort"].$p, PASSWORD_BCRYPT);
 # Sicherstellung, dass alle für das Editieren notwendigen Felder ausgefüllt sind
 if (empty($_POST["passwort"])) {
     die("<div class='fail'>Bitte fülle für die Änderung alle Felder aus</div>");
-} else if(empty($_GET["Nutzer_Id"])) {
+} else if(empty($_GET["Nutzer_ID"])) {
     die("<div class='fail'>Es ist ein Problem bei der Bearbeitung aufgetreten. Bitte lade die Seite neu.</div>");
 }
 
