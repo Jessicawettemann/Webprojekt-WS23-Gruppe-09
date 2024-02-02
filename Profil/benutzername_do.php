@@ -9,6 +9,7 @@ session_start();
 <html lang="de">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="fehlermeldung.css">
 
     <title>Username bearbeiten</title>
 
@@ -19,9 +20,15 @@ session_start();
 
 # Sicherstellung, dass alle für das Editieren notwendigen Felder ausgefüllt sind -> funktioniert nicht
 if (empty($_POST["benutzername"])) {
-    die("<div class='fail'>Bitte fülle für die Änderung alle Felder aus</div>"."<a href= 'benutzername.php'> Zurück zum Bearbeiten</a>");
+    //displayMessage-Funktion
+    include 'fehlermeldung.php';
+    displayMessage("Bitte fülle für die Änderung alle Felder aus. <br><a href='benutzername.php'>Zurück zum Bearbeiten</a>", 'fail');
+
+
 } else if(empty($_GET["Nutzer_id"])) {
-    die("<div class='fail'>Es ist ein Problem bei der Bearbeitung passiert. Bitte probieren es erneut.</div>"."<a href= 'benutzername.php'> Zurück zum Bearbeiten</a>");
+    //displayMessage-Funktion
+    include 'fehlermeldung.php';
+    displayMessage("Es ist ein Problem bei der Bearbeitung passiert. Bitte probieren es erneut.<br><a href='benutzername.php'>Zurück zum Bearbeiten</a>", 'fail');
 }
 
 # Prüfen ob Nutzername bereits vorhanden
@@ -32,7 +39,11 @@ $benutzername2 = $statement-> fetch(); #Nutzer mit dem übergebenen Benutzername
 
 
 if ($benutzername2){
-    die ("<div class='fail'>Der Nutzername existiert bereits, bitte wähle einen anderen.</div>"."</p> <a href= 'benutzername.php'> Profil bearbeiten</a>"); # wenn nicht fehlermeldung
+    //displayMessage-Funktion
+    include 'fehlermeldung.php';
+    displayMessage("Der Nutzername existiert bereits, bitte wähle einen anderen. <br><a href='benutzername.php'>Profil bearbeiten</a>", 'fail');
+ # wenn nicht fehlermeldung
+
 }else{
     # Änderung der Nutzerdaten in der Datenbank
     $statement2=$pdo->prepare("UPDATE Nutzer SET benutzername=? WHERE ID=?");
@@ -40,9 +51,16 @@ if ($benutzername2){
     $statement2->execute([$benutzername, $Nutzer_id]);# gibt true zurück, wenn die Aktualisierung erfolgreich war, andernfalls false.
 }
 if($statement->execute()){
-    echo '<p>'. "<div class='fine'>Deine Änderung war erfolgreich!</div>";
+     //displayMessage-Funktion
+    include 'fehlermeldung.php';
+    displayMessage("Deine Änderung war erfolgreich.<br><a href='Profil übersicht.php'>Zurück zum Profil</a>", 'fine');
+    
+
 }else{
-    echo '<p>'. "<div class='fail'>Beim Bearbeiten ist etwas schiefgelaufen, bitte versuche es erneut</div>.". "</p> <a href= 'benutzername.php'> Benutzername bearbeiten</a>";
+    //displayMessage-Funktion
+    include 'fehlermeldung.php';
+    displayMessage("Beim Bearbeiten ist etwas schiefgelaufen, bitte versuche es erneut.<br><a href='benutzername.php'>Benutzername bearbeiten</a>", 'fail');
+   
 }
 ?>
 </body>
