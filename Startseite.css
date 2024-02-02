@@ -185,10 +185,18 @@ button:focus {
         width: 60%;
         height: 180px;
     }
+    .Layer {
 
+        height: 180px; /* Ändern Sie die Höhe auf 100% */
+        width: 60%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: 0.5s;
+    }
 
     .Layer h3 {
-        width: 60%;
+        width: 40%;
         font-weight: 500;
         color: white;
         font-size: 9px;
