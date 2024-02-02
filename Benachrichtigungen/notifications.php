@@ -19,30 +19,6 @@ function getEmailFromDatabase($pdo, $Nutzer) {    // Definierung der Funktion, u
     $result = $statement->fetch();    // Ergebnisse der Abfrage abrufen
     return $result;   //Rückgabe der Email -> Keine Fehlermeldung nötig, da Email verpflichtend für Anmeldung 
 }
-
-// E-Mail-Versand für ausstehende Benachrichtigungen
-$notificationStatement = $pdo->prepare("SELECT * FROM Benachrichtigungen WHERE email_gesendet = 0");  // Vorbereitung Abfrage von Benachrichtigungen wo Email = 0 (noch nicht gesendet)
-if (!$notificationStatement->execute()) {  //Ausführung Abfrage (Das ! kehrt das Ergebnis um / Wenn true rauskommt bedeutet das false und der if Block wird nicht ausgeführt)
-    echo ("<div class='fail'>Fehler bei der Datenbankabfrage</div>");   // Wenn nicht erfolgreich = Fehlermeldung 
-} else {
-    while ($notification = $notificationStatement->fetch()) {  // Durchlaufen von erhaltenen Benachrichtigungen
-        $absenderEmail = getEmailFromDatabase($pdo, $notification['absender_username']);  // Abruf Email Absender (Ergebnis wird gespeichert in $absenderEmail)
-        $empfaengerEmail = getEmailFromDatabase($pdo, $notification['empfaenger_username']); // Abruf Email Empfänger (Ergebnis wird gespeichert in $empfaengerEmail)
-        $betreff = 'Es wurde auf Landify ein neuer Beitrag veröffentlicht!';  // Definierung Betreff
-        $nachricht = $notification['nachricht']; // Definiert Nachricht (In Datenbank unter nachricht vorhanden)
-        $header = 'From:' . ($absenderEmail); // Definiert von wem die Email kommt (absenderemail)
-
-        if (!mail($empfaengerEmail, $betreff, $nachricht, $header)) { // Versucht die Email zu versenden (Das ! kehrt das Ergebnis um / Wenn true rauskommt bedeutet das false und der if Block wird nicht ausgeführt)
-            echo ("<div class='fail'>Fehler beim Senden der E-Mail</div>");
-        } else {   // Wenn sie versendet werden kann wird der Status der Benachrichtigung aktualisiert (In der Datenbank)
-            $updateNotificationStatement = $pdo->prepare("UPDATE Benachrichtigungen SET email_gesendet = 1 WHERE ID = ?"); // Vorbereitung
-            if (!$updateNotificationStatement->execute([$notification['ID']])) {  //Ausführung -> Aktualisierung der ID (Das ! kehrt das Ergebnis um / Wenn true rauskommt bedeutet das false und der if Block wird nicht ausgeführt)
-                echo ("<div class='fail'>Fehler beim Aktualisieren der Datenbank</div>");
-            }
-        }
-    }
-}
-
 // Anzeigen der Benachrichtigungen, unabhängig davon, ob die E-Mail gesendet wurde oder nicht
 $notificationStatement = $pdo->prepare("SELECT Benachrichtigungen.*, Beitrag.datum AS beitrag_datum FROM Benachrichtigungen JOIN Beitrag ON Benachrichtigungen.beitrags_id = Beitrag.ID WHERE Benachrichtigungen.empfaenger_username = ? ORDER BY datum DESC");  // Vorbereitung Abfrage (JOIN verbindet Tabelle aus Datenbank)
 $notificationStatement->execute([$_SESSION["benutzername"]]); // Ausführung Abfrage auf Basis des Benutzernamens
@@ -57,3 +33,5 @@ echo "</div>";
 ?>
 </body>
 </html>
+
+
