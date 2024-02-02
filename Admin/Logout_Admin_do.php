@@ -23,14 +23,14 @@ session_start();
 <?php
 if (!isset($_SESSION["Admin_ID"])) {
     
-    // Rufe die displayMessage-Funktion auf
+    //displayMessage-Funktion
     include 'fehlermeldung.php';
     displayMessage("Du bist nicht angemeldet. <br><a href='Login_Admin.php'>Hier geht's zum Login</a>", 'fail');
 
 }
 session_destroy();
 
-    // Rufe die displayMessage-Funktion auf
+    //displayMessage-Funktion
     include 'fehlermeldung.php';
     displayMessage("Logout war erfolgreich. <br><a href='Startseite.php'>Zurück zur Startseite</a>", 'fine');
 
