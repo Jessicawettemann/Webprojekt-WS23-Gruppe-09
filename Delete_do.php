@@ -12,12 +12,11 @@ session_start();
 ?>
 
 <?php
-// Admin kann diese Funktion nur nutzen
-if (!isset($_SESSION["admin"])) {
-    //displayMessage-Funktion
-    include 'fehlermeldung.php';
-    displayMessage("Diese Funktion steht nur den Admins zu. <br><a href='Login_Admin.php'>Hier geht's zum Admin-Login</a>", 'fail');
+
+if (!isset($_SESSION["admin"])) {#prüft, ob Admin eingeloggt ist
+    die("<div class='fail'>Du musst als Admin eingeloggt sein, um Angebote aus der Datenbank löschen zu können!" . "<br><br>" . "<a href=Login_Admin.php'>Hier geht's zum Admin-Login</a> </div>");
 }
+
 
 // Stellen Sie sicher, dass eine Beitrags-ID vorhanden ist
 if (isset($_GET['id'])) {

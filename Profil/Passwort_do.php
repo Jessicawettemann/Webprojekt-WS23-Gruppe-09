@@ -9,7 +9,7 @@ session_start();
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="fehlermeldung.css">
+
     <title>Passwort bearbeiten</title>
 
 </head>
@@ -22,15 +22,9 @@ $hash= password_hash($_POST["passwort"].$p, PASSWORD_BCRYPT);
 
 # Sicherstellung, dass alle für das Editieren notwendigen Felder ausgefüllt sind
 if (empty($_POST["passwort"])) {
-    //displayMessage-Funktion
-    include 'fehlermeldung.php';
-    displayMessage("Bitte fülle für die Änderung alle Felder aus.<br>", 'fail');
-    
-
+    die("<div class='fail'>Bitte fülle für die Änderung alle Felder aus</div>");
 } else if(empty($_GET["Nutzer_Id"])) {
-    //displayMessage-Funktion
-    include 'fehlermeldung.php';
-    displayMessage("Es ist ein Problem bei der Bearbeitung aufgetreten. Bitte lade die Seite neu.<br>", 'fail');
+    die("<div class='fail'>Es ist ein Problem bei der Bearbeitung aufgetreten. Bitte lade die Seite neu.</div>");
 }
 
 # Änderung der Nutzerdaten in der Datenbank
