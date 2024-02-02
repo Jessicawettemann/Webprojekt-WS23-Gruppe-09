@@ -9,6 +9,7 @@ session_start();
 <html lang="de">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="fehlermeldung.css">
 
 </head>
 <body>
@@ -48,15 +49,24 @@ if($statement->execute(array(htmlspecialchars($_POST["admin"])))) {
                 echo "<a class='go' href='ich-biete_Übersicht.php'> Übersicht </a> <br>";
             } else {
 
-                echo("<div class='fail'>Passwort falsch</div>");
-                echo $st->errorInfo()[2];
+                // Rufe die displayMessage-Funktion auf
+                 include 'fehlermeldung.php';
+                 displayMessage("Passwort falsch. <br><a href='Login_Admin.php'>Erneut versuchen</a>", 'fail');
+
             }
         } else {
 
-            echo "<div class='fail'>Nutzer nicht vorhanden</div>";
+            // Rufe die displayMessage-Funktion auf
+            include 'fehlermeldung.php';
+            displayMessage("Nutzer nicht vorhanden. <br><a href='Login_Admin.php'>Erneut versuchen</a>", 'fail');
+
         }
     } else {
-        echo "<div class='fail'>Passwort falsch!</div>";
+
+        // Rufe die displayMessage-Funktion auf
+        include 'fehlermeldung.php';
+        displayMessage("Passwort falsch. <br><a href='Login_Admin.php'>Erneut versuchen</a>", 'fail');
+
     }
 }
 
