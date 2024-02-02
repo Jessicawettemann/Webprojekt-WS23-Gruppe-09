@@ -1,6 +1,7 @@
 <?php
 include "Header Sicherheit.php";
 include "Datenbank Verbindung.php";
+
 session_start();
 ?>
 <!DOCTYPE html>
@@ -9,6 +10,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" type="text/css" href="Bearbeiten.css">
+    <link rel="stylesheet" type="text/css" href="fehlermeldung.css">
     <title>Bearbeiten</title>
 </head>
 <body>
@@ -32,11 +34,15 @@ if ($statement->execute(array($_GET["ID"]))){
         <?php
 
     }else{
-        die("<div class='fail'>Beitrag schon vorhanden</div>");
+    //displayMessage-Funktion
+    include 'fehlermeldung.php';
+    displayMessage("Beitrag schon vorhanden. <br>", 'fail');
     }
 
 } else{
-    die("<div class='fail'>Formular-Fehler</div>");
+    //displayMessage-Funktion
+    include 'fehlermeldung.php';
+    displayMessage("Formular-Fehler. <br>", 'fail');
 }
 
 
