@@ -14,6 +14,7 @@ if(!isset($_SESSION["Nutzer_ID"])){
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="Profil_1.css">
+    <link rel="stylesheet" type="text/css" href="fehlermeldung.css">
     <title>Profilbild bearbeiten</title>
 
 </head>

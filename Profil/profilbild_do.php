@@ -8,6 +8,7 @@ session_start();
 <html lang="de">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="fehlermeldung.css">
     <title>Profilbild bearbeiten</title>
 
 </head>
