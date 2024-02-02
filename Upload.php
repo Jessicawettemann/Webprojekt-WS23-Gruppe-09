@@ -8,6 +8,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" type="text/css" href="Upload.css">
+    <link rel="stylesheet" type="text/css" href="fehlermeldung.css">
 
     <title>Uploads</title>
 </head>
@@ -16,7 +17,10 @@ session_start();
 
 <?php
 if(!isset($_SESSION["Nutzer_ID"])){
-    echo("<div class='fail'> Bitte melde dich zunächst an! "."<br><br>". "<a href='Login Formular.php'>Hier geht's zum Login</a> </div>");
+    //displayMessage-Funktion
+    include 'fehlermeldung.php';
+    displayMessage("Bitte melde dich zunächst an. <br><a href='Login Formular.php'>Hier geht's zum Login</a>", 'fail');
+
 }else{
     ?>
 
