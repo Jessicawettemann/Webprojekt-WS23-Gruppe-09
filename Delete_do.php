@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="fehlermeldung.css">
+</head>
 <?php
 include "Header Sicherheit.php";
 include "Datenbank Verbindung.php";
@@ -7,7 +14,9 @@ session_start();
 <?php
 // Admin kann diese Funktion nur nutzen
 if (!isset($_SESSION["admin"])) {
-    die("<div class='fail'>Diese Funktion steht nur den Admins zu! "."<br><br>". "<a href='Login_Admin.php'>Hier geht's zum Admin-Login</a> </div>");
+    //displayMessage-Funktion
+    include 'fehlermeldung.php';
+    displayMessage("Diese Funktion steht nur den Admins zu. <br><a href='Login_Admin.php'>Hier geht's zum Admin-Login</a>", 'fail');
 }
 
 // Stellen Sie sicher, dass eine Beitrags-ID vorhanden ist
@@ -24,6 +33,8 @@ if (isset($_GET['id'])) {
 
 } else {
     // Wenn keine Beitrags-ID vorhanden ist, zeigen Sie eine Fehlermeldung an
-    echo "Keine Beitrags-ID vorhanden!";
+    //displayMessage-Funktion
+    include 'fehlermeldung.php';
+    displayMessage("Keine Beitrags-ID vorhanden. <br>", 'fail');
 }
 ?>
