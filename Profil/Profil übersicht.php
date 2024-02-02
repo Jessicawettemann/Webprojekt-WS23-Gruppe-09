@@ -8,12 +8,16 @@ include "Header Sicherheit.php";
     <html lang="de">
     <head>
         <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="fehlermeldung.css">
         <title>Mein Profil</title>
 
     </head>
 <?php
 if(!isset($_SESSION["Nutzer_ID"])){
-    echo("<div class='fail'> Bitte melde dich zunächst an! "."<br><br>". "<a href='Login Formular.php'>Hier geht's zum Login</a> </div>");
+    //displayMessage-Funktion
+    include 'fehlermeldung.php';
+    displayMessage("Bitte melde dich zunächst an. <br><a href='Login Formular.php'>Hier geht's zum Login</a>", 'fail');
+
 }else{
     ?>
     <body>
