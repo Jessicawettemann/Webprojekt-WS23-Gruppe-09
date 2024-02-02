@@ -16,42 +16,33 @@ session_start();
 <body>
 <h1>Bearbeiten</h1>
 <?php
-$statement=$pdo->prepare("SELECT * FROM Upload WHERE ID=?");
-if ($statement->execute(array($_GET["ID"]))){
-    if($row=$statement->fetch()){
-?>
+$statement=$pdo->prepare("SELECT * FROM Upload WHERE ID=?"); // Vorbereitung Abfrage für aus Upload für eine bestimmte ID
+if ($statement->execute(array($_GET["ID"]))){  //Ausführung Abfrage mit der ID aus der URL / Wenn erfolgreich gehts weiter
+    if($row=$statement->fetch()){ // Versuch Zeile aus Ergebniss der Abfrage in $row zu speichern wenn gefunden gehts weiter
 
-        <form action="Change_do.php?ID=<?php echo $row["ID"];?>" method="post" enctype="multipart/form-data">
+// Unten werden Eingabefelder erstellt, welche vorab den ursprünglichen Wert aus der Datenbank anzeigen
+?> 
+
+        <form action="Change_do.php?ID=<?php echo $row["ID"];?>" method="post" enctype="multipart/form-data">  
             <h1>Bearbeiten</h1>
-            <input type="text" placeholder="Neue Beschreibung" name="beschreibung" value="<?php echo $row["beschreibung"];?>">
-            <input type="text" placeholder="Neuer Zustand" name="zustand" value="<?php echo $row["zustand"];?>">
+            <input type="text" name="beschreibung" value="<?php echo $row["beschreibung"];?>">
+            <input type="text" name="zustand" value="<?php echo $row["zustand"];?>">
             <input type="file" name="foto">
-            <input type="text" placeholder="Neuer Preis" name="preis" value="<?php echo $row["preis"];?>" > <br>
+            <input type="text" name="preis" value="<?php echo $row["preis"];?>" > <br>
 
             <button type="submit">Absenden</button> <br><br>
             <a href="ich-biete_Übersicht.php">Zurück </a>
         </form>
+
 <?php
     }else{
     //displayMessage-Funktion
     include 'fehlermeldung.php';
     displayMessage("Beitrag schon vorhanden. <br>", 'fail');
     }
-<<<<<<< HEAD
     } else{
-        die("<div class='fail'>Formular-Fehler</div>");
+        die("<div class='fail'>Formulare-Fehler</div>");
     }
-=======
-
-} else{
-    //displayMessage-Funktion
-    include 'fehlermeldung.php';
-    displayMessage("Formular-Fehler. <br>", 'fail');
-}
-
-
-
->>>>>>> 6553c147e78f61c4606ea56452a185849f61178f
 ?>
 
 </body>

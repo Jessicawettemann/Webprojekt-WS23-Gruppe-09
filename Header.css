@@ -96,9 +96,7 @@ li a:hover{
 
     /* Stile für Geräte mit einer Ansichtsbreite von 480px oder weniger */
     @media (max-width: 480px) {
-        .container {
-            padding: 0 10px;
-        }
+
 
         .header {
             padding: 10px;
@@ -117,6 +115,13 @@ li a:hover{
             width: 30px;
             height: 29px;
         }
+        header{
+            font-size: 10px;
+        }
+        .ul{
+            font-size: 10px;
+        }
     }
+
 
 

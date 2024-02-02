@@ -36,7 +36,7 @@ $passwort = $row["passwort"];
 ?>
 
 <!-- Formular Profil Passwort bearbeiten-->
-<form class="rows" action = "Passwort_do.php"?Nutzer_Id=<?php echo $Nutzer_Id; ?>" method="post">
+<form class="rows" action = "Passwort_do.php?Nutzer_Id=<?php echo $Nutzer_Id; ?>" method="post">
 <h1>Passwort bearbeiten</h1>
     <label for="passwort_input"></label>
     <input type="password" name="passwort" id="passwortinput" placeholder="Passwort"> <br>

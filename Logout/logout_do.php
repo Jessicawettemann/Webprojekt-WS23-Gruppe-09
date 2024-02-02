@@ -18,7 +18,7 @@ include "Header Sicherheit.php";
 <body>
 <div>
 
-    <h2>Logout</h2>
+
 </div>
 </body>
 
