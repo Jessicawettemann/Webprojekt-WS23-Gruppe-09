@@ -182,13 +182,13 @@ button:focus {
         width: 150px;
     }
     .picture img {
-        width: auto;
-        height: auto;
+        width: 60%;
+        height: 290px;
     }
 
 
     .Layer h3 {
-        width: auto;
+        width: 60%;
         font-weight: 500;
         color: white;
         font-size: 9px;
