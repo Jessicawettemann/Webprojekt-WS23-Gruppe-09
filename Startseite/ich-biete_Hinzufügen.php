@@ -8,6 +8,7 @@ session_start();
 <html lang="de">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="fehlermeldung.css">
     <title>Startseite</title>
     <title>Angebotsübersicht</title>
 </head>
@@ -15,7 +16,10 @@ session_start();
     
 <?php
 if(!isset($_SESSION["Nutzer_ID"])){
-    echo("<div class='fail'> Diese Funktion steht nur den Nutzern zu Verfügung! "."<br><br>". "<a href='../Login Formular.php'>Hier geht's zum Login</a> </div>");
+    //displayMessage-Funktion
+    include 'fehlermeldung.php';
+    displayMessage("Diese Funktion steht nur den Nutzern zu Verfügung. <br><a href='Login Formular.php'>Hier geht's zum Login</a>", 'fail');
+
 }else{
     ?>
 
