@@ -13,7 +13,7 @@ if(!isset($_SESSION["Nutzer_ID"])){
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-
+    <link rel="stylesheet" type="text/css" href="Profil_1.css">
     <title>Username bearbeiten</title>
 
 </head>
