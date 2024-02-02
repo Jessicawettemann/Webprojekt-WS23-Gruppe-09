@@ -27,7 +27,7 @@ if (!isset($_FILES["foto"]["tmp_name"]) || !isset($_FILES["foto"]["name"])) {
 // Überprüfen Sie den Dateityp und die Dateigröße
 $fileName = $_FILES["foto"]["name"];
 $fileInfo = pathinfo($fileName);
-$fileType = $fileInfo['extension'];
+$fileType = $fileInfo['extension'];# datei wird auf foramt überprüft
 $fileSize = $_FILES["foto"]["size"];
 
 if ($fileType == "jpg" or $fileType == "png" or $fileType == "PNG" or $fileType == "pdf" or $fileType == "HEIC" or $fileType == "jpeg" or $fileType == "JPG") {

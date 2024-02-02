@@ -4,7 +4,10 @@ include "Header Sicherheit.php";
 session_start();
 
 if(!isset($_SESSION["Nutzer_ID"])){
-    echo("<div class='fail'> Bitte melde dich zunächst an! "."<br><br>". "<a href='Login Formular'>Hier geht's zum Login</a> </div>");
+    //displayMessage-Funktion
+    include 'fehlermeldung.php';
+    displayMessage("Bitte melde dich zunächst an. <br><a href='Login Formular.php'>Hier geht's zum Login</a>", 'fail');
+
 }else{
 
 ?>
@@ -14,6 +17,7 @@ if(!isset($_SESSION["Nutzer_ID"])){
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="Profil_1.css">
+    <link rel="stylesheet" type="text/css" href="fehlermeldung.css">
     <title>Profilbild bearbeiten</title>
 
 </head>
@@ -24,7 +28,10 @@ if(!isset($_SESSION["Nutzer_ID"])){
 $Nutzer = $_SESSION["Nutzer_ID"];
 $statement=$pdo->prepare("SELECT * FROM Nutzer WHERE ID = ?");
 if (!$statement->execute([$Nutzer])){
-    die("<div class='fail'>Datensatz nicht verfügbar</div>");
+    //displayMessage-Funktion
+    include 'fehlermeldung.php';
+    displayMessage("Datensatz nicht verfügbar. <br>", 'fail');
+
 
 }
 $row = $statement->fetch();

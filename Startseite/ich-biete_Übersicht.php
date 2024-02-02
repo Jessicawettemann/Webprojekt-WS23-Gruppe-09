@@ -14,7 +14,7 @@ session_start();
 
 <body>
 <br><br>
-<h1> Angebote</h1>
+<h4> Angebote</h4>
 <br><br>
 <div>
 <a href= Upload.php> <button class=button1>Hinzufügen</button>
@@ -43,7 +43,7 @@ if ($statement->execute()){
             echo "<img src='https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/" . $row["optionalImage"] . "'>";
             echo "</div>";
         } else{
-            echo "<div class='small'>optional</div>";
+            echo "<div class='small'>optional weitere Datei</div>";
         }
         echo "<h1>Zustand</h1>";
         echo "<h2>".$row["zustand"]."</h2>";
