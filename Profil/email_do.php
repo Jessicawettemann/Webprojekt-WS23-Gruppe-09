@@ -18,9 +18,14 @@ session_start();
 
 # Sicherstellung, dass alle für das Editieren notwendigen Felder ausgefüllt sind
 if (empty($_POST["email"])) {
-    die("<div class='fail'>Bitte fülle für die Registrierung alle Felder aus</div>");
+    //displayMessage-Funktion
+    include 'fehlermeldung.php';
+    displayMessage("Bitte fülle für die Registrierung alle Felder aus. <br>", 'fail');
+    
 } else if(empty($_GET["Nutzer_Id"])) {
-    die("<div class='fail'>Es ist ein Problem bei der Bearbeitung passiert. Bitte probieren sie es nochmal von vorne.</div>");
+    //displayMessage-Funktion
+    include 'fehlermeldung.php';
+    displayMessage("Es ist ein Problem bei der Bearbeitung passiert. Bitte probieren sie es nochmal von vorne. <br>", 'fail');
 }
 
 # Prüfen ob Mail bereits vorhanden
@@ -29,7 +34,10 @@ $statement=$pdo->prepare("SELECT * FROM Nutzer WHERE email = ?");
 $statement->execute([$email]);
 $email2 = $statement-> fetch();
 if ($email2){
-    die ("<div class='fail'>Die Mailadresse existiert bereits, bitte wähle eine andere.</div>". "</p> <a href= 'email.php'> Zurück zur Bearbeitung</a>");
+    //displayMessage-Funktion
+    include 'fehlermeldung.php';
+    displayMessage("Die Mailadresse existiert bereits, bitte wähle eine andere.<br><a href='email.php'>Zurück zur Bearbeitung</a>", 'fail');
+
 }else{
     # Änderung der Nutzerdaten in der Datenbank
     $statement2=$pdo->prepare("UPDATE Nutzer SET email=? WHERE ID=?");
@@ -37,9 +45,14 @@ if ($email2){
     $statement2->execute([$email, $Nutzer_Id]);
 }
 if($statement->execute()){
-    echo '<p>'. "<div class='fine''>Deine Änderung war erfolgreich!</div>";
+        //displayMessage-Funktion
+        include 'fehlermeldung.php';
+        displayMessage("Deine Änderung war erfolgreich.<br>", 'fine');
+
 }else{
-    echo '<p>'. "<div>Beim Bearbeiten ist etwas schiefgelaufen, bitte versuche es erneut.</div>". "</p> <a href= 'email_do.php'> Mail bearbeiten</a>";
+    //displayMessage-Funktion
+    include 'fehlermeldung.php';
+    displayMessage("Beim Bearbeiten ist etwas schiefgelaufen, bitte versuche es erneut.<br><a href='email.php'>Mail bearbeiten</a>", 'fail');
 }
 ?>
 </body>
