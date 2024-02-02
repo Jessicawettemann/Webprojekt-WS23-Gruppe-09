@@ -15,7 +15,7 @@ include "Header Sicherheit.php";
 
 if (!isset($_SESSION["Nutzer_ID"])){
 
-    // Rufe die displayMessage-Funktion auf
+    //displayMessage-Funktion
     include 'fehlermeldung.php';
     displayMessage("Bitte melde dich zunächst an. <br><a href='Login Formular.php'>Hier geht's zum Login</a>", 'fail');
     

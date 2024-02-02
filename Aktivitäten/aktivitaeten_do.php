@@ -31,16 +31,16 @@ if (!isset($_SESSION["Nutzer_ID"])){
             $statement = $pdo->prepare("INSERT INTO Aktivitäten (thema, beschreibung, datum, ort) VALUES (?,?,?,?)");
 
             if ($statement->execute([$thema, $beschreibung, $datum, $ort])) {
-                // Rufe die displayMessage-Funktion auf
+                //displayMessage-Funktion
                 include 'fehlermeldung.php';
                 displayMessage("Ereignis erfolgreich gespeichert! <br><a href='aktivitaeten.php'>Zu den Aktivitäten</a>", 'fine');
             } else {
-                // Rufe die displayMessage-Funktion auf
+                //displayMessage-Funktion
                 include 'fehlermeldung.php';
                 displayMessage("Fehler beim Speichern des Ereignisses. <br><a href='aktivitaeten.php'>Erneut versuchen</a>", 'fail');
             }
         } else {
-            // Rufe die displayMessage-Funktion auf
+            //displayMessage-Funktion
             include 'fehlermeldung.php';
             displayMessage("Das eingegebene Datum darf nicht in der Vergangenheit liegen. <br><a href='aktivitaeten.php'>Erneut versuchen</a>", 'fail');
         }
