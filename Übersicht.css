@@ -10,10 +10,17 @@ body{
 
 h1{
     font-family: "Avenir Next Medium";
-font-size: 38px;
+
 color: black;
 position: relative;
-text-align: center
+
+}
+h4{
+    font-family: "Avenir Next Medium";
+    font-size: 38px;
+    color: black;
+    position: relative;
+    text-align: center
 }
 
 button1{

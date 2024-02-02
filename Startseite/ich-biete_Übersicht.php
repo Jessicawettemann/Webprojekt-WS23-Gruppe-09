@@ -14,7 +14,7 @@ session_start();
 
 <body>
 <br><br>
-<h1> Angebote</h1>
+<h4> Angebote</h4>
 <br><br>
 <div>
 <a href= Upload.php> <button class=button1>Hinzufügen</button>
