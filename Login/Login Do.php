@@ -38,17 +38,20 @@ if($statement->execute(array(htmlspecialchars($_POST["benutzername"])))){ #htmls
 
 
         } else{
-             // Rufe die displayMessage-Funktion auf
+             //displayMessage-Funktion
              include 'fehlermeldung.php';
              displayMessage("Passwort falsch. <br><a href='Login Formular.php'>Erneut versuchen</a>", 'fail');
-            echo $statement->errorInfo()[2];
+
         }
     }else{
 
+       //displayMessage-Funktion
         include 'fehlermeldung.php';
         displayMessage("Nutzer nicht vorhanden. <br><a href='Registrierung_Formular.php'>Hier registrieren</a>", 'fail');
     }
 }else{
+
+    //displayMessage-Funktion
     include 'fehlermeldung.php';
     displayMessage("Datenbank-Fehler. <br><a href='Login Formular.php'>Erneut versuchen</a>", 'fail');
 
