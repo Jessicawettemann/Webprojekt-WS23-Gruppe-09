@@ -105,7 +105,7 @@ if ((!empty($_POST["beschreibung"])) and (!empty($_FILES["foto"])) and (!empty($
     if ($statement->execute(array(htmlspecialchars($_POST["beschreibung"]), htmlspecialchars($_FILES["foto"]["name"]), htmlspecialchars($_FILES["optionalImage"]["name"]), htmlspecialchars($_POST["zustand"]), htmlspecialchars($_POST["preis"]), htmlspecialchars($_POST["ort"])))) {
             //displayMessage-Funktion
             include 'fehlermeldung.php';
-            displayMessage("Eintrag wurde erstellt. <br><a href='ich-biete_Übersicht'>Zurück zur Übersicht</a>", 'fine');
+            displayMessage("Eintrag wurde erstellt. <br><a href='ich-biete_Übersicht.php'>Zurück zur Übersicht</a>", 'fine');
         
     } else {
         //displayMessage-Funktion
