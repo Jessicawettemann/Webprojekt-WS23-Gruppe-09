@@ -182,7 +182,13 @@ button:focus {
         width: 150px;
     }
     .picture img {
-        width: 60%;
+
+        display: flex; /* Flexbox-Container */
+        flex-wrap: wrap; /* Bilder in mehrere Zeilen umbrechen */
+        justify-content: center; /* Bilder zentriert ausrichten */
+        margin-bottom: 30px;
+
+        width: auto;
         height: 180px;
     }
 
