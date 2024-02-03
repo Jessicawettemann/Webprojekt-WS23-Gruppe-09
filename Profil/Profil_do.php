@@ -35,7 +35,9 @@ if(!isset($_SESSION["Nutzer_ID"])){
     $Nutzer = $_SESSION["Nutzer_ID"];
     $statement = $pdo->prepare("SELECT * FROM Nutzer WHERE ID = ?");
     if (!$statement->execute([$Nutzer])) {
-        die("<div class='fail'>Datensatz nicht verfügbar</div>");
+        //displayMessage-Funktion
+        include 'fehlermeldung.php';
+        displayMessage("Datensatz nicht verfügbar. <br>", 'fail');
     }
     $row = $statement->fetch();
     $profilbild = $row["profilbild"];
