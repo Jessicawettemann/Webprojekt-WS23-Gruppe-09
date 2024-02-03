@@ -10,7 +10,7 @@ function sendNotificationsAndEmails($pdo, $beitragErsteller, $neuerBeitragID) {
     $nutzerStatement = $pdo->prepare("SELECT benutzername, email FROM Nutzer");
     $nutzerStatement->execute();
 
-    while ($nutzer = $nutzerStatement->fetch(PDO::FETCH_ASSOC)) {
+    while ($nutzer = $nutzerStatement->fetch()) {
         $benachrichtigungsStatement = $pdo->prepare("INSERT INTO Benachrichtigungen (empfaenger_username, absender_username, beitrags_id, nachricht, email_gesendet) VALUES (?, ?, ?, ?, 0)");
         $benachrichtigungsStatement->execute([$nutzer['benutzername'], $beitragErsteller, $neuerBeitragID, "Neuer Beitrag veröffentlicht"]);
 
