@@ -14,7 +14,10 @@ session_start();
 <?php
 
 if (!isset($_SESSION["admin"])) {#prüft, ob Admin eingeloggt ist
-    die("<div class='fail'>Du musst als Admin eingeloggt sein, um Angebote aus der Datenbank löschen zu können!" . "<br><br>" . "<a href=Login_Admin.php'>Hier geht's zum Admin-Login</a> </div>");
+    //displayMessage-Funktion
+    include 'fehlermeldung.php';
+    displayMessage("Du musst als Admin eingeloggt sein, um Angebote aus der Datenbank löschen zu können. <br><a href='Login_Admin.php'>Hier geht's zum Admin-Login/a>", 'fail');
+    
 }
 
 
