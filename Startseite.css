@@ -187,7 +187,8 @@ button:focus {
         flex-wrap: wrap; /* Bilder in mehrere Zeilen umbrechen */
         justify-content: center; /* Bilder zentriert ausrichten */
         margin-bottom: 30px;
-
+    }
+.picture img {
         width: auto;
         height: 180px;
     }
