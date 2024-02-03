@@ -46,7 +46,7 @@ if($statement->execute(array(htmlspecialchars($_POST["admin"])))) {
                 $_SESSION["Admin_ID"] = $row["ID"];
                 echo "<a class='go' href= 'ich-biete_Hinzufügen.php'> ich biete </a> <br> ";
 
-                echo "<a class='go' href='ich-biete_Übersicht.php'> Übersicht </a> <br>";
+                echo "<a class='go' href='Startseite.php'> Startseite</a> <br>";
             } else {
 
                 //displayMessage-Funktion
