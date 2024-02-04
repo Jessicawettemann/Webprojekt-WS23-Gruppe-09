@@ -1,5 +1,5 @@
 <?php
-include"Datenbank Verbindung.php";
+include "Datenbank Verbindung.php";
 session_start();
 ?>
 
@@ -8,7 +8,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" type="text/css" href="fehlermeldung.css">
+    <link rel="stylesheet" type="text/css" href="../fehlermeldung.css">
 </head>
 <?php
 if (!isset($_POST["beschreibung"]) ) {
