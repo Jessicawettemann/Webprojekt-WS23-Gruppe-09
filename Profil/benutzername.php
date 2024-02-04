@@ -36,7 +36,7 @@ $benutzername = $row["benutzername"];
 <form class='rows' action = "benutzername_do.php?Nutzer_id=<?php echo $Nutzer_id; ?>" method="post">
     <label for="benutzernameinput"></label>
     <input type="text" name="username" id="benutzernameinput" value="<?php echo $row["benutzername"]; ?>"> <br>
-    <p><input type="submit" value="Änderung bestätigen"></p>
+    <p1><input type="submit" value="Änderung bestätigen"></p1>
 </form>
 <?php
 }

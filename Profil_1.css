@@ -87,13 +87,13 @@ button:focus {
     outline: none;
     width: 200px;
 }
-p{
+p1{
     font-family: "Avenir Next", sans-serif;
     color: white;
     font-size: 14px;
 }
 
-p:hover{
+p1:hover{
     color: #f8c954;
 }
 
