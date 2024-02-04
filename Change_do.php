@@ -14,9 +14,7 @@ session_start();
 </head>
 
 <body>
-<br><br>
-<h1> Bearbeiten</h1>
-<br><br>
+
 
 <?php
 
