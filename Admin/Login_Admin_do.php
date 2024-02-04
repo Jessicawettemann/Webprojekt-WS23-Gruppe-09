@@ -27,12 +27,22 @@ if($statement->execute(array(htmlspecialchars($_POST["admin"])))) {
         if ($st->execute(array(htmlspecialchars($_POST["Passwort"])))) {
             if ($r = $st->fetch()) {
 
-                echo "<div class='fine'>Herzlich Willkommen, " . $row["admin"]."</div>";
+                
+                //displayMessage-Funktion
+                include 'fehlermeldung.php';
+                displayMessage("Herzlich Willkommen <br><a href='Startseite.php'>Startseite</a>", 'fine');
+        
+
                 $_SESSION["admin"] = $row["admin"];
                 $_SESSION["Admin_ID"] = $row["ID"];
-                echo "<a class='go' href= 'ich-biete_Hinzufügen.php'> ich biete </a> <br> ";
-
-                echo "<a class='go' href='Startseite.php'> Startseite</a> <br>";
+                //displayMessage-Funktion
+                include 'fehlermeldung.php';
+                displayMessage("Passwort falsch. <br><a href='ich-biete_Hinzufügen.php'>Ich biete</a>", 'fine');
+               
+                
+                //displayMessage-Funktion
+                include 'fehlermeldung.php';
+                displayMessage("Passwort falsch. <br><a href='Startseite.php'>Startseite</a>", 'fine');
             } else {
 
                 //displayMessage-Funktion
