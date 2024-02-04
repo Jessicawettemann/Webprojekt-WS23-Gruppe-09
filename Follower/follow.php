@@ -3,23 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <!-- Einbinden des CSS-Stils für Fehlermeldungen -->
     <link rel="stylesheet" type="text/css" href="fehlermeldung.css">
 </head>
 <body>
 
 <?php
-// Einbinden der Datei für die Datenbankverbindung und Sicherheitsüberprüfung
 include "Datenbank Verbindung.php";
 include "Header Sicherheit.php";
 
-// Überprüfen, ob der Benutzer nicht angemeldet ist
+// Überprüfung, ob der Benutzer NICHT angemeldet ist
 if (!isset($_SESSION["Nutzer_ID"])){
-    // displayMessage-Funktion aufrufen und Fehlermeldung anzeigen
+    // displayMessage-Funktion
     include 'fehlermeldung.php';
     displayMessage("Bitte melde dich zunächst an. <br><a href='Login Formular.php'>Hier geht's zum Login</a>", 'fail');
 } else {
-    // Überprüfen, ob das Formular abgeschickt wurde
+    // Überprüfung, ob das Formular abgeschickt wurde
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Den Benutzernamen des gefolgten Benutzers aus dem Formular holen
         $followedUsername = htmlspecialchars($_POST["followed_username"]);
