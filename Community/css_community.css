@@ -65,8 +65,13 @@ h1 {
     text-align: center; /* Zentriert den Text innerhalb des Follow-Formulars */
 }
 
-/* Pagination  zentrieren */
-.pagination {
-    margin-top: 20px; /* oberer Margin-Abstand für die Pagination auf 20 Pixel */
-    text-align: center; /* Zentriert den Text innerhalb der Pagination */
+
+.comment-container {
+    background-color: #fff;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    align-items: center;
 }
