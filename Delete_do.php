@@ -1,3 +1,8 @@
+<?php
+include "Header Sicherheit.php";
+include "Datenbank Verbindung.php";
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -5,11 +10,6 @@
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" type="text/css" href="fehlermeldung.css">
 </head>
-<?php
-include "Header Sicherheit.php";
-include "Datenbank Verbindung.php";
-session_start();
-?>
 
 <?php
 

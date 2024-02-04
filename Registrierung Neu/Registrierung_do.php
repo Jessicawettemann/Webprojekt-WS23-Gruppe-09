@@ -1,4 +1,4 @@
-@ -1,58 +0,0 @@
+
 <?php
 
 include"Datenbank Verbindung.php";

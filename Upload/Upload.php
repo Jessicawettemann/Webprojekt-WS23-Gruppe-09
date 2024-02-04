@@ -8,7 +8,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" type="text/css" href="Upload.css">
-    <link rel="stylesheet" type="text/css" href="fehlermeldung.css">
+    <link rel="stylesheet" type="text/css" href="../fehlermeldung.css">
 
     <title>Uploads</title>
 </head>
