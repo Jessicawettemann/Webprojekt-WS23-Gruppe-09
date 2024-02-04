@@ -90,7 +90,7 @@ ini_set('display_errors', 1);
             // Iterieren durch jeden Beitrag und anzeigen
             foreach ($statementBeitrag as $key => $row) {
                 // Container für jeden Beitrag 
-                echo "<div class='comment-container";
+                echo "<div class='comment-container" . ($key === 0 ? " active" : "") . "'>";
                 echo "<div class='comment'>";
 
                 // Profilbild des Benutzers anzeigen, falls vorhanden
