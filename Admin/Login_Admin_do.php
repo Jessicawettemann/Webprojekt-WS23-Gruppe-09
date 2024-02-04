@@ -39,9 +39,7 @@ if($statement->execute(array(htmlspecialchars($_POST["admin"])))) {
 
                
                 
-                //displayMessage-Funktion
-                include 'fehlermeldung.php';
-                displayMessage("Passwort falsch. <br><a href='Startseite.php'>Startseite</a>", 'fine');
+
             } else {
 
                 //displayMessage-Funktion
