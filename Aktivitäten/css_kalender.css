@@ -137,7 +137,7 @@ button:hover {
 
 /* Stiländerungen beim Hovern über den Ereignis-Button */
 .ereignis-button:hover {
-    background-color: #45a049; /* Ändere die Hintergrundfarbe beim Hovern zu einem dunkleren Grünton */
+    background-color: #45a049;
 }
 @media (max-width: 480px) {
     .ereignis-button {
