@@ -1,102 +1,93 @@
 body {
-    font-family:  "Avenir Next Medium";
-    margin: 0;
-    padding: 0;
+    font-family:  "Avenir Next Medium"; 
+    margin: 0; /* Außenabstand */
+    padding: 0; 
     background-color: #f4f4f4;
 }
 
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+    max-width: 800px; /* maximale Breite */
+    margin: 0 auto; /* Container zentrieren */
+    padding: 20px; 
 }
 
 h1 {
-    color: #333;
+    color: #333; 
 }
 
 .forum-form {
-    background-color: #fff;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 8px;
+    background-color: #fff; /* Hintergrundfarbe des Formulars */
+    padding: 20px; 
+    margin-bottom: 20px; /* unterer Margin-Abstand  */
+    border-radius: 8px; /* Abgrundung der Ecken des Formulars */
 }
 
 .forum-form input[type="text"] {
-    width: calc(100% - 20px);
-    padding: 10px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+    width: calc(100% - 20px); /* Breite des Texteingabefelds*/
+    padding: 10px; /* Padding für das Texteingabefeld */
+    margin: 8px 0; /* Margin-Abstand oben und unten für das Texteingabefeld */
+    display: inline-block; /* Ermöglicht das Anzeigen als Inline-Block-Element */
+    border: 1px solid #ccc; /* Setzt Rahmen um das Texteingabefeld */
+    border-radius: 4px; /* Rundet die Ecken des Texteingabefelds ab */
+    box-sizing: border-box; /* Box-Sizing-Methode auf border-box */
 }
 
 .forum-form button {
-    background-color: #45a049;
-    color: white;
-    padding: 10px 15px;
+    background-color: #45a049; /* Hintergrundfarbe des Buttons  */
+    color: white; /* Textfarbe Button */
+    padding: 10px 15px; 
     border: none;
-    border-radius: 4px;
-    cursor: pointer;
+    border-radius: 4px; /* Rundet die Ecken des Buttons ab */
+    cursor: pointer; /* Setzt den Mauszeigerstil auf einen Zeiger */
 }
 
 .forum-form button:hover {
-    background-color: #45a049;
+    background-color: #45a049; /* Button Hover */
 }
 
 .forum-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    display: flex; /* Flexbox-Layout-Modus für das Container-Element */
+    flex-direction: column; /* Ausrichtung der flexiblen Container auf Spalten */
+    align-items: flex-start; /* Ausrichtung der Elemente auf den Start der Achse (links) */
 }
 
-.comment-container {
-    background-color: #fff;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    width: 100%;
-    padding: 15px;
-    display: flex;
-    align-items: center;
-}
 
 .comment-container img.profile-picture {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    margin-right: 0;
+    width: 60px; /* Setzt die Breite des Profilbildes auf 60 Pixel */
+    height: 60px; /* Setzt die Höhe des Profilbildes auf 60 Pixel */
+    border-radius: 50%; /* Rundet die Ecken des Profilbildes ab, um einen Kreis zu erstellen */
+    margin-right: 0; /* Setzt den rechten Margin-Abstand für das Profilbild auf 0 */
 }
 
 .comment {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
+    display: flex; /* Aktiviert den Flexbox-Layout-Modus für das Container-Element */
+    flex-direction: column; /* Legt die Ausrichtung der flexiblen Container auf Spalten fest */
+    flex-grow: 1; /* Weist dem Container das Wachsen-Flex-Attribut zu, damit er den verfügbaren Platz einnimmt */
 }
 
 .comment p {
-    margin: 0;
+    margin: 0; /* Setzt den Margin-Abstand für Absätze innerhalb des Kommentar-Containers auf 0 */
 }
 
 .comment span {
-    color: #888;
-    font-size: 12px;
+    color: #888; /* Setzt die Textfarbe für den span-Text auf Grau */
+    font-size: 12px; /* Setzt die Schriftgröße für den span-Text auf 12 Pixel */
 }
 
 /* Füge diese Regel hinzu, um die Kommentare zentriert darzustellen */
 .comment-container {
-    align-items: center;
-    text-align: center;
+    align-items: center; /* Setzt die Ausrichtung der Elemente auf das Zentrum der Achse */
+    text-align: center; /* Zentriert den Text innerhalb des Kommentar-Containers */
 }
 
 /* Füge diese Regel hinzu, um den Follow-Button unterhalb des Beitrags zu zentrieren */
 .follow-form {
-    margin-top: 10px;
-    text-align: center;
+    margin-top: 10px; /* Setzt den oberen Margin-Abstand für das Follow-Formular auf 10 Pixel */
+    text-align: center; /* Zentriert den Text innerhalb des Follow-Formulars */
 }
 
 /* Füge diese Regel hinzu, um die Pagination zu zentrieren */
 .pagination {
-    margin-top: 20px;
-    text-align: center;
+    margin-top: 20px; /* Setzt den oberen Margin-Abstand für die Pagination auf 20 Pixel */
+    text-align: center; /* Zentriert den Text innerhalb der Pagination */
 }
