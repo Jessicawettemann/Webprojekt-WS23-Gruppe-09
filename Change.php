@@ -23,7 +23,7 @@ if ($statement->execute(array($_GET["ID"]))){  //Ausführung Abfrage mit der ID 
 // Unten werden Eingabefelder erstellt, welche vorab den ursprünglichen Wert aus der Datenbank anzeigen
 ?> 
 
-        <form action="Change_do.php?ID=<?php echo $row["ID"];?>" method="post" enctype="multipart/form-data">  
+        <form action="Change_do.php?ID=<?php echo $row["ID"];?>"  method="post" enctype="multipart/form-data">  
             <h1>Bearbeiten</h1>
             <input type="text" name="beschreibung" value="<?php echo $row["beschreibung"];?>">
             <input type="text" name="zustand" value="<?php echo $row["zustand"];?>">
