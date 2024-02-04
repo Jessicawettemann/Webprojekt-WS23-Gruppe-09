@@ -31,15 +31,6 @@ table {
     background: linear-gradient(45deg, #f26b70, #f8c954); /* Farbverlauf für den Hintergrund */
 }
 
-/* Formatierung für Tabellenzellen mit fester Breite, Höhe, und Ausrichtung */
-th, td {
-    width: 14.28%; 
-    padding: 10px; 
-    text-align: left; /* Text links ausrichten */
-    height: 80px; 
-    vertical-align: top; /* Obere Ausrichtung des Inhalts */
-    font-size: 12px; 
-}
 
 /* Stil für Tabellenüberschriften mit Hintergrundfarbe und angepasster Höhe */
 th {
