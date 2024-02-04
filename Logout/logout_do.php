@@ -12,7 +12,7 @@ include "Header Sicherheit.php";
     <link rel="stylesheet" type="text/css" href="fehlermeldung.css">
 
 
-    <title>Logout</title>
+
 
 </head>
 <body>
