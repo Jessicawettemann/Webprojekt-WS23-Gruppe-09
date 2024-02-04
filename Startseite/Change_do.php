@@ -23,9 +23,13 @@ if (!move_uploaded_file($_FILES["foto"]["tmp_name"], "/home/jw170/public_html/Bi
     include 'fehlermeldung.php';
     displayMessage("Bild konnte nicht hochgeladen werden. <br>", 'fail');
 }
-if (isset($_POST["beschreibung"]) or isset ($_POST["zustand"]) or isset ($_FILES["foto"]) or isset ($_POST["preis"]) and isset ($_GET["ID"])) { // Überpfüfung ob mindestens ein Formularfeld gesetzt sind u. ID in der URL ist
-    $statement = $pdo->prepare("UPDATE Upload SET beschreibung=?, zustand=?, foto=?, preis=? WHERE ID=?"); // Vorbereitung (Aktualisierung Upload Tabelle für spezifische ID)
-    if ($statement->execute(array($_POST["beschreibung"]), ($_POST["zustand"]), ($_FILES["foto"]["name"]), ($_POST["preis"]), $_GET["ID"])) { // Ausführung und <übernahme in die Datenbank
+ // Überpfüfung ob mindestens ein Formularfeld gesetzt sind u. ID in der URL ist
+     // Vorbereitung (Aktualisierung Upload Tabelle für spezifische ID)
+     // Ausführung und <übernahme in die Datenbank
+if (isset($_POST["beschreibung"]) or isset ($_POST["zustand"]) or isset ($_FILES["foto"]) or isset ($_POST["preis"]) and isset ($_GET["ID"])) {
+    $statement = $pdo->prepare("UPDATE Upload SET beschreibung=?, zustand=?, foto=?, preis=? WHERE ID=?");
+    if ($statement->execute(array(htmlspecialchars($_POST["beschreibung"]), htmlspecialchars($_POST["zustand"]), htmlspecialchars($_FILES["foto"]["name"]), htmlspecialchars($_POST["preis"]), $_GET["ID"]))) {
+
         //displayMessage-Funktion
         include 'fehlermeldung.php';
         displayMessage("Bearbeiten erfolgreich. <br><a href='ich-biete_Übersicht.php'>Zurück zu den Angeboten</a>",  'fine');
