@@ -13,7 +13,7 @@ session_start();
 
 <?php
 
-if (!isset($_SESSION["admin"])) {#prüft, ob Admin eingeloggt ist
+if (!isset($_SESSION["admin"])) {  //prüft ob der Admin eingeloggt ist
     //displayMessage-Funktion
     include 'fehlermeldung.php';
     displayMessage("Du musst als Admin eingeloggt sein, um Angebote aus der Datenbank löschen zu können. <br><a href='Login_Admin.php'>Hier geht's zum Admin-Login/a>", 'fail');
@@ -21,20 +21,19 @@ if (!isset($_SESSION["admin"])) {#prüft, ob Admin eingeloggt ist
 }
 
 
-// Stellen Sie sicher, dass eine Beitrags-ID vorhanden ist
+// Stellt sicher ob eine Beitrags-ID vorhanden ist
 if (isset($_GET['id'])) {
     $chosenAngebot = $_GET['id'];
 
-    // Löschen Sie den Beitrag aus der Datenbank
+    // Löschen des Beitrags aus der Datenbank
     $statement=$pdo->prepare("DELETE FROM Upload WHERE ID=:chosenAngebot");
-    $statement->execute(['chosenSong' => $chosenAngebot]);
+    $statement->execute(['chosenAngebot' => $chosenAngebot]);
 
-    // Umleiten Sie den Benutzer zur Übersichtsseite
+    // Umleitung des Benutzers zur Übersichtsseite
     header('Location: ich-biete_Übersicht.php');
     exit();
 
 } else {
-    // Wenn keine Beitrags-ID vorhanden ist, zeigen Sie eine Fehlermeldung an
     //displayMessage-Funktion
     include 'fehlermeldung.php';
     displayMessage("Keine Beitrags-ID vorhanden. <br>", 'fail');
