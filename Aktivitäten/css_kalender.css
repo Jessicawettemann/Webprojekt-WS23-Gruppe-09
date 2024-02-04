@@ -111,21 +111,10 @@ th {
     font-size: 14px; /* Setzen Sie hier die gewünschte Schriftgröße */
 }
 
-/* Stil für den Hover-Effekt der Navigationsbutton */
-.nav-button:hover {
-    background-color: #45a049; /* Hintergrundfarbe ändert sich bei Hover */
-}
 
 /* Stil für den Hover-Effekt aller Buttons im Dokument */
 button:hover {
     background-color: #45a049; /* Hintergrundfarbe ändert sich bei Hover */
-}
-
-
-
-/* Stiländerungen beim Hovern über den Ereignis-Button */
-.ereignis-button:hover {
-    background-color: #45a049;
 }
 
 
