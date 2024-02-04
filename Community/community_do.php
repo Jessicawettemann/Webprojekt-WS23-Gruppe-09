@@ -35,33 +35,51 @@ function sendNotificationsAndEmails($pdo, $beitragErsteller, $neuerBeitragID) { 
 <body>
 
 <?php
+// Überprüfen, ob das Formular über die POST-Methode gesendet wurde
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    
     if (isset($_SESSION["benutzername"])) {
-        $statement = $pdo->prepare("INSERT INTO Beitrag (beitrag, benutzername, profilbild) VALUES (?, ?, ?)");
+        $statement = $pdo->prepare("INSERT INTO Beitrag (beitrag, benutzername, profilbild) VALUES (?, ?, ?)"); //Vorbereitung SQL-Abfrage
         $benutzername = $_SESSION["benutzername"];
 
+        // Vorbereitung der SQL-Abfrage zum Abrufen des Profilbilds des Benutzers
         $statementProfilbild = $pdo->prepare("SELECT profilbild FROM Nutzer WHERE benutzername = ?");
         $statementProfilbild->execute([$benutzername]);
-        $profilbildRow = $statementProfilbild->fetch(PDO::FETCH_ASSOC);
+        $profilbildRow = $statementProfilbild->fetch(); // Abrufen des Ergebnisses der Profilbild-Abfrage
+
+        // Prüfen, ob ein Profilbild vorhanden ist, andernfalls auf null setzen
         $profilbild = $profilbildRow && isset($profilbildRow['profilbild']) ? $profilbildRow['profilbild'] : null;
 
+        // Ausführen der SQL-Abfrage zum Einfügen des neuen Beitrags in die Datenbank
         if ($statement->execute(array(htmlspecialchars($_POST["beitrag"]), $benutzername, $profilbild))) {
+            
+            //displaymessage Funktion
             include 'fehlermeldung.php';
             displayMessage("Ereignis erfolgreich gespeichert! <br><a href='community.php'>Zu den Beiträgen</a>", 'fine');
 
-            $neuerBeitragID = $pdo->lastInsertId(); // Zieht die ID des letzten Beitrags (Methode die den letzten Beitrag zurückgibt)
-            sendNotificationsAndEmails($pdo, $benutzername, $neuerBeitragID); // Erstellen der Benachrichtigung     => Aufruf der obigen Funktion nach erstellung des Beitrags
+            
+            // Ziehen der ID des letzten Beitrags (Methode, die die letzte eingefügte ID zurückgibt)
+            $neuerBeitragID = $pdo->lastInsertId();
 
+            // Erstellen von Benachrichtigungen und E-Mails nach dem Hinzufügen des Beitrags
+            sendNotificationsAndEmails($pdo, $benutzername, $neuerBeitragID);
+
+            // Deaktivieren des Formulars mit JavaScript
             echo "<script>document.getElementById('communityForm').disabled = true;</script>";
+       
+       
         } else {
+            // displayMessage-Funktion
             include 'fehlermeldung.php';
             displayMessage("Fehler beim Speichern des Ereignisses. <br><a href='community.php'>Erneut versuchen</a>", 'fail');
         }
     } else {
+        // displayMessage-Funktion
         include 'fehlermeldung.php';
         displayMessage("Bitte melde dich zunächst an! <br><a href='Login Formular.php'>Hier geht's zum Login</a>", 'fail');
     }
 }
 ?>
+
 </body>
 </html>
