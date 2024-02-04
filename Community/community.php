@@ -38,20 +38,21 @@ ini_set('display_errors', 1);
     </form>
 
     <?php
+    // Überprüfen, ob der Benutzer NICHT angemeldet ist
     if (!isset($_SESSION["Nutzer_ID"])) {
         echo("<div class='fail'> Bitte melde dich zunächst an! " . "<br><br>" . "<a href='Login Formular.php'>Hier geht's zum Login</a> </div>");
     } else {
         // Überprüfen, ob das Formular zur Nutzersuche abgeschickt wurde
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $searchUser = htmlspecialchars($_POST["search_user"]);
+            $searchUser = htmlspecialchars($_POST["search_user"]); // Daten aus dem Formular extrahieren
 
             // Überprüfen, ob der Nutzer existiert
             $searchStatement = $pdo->prepare("SELECT * FROM Nutzer WHERE benutzername = ? OR CONCAT(vorname, ' ', nachname) = ?");
             $searchStatement->execute([$searchUser, $searchUser]);
 
             if ($searchStatement->rowCount() > 0) {
-                $userRow = $searchStatement->fetch(PDO::FETCH_ASSOC);
-
+                // Wenn der Nutzer gefunden wurde,  Informationen anzeigen
+                $userRow = $searchStatement->fetch();
                 echo "<h2>Gefundener Nutzer:</h2>";
                 echo "Benutzername: " . $userRow['benutzername'] . "<br>";
                 echo "Vorname: " . $userRow['vorname'] . "<br>";
@@ -61,10 +62,11 @@ ini_set('display_errors', 1);
                 $checkStatement = $pdo->prepare("SELECT * FROM Follower WHERE follower_username = ? AND followed_username = ?");
                 $checkStatement->execute([$_SESSION["benutzername"], $userRow['benutzername']]);
 
+                // Formular für das Folgen oder Entfolgen erstellen
                 echo "<form action='follow.php' method='post'>";
                 echo "<input type='hidden' name='followed_username' value='" . $userRow['benutzername'] . "'>";
 
-                if ($checkStatement->rowCount() == 0) {
+                if ($checkStatement->rowCount() == 0) { //Wenn Anzahl der Zeilen = 0 wird noch nicht gefolgt
                     echo "<button type='submit'>Follow</button>";
                 } else {
                     echo "<button type='submit' formaction='unfollow.php'>Unfollow</button>";
@@ -72,44 +74,53 @@ ini_set('display_errors', 1);
 
                 echo "</form>";
             } else {
+                // Wenn der Nutzer nicht gefunden wurde, entsprechende Meldung
                 echo "<p>Nutzer nicht gefunden.</p>";
             }
         }
 
+        // Beiträge aus der Datenbank abrufen und anzeigen
         $statementBeitrag = $pdo->prepare("SELECT * FROM Beitrag INNER JOIN Nutzer ON Beitrag.benutzername = Nutzer.benutzername ORDER BY datum DESC");
         $statementBeitrag->execute();
-        
 
         if ($statementBeitrag->rowCount() > 0) {
+            // Wenn Beiträge vorhanden sind,  Container erstellen
             echo "<div class='forum-container'>";
 
+            // Iterieren durch jeden Beitrag und anzeigen
             foreach ($statementBeitrag as $key => $row) {
-                echo "<div class='comment-container" . ($key === 0 ? " active" : "") . "'>";
+                // Container für jeden Beitrag 
+                echo "<div class='comment-container";
                 echo "<div class='comment'>";
 
-                // Profilbild anzeigen
+                // Profilbild des Benutzers anzeigen, falls vorhanden
                 $statementProfilbild = $pdo->prepare("SELECT profilbild FROM Nutzer WHERE benutzername = ?");
                 $statementProfilbild->execute([$row['benutzername']]);
                 $profilbildRow = $statementProfilbild->fetch();
 
                 if (!empty($profilbildRow['profilbild'])) {
+                    // Wenn ein Profilbild vorhanden ist, anzeigen
                     echo "<div><img class='profilpicture' src='https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/" . $profilbildRow['profilbild'] . "'></div>";
                 } else {
+                    // Wenn kein Profilbild vorhanden ist, Hinweis anzeigen
                     echo "<div>Kein Profilbild</div>";
                 }
 
+                // Benutzername, Beitrag und Datum anzeigen
                 echo "<p><strong>" . $row['vorname'] . " " . $row['nachname'] . "</strong></p>";
                 echo "<p>" . $row['beitrag'] . "</p>";
                 echo "<span>" . $row['datum'] . "</span>";
 
-                echo "<form action='follow.php' method='post' class='follow-form'>";
+                // Formular für das Folgen oder Entfolgen erstellen
+                echo "<form action='follow.php' method='post' class='follow-form'>"; //geht an follow.php
                 echo "<input type='hidden' name='followed_username' value='" . $row['benutzername'] . "'>";
 
+                //Überprüfung, ob schon gefolgt wird
                 $checkStatement = $pdo->prepare("SELECT * FROM Follower WHERE follower_username = ? AND followed_username = ?");
                 $checkStatement->execute([$_SESSION["benutzername"], $row['benutzername']]);
 
                 if ($checkStatement->rowCount() == 0) {
-                    echo "<button type='submit'>Follow</button>";
+                    echo "<button type='submit'>Follow</button>"; //keine Zeilenim Ergebnis des SQL-Statements: follow-Button
                 } else {
                     echo "<button type='submit' formaction='unfollow.php'>Unfollow</button>";
                 }
@@ -120,11 +131,15 @@ ini_set('display_errors', 1);
                 echo "</div>";
             }
 
-            echo "</div>";
+           
+            echo "</div>"; //Container für Beiträge
         } else {
-            echo "<p>Es gibt keine Beiträge.</p>";
+            
+            echo "<p>Es gibt keine Beiträge.</p>"; // Wenn keine Beiträge vorhanden sind, zeige eine Meldung
         }
     }
+    ?>
+
     ?>
 
 </div>
