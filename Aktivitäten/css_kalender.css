@@ -6,7 +6,6 @@ body {
     background-color: #f4f4f4; /* Hintergrundfarbe des Body */
 }
 
-
 /* Oberer Abstand für den Kalenderbereich */
 #calendar {
     margin-top: 20px; /* 20px Abstand vom oberen Rand für den Kalenderbereich */
@@ -29,6 +28,11 @@ table {
     border-collapse: collapse; /* Rand zwischen den Tabellenzellen entfernen */
     margin: 20px auto; /* Zentriere die Tabelle mit 20px Abstand oben und unten */
     background: linear-gradient(45deg, #f26b70, #f8c954); /* Farbverlauf für den Hintergrund */
+}
+
+/* Allgemeine Formatierung für Tabellen, Tabellenzellen und Tabellenüberschriften */
+table, th, td {
+    border: 1px solid #ddd; /* Leichter Rahmen für Tabellenzellen und -überschriften */
 }
 
 /* Formatierung für Tabellenzellen mit fester Breite, Höhe, und Ausrichtung */
