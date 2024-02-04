@@ -24,11 +24,6 @@ form {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Leichter Schatten für das Formular */
 }
 
-/* Kommentar-Stil für bestimmte Bereiche mit kleinerer Schrift und grauer Farbe */
-.comment span {
-    font-size: 12px; /* Schriftgröße 12px */
-    color: #888; /* Graue Textfarbe */
-}
 
 /* Stil für die Tabelle (Kalender) mit einem Farbverlauf als Hintergrund */
 table {
