@@ -144,31 +144,6 @@ ini_set('display_errors', 1);
 
 </div>
 
-<!-- Füge JavaScript am Ende der Datei hinzu, um die aktive Klasse zu steuern -->
-<script>
-    let currentIndex = 0;
-    const commentContainers = document.querySelectorAll('.comment-container');
-
-    function showPost(index) {
-        commentContainers.forEach((container, i) => {
-            container.classList.toggle('active', i === index);
-        });
-    }
-
-    function showPreviousPost() {
-        currentIndex = (currentIndex - 1 + commentContainers.length) % commentContainers.length;
-        showPost(currentIndex);
-    }
-
-    function showNextPost() {
-        currentIndex = (currentIndex + 1) % commentContainers.length;
-        showPost(currentIndex);
-    }
-
-    // Zeige den ersten Beitrag an
-    showPost(currentIndex);
-</script>
-
 
 </body>
 </html>
