@@ -86,16 +86,6 @@ th {
     flex-grow: 1; /* Der Monat nimmt so viel Platz wie möglich ein */
 }
 
-.day {
-    width: 100px; /* Setze eine feste Breite für die Kalenderfelder */
-    height: 100px; /* Setze eine feste Höhe für die Kalenderfelder */
-    overflow: hidden; /* Verhindere, dass langer Text das Feld übersteigt */
-}
-
-.event {
-    max-height: 80px; /* Setze eine maximale Höhe für Ereignisse innerhalb des Feldes */
-    overflow: hidden; /* Verhindere, dass lange Ereignistexte das Feld übersteigen */
-}
 
 /* Stil für Navigationsbutton mit festen Abständen, Breite und Farben */
 .nav-button {
