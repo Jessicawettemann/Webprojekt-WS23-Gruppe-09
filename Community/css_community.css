@@ -66,7 +66,7 @@ h1 {
 }
 
 
-.comment-container {
+.comment-container { /* weisser Container um dem Beitrag */
     background-color: #fff;
     border-radius: 8px;
     margin-bottom: 15px;
@@ -77,28 +77,28 @@ h1 {
 }
 
 .comment-container img.profile-picture {
-    width: 60px; /* Setzt die Breite des Profilbildes auf 60 Pixel */
-    height: 60px; /* Setzt die Höhe des Profilbildes auf 60 Pixel */
-    border-radius: 50%; /* Rundet die Ecken des Profilbildes ab, um einen Kreis zu erstellen */
-    margin-right: 0; /* Setzt den rechten Margin-Abstand für das Profilbild auf 0 */
+    width: 60px; /* Breite des Profilbildes auf 60 Pixel */
+    height: 60px; 
+    border-radius: 50%; /* Kreis */
+    margin-right: 0; 
 }
 
 .comment {
-    display: flex; /* Aktiviert den Flexbox-Layout-Modus für das Container-Element */
+    display: flex; /* lexbox-Layout-Modus für das Container-Element */
     flex-direction: column; /* Legt die Ausrichtung der flexiblen Container auf Spalten fest */
     flex-grow: 1; /* Weist dem Container das Wachsen-Flex-Attribut zu, damit er den verfügbaren Platz einnimmt */
 }
 
 .comment p {
-    margin: 0; /* Setzt den Margin-Abstand für Absätze innerhalb des Kommentar-Containers auf 0 */
+    margin: 0; /* Margin-Abstand für Absätze innerhalb des Kommentar-Containers auf 0 */
 }
 
-.comment span {
-    color: #888; /* Setzt die Textfarbe für den span-Text auf Grau */
-    font-size: 12px; /* Setzt die Schriftgröße für den span-Text auf 12 Pixel */
+.comment span { /* Datum*/
+    color: #888; 
+    font-size: 12px; 
 }
 
-/* Füge diese Regel hinzu, um die Kommentare zentriert darzustellen */
+/* Zentriert */
 .comment-container {
     align-items: center; /* Setzt die Ausrichtung der Elemente auf das Zentrum der Achse */
     text-align: center; /* Zentriert den Text innerhalb des Kommentar-Containers */
