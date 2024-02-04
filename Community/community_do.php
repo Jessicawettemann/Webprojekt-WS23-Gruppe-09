@@ -6,19 +6,19 @@ error_reporting(E_ALL);
 include "Datenbank Verbindung.php";
 include "Header Sicherheit.php";
 
-function sendNotificationsAndEmails($pdo, $beitragErsteller, $neuerBeitragID) {
-    $nutzerStatement = $pdo->prepare("SELECT benutzername, email FROM Nutzer");
-    $nutzerStatement->execute();
+function sendNotificationsAndEmails($pdo, $beitragErsteller, $neuerBeitragID) { // Definierung der Funktion (Benutzername des Erstellers u. ID des Beitrags)
+    $nutzerStatement = $pdo->prepare("SELECT benutzername, email FROM Nutzer"); // Vorbereitung Abfrage ( Alle Benutzernamen u. Emails der Tabelle Nutzer)
+    $nutzerStatement->execute(); // Abfrage ausführen 
 
-    while ($nutzer = $nutzerStatement->fetch()) {
-        $benachrichtigungsStatement = $pdo->prepare("INSERT INTO Benachrichtigungen (empfaenger_username, absender_username, beitrags_id, nachricht, email_gesendet) VALUES (?, ?, ?, ?, 0)");
-        $benachrichtigungsStatement->execute([$nutzer['benutzername'], $beitragErsteller, $neuerBeitragID, "Neuer Beitrag veröffentlicht"]);
+    while ($nutzer = $nutzerStatement->fetch()) { // Durchlaufen der while Schleife (für jeden Nutzer der Tabelle Nutzer)
+        $benachrichtigungsStatement = $pdo->prepare("INSERT INTO Benachrichtigungen (empfaenger_username, absender_username, beitrags_id, nachricht, email_gesendet) VALUES (?, ?, ?, ?, 0)");  // Vorbereitung Abfrage (Einfügen der Benachrichtigung in Tabelle / email_gesendet auf 0 d.h. noch nicht gesendet)
+        $benachrichtigungsStatement->execute([$nutzer['benutzername'], $beitragErsteller, $neuerBeitragID, "Neuer Beitrag veröffentlicht"]); // Abfrage wird ausgeführt ( Werte werden eingesetzt) -> Nachricht an alle Nutzer
 
-        if ($nutzer['email']) {
-            $betreff = "Neuer Beitrag von $beitragErsteller";
-            $nachricht = "Ein neuer Beitrag wurde veröffentlicht. Beitrag-ID: $neuerBeitragID";
-            $header = "From: info@ihrewebseite.de";
-            mail($nutzer['email'], $betreff, $nachricht, $header);
+        if ($nutzer['email']) {  // prüft ob Email vorhanden 
+            $betreff = "Neuer Beitrag von $beitragErsteller"; // Betreff wird festgelegt (Namen Beitragsersteller)
+            $nachricht = "Ein neuer Beitrag wurde veröffentlicht. Beitrag-ID: $neuerBeitragID"; // Inhalt wird festgelegt (Mit ID des neuen Beitrags)
+            $header = "From: info@landify.de"; // Absender wird festgelegt (Absenderemail)
+            mail($nutzer['email'], $betreff, $nachricht, $header); // Versand der Email an Nutzer
         }
     }
 }
@@ -49,8 +49,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             include 'fehlermeldung.php';
             displayMessage("Ereignis erfolgreich gespeichert! <br><a href='community.php'>Zu den Beiträgen</a>", 'fine');
 
-            $neuerBeitragID = $pdo->lastInsertId();
-            sendNotificationsAndEmails($pdo, $benutzername, $neuerBeitragID);
+            $neuerBeitragID = $pdo->lastInsertId(); // Zieht die ID des letzten Beitrags (Methode die den letzten Beitrag zurückgibt)
+            sendNotificationsAndEmails($pdo, $benutzername, $neuerBeitragID); // Erstellen der Benachrichtigung     => Aufruf der obigen Funktion nach erstellung des Beitrags
 
             echo "<script>document.getElementById('communityForm').disabled = true;</script>";
         } else {
