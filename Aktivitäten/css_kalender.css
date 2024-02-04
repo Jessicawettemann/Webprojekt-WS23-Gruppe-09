@@ -87,10 +87,22 @@ th {
     font-size: 14px; /* Setzen Sie hier die gewünschte Schriftgröße */
 }
 
+.ereignis-button{
+    display: inline-block; /* Navigationsbutton als Inline-Block-Elemente */
+    padding: 10px; /* Innenabstand für die Navigationsbutton */
+    text-decoration: none; /* Keine Unterstreichung für den Text */
+    color: #fff; /* Textfarbe weiß */
+    background-color: #4caf50; /* Hintergrundfarbe für die Navigationsbutton */
+    border: 1px solid #45a049; /* Rahmen für die Navigationsbutton */
+    border-radius: 100px; /* Runde Ecken für die Navigationsbutton */
+    width: 200px; /* Feste Breite für beide Navigationsbutton */
+    transition: background-color 0.3s; /* Sanfter Farbübergang beim Hovern */
+    font-size: 14px; /* Setzen Sie hier die gewünschte Schriftgröße */
 
+}
 /* Stil für den Hover-Effekt aller Buttons im Dokument */
-button:hover {
-    background-color: #45a049; /* Hintergrundfarbe ändert sich bei Hover */
+.ereignis-button:hover {
+    width: 220px; /* Hintergrundfarbe ändert sich bei Hover */
 }
 
 
