@@ -36,8 +36,7 @@ if($statement->execute(array(htmlspecialchars($_POST["admin"])))) {
                 $_SESSION["admin"] = $row["admin"];
                 $_SESSION["Admin_ID"] = $row["ID"];
                 //displayMessage-Funktion
-                include 'fehlermeldung.php';
-                displayMessage("Passwort falsch. <br><a href='ich-biete_Hinzufügen.php'>Ich biete</a>", 'fine');
+
                
                 
                 //displayMessage-Funktion
