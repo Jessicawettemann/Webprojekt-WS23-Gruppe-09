@@ -28,7 +28,7 @@ if (isset($_POST["beschreibung"]) or isset ($_POST["zustand"]) or isset ($_FILES
     if ($statement->execute(array($_POST["beschreibung"]), ($_POST["zustand"]), ($_FILES["foto"]["name"]), ($_POST["preis"]), $_GET["ID"])) { // Ausführung und <übernahme in die Datenbank
         //displayMessage-Funktion
         include 'fehlermeldung.php';
-        displayMessage("Bearbeiten erfolgreich. <br><a href='ich-biete_Übersicht.php'>Zurück zu den Angeboten</a>", 'fine');
+        displayMessage("Bearbeiten erfolgreich. <br><a href='ich-biete_Übersicht.php'>Zurück zu den Angeboten</a>",  'fine');
 
 
     } else {
