@@ -10,7 +10,7 @@ session_start();
     <meta charset="UTF-8">
     <title>Bearbeiten</title>
     <link rel="stylesheet" href="Übersicht.css">
-    <link rel="stylesheet" type="text/css" href="../fehlermeldung.css">
+    <link rel="stylesheet" type="text/css" href="fehlermeldung.css">
 </head>
 
 <body>
