@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Vorbereitung der SQL-Abfrage zum Abrufen des Profilbilds des Benutzers
         $statementProfilbild = $pdo->prepare("SELECT profilbild FROM Nutzer WHERE benutzername = ?");
         $statementProfilbild->execute([$benutzername]);
-        $profilbildRow = $statementProfilbild->fetch(); // Abrufen des Ergebnisses der Profilbild-Abfrage
+        $profilbildRow = $statementProfilbild->fetch(PDO::FETCH_ASSOC); // Abrufen des Ergebnisses der Profilbild-Abfrage
 
         // Prüfen, ob ein Profilbild vorhanden ist, andernfalls auf null setzen
         $profilbild = $profilbildRow && isset($profilbildRow['profilbild']) ? $profilbildRow['profilbild'] : null;
