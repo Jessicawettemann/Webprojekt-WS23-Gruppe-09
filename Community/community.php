@@ -52,7 +52,7 @@ ini_set('display_errors', 1);
 
             if ($searchStatement->rowCount() > 0) {
                 // Wenn der Nutzer gefunden wurde,  Informationen anzeigen
-                $userRow = $searchStatement->fetch();
+                $userRow = $searchStatement->fetch(PDO::FETCH_ASSOC);
                 echo "<h2>Gefundener Nutzer:</h2>";
                 echo "Benutzername: " . $userRow['benutzername'] . "<br>";
                 echo "Vorname: " . $userRow['vorname'] . "<br>";
