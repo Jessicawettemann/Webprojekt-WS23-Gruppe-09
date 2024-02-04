@@ -53,31 +53,10 @@ h1 {
 
 
 .comment-container img.profile-picture {
-    width: 60px; /* Setzt die Breite des Profilbildes auf 60 Pixel */
-    height: 60px; /* Setzt die Höhe des Profilbildes auf 60 Pixel */
-    border-radius: 50%; /* Rundet die Ecken des Profilbildes ab, um einen Kreis zu erstellen */
-    margin-right: 0; /* Setzt den rechten Margin-Abstand für das Profilbild auf 0 */
-}
-
-.comment {
-    display: flex; /* Aktiviert den Flexbox-Layout-Modus für das Container-Element */
-    flex-direction: column; /* Legt die Ausrichtung der flexiblen Container auf Spalten fest */
-    flex-grow: 1; /* Weist dem Container das Wachsen-Flex-Attribut zu, damit er den verfügbaren Platz einnimmt */
-}
-
-.comment p {
-    margin: 0; /* Setzt den Margin-Abstand für Absätze innerhalb des Kommentar-Containers auf 0 */
-}
-
-.comment span {
-    color: #888; /* Setzt die Textfarbe für den span-Text auf Grau */
-    font-size: 12px; /* Setzt die Schriftgröße für den span-Text auf 12 Pixel */
-}
-
-/* Füge diese Regel hinzu, um die Kommentare zentriert darzustellen */
-.comment-container {
-    align-items: center; /* Setzt die Ausrichtung der Elemente auf das Zentrum der Achse */
-    text-align: center; /* Zentriert den Text innerhalb des Kommentar-Containers */
+    width: 60px; /* Breite Profilbild */
+    height: 60px; 
+    border-radius: 50%; /* Kreis */
+    margin-right: 0; 
 }
 
 /* Füge diese Regel hinzu, um den Follow-Button unterhalb des Beitrags zu zentrieren */
