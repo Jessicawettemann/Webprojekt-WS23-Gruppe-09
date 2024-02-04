@@ -139,13 +139,6 @@ button:hover {
 .ereignis-button:hover {
     background-color: #45a049;
 }
-@media (max-width: 480px) {
-    .ereignis-button {
 
-        width: 150px; /* Feste Breite für den Button */
-
-        font-size: 10px; /* Setzen Sie hier die gewünschte Schriftgröße */
-    }
-}
 
 
