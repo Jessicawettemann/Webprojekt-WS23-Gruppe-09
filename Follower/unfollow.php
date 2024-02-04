@@ -1,16 +1,13 @@
 <?php
-// Einbinden der Datei für die Datenbankverbindung
 include "Datenbank Verbindung.php";
-
-// Einbinden der Datei für Sicherheitsüberprüfungen
 include "Header Sicherheit.php";
 
 // Überprüfen, ob das Formular abgeschickt wurde
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Den Benutzernamen des gefolgten Benutzers aus dem Formular holen und sicher verarbeiten
+    // Den Benutzernamen des gefolgten Benutzers aus dem Formular holen und verarbeiten
     $followedUsername = htmlspecialchars($_POST["followed_username"]);
 
-    // Überprüfen, ob der Benutzer bereits folgt
+    // Überprüfung, ob der Benutzer bereits folgt
     $checkStatement = $pdo->prepare("SELECT * FROM Follower WHERE follower_username = ? AND followed_username = ?");
     $checkStatement->execute([$_SESSION["benutzername"], $followedUsername]);
 
