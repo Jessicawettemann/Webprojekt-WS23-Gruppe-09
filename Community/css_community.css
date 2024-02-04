@@ -59,14 +59,10 @@ h1 {
     margin-right: 0; 
 }
 
-/* Füge diese Regel hinzu, um den Follow-Button unterhalb des Beitrags zu zentrieren */
+/* Follow-Button unterhalb des Beitrags zentrieren */
 .follow-form {
-    margin-top: 10px; /* Setzt den oberen Margin-Abstand für das Follow-Formular auf 10 Pixel */
+    margin-top: 10px; /* oberer Margin-Abstand für das Follow-Formular auf 10 Pixel */
     text-align: center; /* Zentriert den Text innerhalb des Follow-Formulars */
 }
 
-/* Füge diese Regel hinzu, um die Pagination zu zentrieren */
-.pagination {
-    margin-top: 20px; /* Setzt den oberen Margin-Abstand für die Pagination auf 20 Pixel */
-    text-align: center; /* Zentriert den Text innerhalb der Pagination */
-}
+
