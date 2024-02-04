@@ -18,7 +18,7 @@ session_start();
 <?php
 $statement=$pdo->prepare("SELECT * FROM Upload WHERE ID=?"); // Vorbereitung Abfrage für aus Upload für eine bestimmte ID
 if ($statement->execute(array($_GET["ID"]))){  //Ausführung Abfrage mit der ID aus der URL / Wenn erfolgreich gehts weiter
-    if($row=$statement->fetch()){ // Versuch Zeile aus Ergebniss der Abfrage in $row zu speichern wenn gefunden gehts weiter
+    if($row=$statement->fetch()){ // Überüfung ob fetch ein Ergebnis liefert (Wenn gefunden dann wird dieser in $row gespeichert) 
 
 // Unten werden Eingabefelder erstellt, welche vorab den ursprünglichen Wert aus der Datenbank anzeigen
 ?> 

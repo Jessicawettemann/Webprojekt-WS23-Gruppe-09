@@ -45,7 +45,7 @@ $email = $row["email"];
     <h1>E-Mail bearbeiten</h1>
     <label for="mailinput"></label>
     <input type="email" name="email" id="email_input" value="<?php echo $row["email"]; ?>"> <br>
-    <p><input type="submit" value="Änderung bestätigen"></p>
+    <p1><input type="submit" value="Änderung bestätigen"></p1>
 </form>
 <?php
 }

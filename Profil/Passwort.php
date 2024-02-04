@@ -40,7 +40,7 @@ $passwort = $row["passwort"];
 <h1>Passwort bearbeiten</h1>
     <label for="passwort_input"></label>
     <input type="password" name="passwort" id="passwortinput" placeholder="Passwort"> <br>
-    <p><input type="submit" value="Änderung bestätigen"></p>
+    <p1><input type="submit" value="Änderung bestätigen"></p1>
 </form>
 <?php
 }

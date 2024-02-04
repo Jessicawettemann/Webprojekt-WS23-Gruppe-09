@@ -16,7 +16,6 @@ session_start();
 </head>
 <div>
 
-    <h2>Logout</h2>
 </div>
 </body>
 

@@ -13,21 +13,7 @@ session_start();
 
 </head>
 <body>
-<header>
-    <div class="header">
 
-
-            <?php
-            #wenn Nutzer angemeldet ist wird zum Logout verlinkt, anderenfalls zum Login
-            if(isset($_SESSION["admin"])) {
-                echo "<li class='li'><a href='Logout_Admin.php'>Logout</a></li";
-            }else{
-                echo "<li class='li'><a href='Login_Admin.php'>Login</a></li";
-            }
-            ?>
-        </ul>
-    </div>
-</header>
 
 <?php
 

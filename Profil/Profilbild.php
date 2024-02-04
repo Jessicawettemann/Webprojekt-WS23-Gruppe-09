@@ -45,9 +45,9 @@ $profilbild = $row["profilbild"];
     <h1>Profilbild bearbeiten</h1>
     <label for="profilbildinput"></label>
     <input type="file" name="profilbild" value="<?php echo $row["profilbild"];?>"> <br>
-    <p>
+    <p1>
         <input type="submit" value="Änderung bestätigen" >
-    </p>
+    </p1>
 </form>
 <?php
 }
