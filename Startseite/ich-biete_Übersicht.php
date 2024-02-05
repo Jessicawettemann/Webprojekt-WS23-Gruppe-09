@@ -40,7 +40,7 @@ if ($statement->execute()){
         }
         if (!empty($row["optionalImage"])) {
             echo"<div class='pdf'>";
-            echo "<img src='https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/" . $row["optionalImage"] . "'>";
+            echo "<object data= 'https://mars.iuk.hdm-stuttgart.de/~jw170/Bilder/Projektstatuts.pdf" . $row["optionalImage"] . "'>";
             echo "</div>";
         } else{
             echo "<div class='small'>optional weitere Datei</div>";
